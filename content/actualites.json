@@ -1,48 +1,56 @@
 {
   "liste": [
     {
+      "lien": "https://www.11teamsports.com/fr-fr/clubshop/association-sportive-val-de-sioule/",
       "date": "2026-08-12",
-      "categorie": "club",
       "titre": "La boutique du club est ouverte",
-      "image": "assets/img/vetements.jpg",
-      "video": "",
-      "document": "",
+      "categorie": "club",
       "documentTitre": "",
       "texte": "Survêtements, polos, sweats et tenues d'entraînement aux couleurs de l'ASVS : la gamme 2026-2027 est en ligne. Rouge, vert ou bleu — ou les trois ! Commande directe sur la boutique 11teamsports du club.",
-      "lien": "https://www.11teamsports.com/fr-fr/clubshop/association-sportive-val-de-sioule/"
-    },
-    {
-      "date": "2026-08-11",
-      "categorie": "sportif",
-      "titre": "Calendriers de la phase aller dévoilés",
-      "image": "assets/img/calendrier-equipe-a.jpg",
       "video": "",
       "document": "",
+      "image": "assets/img/vetements.jpg"
+    },
+    {
+      "lien": "calendrier.html",
+      "date": "2026-08-11",
+      "titre": "Calendriers de la phase aller dévoilés",
+      "categorie": "sportif",
       "documentTitre": "",
       "texte": "L'équipe A repart en Départemental 2 et la réserve en Départemental 4. Premiers rendez-vous le 5 septembre à Marcillat-Pionsat pour les A, et le 6 septembre à domicile face à Hauterive pour les B.",
-      "lien": "calendrier.html"
-    },
-    {
-      "date": "2026-08-10",
-      "categorie": "event",
-      "titre": "Concours de pétanque : 54 équipes, un record !",
-      "image": "assets/photos/actu-petanque.jpg",
       "video": "",
       "document": "",
+      "image": "assets/img/calendrier-equipe-a.jpg"
+    },
+    {
+      "lien": "",
+      "date": "2026-08-10",
+      "titre": "Concours de pétanque : 54 équipes, un record !",
+      "categorie": "event",
       "documentTitre": "",
       "texte": "Le traditionnel concours de pétanque s'est tenu en semi-nocturne le samedi 8 août. 54 équipes engagées, un nouveau record pour le club, dans une ambiance conviviale. Bravo aux finalistes Stelio et Nounours, et merci aux bénévoles de la buvette, de la restauration et de la table de marque.",
-      "lien": ""
-    },
-    {
-      "date": "2026-08-08",
-      "categorie": "sportif",
-      "titre": "Préparation conclue par une belle victoire",
-      "image": "assets/photos/actu-preparation.jpg",
       "video": "",
       "document": "",
+      "image": "assets/photos/actu-petanque.jpg"
+    },
+    {
+      "lien": "",
+      "date": "2026-08-08",
+      "titre": "Préparation conclue par une belle victoire",
+      "categorie": "sportif",
       "documentTitre": "",
       "texte": "Pour son dernier match de préparation, l'équipe A s'imposait 5-0 sur le terrain de Beauregard-l'Évêque, pensionnaire de Départemental 2 dans le Puy-de-Dôme. Une prestation sérieuse de bout en bout avant le retour à la compétition officielle.",
-      "lien": ""
+      "video": "",
+      "document": "",
+      "image": "assets/photos/actu-preparation.jpg"
+    },
+    {
+      "categorie": "sportif",
+      "documentTitre": "",
+      "date": "2026-08-23",
+      "titre": "VICTOIRE AU PREMIER TOUR SAISON 26/27",
+      "image": "<iframe src=\"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid05Cbgj6zVPbtshcgsRAMLvGNsWGeSJbC13DywVVYYissczeYp4JYgc5dLnXbsmTGcl%26id%3D100079830892626&show_text=true&width=500\" width=\"500\" height=\"680\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\"></iframe>",
+      "texte": "VICTOIRE 🏆🔴🔵🟢\nAprès une première mi-temps difficile et une équipe de l'ASVS menée 1-0, notre équipe fanion a fini par dérouler son jeu en deuxième mi-temps, malgré un terrain digne des grandes rencontres de nos campagnes 🌿\nNos buteurs :\n⚽⚽ Rémy Couvelard \n⚽⚽ Jonathan Courtinat \nFélicitations à cette belle équipe de A.S. Brugheas qui fera sans nul doute une très belle saison 🔥\nRendez-vous la semaine prochaine face à Haut d'Allier (D1)\n#asvs #victoire #CoupeDeFrance #DistrictAllier #rendezvous #terrain"
     }
   ]
 }
