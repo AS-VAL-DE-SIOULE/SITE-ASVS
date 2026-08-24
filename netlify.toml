@@ -1,0 +1,28 @@
+# ============================================================
+#  Configuration Netlify — site de l'AS Val de Sioule
+#  Site statique : aucune compilation n'est nécessaire.
+# ============================================================
+
+[build]
+  publish = "."
+  command = ""
+
+# Le back-office ne doit pas être indexé par les moteurs de recherche
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"
+
+# Les fichiers de contenu changent à chaque publication :
+# on évite qu'un visiteur voie une version périmée.
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Les images, vidéos et polices peuvent être mises en cache longtemps
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

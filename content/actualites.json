@@ -1,0 +1,48 @@
+{
+  "liste": [
+    {
+      "date": "2026-08-12",
+      "categorie": "club",
+      "titre": "La boutique du club est ouverte",
+      "image": "assets/img/vetements.jpg",
+      "video": "",
+      "document": "",
+      "documentTitre": "",
+      "texte": "Survêtements, polos, sweats et tenues d'entraînement aux couleurs de l'ASVS : la gamme 2026-2027 est en ligne. Rouge, vert ou bleu — ou les trois ! Commande directe sur la boutique 11teamsports du club.",
+      "lien": "https://www.11teamsports.com/fr-fr/clubshop/association-sportive-val-de-sioule/"
+    },
+    {
+      "date": "2026-08-11",
+      "categorie": "sportif",
+      "titre": "Calendriers de la phase aller dévoilés",
+      "image": "assets/img/calendrier-equipe-a.jpg",
+      "video": "",
+      "document": "",
+      "documentTitre": "",
+      "texte": "L'équipe A repart en Départemental 2 et la réserve en Départemental 4. Premiers rendez-vous le 5 septembre à Marcillat-Pionsat pour les A, et le 6 septembre à domicile face à Hauterive pour les B.",
+      "lien": "calendrier.html"
+    },
+    {
+      "date": "2026-08-10",
+      "categorie": "event",
+      "titre": "Concours de pétanque : 54 équipes, un record !",
+      "image": "assets/photos/actu-petanque.jpg",
+      "video": "",
+      "document": "",
+      "documentTitre": "",
+      "texte": "Le traditionnel concours de pétanque s'est tenu en semi-nocturne le samedi 8 août. 54 équipes engagées, un nouveau record pour le club, dans une ambiance conviviale. Bravo aux finalistes Stelio et Nounours, et merci aux bénévoles de la buvette, de la restauration et de la table de marque.",
+      "lien": ""
+    },
+    {
+      "date": "2026-08-08",
+      "categorie": "sportif",
+      "titre": "Préparation conclue par une belle victoire",
+      "image": "assets/photos/actu-preparation.jpg",
+      "video": "",
+      "document": "",
+      "documentTitre": "",
+      "texte": "Pour son dernier match de préparation, l'équipe A s'imposait 5-0 sur le terrain de Beauregard-l'Évêque, pensionnaire de Départemental 2 dans le Puy-de-Dôme. Une prestation sérieuse de bout en bout avant le retour à la compétition officielle.",
+      "lien": ""
+    }
+  ]
+}

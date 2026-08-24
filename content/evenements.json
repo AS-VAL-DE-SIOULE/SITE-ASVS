@@ -1,0 +1,11 @@
+{
+  "liste": [
+    { "nom": "Concours de pétanque", "periode": "Août", "emoji": "🎯", "texte": "Le rendez-vous de l'été, désormais en semi-nocturne. Édition 2026 : 54 équipes engagées, un record pour le club.", "image": "", "document": "" },
+    { "nom": "Vente des calendriers", "periode": "Novembre – Décembre", "emoji": "📅", "texte": "Le calendrier du club, réalisé avec nos partenaires, passe de porte en porte dans les trois communes.", "image": "", "document": "" },
+    { "nom": "Grilles de dinde", "periode": "Décembre", "emoji": "🍗", "texte": "Un grand classique de fin d'année, tenu par les bénévoles au profit des équipes du club.", "image": "", "document": "" },
+    { "nom": "Soirée du Nouvel An", "periode": "31 décembre", "emoji": "🎉", "texte": "La soirée qui clôt l'année en beauté, et l'une des principales recettes de la saison.", "image": "", "document": "" },
+    { "nom": "Soirée Moules-Frites", "periode": "Hiver", "emoji": "🥘", "texte": "Salle comble, ambiance garantie : le repas le plus attendu des supporters de l'ASVS.", "image": "", "document": "" },
+    { "nom": "Tournoi des jeunes", "periode": "Printemps", "emoji": "⚽", "texte": "Une journée entière consacrée à l'école de foot, avec les clubs voisins invités sur nos installations.", "image": "", "document": "" },
+    { "nom": "Repas de fin de saison", "periode": "Juin", "emoji": "🍽️", "texte": "Bilan sportif, remise des récompenses et remerciements aux bénévoles autour d'une même table.", "image": "", "document": "" }
+  ]
+}

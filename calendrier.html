@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendrier des matchs — AS Val de Sioule</title>
+<meta name="description" content="Calendrier complet de la saison 2026-2027 de l'AS Val de Sioule : équipe A en Départemental 2, équipe B en Départemental 4, matchs à domicile et déplacements.">
+<link rel="icon" href="assets/img/logo-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-entete">
+  <div class="chevrons"><span></span><span></span><span></span></div>
+  <div class="contenu site-entete__barre">
+    <a class="marque" href="index.html">
+      <img src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
+      <span class="marque__txt">
+        <span class="marque__nom">AS Val de Sioule</span>
+        <span class="marque__sous">Depuis 2009</span>
+      </span>
+    </a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    <nav class="nav-principale" id="menu" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="club.html">Le club</a></li>
+        <li><a href="equipes.html">Équipes</a></li>
+        <li><a href="calendrier.html" aria-current="page">Calendrier</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="infos.html">Infos pratiques</a></li>
+        <li class="nav-cta"><a href="partenaires.html">Partenaires</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero hero--page">
+  <div class="hero__fond" style="background-image:url('assets/img/calendrier-equipe-a.jpg');background-position:center 20%"></div>
+  <div class="contenu hero__contenu">
+    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong>Calendrier</strong></p>
+    <span class="hero__script">Saison 2026-2027 · phase aller</span>
+    <h1>Calendrier des matchs</h1>
+    <p class="hero__chapeau">
+      <span data-stat="matchs">23</span> rencontres programmées, dont <span data-stat="domicile">—</span>
+      à domicile au stade municipal de Broût-Vernet.
+    </p>
+  </div>
+</section>
+
+<section class="section section--creme">
+  <div class="contenu">
+    <div class="entete-section">
+      <span class="script">Filtrez comme vous voulez</span>
+      <h2 class="souligne">Toutes les rencontres</h2>
+      <p class="chapeau">Les horaires sont ceux communiqués par le District de l'Allier et peuvent évoluer.
+         En cas de doute, la page Facebook du club fait foi.</p>
+    </div>
+
+    <div class="filtres" role="group" aria-label="Filtrer les rencontres">
+      <button class="filtre" type="button" data-filtre="tous" aria-pressed="true">Toutes</button>
+      <button class="filtre" type="button" data-filtre="avenir" aria-pressed="false">À venir</button>
+      <button class="filtre" type="button" data-filtre="A" aria-pressed="false">Équipe A</button>
+      <button class="filtre" type="button" data-filtre="B" aria-pressed="false">Équipe B</button>
+      <button class="filtre" type="button" data-filtre="domicile" aria-pressed="false">À domicile</button>
+      <button class="filtre" type="button" data-filtre="exterieur" aria-pressed="false">Déplacements</button>
+    </div>
+
+    <div class="matchs" id="calendrier-complet"></div>
+  </div>
+</section>
+
+<section class="section section--sombre">
+  <div class="contenu">
+    <div class="duo">
+      <div>
+        <div class="entete-section">
+          <span class="script">Venir voir un match</span>
+          <h2 class="souligne">Rendez-vous au stade</h2>
+        </div>
+        <p>
+          Les rencontres à domicile se jouent au <strong data-club="stade">Stade Municipal</strong> de
+          <strong data-club="ville">Broût-Vernet</strong>. Entrée libre, buvette ouverte à chaque match,
+          et une ambiance qui vaut le déplacement.
+        </p>
+        <ul class="liste-check" style="margin-top:1.2rem">
+          <li>Les séniors A reçoivent le plus souvent le samedi à 20 h.</li>
+          <li>La réserve joue en général le dimanche à 15 h.</li>
+          <li>Buvette tenue par les bénévoles : venez leur dire bonjour.</li>
+        </ul>
+        <div class="groupe-btn" style="margin-top:1.8rem">
+          <a class="btn btn--fantome" href="infos.html">Plan d'accès et contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="carte">
+          <h3>Résultats en direct</h3>
+          <p>Le club publie les résultats et les compositions sur sa page Facebook après chaque
+             journée. Les classements officiels sont consultables sur le site du District de l'Allier.</p>
+          <div class="groupe-btn" style="margin-top:1.2rem">
+            <a class="btn btn--bleu" data-club="facebook" href="#" target="_blank" rel="noopener">Page Facebook</a>
+            <a class="btn btn--fantome" href="https://allier.fff.fr/" target="_blank" rel="noopener">District de l'Allier</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--blanc">
+  <div class="contenu">
+    <div class="entete-section centre">
+      <h2 class="souligne">Les affiches officielles</h2>
+    </div>
+    <div class="galerie">
+      <figure>
+        <img src="assets/img/calendrier-equipe-a.jpg" alt="Planning des rencontres de l'équipe A, Départemental 2, phase aller" loading="lazy">
+        <figcaption><strong>Équipe A — Départemental 2</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/calendrier-equipe-b.jpg" alt="Planning des rencontres de l'équipe B, Départemental 4, phase aller" loading="lazy">
+        <figcaption><strong>Équipe B — Départemental 4</strong></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-pied">
+  <div class="contenu">
+    <div class="pied__grille">
+      <div>
+        <div class="pied__marque">
+          <img src="assets/img/logo.png" alt="">
+          <strong>AS Val de Sioule</strong>
+        </div>
+        <p>Club de football des communes de Broût-Vernet, Étroussat et Barberier.<br>
+           Affilié à la FFF sous le numéro <span data-club="affiliation">554229</span>.</p>
+        <div class="reseaux">
+          <a class="reseaux--facebook" data-club="facebook" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+            <span>Suivre sur Facebook</span>
+          </a>
+          <a class="reseaux--boutique" data-club="boutique" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4a5 5 0 0 1 10 0h3a1 1 0 0 1 1 1l-1 15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2L3 5a1 1 0 0 1 1-1h3zm2 0h6a3 3 0 0 0-6 0z"/></svg>
+            <span>La boutique</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Le club</h4>
+        <ul>
+          <li><a href="club.html">Histoire et valeurs</a></li>
+          <li><a href="club.html#organisation">Bureau et conseil</a></li>
+          <li><a href="equipes.html">Nos équipes</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pratique</h4>
+        <ul>
+          <li><a href="calendrier.html">Calendrier des matchs</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="infos.html">Licences et tarifs</a></li>
+          <li><a href="partenaires.html">Devenir partenaire</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nous trouver</h4>
+        <ul>
+          <li><span data-club="stade">Stade Municipal</span><br><span data-club="codePostal">03110</span> <span data-club="ville">Broût-Vernet</span></li>
+          <li><a data-club="email" href="#"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pied__bas">
+      <span>© <span data-annee>2026</span> AS Val de Sioule — Tous droits réservés.</span>
+      <span><a href="mentions-legales.html">Mentions légales</a></span>
+      <span>Saison <span data-club="saison">2026 / 2027</span></span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

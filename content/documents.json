@@ -1,0 +1,6 @@
+{
+  "liste": [
+    { "titre": "Plaquette de sponsoring", "fichier": "assets/docs/plaquette-sponsoring.pdf", "description": "Les formules de partenariat et les contreparties proposées aux entreprises.", "categorie": "partenaires" },
+    { "titre": "Modèle de reçu fiscal (CERFA)", "fichier": "assets/docs/cerfa-defiscalisation.pdf", "description": "Le justificatif remis aux entreprises mécènes pour leur réduction d'impôt.", "categorie": "partenaires" }
+  ]
+}

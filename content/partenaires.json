@@ -1,0 +1,15 @@
+{
+  "liste": [
+    { "nom": "ACTO Intérim Saint-Pourçain", "niveau": "or", "soutien": "Jeu de maillots de l'équipe A + flamme", "logo": "", "siteWeb": "" },
+    { "nom": "Imagine Ton Crédit", "niveau": "or", "soutien": "Jeu de maillots", "logo": "", "siteWeb": "" },
+    { "nom": "Treyve Paysages", "niveau": "or", "soutien": "Panneau au stade + soutien du club", "logo": "", "siteWeb": "" },
+    { "nom": "Aux Délices Bourbonnais", "niveau": "or", "soutien": "Soutien au minibus du club", "logo": "", "siteWeb": "" },
+    { "nom": "Le Monde du Macaron", "niveau": "or", "soutien": "Soutien au minibus du club", "logo": "", "siteWeb": "" },
+    { "nom": "Caille Environnement", "niveau": "argent", "soutien": "Panneau au stade", "logo": "", "siteWeb": "" },
+    { "nom": "Garage Moulin", "niveau": "argent", "soutien": "Panneau au stade", "logo": "", "siteWeb": "" },
+    { "nom": "Prolum Gannat", "niveau": "argent", "soutien": "Panneau au stade", "logo": "", "siteWeb": "" },
+    { "nom": "Antoine Alligier", "niveau": "argent", "soutien": "Panneau au stade d'Étroussat", "logo": "", "siteWeb": "" },
+    { "nom": "RM Élec", "niveau": "argent", "soutien": "Dotation en ballons de match", "logo": "", "siteWeb": "" },
+    { "nom": "Atol", "niveau": "bronze", "soutien": "Soutien au club", "logo": "", "siteWeb": "" }
+  ]
+}

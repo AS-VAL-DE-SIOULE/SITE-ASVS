@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Administration — AS Val de Sioule</title>
+<link rel="icon" href="../assets/img/logo-192.png">
+<style>
+  body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:#1e3b28}
+  #chargement{
+    position:fixed;inset:0;display:grid;place-items:center;color:#fff;text-align:center;
+    padding:2rem;z-index:1;
+  }
+  #chargement img{width:90px;margin-bottom:1.2rem}
+  #chargement h1{font-size:1.3rem;margin:0 0 .5rem}
+  #chargement p{margin:0;color:rgba(255,255,255,.7);font-size:.95rem;max-width:38ch}
+</style>
+</head>
+<body>
+
+<div id="chargement">
+  <div>
+    <img src="../assets/img/logo.png" alt="">
+    <h1>Administration du site</h1>
+    <p>Chargement de l'espace de gestion… Si rien ne s'affiche au bout de quelques
+       secondes, vérifiez votre connexion internet.</p>
+  </div>
+</div>
+
+<!-- Identification : seules les personnes invitées peuvent se connecter -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!-- Interface de gestion du contenu -->
+<script src="https://unpkg.com/decap-cms@^3.1.10/dist/decap-cms.js"></script>
+
+<script>
+  // Une fois l'interface prête, on retire l'écran de chargement.
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      var e = document.getElementById("chargement");
+      if (e) e.style.display = "none";
+    }, 1200);
+  });
+</script>
+</body>
+</html>
