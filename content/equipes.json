@@ -1,12 +1,12 @@
 {
   "liste": [
     {
-      "fait": "Demi-finaliste de la Coupe Paul-Baptiste 2024-2025 et finaliste du tournoi futsal hivernal.",
+      "fait": "Changement de coaching - Repris par Sylvain JAFFUEL et Julien ALLIGIER suite au départ de Benoît PAROT.",
       "nom": "Séniors A",
       "photo": "",
-      "creneaux": "Entraînements le mardi et le vendredi soir",
+      "creneaux": "Entraînements le mardi et le vendredi soir - 20H",
       "texte": "L'équipe fanion du club évolue en Départemental 2. Après un maintien arraché lors de la dernière journée en 2024-2025 et une demi-finale en Coupe Paul-Baptiste, le groupe repart avec l'ambition de confirmer les bonnes séquences de la première partie de saison.",
-      "legende": "L'équipe A lors du dernier match de préparation, août 2026.",
+      "legende": "L'équipe A en début de saison 2025-2026.",
       "coach": "Julien ALLIGIER & Sylvain JAFFUEL",
       "video": "",
       "id": "A",
@@ -19,7 +19,7 @@
       "photo": "",
       "creneaux": "Entraînements le mardi et le vendredi soir",
       "texte": "La réserve est le poumon du club : elle accueille les nouveaux licenciés, fait jouer les jeunes qui montent et donne du temps de jeu à tout le monde. Un groupe qui a marqué la saison passée par son état d'esprit, jusqu'à terminer une rencontre à neuf sans jamais rien lâcher.",
-      "legende": "",
+      "legende": "Equipe B lors de la présentation du nouveau sponsor \"IMAGINE TON CREDIT\" - saison 2025-2026",
       "coach": "Julien GUILLOT & Jordan PINEL",
       "video": "",
       "id": "B",
@@ -29,10 +29,10 @@
     {
       "fait": "Les U13 champions de Division 4 en 2024-2025 et promus à l'échelon supérieur.",
       "nom": "École de foot",
-      "photo": "",
+      "photo": "/assets/medias/pxl_20250920_133506151.jpg",
       "creneaux": "Entraînements et plateaux le mercredi et le samedi",
-      "texte": "De la première touche de balle en U7 jusqu'aux U15, l'école de foot accueille les enfants des trois communes. Les catégories U7 à U13 fonctionnent en entente avec Chantelle, et une équipe U14-U15 a vu le jour en entente avec Chantelle et Ébreuil.",
-      "legende": "",
+      "texte": "De la première touche de balle en U7 jusqu'aux U15, l'école de foot accueille les enfants de toutes les communes environnantes.",
+      "legende": "Equipe en plein briefing fait par Thomas PINFORT et Julien ALLIGIER",
       "coach": "Thomas PINFORT, Julien ALLIGIER, Victor HEVIN, Maxime QUILLERET",
       "video": "",
       "id": "jeunes",
