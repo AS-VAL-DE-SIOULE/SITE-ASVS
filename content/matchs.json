@@ -1,28 +1,244 @@
 {
   "liste": [
-    { "equipe": "A", "date": "2026-08-23", "heure": "14:30", "competition": "Coupe de France Crédit Agricole", "journee": "1er tour", "domicile": false, "adversaire": "A.S. Brugheas", "score": "" },
-    { "equipe": "A", "date": "2026-09-05", "heure": "20:00", "competition": "Départemental 2", "journee": "Journée 1", "domicile": false, "adversaire": "US Marcillat Pionsat", "score": "" },
-    { "equipe": "A", "date": "2026-09-19", "heure": "20:00", "competition": "Départemental 2", "journee": "Journée 2", "domicile": true, "adversaire": "Louchy A.S.", "score": "" },
-    { "equipe": "A", "date": "2026-10-04", "heure": "15:00", "competition": "Départemental 2", "journee": "Journée 3", "domicile": false, "adversaire": "Am.C. Creuzier-le-Vieux", "score": "" },
-    { "equipe": "A", "date": "2026-10-18", "heure": "15:00", "competition": "Départemental 2", "journee": "Journée 4", "domicile": false, "adversaire": "Montluçon BA", "score": "" },
-    { "equipe": "A", "date": "2026-10-24", "heure": "20:00", "competition": "Départemental 2", "journee": "Journée 5", "domicile": true, "adversaire": "Chevagnes U.S.", "score": "" },
-    { "equipe": "A", "date": "2026-11-08", "heure": "15:00", "competition": "Départemental 2", "journee": "Journée 6", "domicile": false, "adversaire": "Lusigny U.S.", "score": "" },
-    { "equipe": "A", "date": "2026-11-14", "heure": "20:00", "competition": "Départemental 2", "journee": "Journée 7", "domicile": true, "adversaire": "Mayotte FC de Vichy", "score": "" },
-    { "equipe": "A", "date": "2026-11-22", "heure": "15:00", "competition": "Départemental 2", "journee": "Journée 8", "domicile": false, "adversaire": "AC S. Moulins Foot 2", "score": "" },
-    { "equipe": "A", "date": "2026-12-05", "heure": "20:00", "competition": "Départemental 2", "journee": "Journée 9", "domicile": true, "adversaire": "Am. Laïq. de Quinssaines 2", "score": "" },
-    { "equipe": "A", "date": "2026-12-13", "heure": "15:00", "competition": "Départemental 2", "journee": "Journée 10", "domicile": false, "adversaire": "Molinet E.Sp.", "score": "" },
-    { "equipe": "A", "date": "2027-01-30", "heure": "20:00", "competition": "Départemental 2", "journee": "Journée 11", "domicile": true, "adversaire": "Monétay/Allier O.C.", "score": "" },
-
-    { "equipe": "B", "date": "2026-09-06", "heure": "15:00", "competition": "Départemental 4", "journee": "Journée 1", "domicile": true, "adversaire": "F.C.L. Hauterive", "score": "" },
-    { "equipe": "B", "date": "2026-09-20", "heure": "15:00", "competition": "Départemental 4", "journee": "Journée 2", "domicile": false, "adversaire": "USVBB 3", "score": "" },
-    { "equipe": "B", "date": "2026-10-04", "heure": "15:00", "competition": "Départemental 4", "journee": "Journée 3", "domicile": true, "adversaire": "Gannat S.C. 2", "score": "" },
-    { "equipe": "B", "date": "2026-10-18", "heure": "15:00", "competition": "Départemental 4", "journee": "Journée 4", "domicile": true, "adversaire": "Arfeuilles ES", "score": "" },
-    { "equipe": "B", "date": "2026-10-24", "heure": "20:00", "competition": "Départemental 4", "journee": "Journée 5", "domicile": false, "adversaire": "Association F.C. Ébreuil", "score": "" },
-    { "equipe": "B", "date": "2026-11-08", "heure": "15:00", "competition": "Départemental 4", "journee": "Journée 6", "domicile": true, "adversaire": "St-Yorre – Le Vernet 3", "score": "" },
-    { "equipe": "B", "date": "2026-11-15", "heure": "15:00", "competition": "Départemental 4", "journee": "Journée 7", "domicile": false, "adversaire": "St-Germain-des-Fossés 3", "score": "" },
-    { "equipe": "B", "date": "2026-11-22", "heure": "15:00", "competition": "Départemental 4", "journee": "Journée 8", "domicile": true, "adversaire": "A.S. Rongères", "score": "" },
-    { "equipe": "B", "date": "2026-12-06", "heure": "15:00", "competition": "Départemental 4", "journee": "Journée 9", "domicile": false, "adversaire": "Billezois AS", "score": "" },
-    { "equipe": "B", "date": "2026-12-13", "heure": "15:00", "competition": "Départemental 4", "journee": "Journée 10", "domicile": true, "adversaire": "A.S. de Le Breuil", "score": "" },
-    { "equipe": "B", "date": "2027-01-31", "heure": "13:00", "competition": "Départemental 4", "journee": "Journée 11", "domicile": false, "adversaire": "Mont Bourbonnais 2", "score": "" }
+    {
+      "equipe": "A",
+      "date": "2026-08-23",
+      "heure": "14:30",
+      "competition": "Coupe de France Crédit Agricole",
+      "journee": "1er tour",
+      "domicile": false,
+      "adversaire": "A.S. Brugheas",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2026-09-05",
+      "heure": "20:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 1",
+      "domicile": false,
+      "adversaire": "US Marcillat Pionsat",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2026-09-19",
+      "heure": "20:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 2",
+      "domicile": true,
+      "adversaire": "Louchy A.S.",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2026-10-04",
+      "heure": "15:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 3",
+      "domicile": false,
+      "adversaire": "Am.C. Creuzier-le-Vieux",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2026-10-18",
+      "heure": "15:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 4",
+      "domicile": false,
+      "adversaire": "Montluçon BA",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2026-10-24",
+      "heure": "20:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 5",
+      "domicile": true,
+      "adversaire": "Chevagnes U.S.",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2026-11-08",
+      "heure": "15:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 6",
+      "domicile": false,
+      "adversaire": "Lusigny U.S.",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2026-11-14",
+      "heure": "20:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 7",
+      "domicile": true,
+      "adversaire": "Mayotte FC de Vichy",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2026-11-22",
+      "heure": "15:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 8",
+      "domicile": false,
+      "adversaire": "AC S. Moulins Foot 2",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2026-12-05",
+      "heure": "20:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 9",
+      "domicile": true,
+      "adversaire": "Am. Laïq. de Quinssaines 2",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2026-12-13",
+      "heure": "15:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 10",
+      "domicile": false,
+      "adversaire": "Molinet E.Sp.",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "date": "2027-01-30",
+      "heure": "20:00",
+      "competition": "Départemental 2",
+      "journee": "Journée 11",
+      "domicile": true,
+      "adversaire": "Monétay/Allier O.C.",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2026-09-06",
+      "heure": "15:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 1",
+      "domicile": true,
+      "adversaire": "F.C.L. Hauterive",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2026-09-20",
+      "heure": "15:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 2",
+      "domicile": false,
+      "adversaire": "USVBB 3",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2026-10-04",
+      "heure": "15:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 3",
+      "domicile": true,
+      "adversaire": "Gannat S.C. 2",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2026-10-18",
+      "heure": "15:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 4",
+      "domicile": true,
+      "adversaire": "Arfeuilles ES",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2026-10-24",
+      "heure": "20:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 5",
+      "domicile": false,
+      "adversaire": "Association F.C. Ébreuil",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2026-11-08",
+      "heure": "15:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 6",
+      "domicile": true,
+      "adversaire": "St-Yorre – Le Vernet 3",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2026-11-15",
+      "heure": "15:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 7",
+      "domicile": false,
+      "adversaire": "St-Germain-des-Fossés 3",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2026-11-22",
+      "heure": "15:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 8",
+      "domicile": true,
+      "adversaire": "A.S. Rongères",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2026-12-06",
+      "heure": "15:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 9",
+      "domicile": false,
+      "adversaire": "Billezois AS",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2026-12-13",
+      "heure": "15:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 10",
+      "domicile": true,
+      "adversaire": "A.S. de Le Breuil",
+      "score": ""
+    },
+    {
+      "equipe": "B",
+      "date": "2027-01-31",
+      "heure": "13:00",
+      "competition": "Départemental 4",
+      "journee": "Journée 11",
+      "domicile": false,
+      "adversaire": "Mont Bourbonnais 2",
+      "score": ""
+    },
+    {
+      "equipe": "A",
+      "heure": "20:00",
+      "competition": "Coupe de France",
+      "journee": "Deuxième tour",
+      "domicile": true,
+      "score": "",
+      "date": "2026-08-29",
+      "adversaire": "FC HAUT D'ALLIER"
+    }
   ]
 }
