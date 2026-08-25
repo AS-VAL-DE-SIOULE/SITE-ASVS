@@ -4,71 +4,71 @@
       "nom": "ACTO Intérim Saint-Pourçain",
       "niveau": "or",
       "soutien": "Jeu de maillots pour les équipes séniors (ADIDAS ROUGE) + Flamme postée à l'entrée du terrain",
-      "logo": "",
-      "siteWeb": ""
+      "logo": "/assets/medias/acto-interim.png",
+      "siteWeb": "https://www.acto-rh.com/agences/acto-interim-saint-pourcain-sur-sioule/"
     },
     {
       "nom": "Imagine Ton Crédit",
       "niveau": "or",
-      "soutien": "Jeu de maillots",
-      "logo": "",
-      "siteWeb": ""
+      "soutien": "Jeu de maillots pour les séniors (ADIDAS BLEU)",
+      "logo": "/assets/medias/imagine-ton-crédit.jpg",
+      "siteWeb": "https://imaginetoncredit.fr/"
     },
     {
       "nom": "Treyve Paysages",
       "niveau": "or",
       "soutien": "Panneau au stade + soutien du club",
-      "logo": "",
-      "siteWeb": ""
+      "logo": "/assets/medias/treyve-paysages.jpg",
+      "siteWeb": "https://treyve-paysages.fr/"
     },
     {
       "nom": "Aux Délices Bourbonnais",
       "niveau": "or",
       "soutien": "Soutien au minibus du club",
-      "logo": "",
-      "siteWeb": ""
+      "logo": "/assets/medias/boulangerie-brout-vernet.jpg",
+      "siteWeb": "https://www.facebook.com/p/Aux-D%C3%A9lices-Bourbonnais-100057439990421/"
     },
     {
       "nom": "Le Monde du Macaron",
       "niveau": "or",
       "soutien": "Soutien au minibus du club",
-      "logo": "",
-      "siteWeb": ""
+      "logo": "/assets/medias/le-monde-du-macaron.png",
+      "siteWeb": "https://www.facebook.com/p/Le-monde-du-Macaron-Saint-Pour%C3%A7ain-Sur-Sioule-61575828699074/"
     },
     {
       "nom": "Caille Environnement",
       "niveau": "argent",
       "soutien": "Panneau au stade",
-      "logo": "",
-      "siteWeb": ""
+      "logo": "/assets/medias/caille.png",
+      "siteWeb": "https://caille-shop.fr/"
     },
     {
       "nom": "Garage Moulin",
       "niveau": "argent",
       "soutien": "Panneau au stade",
-      "logo": "",
-      "siteWeb": ""
+      "logo": "/assets/medias/moulin.png",
+      "siteWeb": "https://www.facebook.com/EtsMOULINsarl/?locale=fr_FR"
     },
     {
       "nom": "Prolum Gannat",
       "niveau": "argent",
       "soutien": "Panneau au stade",
-      "logo": "",
-      "siteWeb": ""
+      "logo": "/assets/medias/prolum.png",
+      "siteWeb": "https://www.prolum.fr/implantations-agences-prolum/centre-auvergne/"
     },
     {
-      "nom": "Antoine Alligier",
+      "nom": "ALLIGIER PAYSAGES",
       "niveau": "argent",
       "soutien": "Panneau au stade d'Étroussat",
-      "logo": "",
-      "siteWeb": ""
+      "logo": "/assets/medias/alligier.png",
+      "siteWeb": "https://www.facebook.com/p/Alligier-Paysage-100094671947566/"
     },
     {
       "nom": "RM Élec",
       "niveau": "argent",
       "soutien": "Dotation en ballons de match",
-      "logo": "",
-      "siteWeb": ""
+      "logo": "/assets/medias/rm-elec.png",
+      "siteWeb": "https://www.facebook.com/p/RMElec-100063559843050/"
     },
     {
       "nom": "Atol",
