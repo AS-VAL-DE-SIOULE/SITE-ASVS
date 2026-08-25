@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Actualités — AS Val de Sioule</title>
-<meta name="description" content="Toute l'actualité de l'AS Val de Sioule : résultats, vie du club, événements, boutique et communications officielles.">
+<title>Notre histoire — AS Val de Sioule</title>
+<meta name="description" content="L'histoire de l'AS Val de Sioule depuis la fusion de 2009 : la chronologie du club, la signification du blason et les photos d'équipes au fil des saisons.">
 <link rel="icon" href="assets/img/logo-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +28,10 @@
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="club.html">Le club</a></li>
-        <li><a href="histoire.html">Histoire</a></li>
+        <li><a href="histoire.html" aria-current="page">Histoire</a></li>
         <li><a href="equipes.html">Équipes</a></li>
         <li><a href="calendrier.html">Calendrier</a></li>
-        <li><a href="actualites.html" aria-current="page">Actualités</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
         <li><a href="evenements.html">Événements</a></li>
         <li><a href="infos.html">Infos pratiques</a></li>
         <li class="nav-cta"><a href="partenaires.html">Partenaires</a></li>
@@ -43,54 +43,86 @@
 <main>
 
 <section class="hero hero--page">
-  <div class="hero__fond" style="background-image:url('assets/photos/actu-petanque.jpg');background-position:center 40%"></div>
+  <div class="hero__fond" style="background-image:url('assets/img/banniere.jpg')"></div>
   <div class="contenu hero__contenu">
-    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong>Actualités</strong></p>
-    <span class="hero__script">La vie du club, semaine après semaine</span>
-    <h1>Actualités</h1>
-    <p class="hero__chapeau">Résultats, événements, annonces : tout ce qui fait battre le cœur de l'ASVS.</p>
+    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong>Notre histoire</strong></p>
+    <span class="hero__script">Depuis 2009, et bien avant</span>
+    <h1>Notre histoire</h1>
+    <p class="hero__chapeau" id="histoire-intro">
+      Deux villages, deux clochers, une rivière.
+    </p>
   </div>
 </section>
 
+<!-- ===== LE BLASON ===== -->
 <section class="section section--creme">
   <div class="contenu">
-    <div class="actus" id="liste-actus"></div>
-  </div>
-</section>
+    <div class="duo duo--large-gauche">
+      <div class="reveal-gauche">
+        <div class="entete-section">
+          <span class="script">Ce que raconte notre écusson</span>
+          <h2 class="souligne" id="blason-titre">La signification du blason</h2>
+          <p class="chapeau" id="blason-chapeau">Chaque élément raconte un morceau de notre histoire.</p>
+        </div>
+      </div>
+      <div class="reveal-droite">
+        <img id="blason-image" class="flotte" src="assets/img/logo.png"
+             alt="Le blason de l'AS Val de Sioule"
+             style="max-width:300px;margin-inline:auto;box-shadow:none">
+      </div>
+    </div>
 
-<section class="section section--sombre">
-  <div class="contenu">
-    <div class="cta-bande reveal" style="background:linear-gradient(105deg,#2f6fb7 0%,#24548c 55%,#14291b 100%)">
-      <div>
-        <h2>Toute l'actu en direct sur Facebook</h2>
-        <p>Compositions, résultats, photos d'après-match, annonces de manifestations : la page
-           Facebook du club est mise à jour après chaque journée, et suivie par plus de mille personnes.</p>
-      </div>
-      <div class="groupe-btn">
-        <a class="btn btn--fantome" data-club="facebook" href="#" target="_blank" rel="noopener">Suivre la page</a>
-      </div>
+    <div class="blason-grille" id="blason-elements" style="margin-top:2rem"></div>
+
+    <div class="encadre encadre--vert" style="margin-top:2rem">
+      <h4>Un blason choisi par le club</h4>
+      <p id="blason-note">
+        Le blason actuel a été adopté en 2025, à l'issue d'un sondage public organisé sur
+        la page Facebook du club.
+      </p>
     </div>
   </div>
 </section>
 
-<section class="section section--blanc">
+<!-- ===== CHRONOLOGIE ===== -->
+<section class="section section--sombre">
+  <div class="contenu contenu-etroit">
+    <div class="entete-section">
+      <span class="script">Le fil des saisons</span>
+      <h2 class="souligne">La chronologie du club</h2>
+      <p class="chapeau">
+        Les dates qui ont compté. Cette page grandira au fil des souvenirs et des photos
+        que vous nous confierez.
+      </p>
+    </div>
+    <ol class="chrono" id="chronologie"></ol>
+  </div>
+</section>
+
+<!-- ===== PHOTOS D'ÉQUIPES ===== -->
+<section class="section section--blanc" id="bloc-equipes-historiques" hidden>
   <div class="contenu">
     <div class="entete-section centre">
-      <span class="script">Aux couleurs du club</span>
-      <h2 class="souligne">La boutique officielle</h2>
-      <p class="chapeau">Survêtements, polos, sweats et tenues d'entraînement adidas floqués ASVS.
-         Rouge, vert ou bleu — ou les trois.</p>
+      <span class="script">Saison après saison</span>
+      <h2 class="souligne">Nos équipes au fil des ans</h2>
+      <p class="chapeau">Les photos officielles, d'hier à aujourd'hui.</p>
     </div>
-    <div class="duo">
-      <div><img src="assets/img/vetements.jpg" alt="La gamme de vêtements 2026-2027 de l'AS Val de Sioule" loading="lazy"></div>
+    <div class="galerie cascade" id="equipes-historiques"></div>
+  </div>
+</section>
+
+<!-- ===== APPEL AUX SOUVENIRS ===== -->
+<section class="section section--creme">
+  <div class="contenu">
+    <div class="cta-bande reveal-zoom">
       <div>
-        <p>La boutique en ligne du club est hébergée par 11teamsports. Les commandes se font
-           directement en ligne, et les articles sont livrés floqués aux couleurs de l'ASVS.</p>
-        <p>Un grand merci à notre partenaire <strong>Aux Délices Bourbonnais</strong>, la boulangerie
-           de Broût-Vernet, qui a soutenu le lancement de la gamme.</p>
-        <div class="groupe-btn" style="margin-top:1.6rem">
-          <a class="btn btn--primaire" data-club="boutique" href="#" target="_blank" rel="noopener">Accéder à la boutique</a>
-        </div>
+        <h2>Vous avez des photos d'avant&nbsp;?</h2>
+        <p>Une photo d'équipe du BVS ou du FC Étroussat, une coupe soulevée, un tournoi oublié :
+           le club cherche à rassembler sa mémoire. Envoyez-nous vos images, elles trouveront
+           leur place sur cette page.</p>
+      </div>
+      <div class="groupe-btn">
+        <a class="btn btn--fantome" data-club="email" href="#">Nous envoyer une photo</a>
       </div>
     </div>
   </div>
@@ -123,7 +155,7 @@
         <h4>Le club</h4>
         <ul>
           <li><a href="club.html">Histoire et valeurs</a></li>
-          <li><a href="club.html#organisation">Bureau et conseil</a></li>
+          <li><a href="histoire.html">Notre histoire</a></li>
           <li><a href="equipes.html">Nos équipes</a></li>
           <li><a href="evenements.html">Événements</a></li>
         </ul>

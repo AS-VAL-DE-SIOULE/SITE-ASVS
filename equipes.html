@@ -28,6 +28,7 @@
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="club.html">Le club</a></li>
+        <li><a href="histoire.html">Histoire</a></li>
         <li><a href="equipes.html" aria-current="page">Équipes</a></li>
         <li><a href="calendrier.html">Calendrier</a></li>
         <li><a href="actualites.html">Actualités</a></li>
@@ -73,18 +74,18 @@
         <tbody>
           <tr><td><strong>Séniors A</strong></td><td>Départemental 2</td><td>Julien ALLIGIER &amp; Sylvain JAFFUEL</td></tr>
           <tr><td><strong>Séniors B</strong></td><td>Départemental 4</td><td>Julien GUILLOT &amp; Jordan PINEL</td></tr>
-          <tr><td><strong>U14-U15</strong></td><td>Entente Chantelle / Ébreuil</td><td>Encadrement d'entente</td></tr>
-          <tr><td><strong>U13</strong></td><td>U13 Départemental</td><td>Maxime QUILLERET &amp; Victor HEVIN</td></tr>
-          <tr><td><strong>U11</strong></td><td>Plateaux départementaux</td><td>Thomas PINFORT &amp; Julien ALLIGIER</td></tr>
-          <tr><td><strong>U9</strong></td><td>Plateaux — entente Chantelle</td><td>Éducateurs du club</td></tr>
-          <tr><td><strong>U7</strong></td><td>Plateaux — entente Chantelle</td><td>Éducateurs du club</td></tr>
+          <tr><td><strong>U15</strong></td><td>Entente avec Ébreuil</td><td>Maxime QUILLERET</td></tr>
+          <tr><td><strong>U13</strong></td><td>U13 Départemental</td><td>Sylvain JAFFUEL &amp; Victor HEVIN</td></tr>
+          <tr><td><strong>U11</strong></td><td>Plateaux départementaux</td><td>Éducateurs du club</td></tr>
+          <tr><td><strong>U9</strong></td><td>Plateaux départementaux</td><td>Éducateurs du club</td></tr>
+          <tr><td><strong>U7</strong></td><td>Plateaux départementaux</td><td>Éducateurs du club</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="encadre" style="margin-top:1.8rem">
+    <div class="encadre" id="bloc-arbitres" style="margin-top:1.8rem" hidden>
       <h4>Les arbitres du club</h4>
-      <p>Germain POULET et Thomas PINFORT assurent le rôle d'arbitre pour l'ASVS.
-         Un engagement essentiel, régulièrement salué par le président en Assemblée Générale.</p>
+      <p>Un engagement essentiel, régulièrement salué par le président en Assemblée Générale.</p>
+      <div class="jetons" id="liste-arbitres"></div>
     </div>
   </div>
 </section>
@@ -99,13 +100,13 @@
           <h2 class="souligne">L'école de foot</h2>
         </div>
         <p>
-          De l'U7 à l'U15, l'école de foot accueille les enfants des trois communes. Les
-          catégories fonctionnent en entente avec Chantelle, et une équipe U14-U15 a vu le jour
-          en entente avec Chantelle et Ébreuil.
+          De l'U7 à l'U15, l'école de foot accueille les enfants des trois communes. Le club
+          encadre désormais ses catégories en propre ; seuls les U15 évoluent en entente
+          avec Ébreuil.
         </p>
         <ul class="liste-check" style="margin-top:1.4rem">
           <li>Une génération U13 dynamique et prometteuse, championne de Division 4 en 2024-2025.</li>
-          <li>Des plateaux réguliers en U7, U8 et U9, dans un excellent état d'esprit.</li>
+          <li>Des plateaux réguliers en U7, U9 et U11, dans un excellent état d'esprit.</li>
           <li>Un encadrement bénévole, épaulé par les parents à chaque déplacement.</li>
           <li>Licence à 20 € pour toutes les catégories jeunes, de l'U6 à l'U18.</li>
         </ul>
@@ -113,8 +114,15 @@
           <a class="btn btn--fantome" href="infos.html">Inscrire un enfant</a>
         </div>
       </div>
-      <div>
-        <img src="assets/img/vetements.jpg" alt="La gamme de vêtements 2026-2027 de l'AS Val de Sioule">
+      <div class="reveal-droite">
+        <div class="carte" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)">
+          <div class="carte__pastille pastille--vert">🧒</div>
+          <h3>Une place pour chaque enfant</h3>
+          <p>Dès 5 ans, les enfants découvrent le football par le jeu. Aucun niveau requis,
+             aucun engagement de résultat : on vient pour apprendre et pour s'amuser.</p>
+          <p style="margin-top:.8rem"><strong>Une séance d'essai est toujours possible</strong>
+             avant de prendre une licence.</p>
+        </div>
       </div>
     </div>
   </div>
