@@ -1,6 +1,14 @@
 {
   "liste": [
     {
+      "categorie": "sportif",
+      "documentTitre": "",
+      "date": "2026-08-23",
+      "titre": "Victoire au premier tour de coupe de France - S26/27",
+      "image": "/assets/medias/1000031677.png",
+      "texte": "VICTOIRE 🏆🔴🔵🟢\n\nAprès une première mi-temps difficile et une équipe de l'ASVS menée 1-0, notre équipe fanion a fini par dérouler son jeu en deuxième mi-temps, malgré un terrain digne des grandes rencontres de nos campagnes 🌿\n\nNos buteurs :\n⚽⚽ Rémy Couvelard \n⚽⚽ Jonathan Courtinat \n\nFélicitations à cette belle équipe de A.S. Brugheas qui fera sans nul doute une très belle saison 🔥\nRendez-vous la semaine prochaine face à Haut d'Allier (D1)\n\n#asvs #victoire #CoupeDeFrance #DistrictAllier #rendezvous #terrain"
+    },
+    {
       "lien": "https://www.11teamsports.com/fr-fr/clubshop/association-sportive-val-de-sioule/",
       "date": "2026-08-12",
       "titre": "La boutique du club est ouverte",
@@ -35,7 +43,7 @@
     },
     {
       "lien": "",
-      "date": "2026-08-08",
+      "date": "2026-08-14",
       "titre": "Préparation conclue par une belle victoire",
       "categorie": "sportif",
       "documentTitre": "",
@@ -43,14 +51,6 @@
       "video": "",
       "document": "",
       "image": "/assets/medias/1000031580.png"
-    },
-    {
-      "categorie": "sportif",
-      "documentTitre": "",
-      "date": "2026-08-23",
-      "titre": "Victoire au premier tour de coupe de France - S26/27",
-      "image": "/assets/medias/1000031677.png",
-      "texte": "VICTOIRE 🏆🔴🔵🟢\n\nAprès une première mi-temps difficile et une équipe de l'ASVS menée 1-0, notre équipe fanion a fini par dérouler son jeu en deuxième mi-temps, malgré un terrain digne des grandes rencontres de nos campagnes 🌿\n\nNos buteurs :\n⚽⚽ Rémy Couvelard \n⚽⚽ Jonathan Courtinat \n\nFélicitations à cette belle équipe de A.S. Brugheas qui fera sans nul doute une très belle saison 🔥\nRendez-vous la semaine prochaine face à Haut d'Allier (D1)\n\n#asvs #victoire #CoupeDeFrance #DistrictAllier #rendezvous #terrain"
     }
   ]
 }
