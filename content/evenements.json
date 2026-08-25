@@ -37,7 +37,7 @@
       "periode": "Hiver",
       "emoji": "🥘",
       "texte": "Salle comble, ambiance garantie : le repas le plus attendu des supporters de l'ASVS.",
-      "image": "",
+      "image": "/assets/medias/1000031742.png",
       "document": ""
     },
     {
@@ -45,14 +45,6 @@
       "periode": "Printemps",
       "emoji": "⚽",
       "texte": "Une journée entière consacrée à l'école de foot, avec les clubs voisins invités sur nos installations.",
-      "image": "",
-      "document": ""
-    },
-    {
-      "nom": "Repas de fin de saison",
-      "periode": "Juin",
-      "emoji": "🍽️",
-      "texte": "Bilan sportif, remise des récompenses et remerciements aux bénévoles autour d'une même table.",
       "image": "",
       "document": ""
     }
