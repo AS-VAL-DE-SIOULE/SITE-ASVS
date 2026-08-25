@@ -1,13 +1,37 @@
 {
   "bureau": [
-    { "role": "Président d'honneur", "nom": "Michel QUILLERET" },
-    { "role": "Président", "nom": "Philippe ALLIGIER" },
-    { "role": "Vice-président", "nom": "Bernard PAROT" },
-    { "role": "Vice-président", "nom": "Christian FRAGNY" },
-    { "role": "Trésorier", "nom": "Alain GAUDON" },
-    { "role": "Trésorier adjoint", "nom": "Jean-Claude BEAUJON" },
-    { "role": "Secrétaire", "nom": "Philippe RICHARD" },
-    { "role": "Secrétaire adjoint", "nom": "Germain POULET" }
+    {
+      "role": "Président",
+      "nom": "Philippe ALLIGIER"
+    },
+    {
+      "role": "Président d'honneur",
+      "nom": "Michel QUILLERET"
+    },
+    {
+      "role": "Vice-président",
+      "nom": "Bernard PAROT"
+    },
+    {
+      "role": "Vice-président",
+      "nom": "Christian FRAGNY"
+    },
+    {
+      "role": "Trésorier",
+      "nom": "Alain GAUDON"
+    },
+    {
+      "role": "Trésorier adjoint",
+      "nom": "Jean-Claude BEAUJON"
+    },
+    {
+      "role": "Secrétaire",
+      "nom": "Philippe RICHARD"
+    },
+    {
+      "role": "Secrétaire adjoint",
+      "nom": "Germain POULET"
+    }
   ],
   "conseil": [],
   "commissions": []
