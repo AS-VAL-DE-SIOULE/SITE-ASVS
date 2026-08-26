@@ -1,5 +1,14 @@
 {
   "liste": [
-    { "fichier": "assets/photos/actu-petanque.jpg", "type": "photo", "legende": "Concours de pétanque semi-nocturne, 8 août 2026 — 54 équipes engagées." }
+    {
+      "fichier": "assets/photos/actu-petanque.jpg",
+      "type": "photo",
+      "legende": "Concours de pétanque semi-nocturne, 8 août 2026 — 54 équipes engagées."
+    },
+    {
+      "type": "photo",
+      "legende": "Jour de notre reprise - saison 2026-2027",
+      "fichier": "/assets/medias/publication-facebook-—-journée-cohésion-foot_20260725_164435_0000.png"
+    }
   ]
 }
