@@ -27,6 +27,18 @@
       "couleur": "b"
     },
     {
+      "fait": "Plaisir et convivialité ",
+      "nom": "Séniors C",
+      "photo": "/assets/medias/1000031754.png",
+      "creneaux": "Mardi et vendredi à 20h",
+      "texte": "Une équipe qui joue vraiment pour le plaisir du football. Ce qui compte c'est un bon match pour se dégourdir les jambes et une bonne troisième mi-temps pour rigoler et se raconter des anecdotes du match 🔴🔵🟢",
+      "legende": "",
+      "coach": "En attente",
+      "id": "C",
+      "niveau": "Départemental 5",
+      "couleur": "a"
+    },
+    {
       "fait": "Les U13 champions de Division 4 en 2024-2025 et promus à l'échelon supérieur.",
       "nom": "École de foot",
       "photo": "/assets/medias/pxl_20250920_133506151.jpg",
@@ -38,18 +50,6 @@
       "id": "jeunes",
       "niveau": "U7 à U15",
       "couleur": "jeunes"
-    },
-    {
-      "fait": "Plaisir et convivialité ",
-      "nom": "Séniors C",
-      "photo": "/assets/medias/1000031754.png",
-      "creneaux": "Mardi et vendredi à 20h",
-      "texte": "Une équipe qui joue vraiment pour le plaisir du football. Ce qui compte c'est un bon match pour se dégourdir les jambes et une bonne troisième mi-temps pour rigoler et se raconter des anecdotes du match 🔴🔵🟢",
-      "legende": "",
-      "coach": "En attente",
-      "id": "C",
-      "niveau": "Départemental 5",
-      "couleur": "a"
     }
   ]
 }
