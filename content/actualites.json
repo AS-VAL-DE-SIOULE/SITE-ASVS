@@ -1,64 +1,86 @@
 {
   "liste": [
     {
+      "date": "2026-08-26",
       "categorie": "club",
+      "titre": "Ouverture d'une équipe C",
+      "photos": [
+        { "fichier": "/assets/medias/1000031754.jpg", "legende": "Une troisième équipe séniors, en Départemental 5." }
+      ],
+      "video": "",
+      "document": "",
       "documentTitre": "",
-      "titre": "Ouverture d'une Équipe C",
-      "texte": "Nous sommes heureux de vous annoncer qu'avec 25 nouvelles arrivées cette saison, l'ASVS ouvre une troisième équipe qui évoluera en D5.\n\nOn accueille encore les anciens et les jeunes qui souhaiteraient se maintenir ou s'améliorer ⚽⚽\n\nTu es encore indécis ? Nous on a une troisième mi-temps du tonnerre 😁🔴🔵🟢\n\nÀ vos licences, prêts, jouez !! ⚽🔴🔵🟢\n\n#EquipeC #asvs #District #DistrictAllier #nouvelle #force #amateur #footamateur #foot #allier #broutvernet #etroussat #buvette",
-      "image": "/assets/medias/1000031754.png",
-      "date": "2026-08-26"
+      "texte": "Nous sommes heureux de vous annoncer qu'avec 25 nouvelles arrivées cette saison, l'ASVS ouvre une troisième équipe qui évoluera en D5.\n\nOn accueille encore les anciens et les jeunes qui souhaiteraient se maintenir ou s'améliorer ⚽⚽\n\nTu es encore indécis ? Nous on a une troisième mi-temps du tonnerre 😁🔴🔵🟢\n\nÀ vos licences, prêts, jouez !! ⚽🔴🔵🟢",
+      "lien": ""
     },
     {
-      "categorie": "sportif",
-      "documentTitre": "",
       "date": "2026-08-23",
-      "titre": "Victoire au premier tour de coupe de France - S26/27",
-      "image": "/assets/medias/1000031677.png",
-      "texte": "VICTOIRE 🏆🔴🔵🟢\n\nAprès une première mi-temps difficile et une équipe de l'ASVS menée 1-0, notre équipe fanion a fini par dérouler son jeu en deuxième mi-temps, malgré un terrain digne des grandes rencontres de nos campagnes 🌿\n\nNos buteurs :\n⚽⚽ Rémy Couvelard \n⚽⚽ Jonathan Courtinat \n\nFélicitations à cette belle équipe de A.S. Brugheas qui fera sans nul doute une très belle saison 🔥\nRendez-vous la semaine prochaine face à Haut d'Allier (D1)\n\n#asvs #victoire #CoupeDeFrance #DistrictAllier #rendezvous #terrain"
-    },
-    {
-      "lien": "https://www.11teamsports.com/fr-fr/clubshop/association-sportive-val-de-sioule/",
-      "date": "2026-08-12",
-      "titre": "La boutique du club est ouverte",
-      "categorie": "club",
-      "documentTitre": "",
-      "texte": "Survêtements, polos, sweats et tenues d'entraînement aux couleurs de l'ASVS : la gamme 2026-2027 est en ligne. Rouge, vert ou bleu — ou les trois ! Commande directe sur la boutique 11teamsports du club.",
-      "video": "",
-      "document": "",
-      "image": "assets/img/vetements.jpg"
-    },
-    {
-      "lien": "calendrier.html",
-      "date": "2026-08-11",
-      "titre": "Calendriers de la phase aller dévoilés",
       "categorie": "sportif",
-      "documentTitre": "",
-      "texte": "L'équipe A repart en Départemental 2 et la réserve en Départemental 4. Premiers rendez-vous le 5 septembre à Marcillat-Pionsat pour les A, et le 6 septembre à domicile face à Hauterive pour les B.",
+      "titre": "Victoire au premier tour de Coupe de France",
+      "photos": [
+        { "fichier": "/assets/medias/1000031677.jpg", "legende": "A.S. Brugheas 2 – 4 AS Val de Sioule." }
+      ],
       "video": "",
       "document": "",
-      "image": "assets/img/calendrier-equipe-a.jpg"
-    },
-    {
-      "lien": "",
-      "date": "2026-08-10",
-      "titre": "Concours de pétanque : 54 équipes, un record !",
-      "categorie": "event",
       "documentTitre": "",
-      "texte": "Le traditionnel concours de pétanque s'est tenu en semi-nocturne le samedi 8 août. 54 équipes engagées, un nouveau record pour le club, dans une ambiance conviviale. Bravo aux finalistes Stelio et Nounours, et merci aux bénévoles de la buvette, de la restauration et de la table de marque.",
-      "video": "",
-      "document": "",
-      "image": "assets/photos/actu-petanque.jpg"
+      "texte": "VICTOIRE 🏆🔴🔵🟢\n\nAprès une première mi-temps difficile et une équipe de l'ASVS menée 1-0, notre équipe fanion a fini par dérouler son jeu en deuxième mi-temps, malgré un terrain digne des grandes rencontres de nos campagnes 🌿\n\nNos buteurs :\n⚽⚽ Rémy Couvelard\n⚽⚽ Jonathan Courtinat\n\nFélicitations à cette belle équipe de A.S. Brugheas qui fera sans nul doute une très belle saison 🔥\n\nRendez-vous la semaine prochaine face à Haut d'Allier (D1).",
+      "lien": ""
     },
     {
-      "lien": "",
       "date": "2026-08-14",
-      "titre": "Préparation conclue par une belle victoire",
       "categorie": "sportif",
+      "titre": "Préparation conclue par une belle victoire",
+      "photos": [
+        { "fichier": "/assets/medias/1000031580.jpg", "legende": "Le récapitulatif du match." },
+        { "fichier": "assets/photos/equipe-a.jpg", "legende": "L'équipe A après sa victoire à Beauregard-l'Évêque." }
+      ],
+      "video": "",
+      "document": "",
       "documentTitre": "",
       "texte": "Pour son dernier match de préparation, l'équipe A s'imposait 5-0 sur le terrain de Beauregard-l'Évêque, pensionnaire de Départemental 2 dans le Puy-de-Dôme. Une prestation sérieuse de bout en bout avant le retour à la compétition officielle.",
+      "lien": ""
+    },
+    {
+      "date": "2026-08-12",
+      "categorie": "club",
+      "titre": "La boutique du club est ouverte",
+      "photos": [
+        { "fichier": "assets/img/vetements.jpg", "legende": "La gamme 2026-2027 aux couleurs de l'ASVS." }
+      ],
       "video": "",
       "document": "",
-      "image": "/assets/medias/1000031580.png"
+      "documentTitre": "",
+      "texte": "Survêtements, polos, sweats et tenues d'entraînement aux couleurs de l'ASVS : la gamme 2026-2027 est en ligne. Rouge, vert ou bleu — ou les trois ! Commande directe sur la boutique 11teamsports du club.",
+      "lien": "https://www.11teamsports.com/fr-fr/clubshop/association-sportive-val-de-sioule/"
+    },
+    {
+      "date": "2026-08-11",
+      "categorie": "sportif",
+      "titre": "Calendriers de la phase aller dévoilés",
+      "photos": [
+        { "fichier": "assets/img/calendrier-equipe-a.jpg", "legende": "Équipe A — Départemental 2." },
+        { "fichier": "assets/img/calendrier-equipe-b.jpg", "legende": "Équipe B — Départemental 4." }
+      ],
+      "video": "",
+      "document": "",
+      "documentTitre": "",
+      "texte": "L'équipe A repart en Départemental 2 et la réserve en Départemental 4. Premiers rendez-vous le 5 septembre à Marcillat-Pionsat pour les A, et le 6 septembre à domicile face à Hauterive pour les B.",
+      "lien": "calendrier.html"
+    },
+    {
+      "date": "2026-08-10",
+      "categorie": "event",
+      "titre": "Concours de pétanque : 54 équipes, un record !",
+      "photos": [
+        { "fichier": "/assets/medias/1000031484.jpg", "legende": "Le concours en semi-nocturne du 8 août 2026." },
+        { "fichier": "/assets/medias/1000031485.jpg", "legende": "54 équipes engagées, un record pour le club." },
+        { "fichier": "/assets/medias/1000031488.jpg", "legende": "Buvette et restauration tenues par les bénévoles." }
+      ],
+      "video": "",
+      "document": "",
+      "documentTitre": "",
+      "texte": "Le traditionnel concours de pétanque s'est tenu en semi-nocturne le samedi 8 août. 54 équipes engagées, un nouveau record pour le club, dans une ambiance conviviale. Bravo aux finalistes Stelio et Nounours, et merci aux bénévoles de la buvette, de la restauration et de la table de marque.",
+      "lien": ""
     }
   ]
 }

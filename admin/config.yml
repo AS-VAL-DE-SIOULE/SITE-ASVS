@@ -1,14 +1,13 @@
 # ============================================================
 #  AS VAL DE SIOULE — configuration du back-office
 # ------------------------------------------------------------
-#  Ce fichier décrit les modules modifiables depuis /admin/.
-#  Pour ajouter un champ à un module, ajoutez une ligne dans
-#  la section "fields" correspondante.
+#  Le menu de gauche reprend le menu du site, page par page.
+#  Chaque rubrique regroupe ce qui alimente la page du même nom.
 # ============================================================
 
 backend:
   name: git-gateway
-  branch: main          # ← si votre dépôt utilise "master", changez ici
+  branch: main
 
 locale: fr
 publish_mode: simple
@@ -17,179 +16,50 @@ publish_mode: simple
 media_folder: "assets/medias"
 public_folder: "/assets/medias"
 
-site_url: /
+site_url: https://asvaldesioule.com
+display_url: https://asvaldesioule.com
 logo_url: /assets/img/logo.png
 
 collections:
 
-  # ----------------------------------------------------------
-  - name: "contenu"
-    label: "Contenu du site"
+  # ==========================================================
+  #  ACCUEIL
+  # ==========================================================
+  - name: "accueil"
+    label: "Accueil"
     files:
-
-      # ------------------ INFOS DU CLUB ------------------
       - name: "club"
         label: "Infos générales du club"
         file: "content/club.json"
-        description: "Nom, adresse, e-mails, liens. Ces informations alimentent tout le site."
+        description: "Nom, stade, communes, e-mails, liens. Ces informations alimentent l'accueil, le pied de page et les mentions légales."
         fields:
           - { name: nom, label: "Nom du club", widget: string }
           - { name: fondation, label: "Année de fondation", widget: number, value_type: int }
           - { name: affiliation, label: "Numéro d'affiliation FFF", widget: string }
           - { name: saison, label: "Saison en cours", widget: string, hint: "Exemple : 2026 / 2027" }
-          - { name: directeurPublication, label: "Directeur de la publication", widget: string, hint: "Le président du club. Apparaît dans les mentions légales." }
-          - { name: adresseSiege, label: "Adresse du siège social", widget: string, hint: "Adresse complète figurant sur les statuts." }
-          - { name: rna, label: "Numéro RNA de l'association", widget: string, required: false, default: "", hint: "Le numéro W03… du récépissé de préfecture. La ligne disparaît des mentions légales tant qu'il est vide." }
+          - { name: licencies, label: "Nombre de licenciés", widget: number, value_type: int }
           - { name: email, label: "E-mail général (adresse FFF)", widget: string }
           - { name: emailPartenaires, label: "E-mail partenariats / sponsoring", widget: string }
+          - { name: facebook, label: "Adresse de la page Facebook", widget: string }
+          - { name: boutique, label: "Adresse de la boutique en ligne", widget: string }
           - { name: stade, label: "Nom du stade", widget: string }
           - { name: ville, label: "Commune du stade", widget: string }
           - { name: codePostal, label: "Code postal", widget: string }
           - { name: communes, label: "Communes du club", widget: list, hint: "Une commune par ligne" }
-          - { name: facebook, label: "Adresse de la page Facebook", widget: string }
-          - { name: boutique, label: "Adresse de la boutique en ligne", widget: string }
-          - { name: licencies, label: "Nombre de licenciés", widget: number, value_type: int }
+          - { name: directeurPublication, label: "Directeur de la publication", widget: string, hint: "Le président du club. Apparaît dans les mentions légales." }
+          - { name: adresseSiege, label: "Adresse du siège social", widget: string }
+          - { name: rna, label: "Numéro RNA de l'association", widget: string, required: false, default: "" }
 
-      # ------------------ ACTUALITÉS ------------------
-      - name: "actualites"
-        label: "Actualités"
-        file: "content/actualites.json"
-        description: "Les actualités affichées sur l'accueil et la page Actualités. La plus récente s'affiche en premier."
-        fields:
-          - name: liste
-            label: "Actualités"
-            label_singular: "une actualité"
-            widget: list
-            summary: "{{fields.date}} — {{fields.titre}}"
-            collapsed: true
-            fields:
-              - { name: date, label: "Date", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
-              - name: categorie
-                label: "Catégorie"
-                widget: select
-                default: club
-                options:
-                  - { label: "Sportif", value: "sportif" }
-                  - { label: "Vie du club", value: "club" }
-                  - { label: "Événement", value: "event" }
-              - { name: titre, label: "Titre", widget: string }
-              - { name: texte, label: "Texte", widget: text }
-              - { name: image, label: "Photo", widget: image, required: false, hint: "Largeur idéale 1200 px, moins de 500 Ko." }
-              - { name: video, label: "Vidéo", widget: file, required: false, hint: "MP4 de préférence, 20 Mo maximum. La vidéo remplace la photo si les deux sont renseignées." }
-              - { name: document, label: "Document joint (PDF…)", widget: file, required: false }
-              - { name: documentTitre, label: "Nom affiché du document", widget: string, required: false, default: "" }
-              - { name: lien, label: "Lien « En savoir plus »", widget: string, required: false, hint: "Adresse complète, ou nom d'une page du site (ex. calendrier.html)" }
-
-      # ------------------ CALENDRIER ------------------
-      - name: "matchs"
-        label: "Calendrier des matchs"
-        file: "content/matchs.json"
-        description: "Toutes les rencontres. Renseignez le score après le match : il remplace l'heure sur la carte."
-        fields:
-          - name: liste
-            label: "Rencontres"
-            label_singular: "une rencontre"
-            widget: list
-            summary: "{{fields.date}} — {{fields.equipe}} · {{fields.adversaire}}"
-            collapsed: true
-            fields:
-              - name: equipe
-                label: "Équipe"
-                widget: select
-                default: "A"
-                options:
-                  - { label: "Séniors A", value: "A" }
-                  - { label: "Séniors B", value: "B" }
-              - { name: date, label: "Date", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
-              - { name: heure, label: "Heure", widget: string, default: "15:00", hint: "Format 20:00" }
-              - { name: competition, label: "Compétition", widget: string, default: "Départemental 2" }
-              - { name: journee, label: "Journée", widget: string, default: "Journée 1" }
-              - { name: domicile, label: "Match à domicile", widget: boolean, default: true }
-              - { name: adversaire, label: "Adversaire", widget: string }
-              - { name: score, label: "Score", widget: string, required: false, default: "", hint: "Laisser vide avant le match. Notre score en premier : 3-1" }
-
-      # ------------------ ÉQUIPES ------------------
-      - name: "equipes"
-        label: "Les équipes"
-        file: "content/equipes.json"
-        description: "Les fiches des équipes séniors et de l'école de foot."
-        fields:
-          - name: liste
-            label: "Équipes"
-            label_singular: "une équipe"
-            widget: list
-            summary: "{{fields.nom}} — {{fields.niveau}}"
-            collapsed: true
-            fields:
-              - { name: id, label: "Identifiant", widget: string, hint: "Sert aux liens internes. Sans espace ni accent : A, B, jeunes…" }
-              - name: couleur
-                label: "Couleur du bandeau"
-                widget: select
-                default: "a"
-                options:
-                  - { label: "Rouge", value: "a" }
-                  - { label: "Bleu", value: "b" }
-                  - { label: "Vert", value: "jeunes" }
-              - { name: nom, label: "Nom de l'équipe", widget: string }
-              - { name: niveau, label: "Championnat", widget: string }
-              - { name: photo, label: "Photo d'équipe", widget: image, required: false, hint: "Format paysage. La photo est recadrée en bandeau large : cadrez l'équipe au centre." }
-              - { name: legende, label: "Légende de la photo", widget: string, required: false, default: "" }
-              - { name: video, label: "Vidéo (si pas de photo)", widget: file, required: false }
-              - { name: coach, label: "Encadrement", widget: string }
-              - { name: creneaux, label: "Créneaux d'entraînement", widget: string }
-              - { name: texte, label: "Présentation", widget: text }
-              - { name: fait, label: "À retenir", widget: text }
-
-      # ------------------ ÉVÉNEMENTS ------------------
-      - name: "evenements"
-        label: "Événements & manifestations"
-        file: "content/evenements.json"
-        fields:
-          - name: liste
-            label: "Événements"
-            label_singular: "un événement"
-            widget: list
-            summary: "{{fields.nom}} — {{fields.periode}}"
-            collapsed: true
-            fields:
-              - { name: nom, label: "Nom", widget: string }
-              - { name: periode, label: "Période", widget: string, hint: "Exemple : Août, Fin d'année, Printemps" }
-              - { name: emoji, label: "Pictogramme", widget: string, default: "⚽", hint: "Un emoji, affiché sur la carte" }
-              - { name: texte, label: "Description", widget: text }
-              - { name: image, label: "Photo", widget: image, required: false }
-              - { name: document, label: "Document joint (affiche, règlement…)", widget: file, required: false }
-
-      # ------------------ PARTENAIRES ------------------
-      - name: "partenaires"
-        label: "Partenaires"
-        file: "content/partenaires.json"
-        description: "⚠️ Ne jamais saisir ici de téléphone ou d'e-mail de contact : cette page est publique."
-        fields:
-          - name: liste
-            label: "Partenaires"
-            label_singular: "un partenaire"
-            widget: list
-            summary: "{{fields.nom}} ({{fields.niveau}})"
-            collapsed: true
-            fields:
-              - { name: nom, label: "Nom de l'entreprise", widget: string }
-              - name: niveau
-                label: "Niveau"
-                widget: select
-                default: "bronze"
-                options:
-                  - { label: "Or", value: "or" }
-                  - { label: "Argent", value: "argent" }
-                  - { label: "Bronze", value: "bronze" }
-              - { name: soutien, label: "Ce qu'il finance", widget: string, hint: "Visible publiquement. Exemple : Panneau au stade" }
-              - { name: logo, label: "Logo", widget: image, required: false }
-              - { name: siteWeb, label: "Site internet", widget: string, required: false, default: "" }
-
-      # ------------------ ORGANISATION ------------------
+  # ==========================================================
+  #  LE CLUB
+  # ==========================================================
+  - name: "le-club"
+    label: "Le club"
+    files:
       - name: "organisation"
-        label: "Bureau, conseil & commissions"
+        label: "Bureau, conseil, commissions & arbitres"
         file: "content/organisation.json"
-        description: "Un bloc laissé vide disparaît automatiquement de la page Le club."
+        description: "Alimente la page Le club. Un bloc laissé vide disparaît automatiquement du site."
         fields:
           - name: bureau
             label: "Le bureau"
@@ -219,8 +89,128 @@ collections:
               - { name: nom, label: "Nom de la commission", widget: string }
               - { name: responsable, label: "Référent(s)", widget: string }
               - { name: mission, label: "Mission", widget: text }
+          - name: arbitres
+            label: "Les arbitres du club"
+            label_singular: "un arbitre"
+            widget: list
+            summary: "{{fields.nom}}"
+            required: false
+            fields:
+              - { name: nom, label: "Nom", widget: string }
 
-      # ------------------ GALERIE ------------------
+  # ==========================================================
+  #  HISTOIRE
+  # ==========================================================
+  - name: "histoire"
+    label: "Histoire"
+    files:
+      - name: "histoire"
+        label: "Notre histoire & le blason"
+        file: "content/histoire.json"
+        description: "Alimente la page Histoire : signification du blason, chronologie et photos d'équipes d'hier."
+        fields:
+          - { name: intro, label: "Phrase d'introduction", widget: text }
+          - name: blason
+            label: "Signification du blason"
+            widget: object
+            fields:
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Chapeau", widget: string }
+              - { name: image, label: "Image du blason", widget: image, required: false }
+              - name: elements
+                label: "Éléments du blason"
+                label_singular: "un élément"
+                widget: list
+                summary: "{{fields.titre}}"
+                fields:
+                  - name: couleur
+                    label: "Couleur du liseré"
+                    widget: select
+                    default: "navy"
+                    options:
+                      - { label: "Rouge", value: "rouge" }
+                      - { label: "Vert", value: "vert" }
+                      - { label: "Bleu", value: "bleu" }
+                      - { label: "Bleu marine", value: "navy" }
+                  - { name: titre, label: "Titre", widget: string }
+                  - { name: texte, label: "Explication", widget: text }
+              - { name: note, label: "Encadré de bas de section", widget: text, required: false }
+          - name: chronologie
+            label: "Chronologie du club"
+            label_singular: "une étape"
+            widget: list
+            summary: "{{fields.annee}} — {{fields.titre}}"
+            collapsed: true
+            fields:
+              - { name: annee, label: "Année ou période", widget: string, hint: "Exemple : 2009, Juin 2025, 2024-2025" }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Récit", widget: text }
+              - name: photos
+                label: "Photos"
+                label_singular: "une photo"
+                widget: list
+                required: false
+                summary: "{{fields.legende}}"
+                hint: "Plusieurs photos = diaporama automatique."
+                fields:
+                  - { name: fichier, label: "Photo", widget: image }
+                  - { name: legende, label: "Légende", widget: string, required: false, default: "" }
+          - name: equipesHistoriques
+            label: "Photos d'équipes au fil des ans"
+            label_singular: "une photo d'équipe"
+            widget: list
+            required: false
+            summary: "{{fields.saison}}"
+            fields:
+              - { name: saison, label: "Saison", widget: string, hint: "Exemple : Saison 2018-2019" }
+              - { name: fichier, label: "Photo", widget: image }
+              - { name: legende, label: "Légende", widget: string, required: false, default: "" }
+
+  # ==========================================================
+  #  ÉQUIPES
+  # ==========================================================
+  - name: "equipes"
+    label: "Équipes"
+    files:
+      - name: "equipes"
+        label: "Les équipes"
+        file: "content/equipes.json"
+        description: "Les fiches des équipes séniors et de l'école de foot."
+        fields:
+          - name: liste
+            label: "Équipes"
+            label_singular: "une équipe"
+            widget: list
+            summary: "{{fields.nom}} — {{fields.niveau}}"
+            collapsed: true
+            fields:
+              - { name: id, label: "Identifiant", widget: string, hint: "Sert aux liens internes. Sans espace ni accent : A, B, C, jeunes…" }
+              - name: couleur
+                label: "Couleur du bandeau"
+                widget: select
+                default: "a"
+                options:
+                  - { label: "Rouge", value: "a" }
+                  - { label: "Bleu", value: "b" }
+                  - { label: "Vert", value: "jeunes" }
+              - { name: nom, label: "Nom de l'équipe", widget: string }
+              - { name: niveau, label: "Championnat", widget: string }
+              - name: photos
+                label: "Photos de l'équipe"
+                label_singular: "une photo"
+                widget: list
+                required: false
+                summary: "{{fields.legende}}"
+                hint: "Plusieurs photos = diaporama automatique. Format paysage, équipe cadrée au centre."
+                fields:
+                  - { name: fichier, label: "Photo", widget: image }
+                  - { name: legende, label: "Légende", widget: string, required: false, default: "" }
+              - { name: video, label: "Vidéo (si pas de photo)", widget: file, required: false }
+              - { name: coach, label: "Encadrement", widget: string }
+              - { name: creneaux, label: "Créneaux d'entraînement", widget: string }
+              - { name: texte, label: "Présentation", widget: text }
+              - { name: fait, label: "À retenir", widget: text }
+
       - name: "galerie"
         label: "Galerie photos & vidéos"
         file: "content/galerie.json"
@@ -243,11 +233,126 @@ collections:
                   - { label: "Vidéo", value: "video" }
               - { name: legende, label: "Légende", widget: string, required: false, default: "" }
 
-      # ------------------ DOCUMENTS ------------------
+  # ==========================================================
+  #  CALENDRIER
+  # ==========================================================
+  - name: "calendrier"
+    label: "Calendrier"
+    files:
+      - name: "matchs"
+        label: "Calendrier des matchs"
+        file: "content/matchs.json"
+        description: "Toutes les rencontres. Renseignez le score après le match : il remplace l'heure sur la carte."
+        fields:
+          - name: liste
+            label: "Rencontres"
+            label_singular: "une rencontre"
+            widget: list
+            summary: "{{fields.date}} — {{fields.equipe}} · {{fields.adversaire}}"
+            collapsed: true
+            fields:
+              - name: equipe
+                label: "Équipe"
+                widget: select
+                default: "A"
+                options:
+                  - { label: "Séniors A", value: "A" }
+                  - { label: "Séniors B", value: "B" }
+                  - { label: "Séniors C", value: "C" }
+              - { name: date, label: "Date", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - { name: heure, label: "Heure", widget: string, default: "15:00", hint: "Format 20:00" }
+              - { name: competition, label: "Compétition", widget: string, default: "Départemental 2" }
+              - { name: journee, label: "Journée", widget: string, default: "Journée 1" }
+              - { name: domicile, label: "Match à domicile", widget: boolean, default: true }
+              - { name: adversaire, label: "Adversaire", widget: string }
+              - { name: score, label: "Score", widget: string, required: false, default: "", hint: "Laisser vide avant le match. Notre score en premier : 3-1" }
+
+  # ==========================================================
+  #  ACTUALITÉS
+  # ==========================================================
+  - name: "actualites"
+    label: "Actualités"
+    files:
+      - name: "actualites"
+        label: "Actualités"
+        file: "content/actualites.json"
+        description: "Affichées sur l'accueil et la page Actualités. La plus récente apparaît en premier."
+        fields:
+          - name: liste
+            label: "Actualités"
+            label_singular: "une actualité"
+            widget: list
+            summary: "{{fields.date}} — {{fields.titre}}"
+            collapsed: true
+            fields:
+              - { name: date, label: "Date", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - name: categorie
+                label: "Catégorie"
+                widget: select
+                default: club
+                options:
+                  - { label: "Sportif", value: "sportif" }
+                  - { label: "Vie du club", value: "club" }
+                  - { label: "Événement", value: "event" }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text, hint: "Les retours à la ligne et les paragraphes sont respectés : vous pouvez coller le texte d'une publication Facebook." }
+              - name: photos
+                label: "Photos"
+                label_singular: "une photo"
+                widget: list
+                required: false
+                summary: "{{fields.legende}}"
+                hint: "Plusieurs photos = diaporama automatique. 1200 à 1600 px, moins de 500 Ko."
+                fields:
+                  - { name: fichier, label: "Photo", widget: image }
+                  - { name: legende, label: "Légende", widget: string, required: false, default: "" }
+              - { name: video, label: "Vidéo", widget: file, required: false, hint: "MP4, 20 Mo maximum. La vidéo remplace les photos." }
+              - { name: document, label: "Document joint (PDF…)", widget: file, required: false }
+              - { name: documentTitre, label: "Nom affiché du document", widget: string, required: false, default: "" }
+              - { name: lien, label: "Lien « En savoir plus »", widget: string, required: false, hint: "Adresse complète, ou nom d'une page du site (ex. calendrier.html)" }
+
+  # ==========================================================
+  #  ÉVÉNEMENTS
+  # ==========================================================
+  - name: "evenements"
+    label: "Événements"
+    files:
+      - name: "evenements"
+        label: "Événements & manifestations"
+        file: "content/evenements.json"
+        fields:
+          - name: liste
+            label: "Événements"
+            label_singular: "un événement"
+            widget: list
+            summary: "{{fields.nom}} — {{fields.periode}}"
+            collapsed: true
+            fields:
+              - { name: nom, label: "Nom", widget: string }
+              - { name: periode, label: "Période", widget: string, hint: "Exemple : Août, Fin d'année, Printemps" }
+              - { name: emoji, label: "Pictogramme", widget: string, default: "⚽", hint: "Un emoji, affiché sur la carte" }
+              - { name: texte, label: "Description", widget: text }
+              - name: photos
+                label: "Photos"
+                label_singular: "une photo"
+                widget: list
+                required: false
+                summary: "{{fields.legende}}"
+                fields:
+                  - { name: fichier, label: "Photo", widget: image }
+                  - { name: legende, label: "Légende", widget: string, required: false, default: "" }
+              - { name: document, label: "Document joint (affiche, règlement…)", widget: file, required: false }
+
+  # ==========================================================
+  #  INFOS PRATIQUES
+  # ==========================================================
+  - name: "infos-pratiques"
+    label: "Infos pratiques"
+    files:
       - name: "documents"
         label: "Documents à télécharger"
         file: "content/documents.json"
-        description: "Plaquettes, règlements, comptes-rendus. Affichés sur la page correspondant à la catégorie choisie."
+        description: "Plaquettes, règlements, comptes-rendus. Le champ « Où l'afficher » choisit la page de destination."
         fields:
           - name: liste
             label: "Documents"
@@ -264,7 +369,40 @@ collections:
                 widget: select
                 default: "infos"
                 options:
-                  - { label: "Page Partenaires", value: "partenaires" }
                   - { label: "Page Infos pratiques", value: "infos" }
+                  - { label: "Page Partenaires", value: "partenaires" }
                   - { label: "Page Le club", value: "club" }
                   - { label: "Page Événements", value: "evenements" }
+
+  # ==========================================================
+  #  PARTENAIRES
+  # ==========================================================
+  - name: "partenaires"
+    label: "Partenaires"
+    files:
+      - name: "partenaires"
+        label: "Nos partenaires"
+        file: "content/partenaires.json"
+        description: "⚠️ Ne jamais saisir ici de téléphone personnel ni d'e-mail de contact : cette page est publique."
+        fields:
+          - name: liste
+            label: "Partenaires"
+            label_singular: "un partenaire"
+            widget: list
+            summary: "{{fields.nom}} ({{fields.niveau}})"
+            collapsed: true
+            fields:
+              - { name: nom, label: "Nom de l'entreprise", widget: string }
+              - name: niveau
+                label: "Niveau"
+                widget: select
+                default: "bronze"
+                options:
+                  - { label: "Or", value: "or" }
+                  - { label: "Argent", value: "argent" }
+                  - { label: "Bronze", value: "bronze" }
+              - { name: soutien, label: "Ce qu'il finance", widget: string, hint: "Visible publiquement. Exemple : Panneau au stade" }
+              - { name: logo, label: "Logo", widget: image, required: false }
+              - { name: siteWeb, label: "Site internet", widget: string, required: false, default: "" }
+              - { name: telephone, label: "Téléphone de l'entreprise", widget: string, required: false, default: "", hint: "Numéro professionnel uniquement, jamais un portable personnel." }
+              - { name: ville, label: "Ville", widget: string, required: false, default: "" }

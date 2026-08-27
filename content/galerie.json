@@ -1,14 +1,9 @@
 {
   "liste": [
-    {
-      "fichier": "assets/photos/actu-petanque.jpg",
-      "type": "photo",
-      "legende": "Concours de pétanque semi-nocturne, 8 août 2026 — 54 équipes engagées."
-    },
-    {
-      "type": "photo",
-      "legende": "Jour de notre reprise - saison 2026-2027",
-      "fichier": "/assets/medias/publication-facebook-—-journée-cohésion-foot_20260725_164435_0000.png"
-    }
+    { "fichier": "/assets/medias/reprise-2026-2027.jpg", "type": "photo", "legende": "Jour de la reprise — saison 2026-2027." },
+    { "fichier": "/assets/medias/equipe-a-2025-2026.jpg", "type": "photo", "legende": "L'équipe A en début de saison 2025-2026." },
+    { "fichier": "/assets/medias/equipe-b-imagine-ton-credit.jpg", "type": "photo", "legende": "L'équipe B et son sponsor Imagine Ton Crédit." },
+    { "fichier": "/assets/medias/ecole-de-foot-briefing.jpg", "type": "photo", "legende": "Briefing de l'école de foot." },
+    { "fichier": "assets/photos/actu-petanque.jpg", "type": "photo", "legende": "Concours de pétanque semi-nocturne, 8 août 2026 — 54 équipes engagées." }
   ]
 }

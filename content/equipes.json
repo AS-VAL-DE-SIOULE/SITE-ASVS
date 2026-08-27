@@ -1,55 +1,63 @@
 {
   "liste": [
     {
-      "fait": "Changement de coaching - Repris par Sylvain JAFFUEL et Julien ALLIGIER suite au départ de Benoît PAROT.",
-      "nom": "Séniors A",
-      "photo": "/assets/medias/pxl_20251109_135609028~2.jpg",
-      "creneaux": "Entraînements le mardi et le vendredi soir - 20H",
-      "texte": "L'équipe fanion du club évolue en Départemental 2. Après un maintien arraché lors de la dernière journée en 2024-2025 et une demi-finale en Coupe Paul-Baptiste, le groupe repart avec l'ambition de confirmer les bonnes séquences de la première partie de saison.",
-      "legende": "L'équipe A en début de saison 2025-2026.",
-      "coach": "Julien ALLIGIER & Sylvain JAFFUEL",
-      "video": "",
       "id": "A",
+      "couleur": "a",
+      "nom": "Séniors A",
       "niveau": "Départemental 2",
-      "couleur": "a"
+      "photos": [
+        { "fichier": "/assets/medias/equipe-a-2025-2026.jpg", "legende": "L'équipe A en début de saison 2025-2026." },
+        { "fichier": "assets/photos/equipe-a.jpg", "legende": "Après la victoire à Beauregard-l'Évêque, août 2026." }
+      ],
+      "video": "",
+      "coach": "Julien ALLIGIER & Sylvain JAFFUEL",
+      "creneaux": "Entraînements le mardi et le vendredi à 20 h",
+      "texte": "L'équipe fanion du club évolue en Départemental 2. Après un maintien arraché lors de la dernière journée en 2024-2025 et une demi-finale en Coupe Paul-Baptiste, le groupe repart avec l'ambition de confirmer les bonnes séquences de la première partie de saison.",
+      "fait": "Changement de coaching : repris par Sylvain JAFFUEL et Julien ALLIGIER suite au départ de Benoît PAROT."
     },
     {
-      "fait": "Une mentalité saluée par l'ensemble du club lors de l'Assemblée Générale.",
-      "nom": "Séniors B",
-      "photo": "/assets/medias/pxl_20251004_180146199.jpg",
-      "creneaux": "Entraînements le mardi et le vendredi soir",
-      "texte": "La réserve est le poumon du club : elle accueille les nouveaux licenciés, fait jouer les jeunes qui montent et donne du temps de jeu à tout le monde. Un groupe qui a marqué la saison passée par son état d'esprit, jusqu'à terminer une rencontre à neuf sans jamais rien lâcher.",
-      "legende": "Equipe B lors de la présentation du nouveau sponsor \"IMAGINE TON CREDIT\" - saison 2025-2026",
-      "coach": "Julien GUILLOT & Jordan PINEL",
-      "video": "",
       "id": "B",
+      "couleur": "b",
+      "nom": "Séniors B",
       "niveau": "Départemental 4",
-      "couleur": "b"
-    },
-    {
-      "fait": "Plaisir et convivialité ",
-      "nom": "Séniors C",
-      "photo": "/assets/medias/1000031754.png",
-      "creneaux": "Mardi et vendredi à 20h",
-      "texte": "Une équipe qui joue vraiment pour le plaisir du football. Ce qui compte c'est un bon match pour se dégourdir les jambes et une bonne troisième mi-temps pour rigoler et se raconter des anecdotes du match 🔴🔵🟢",
-      "legende": "",
-      "coach": "En attente",
-      "id": "C",
-      "niveau": "Départemental 5",
-      "couleur": "a"
-    },
-    {
-      "fait": "Les U13 champions de Division 4 en 2024-2025 et promus à l'échelon supérieur.",
-      "nom": "École de foot",
-      "photo": "/assets/medias/pxl_20250920_133506151.jpg",
-      "creneaux": "Entraînements et plateaux le mercredi et le samedi",
-      "texte": "De la première touche de balle en U7 jusqu'aux U15, l'école de foot accueille les enfants de toutes les communes environnantes.",
-      "legende": "Equipe en plein briefing fait par Thomas PINFORT et Julien ALLIGIER",
-      "coach": "Thomas PINFORT, Julien ALLIGIER, Victor HEVIN, Maxime QUILLERET",
+      "photos": [
+        { "fichier": "/assets/medias/equipe-b-imagine-ton-credit.jpg", "legende": "Présentation du nouveau sponsor « Imagine Ton Crédit », saison 2025-2026." },
+        { "fichier": "/assets/medias/equipe-b-echauffement.jpg", "legende": "Échauffement avant la rencontre." }
+      ],
       "video": "",
+      "coach": "Julien GUILLOT & Jordan PINEL",
+      "creneaux": "Entraînements le mardi et le vendredi à 20 h",
+      "texte": "La réserve est le poumon du club : elle accueille les nouveaux licenciés, fait jouer les jeunes qui montent et donne du temps de jeu à tout le monde. Un groupe qui a marqué la saison passée par son état d'esprit, jusqu'à terminer une rencontre à neuf sans jamais rien lâcher.",
+      "fait": "Une mentalité saluée par l'ensemble du club lors de l'Assemblée Générale."
+    },
+    {
+      "id": "C",
+      "couleur": "jeunes",
+      "nom": "Séniors C",
+      "niveau": "Départemental 5",
+      "photos": [
+        { "fichier": "/assets/medias/1000031754.jpg", "legende": "L'équipe C, née des 25 arrivées de la saison 2026-2027." }
+      ],
+      "video": "",
+      "coach": "En attente",
+      "creneaux": "Entraînements le mardi et le vendredi à 20 h",
+      "texte": "Une équipe qui joue vraiment pour le plaisir du football. Ce qui compte, c'est un bon match pour se dégourdir les jambes et une bonne troisième mi-temps pour rigoler et se raconter des anecdotes du match 🔴🔵🟢",
+      "fait": "Plaisir et convivialité avant tout."
+    },
+    {
       "id": "jeunes",
+      "couleur": "jeunes",
+      "nom": "École de foot",
       "niveau": "U7 à U15",
-      "couleur": "jeunes"
+      "photos": [
+        { "fichier": "/assets/medias/ecole-de-foot-briefing.jpg", "legende": "Briefing mené par Thomas PINFORT et Julien ALLIGIER." },
+        { "fichier": "/assets/medias/ecole-de-foot-plateau.jpg", "legende": "Un plateau du samedi matin." }
+      ],
+      "video": "",
+      "coach": "Sylvain JAFFUEL & Victor HEVIN (U13) · Maxime QUILLERET (U15)",
+      "creneaux": "Entraînements et plateaux le mercredi et le samedi",
+      "texte": "De la première touche de balle en U7 jusqu'aux U15, l'école de foot accueille les enfants de toutes les communes environnantes. Le club encadre ses catégories en propre ; seuls les U15 évoluent en entente avec Ébreuil.",
+      "fait": "Les U13 champions de Division 4 en 2024-2025 et promus à l'échelon supérieur."
     }
   ]
 }

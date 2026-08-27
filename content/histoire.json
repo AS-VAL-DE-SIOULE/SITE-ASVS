@@ -1,0 +1,43 @@
+{
+  "intro": "Deux villages, deux clochers, une rivière. L'histoire de l'AS Val de Sioule est celle de deux clubs qui ont choisi de n'en faire qu'un, et d'un territoire qui continue de faire vivre son football.",
+  "blason": {
+    "titre": "La signification du blason",
+    "chapeau": "Chaque élément du blason raconte un morceau de notre histoire.",
+    "image": "assets/img/logo.png",
+    "elements": [
+      { "couleur": "rouge", "titre": "Le rouge", "texte": "La couleur du BVS de Broût-Vernet, l'un des deux clubs fondateurs. Elle rappelle d'où vient la moitié de notre histoire." },
+      { "couleur": "vert", "titre": "Le vert", "texte": "La couleur du FC Étroussat, l'autre club fondateur. Sur le blason, le rouge et le vert ne s'opposent plus : ils se côtoient." },
+      { "couleur": "bleu", "titre": "Le bleu", "texte": "La Sioule, la rivière qui traverse le territoire. Elle sépare les deux villages autant qu'elle les relie — c'est elle qui donne son nom au club." },
+      { "couleur": "navy", "titre": "La chaussure et le ballon", "texte": "Le geste, tout simplement. Le football tel qu'on le pratique ici : sans esbroufe, avec envie." },
+      { "couleur": "navy", "titre": "2009", "texte": "L'année de la fusion, inscrite dans le blason pour que personne n'oublie la date où l'AS Val de Sioule est née." }
+    ],
+    "note": "Le blason actuel a été adopté en 2025, à l'issue d'un sondage public organisé sur la page Facebook du club : ce sont les licenciés, les familles et les supporters qui ont choisi."
+  },
+  "chronologie": [
+    {
+      "annee": "2009",
+      "titre": "La fusion",
+      "texte": "Le BVS de Broût-Vernet, en rouge, et le FC Étroussat, en vert, décident de n'en faire qu'un. L'AS Val de Sioule voit le jour et rassemble désormais les familles de Broût-Vernet, d'Étroussat et de Barberier autour d'un même maillot.",
+      "photos": []
+    },
+    {
+      "annee": "2024-2025",
+      "titre": "Une génération qui monte",
+      "texte": "Les U13 sont sacrés champions de Division 4 et accèdent à l'échelon supérieur. L'équipe A atteint la demi-finale de la Coupe Paul-Baptiste et la finale du tournoi futsal hivernal. Le club compte 113 licenciés.",
+      "photos": []
+    },
+    {
+      "annee": "Juin 2025",
+      "titre": "Un nouveau blason, choisi par tous",
+      "texte": "Après un sondage public sur la page Facebook du club, les membres choisissent le nouveau logo. L'Assemblée Générale du 15 juin entérine la démarche et élit le bureau. Une nouvelle identité visuelle prend forme, déclinée ensuite sur les maillots, le calendrier et tous les supports du club.",
+      "photos": []
+    },
+    {
+      "annee": "2026",
+      "titre": "Le club prend de l'ampleur",
+      "texte": "Boutique officielle en ligne, gamme de vêtements aux couleurs du club, et un concours de pétanque record avec 54 équipes engagées. Le site internet du club voit le jour.",
+      "photos": []
+    }
+  ],
+  "equipesHistoriques": []
+}

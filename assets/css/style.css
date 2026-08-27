@@ -50,6 +50,10 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
+  /* Les animations d'entrée décalent les blocs horizontalement :
+     on rogne le débordement pour éviter une barre de défilement latérale.
+     « clip » plutôt que « hidden » afin de ne pas casser l'en-tête collant. */
+  overflow-x: clip;
   background: var(--creme);
   color: var(--texte);
   font-family: var(--f-corps);
@@ -459,7 +463,10 @@ p:last-child { margin-bottom: 0; }
   color: var(--bleu); margin-bottom: .5rem;
 }
 .actu h3 { font-size: 1.18rem; margin-bottom: .55rem; }
-.actu p { color: var(--texte-doux); font-size: .96rem; flex: 1; }
+.actu p { color: var(--texte-doux); font-size: .96rem; }
+.actu__texte { flex: 1; }
+.actu__texte p { margin-bottom: .8em; }
+.actu__texte p:last-child { margin-bottom: 0; }
 .etiquette {
   display: inline-block; padding: .28em .8em; border-radius: 999px;
   font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700;
@@ -712,6 +719,39 @@ tbody tr:last-child td { border-bottom: 0; }
 .document__txt span { font-size: .84rem; color: var(--texte-doux); }
 .document__fleche { margin-left: auto; color: var(--bleu); font-weight: 700; }
 
+/* Média en pleine largeur dans une carte */
+.carte__media {
+  margin: -1.7rem -1.7rem 1.2rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden;
+}
+
+/* Coordonnées d'un partenaire */
+.partenaire__coord {
+  display: flex; flex-wrap: wrap; gap: .35rem .9rem;
+  margin-top: .7rem; padding-top: .7rem;
+  border-top: 1px dashed var(--bordure);
+  font-size: .82rem;
+}
+.partenaire__coord a { color: var(--bleu); text-decoration: none; }
+.partenaire__coord a:hover { text-decoration: underline; }
+.partenaire__ville { color: var(--texte-doux); }
+
+/* Jetons (arbitres, étiquettes courtes) */
+.jetons { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.jeton {
+  display: inline-flex; align-items: center; gap: .5em;
+  padding: .5em 1.05em; border-radius: 999px;
+  background: rgba(47, 111, 183, .1); border: 1px solid rgba(47, 111, 183, .24);
+  color: var(--bleu); font-weight: 700; font-size: .88rem;
+}
+.section--sombre .jeton {
+  background: rgba(255, 255, 255, .09); border-color: var(--bordure-sombre); color: #fff;
+}
+
+/* Le trait tricolore se déploie quand le titre arrive à l'écran */
+.entete-section.vu .souligne::after { transform: scaleX(1); }
+
 /* Logo de partenaire */
 .partenaire__logo {
   max-height: 46px; width: auto; max-width: 100%;
@@ -719,6 +759,150 @@ tbody tr:last-child td { border-bottom: 0; }
 }
 a.partenaire { color: inherit; text-decoration: none !important; transition: transform .15s ease, box-shadow .15s ease; }
 a.partenaire:hover { transform: translateY(-2px); box-shadow: var(--ombre); }
+
+/* ---------- 17 ter. Carrousel de photos ---------- */
+.carrousel { position: relative; overflow: hidden; background: var(--pelouse-2); }
+.carrousel__piste {
+  display: flex; width: 100%;
+  transition: transform .65s cubic-bezier(.35, .85, .35, 1);
+  will-change: transform;
+}
+.carrousel__vue { flex: 0 0 100%; position: relative; }
+.carrousel__vue img, .carrousel__vue video {
+  display: block; width: 100%; height: 100%; object-fit: cover; background: #000;
+}
+.carrousel--4-3 .carrousel__vue img, .carrousel--4-3 .carrousel__vue video { aspect-ratio: 4 / 3; }
+.carrousel--21-9 .carrousel__vue img, .carrousel--21-9 .carrousel__vue video { aspect-ratio: 21 / 9; }
+.carrousel--16-9 .carrousel__vue img, .carrousel--16-9 .carrousel__vue video { aspect-ratio: 16 / 9; }
+
+.carrousel__legende {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 2.4rem .95rem .8rem;
+  font-size: .84rem; color: #fff; line-height: 1.4;
+  background: linear-gradient(to top, rgba(10, 22, 14, .82), transparent);
+  opacity: 0; transform: translateY(6px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.carrousel:hover .carrousel__legende,
+.carrousel:focus-within .carrousel__legende { opacity: 1; transform: none; }
+
+.carrousel__nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(255, 255, 255, .88); border: 0; cursor: pointer;
+  display: grid; place-items: center; font-size: 1.1rem; color: var(--pelouse);
+  opacity: 0; transition: opacity .25s ease, background .15s ease;
+  z-index: 2;
+}
+.carrousel:hover .carrousel__nav,
+.carrousel:focus-within .carrousel__nav { opacity: 1; }
+.carrousel__nav:hover { background: #fff; }
+.carrousel__nav--prec { left: .7rem; }
+.carrousel__nav--suiv { right: .7rem; }
+
+.carrousel__points {
+  position: absolute; left: 0; right: 0; bottom: .7rem; z-index: 2;
+  display: flex; justify-content: center; gap: .4rem;
+}
+.carrousel__point {
+  width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; cursor: pointer;
+  background: rgba(255, 255, 255, .45);
+  transition: background .2s ease, width .25s ease;
+}
+.carrousel__point[aria-current="true"] { background: #fff; width: 22px; border-radius: 5px; }
+
+.carrousel__compteur {
+  position: absolute; top: .7rem; right: .7rem; z-index: 2;
+  background: rgba(10, 22, 14, .62); color: #fff;
+  font-size: .72rem; font-weight: 700; letter-spacing: .05em;
+  padding: .25em .6em; border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrousel__piste { transition: none; }
+  .carrousel__legende { opacity: 1; transform: none; }
+}
+
+/* ---------- 17 quater. Animations ---------- */
+/* Variantes d'apparition, plus vivantes que le simple fondu */
+.reveal-gauche { opacity: 0; transform: translateX(-28px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1); }
+.reveal-droite { opacity: 0; transform: translateX(28px);  transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1); }
+.reveal-zoom   { opacity: 0; transform: scale(.94);        transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1); }
+.reveal-gauche.vu, .reveal-droite.vu, .reveal-zoom.vu { opacity: 1; transform: none; }
+
+/* Décalage en cascade pour les grilles */
+.cascade > *          { transition-delay: 0ms; }
+.cascade > *:nth-child(2) { transition-delay: 80ms; }
+.cascade > *:nth-child(3) { transition-delay: 160ms; }
+.cascade > *:nth-child(4) { transition-delay: 240ms; }
+.cascade > *:nth-child(5) { transition-delay: 320ms; }
+.cascade > *:nth-child(6) { transition-delay: 400ms; }
+
+/* Soulignement animé des titres de section */
+.souligne::after { transform-origin: left; transform: scaleX(0); transition: transform .7s cubic-bezier(.2,.8,.3,1) .1s; }
+.centre .souligne::after { transform-origin: center; }
+.vu .souligne::after, .souligne.vu::after, section.vu .souligne::after { transform: scaleX(1); }
+
+/* Le blason du hero respire doucement */
+@keyframes flotter { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.flotte { animation: flotter 6s ease-in-out infinite; }
+
+/* Cartes : léger soulèvement au survol, déjà présent, renforcé ici */
+.carte, .actu, .document, .partenaire { will-change: transform; }
+
+/* Bandeau de chiffres animés */
+.chiffre strong { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-gauche, .reveal-droite, .reveal-zoom { opacity: 1; transform: none; transition: none; }
+  .souligne::after { transform: none; transition: none; }
+  .flotte { animation: none; }
+}
+
+/* ---------- 17 quinquies. Historique ---------- */
+.blason-grille { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.blason-item {
+  background: #fff; border: 1px solid var(--bordure); border-radius: var(--radius);
+  padding: 1.4rem 1.5rem; border-top: 5px solid var(--bordure);
+}
+.blason-item--rouge { border-top-color: var(--rouge); }
+.blason-item--vert  { border-top-color: var(--vert); }
+.blason-item--bleu  { border-top-color: var(--bleu); }
+.blason-item--navy  { border-top-color: var(--navy); }
+.blason-item h3 { font-size: 1.05rem; margin-bottom: .4rem; }
+.blason-item p { font-size: .93rem; color: var(--texte-doux); }
+
+.chrono { position: relative; padding-left: 0; list-style: none; margin: 0; }
+.chrono::before {
+  content: ""; position: absolute; left: 22px; top: 8px; bottom: 8px; width: 3px;
+  background: linear-gradient(180deg, var(--rouge), var(--vert), var(--bleu));
+  border-radius: 2px;
+}
+.chrono__item { position: relative; padding: 0 0 2.6rem 4rem; }
+.chrono__item:last-child { padding-bottom: 0; }
+.chrono__pastille {
+  position: absolute; left: 8px; top: 2px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--bleu); color: #fff;
+  display: grid; place-items: center; font-size: .95rem;
+  box-shadow: 0 0 0 5px var(--creme);
+}
+.chrono__item:nth-child(3n+1) .chrono__pastille { background: var(--rouge); }
+.chrono__item:nth-child(3n+2) .chrono__pastille { background: var(--vert); }
+.chrono__annee {
+  display: inline-block; font-family: var(--f-titre); font-size: 1.5rem;
+  color: var(--navy); line-height: 1; margin-bottom: .2rem;
+}
+.chrono__item h3 { font-size: 1.2rem; margin: .1rem 0 .5rem; }
+/* Sur fond sombre, l'année et l'anneau des pastilles doivent suivre */
+.section--sombre .chrono__annee { color: var(--bleu-clair); }
+.section--sombre .chrono__pastille { box-shadow: 0 0 0 5px var(--pelouse); }
+.chrono__medias { margin-top: 1.1rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--ombre); }
+@media (max-width: 640px) {
+  .chrono::before { left: 14px; }
+  .chrono__item { padding-left: 3rem; }
+  .chrono__pastille { left: 0; width: 28px; height: 28px; }
+}
 
 /* ---------- 18. Retour en haut ---------- */
 .haut {

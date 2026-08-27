@@ -5,7 +5,21 @@
       "periode": "Août",
       "emoji": "🎯",
       "texte": "Le rendez-vous de l'été, désormais en semi-nocturne. Édition 2026 : 54 équipes engagées, un record pour le club.",
-      "image": "/assets/medias/1000031484.jpg",
+      "photos": [
+        { "fichier": "/assets/medias/1000031484.jpg", "legende": "Édition 2026, en semi-nocturne." },
+        { "fichier": "/assets/medias/1000031485.jpg", "legende": "54 équipes engagées." },
+        { "fichier": "/assets/medias/1000031488.jpg", "legende": "Buvette et restauration." }
+      ],
+      "document": ""
+    },
+    {
+      "nom": "Dégustation d'huîtres au stade d'Étroussat",
+      "periode": "Décembre",
+      "emoji": "🦪",
+      "texte": "Un rendez-vous convivial au stade d'Étroussat, avant les fêtes.",
+      "photos": [
+        { "fichier": "/assets/medias/1000031741.jpg", "legende": "L'affiche de la dégustation." }
+      ],
       "document": ""
     },
     {
@@ -13,7 +27,7 @@
       "periode": "Novembre – Décembre",
       "emoji": "📅",
       "texte": "Le calendrier du club, réalisé avec nos partenaires, passe de porte en porte dans les trois communes.",
-      "image": "",
+      "photos": [],
       "document": ""
     },
     {
@@ -21,7 +35,9 @@
       "periode": "Décembre",
       "emoji": "🍗",
       "texte": "Un grand classique de fin d'année, tenu par les bénévoles au profit des équipes du club.",
-      "image": "/assets/medias/1000031743.png",
+      "photos": [
+        { "fichier": "/assets/medias/1000031743.jpg", "legende": "L'affiche des grilles de dinde." }
+      ],
       "document": ""
     },
     {
@@ -29,7 +45,9 @@
       "periode": "31 décembre",
       "emoji": "🎉",
       "texte": "La soirée qui clôt l'année en beauté, et l'une des principales recettes de la saison.",
-      "image": "/assets/medias/1000031744.png",
+      "photos": [
+        { "fichier": "/assets/medias/1000031744.jpg", "legende": "L'affiche de la soirée." }
+      ],
       "document": ""
     },
     {
@@ -37,7 +55,9 @@
       "periode": "Hiver",
       "emoji": "🥘",
       "texte": "Salle comble, ambiance garantie : le repas le plus attendu des supporters de l'ASVS.",
-      "image": "/assets/medias/1000031742.png",
+      "photos": [
+        { "fichier": "/assets/medias/1000031742.jpg", "legende": "L'affiche de la soirée moules-frites." }
+      ],
       "document": ""
     },
     {
@@ -45,15 +65,16 @@
       "periode": "Printemps",
       "emoji": "⚽",
       "texte": "Une journée entière consacrée à l'école de foot, avec les clubs voisins invités sur nos installations.",
-      "image": "",
+      "photos": [],
       "document": ""
     },
     {
-      "emoji": "🦪",
-      "nom": "Dégustation d'huîtres au stade à Etroussat ",
-      "periode": "Décembre ",
-      "texte": "Tout le monde est invité à venir déguster des huîtres venues de Charente Maritime. Événements sur réservation.",
-      "image": "/assets/medias/1000031741.png"
+      "nom": "Repas de fin de saison",
+      "periode": "Juin",
+      "emoji": "🍽️",
+      "texte": "Bilan sportif, remise des récompenses et remerciements aux bénévoles autour d'une même table.",
+      "photos": [],
+      "document": ""
     }
   ]
 }

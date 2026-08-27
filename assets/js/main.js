@@ -22,7 +22,8 @@
   /* Données du site, remplies au chargement */
   const D = {
     club: {}, matchs: [], actus: [], evenements: [], partenaires: [],
-    bureau: [], conseil: [], commissions: [], equipes: [], galerie: [], documents: []
+    bureau: [], conseil: [], commissions: [], arbitres: [],
+    equipes: [], galerie: [], documents: [], histoire: null
   };
 
   function versDate(iso) {
@@ -62,6 +63,7 @@
     equipes:     "content/equipes.json",
     galerie:     "content/galerie.json",
     documents:   "content/documents.json",
+    histoire:    "content/histoire.json",
     actusAuto:   "content/actualites-auto.json"
   };
 
@@ -83,7 +85,7 @@
   }
 
   async function chargerDonnees() {
-    const [club, matchs, actus, evts, parts, orga, equipes, gal, docs, auto] =
+    const [club, matchs, actus, evts, parts, orga, equipes, gal, docs, hist, auto] =
       await Promise.all(Object.values(FICHIERS).map(lire));
 
     if (club)    D.club        = club;
@@ -93,10 +95,12 @@
     if (equipes) D.equipes     = equipes.liste || [];
     if (gal)     D.galerie     = gal.liste || [];
     if (docs)    D.documents   = docs.liste || [];
+    if (hist)    D.histoire    = hist;
     if (orga) {
       D.bureau      = orga.bureau || [];
       D.conseil     = orga.conseil || [];
       D.commissions = orga.commissions || [];
+      D.arbitres    = orga.arbitres || [];
     }
 
     /* Actualités : celles écrites à la main d'abord, puis celles
@@ -146,7 +150,11 @@
 
   /* ---------- Apparition au défilement ---------- */
   function apparitions() {
-    let restants = $$(".reveal");
+    // Les en-têtes de section s'animent aussi : le trait tricolore
+    // se déploie quand le titre entre à l'écran.
+    $$(".entete-section").forEach(e => e.classList.add("reveal"));
+
+    let restants = $$(".reveal, .reveal-gauche, .reveal-droite, .reveal-zoom");
     if (!restants.length) return;
     let tache = null;
 
@@ -169,6 +177,179 @@
     window.addEventListener("scroll", planifier, { passive: true });
     window.addEventListener("resize", planifier);
     verifier();
+  }
+
+  /* ---------- Carrousel de photos ----------
+     Rend un diaporama à partir d'une liste de médias. Une seule photo :
+     on affiche simplement l'image, sans habillage inutile. */
+  let compteurCarrousel = 0;
+
+  function normaliserPhotos(objet) {
+    // Accepte le nouveau format (liste "photos") comme l'ancien (champ "image")
+    let liste = [];
+    if (Array.isArray(objet.photos)) {
+      liste = objet.photos
+        .map(p => (typeof p === "string") ? { fichier: p, legende: "" } : p)
+        .filter(p => p && p.fichier);
+    }
+    if (!liste.length && objet.image) liste = [{ fichier: objet.image, legende: objet.legende || "" }];
+    return liste;
+  }
+
+  /* Rend un texte long en respectant les retours à la ligne.
+     Indispensable pour les textes recopiés depuis Facebook, qui sont
+     écrits en paragraphes séparés par des lignes vides. */
+  function texteRiche(txt) {
+    if (!txt) return "";
+    const paragraphes = String(txt)
+      .replace(/\r\n?/g, "\n")
+      .split(/\n{2,}/)
+      .map(p => p.trim())
+      .filter(Boolean);
+    if (!paragraphes.length) return "";
+    return paragraphes
+      .map(p => "<p>" + echapper(p).replace(/\n/g, "<br>") + "</p>")
+      .join("");
+  }
+
+  function blocCarrousel(photos, format) {
+    if (!photos.length) return "";
+    const cls = "carrousel--" + (format || "4-3");
+
+    if (photos.length === 1) {
+      const p = photos[0];
+      const f = chemin(p.fichier);
+      const media = estVideo(f)
+        ? '<video controls preload="metadata" playsinline src="' + echapper(f) + '"></video>'
+        : '<img src="' + echapper(f) + '" alt="' + echapper(p.legende || "") + '" loading="lazy">';
+      return '<div class="carrousel ' + cls + '"><div class="carrousel__piste">' +
+        '<div class="carrousel__vue">' + media +
+        (p.legende ? '<div class="carrousel__legende">' + echapper(p.legende) + '</div>' : "") +
+        '</div></div></div>';
+    }
+
+    const id = "carr-" + (++compteurCarrousel);
+    const vues = photos.map(p => {
+      const f = chemin(p.fichier);
+      const media = estVideo(f)
+        ? '<video controls preload="metadata" playsinline src="' + echapper(f) + '"></video>'
+        : '<img src="' + echapper(f) + '" alt="' + echapper(p.legende || "") + '" loading="lazy">';
+      return '<div class="carrousel__vue">' + media +
+        (p.legende ? '<div class="carrousel__legende">' + echapper(p.legende) + '</div>' : "") +
+        '</div>';
+    }).join("");
+
+    const points = photos.map((p, i) =>
+      '<button class="carrousel__point" type="button" data-vers="' + i + '" ' +
+      'aria-label="Photo ' + (i + 1) + '"' + (i === 0 ? ' aria-current="true"' : '') + '></button>'
+    ).join("");
+
+    return '<div class="carrousel ' + cls + '" id="' + id + '" data-carrousel>' +
+      '<div class="carrousel__compteur"><span data-actuel>1</span>/' + photos.length + '</div>' +
+      '<div class="carrousel__piste">' + vues + '</div>' +
+      '<button class="carrousel__nav carrousel__nav--prec" type="button" aria-label="Photo précédente">&#8249;</button>' +
+      '<button class="carrousel__nav carrousel__nav--suiv" type="button" aria-label="Photo suivante">&#8250;</button>' +
+      '<div class="carrousel__points">' + points + '</div>' +
+    '</div>';
+  }
+
+  /* Une image qui ne charge pas ne doit pas laisser un cadre vide.
+     C'est le cas typique d'un lien collé depuis Facebook : les adresses
+     du CDN de Facebook sont signées et expirent au bout de quelques heures. */
+  function surveillerImages() {
+    document.addEventListener("error", function (e) {
+      const el = e.target;
+      if (!el || el.tagName !== "IMG") return;
+
+      const vue = el.closest(".carrousel__vue");
+      if (vue) {
+        const carrousel = vue.closest(".carrousel");
+        vue.remove();
+        if (carrousel && !carrousel.querySelector(".carrousel__vue")) carrousel.remove();
+        else if (carrousel) reindexerCarrousel(carrousel);
+        return;
+      }
+      const figure = el.closest("figure");
+      if (figure) { figure.remove(); return; }
+      el.style.display = "none";
+    }, true);   // capture : les erreurs d'image ne remontent pas autrement
+  }
+
+  /* Remet à jour points et compteur après suppression d'une vue */
+  function reindexerCarrousel(c) {
+    const vues = $$(".carrousel__vue", c).length;
+    const points = $$(".carrousel__point", c);
+    points.slice(vues).forEach(p => p.remove());
+    const compteur = $(".carrousel__compteur", c);
+    if (compteur) {
+      if (vues <= 1) compteur.remove();
+      else compteur.innerHTML = '<span data-actuel>1</span>/' + vues;
+    }
+    if (vues <= 1) {
+      $$(".carrousel__nav, .carrousel__points", c).forEach(el => el.remove());
+      c.removeAttribute("data-carrousel");
+      $(".carrousel__piste", c).style.transform = "translateX(0)";
+    }
+  }
+
+  /* Active tous les carrousels présents dans la page */
+  function activerCarrousels() {
+    $$("[data-carrousel]").forEach(function (c) {
+      const piste = $(".carrousel__piste", c);
+      const points = $$(".carrousel__point", c);
+      const compteur = $("[data-actuel]", c);
+      const total = points.length;
+      let index = 0;
+      let minuterie = null;
+
+      function aller(n) {
+        index = (n + total) % total;
+        piste.style.transform = "translateX(" + (-index * 100) + "%)";
+        points.forEach((p, i) => {
+          if (i === index) p.setAttribute("aria-current", "true");
+          else p.removeAttribute("aria-current");
+        });
+        if (compteur) compteur.textContent = index + 1;
+      }
+      function relancer() {
+        arreter();
+        minuterie = window.setInterval(() => aller(index + 1), 4500);
+      }
+      function arreter() {
+        if (minuterie) { window.clearInterval(minuterie); minuterie = null; }
+      }
+
+      $(".carrousel__nav--prec", c).addEventListener("click", () => { aller(index - 1); relancer(); });
+      $(".carrousel__nav--suiv", c).addEventListener("click", () => { aller(index + 1); relancer(); });
+      points.forEach(p => p.addEventListener("click", () => {
+        aller(parseInt(p.dataset.vers, 10)); relancer();
+      }));
+
+      // On met en pause quand la souris ou le clavier est dessus
+      c.addEventListener("mouseenter", arreter);
+      c.addEventListener("mouseleave", relancer);
+      c.addEventListener("focusin", arreter);
+      c.addEventListener("focusout", relancer);
+
+      // Balayage au doigt
+      let departX = null;
+      c.addEventListener("touchstart", e => { departX = e.touches[0].clientX; arreter(); }, { passive: true });
+      c.addEventListener("touchend", e => {
+        if (departX === null) return;
+        const delta = e.changedTouches[0].clientX - departX;
+        if (Math.abs(delta) > 45) aller(index + (delta < 0 ? 1 : -1));
+        departX = null; relancer();
+      }, { passive: true });
+
+      // Le diaporama ne tourne que si le bloc est visible à l'écran
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(entrees => {
+          entrees.forEach(e => e.isIntersecting ? relancer() : arreter());
+        }, { threshold: 0.35 }).observe(c);
+      } else {
+        relancer();
+      }
+    });
   }
 
   /* ---------- Fragments média réutilisables ---------- */
@@ -288,16 +469,17 @@
           '><strong>En savoir plus &rarr;</strong></a></p>'
         : "";
 
+      const photos = normaliserPhotos(a);
       let media = "";
-      if (a.video) media = blocVideo(a.video, "actu__video");
-      else if (a.image) media = '<div class="actu__img"><img src="' + echapper(chemin(a.image)) + '" alt="" loading="lazy"></div>';
+      if (photos.length) media = blocCarrousel(photos, "4-3");
+      else if (a.video) media = blocVideo(a.video, "actu__video");
 
-      return '<article class="actu">' + media +
+      return '<article class="actu reveal-zoom">' + media +
         '<div class="actu__corps">' +
           '<span class="etiquette etiq--' + echapper(a.categorie || "club") + '">' + (libelles[a.categorie] || "Actualité") + '</span>' +
           '<div class="actu__date">' + echapper(dateLongue(a.date)) + '</div>' +
           '<h3>' + echapper(a.titre) + '</h3>' +
-          '<p>' + echapper(a.texte) + '</p>' +
+          '<div class="actu__texte">' + texteRiche(a.texte) + '</div>' +
           (a.document ? '<div style="margin-top:1rem">' + lienDocument(a.document, a.documentTitre) + '</div>' : "") +
           lien +
         '</div>' +
@@ -310,15 +492,10 @@
     const hote = $("#liste-equipes");
     if (!hote) return;
     hote.innerHTML = D.equipes.map(e => {
+      const photos = normaliserPhotos(e);
       let media = "";
-      if (e.photo) {
-        media = '<figure class="equipe__photo">' +
-          '<img src="' + echapper(chemin(e.photo)) + '" alt="Photo de l\'équipe ' + echapper(e.nom) + ' de l\'AS Val de Sioule" loading="lazy">' +
-          (e.legende ? '<figcaption>' + echapper(e.legende) + '</figcaption>' : "") +
-        '</figure>';
-      } else if (e.video) {
-        media = blocVideo(e.video, "equipe__video");
-      }
+      if (photos.length) media = blocCarrousel(photos, "21-9");
+      else if (e.video) media = blocVideo(e.video, "equipe__video");
       return '<article class="equipe reveal" id="equipe-' + echapper(e.id) + '">' +
         '<header class="equipe__bandeau bandeau--' + echapper(e.couleur) + '">' +
           '<h3>' + echapper(e.nom) + '</h3>' +
@@ -356,26 +533,42 @@
   function evenements() {
     const hote = $("#liste-evenements");
     if (!hote) return;
-    hote.innerHTML = D.evenements.map((e, i) =>
-      '<article class="carte reveal">' +
-        (e.image ? '<img class="carte__img" src="' + echapper(chemin(e.image)) + '" alt="" loading="lazy">' : "") +
+    hote.classList.add("cascade");
+    hote.innerHTML = D.evenements.map((e, i) => {
+      const photos = normaliserPhotos(e);
+      const media = photos.length
+        ? '<div class="carte__media">' + blocCarrousel(photos, "16-9") + '</div>'
+        : "";
+      return '<article class="carte reveal-zoom">' + media +
         '<div class="carte__pastille pastille--' + ["rouge", "vert", "bleu"][i % 3] + '">' + echapper(e.emoji || "⚽") + '</div>' +
         '<span class="etiquette etiq--event">' + echapper(e.periode) + '</span>' +
         '<h3>' + echapper(e.nom) + '</h3>' +
         '<p>' + echapper(e.texte) + '</p>' +
         (e.document ? '<div style="margin-top:1rem">' + lienDocument(e.document, "Le document") + '</div>' : "") +
-      '</article>'
-    ).join("");
+      '</article>';
+    }).join("");
   }
 
   /* ---------- Partenaires ---------- */
-  function cartePartenaire(p) {
+  function cartePartenaire(p, avecCoordonnees) {
+    let coord = "";
+    if (avecCoordonnees) {
+      const bouts = [];
+      if (p.ville) bouts.push('<span class="partenaire__ville">📍 ' + echapper(p.ville) + '</span>');
+      if (p.telephone) bouts.push('<a class="partenaire__tel" href="tel:' + echapper(String(p.telephone).replace(/\s/g, "")) + '">☎ ' + echapper(p.telephone) + '</a>');
+      if (p.siteWeb) bouts.push('<a class="partenaire__web" href="' + echapper(p.siteWeb) + '" target="_blank" rel="noopener">🔗 Site internet</a>');
+      if (bouts.length) coord = '<div class="partenaire__coord">' + bouts.join("") + '</div>';
+    }
+
     const inner =
       (p.logo ? '<img class="partenaire__logo" src="' + echapper(chemin(p.logo)) + '" alt="' + echapper(p.nom) + '" loading="lazy">' : "") +
       '<b>' + echapper(p.nom) + '</b>' +
-      '<span>' + echapper(p.soutien) + '</span>';
+      '<span>' + echapper(p.soutien) + '</span>' + coord;
+
     const cls = 'partenaire partenaire--' + echapper(p.niveau || "bronze");
-    return p.siteWeb
+    // Avec des coordonnées cliquables à l'intérieur, la carte ne peut pas
+    // être elle-même un lien : on imbriquerait des liens.
+    return (p.siteWeb && !avecCoordonnees)
       ? '<a class="' + cls + '" href="' + echapper(p.siteWeb) + '" target="_blank" rel="noopener">' + inner + '</a>'
       : '<div class="' + cls + '">' + inner + '</div>';
   }
@@ -393,12 +586,107 @@
         if (!liste.length) return "";
         return '<div class="niveau-titre"><span class="medaille medaille--' + n.cle + '">' + n.abr + '</span>' +
                '<h3>' + n.titre + '</h3></div>' +
-               '<div class="partenaires">' + liste.map(cartePartenaire).join("") + '</div>';
+               '<div class="partenaires cascade">' + liste.map(p => cartePartenaire(p, true)).join("") + '</div>';
       }).join("");
     }
 
     const bandeau = $("#bandeau-partenaires");
-    if (bandeau) bandeau.innerHTML = D.partenaires.map(cartePartenaire).join("");
+    if (bandeau) bandeau.innerHTML = D.partenaires.map(p => cartePartenaire(p, false)).join("");
+  }
+
+  /* ---------- Les arbitres du club ---------- */
+  function arbitres() {
+    const hote = $("#liste-arbitres");
+    if (!hote) return;
+    const liste = D.arbitres || [];
+    const bloc = $("#bloc-arbitres");
+    if (bloc) bloc.hidden = liste.length === 0;
+    hote.innerHTML = liste.map(a => '<span class="jeton">' + echapper(a.nom) + '</span>').join("");
+  }
+
+  /* ---------- Page Histoire ---------- */
+  function histoire() {
+    const hote = $("#chronologie");
+    if (!hote || !D.histoire) return;
+    const h = D.histoire;
+
+    const intro = $("#histoire-intro");
+    if (intro && h.intro) intro.textContent = h.intro;
+
+    // Signification du blason
+    const hBlason = $("#blason-elements");
+    if (hBlason && h.blason) {
+      if (h.blason.titre) { const t = $("#blason-titre"); if (t) t.textContent = h.blason.titre; }
+      if (h.blason.chapeau) { const c = $("#blason-chapeau"); if (c) c.textContent = h.blason.chapeau; }
+      if (h.blason.note) { const n = $("#blason-note"); if (n) n.textContent = h.blason.note; }
+      const img = $("#blason-image");
+      if (img && h.blason.image) img.src = chemin(h.blason.image);
+      hBlason.classList.add("cascade");
+      hBlason.innerHTML = (h.blason.elements || []).map(e =>
+        '<div class="blason-item blason-item--' + echapper(e.couleur || "navy") + ' reveal-zoom">' +
+          '<h3>' + echapper(e.titre) + '</h3>' +
+          '<p>' + echapper(e.texte) + '</p>' +
+        '</div>'
+      ).join("");
+    }
+
+    // Chronologie
+    hote.innerHTML = (h.chronologie || []).map((c, i) => {
+      const photos = normaliserPhotos(c);
+      const medias = photos.length
+        ? '<div class="chrono__medias">' + blocCarrousel(photos, "16-9") + '</div>'
+        : "";
+      return '<li class="chrono__item ' + (i % 2 ? "reveal-droite" : "reveal-gauche") + '">' +
+        '<span class="chrono__pastille" aria-hidden="true">⚽</span>' +
+        '<span class="chrono__annee">' + echapper(c.annee) + '</span>' +
+        '<h3>' + echapper(c.titre) + '</h3>' +
+        '<p>' + echapper(c.texte) + '</p>' + medias +
+      '</li>';
+    }).join("");
+
+    // Photos d'équipes historiques
+    const hEquipes = $("#equipes-historiques");
+    if (hEquipes) {
+      const liste = h.equipesHistoriques || [];
+      const bloc = $("#bloc-equipes-historiques");
+      if (bloc) bloc.hidden = liste.length === 0;
+      hEquipes.innerHTML = liste.map(e =>
+        '<figure class="reveal-zoom">' +
+          '<img src="' + echapper(chemin(e.fichier)) + '" alt="' + echapper(e.legende || "") + '" loading="lazy">' +
+          '<figcaption><strong>' + echapper(e.saison || "") + '</strong>' +
+          (e.legende ? '<br>' + echapper(e.legende) : "") + '</figcaption>' +
+        '</figure>'
+      ).join("");
+    }
+  }
+
+  /* ---------- Compteurs animés ---------- */
+  function compteurs() {
+    const cibles = $$(".chiffre strong, .hero__meta strong").filter(el => /^\d+$/.test(el.textContent.trim()));
+    if (!cibles.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    function animer(el) {
+      const fin = parseInt(el.textContent, 10);
+      if (!isFinite(fin) || fin === 0) return;
+      const duree = 900;
+      const depart = performance.now();
+      function pas(maintenant) {
+        const t = Math.min(1, (maintenant - depart) / duree);
+        // Décélération douce
+        el.textContent = Math.round(fin * (1 - Math.pow(1 - t, 3)));
+        if (t < 1) requestAnimationFrame(pas);
+      }
+      requestAnimationFrame(pas);
+    }
+
+    if (!("IntersectionObserver" in window)) return;
+    const obs = new IntersectionObserver(entrees => {
+      entrees.forEach(e => {
+        if (e.isIntersecting) { animer(e.target); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    cibles.forEach(el => obs.observe(el));
   }
 
   /* ---------- Documents ---------- */
@@ -490,6 +778,7 @@
     navMobile();
     anneeAuto();
     retourHaut();
+    surveillerImages();
 
     await chargerDonnees();
 
@@ -504,6 +793,12 @@
     partenaires();
     documents();
     organisation();
+    arbitres();
+    histoire();
+
+    // Après le rendu : on anime ce qui vient d'être créé
+    activerCarrousels();
+    compteurs();
     apparitions();
 
     document.body.classList.add("donnees-chargees");

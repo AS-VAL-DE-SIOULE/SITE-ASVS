@@ -1,22 +1,18 @@
 {
+  "nom": "AS Val de Sioule",
+  "fondation": 2009,
+  "affiliation": "554229",
+  "saison": "2026 / 2027",
+  "directeurPublication": "Philippe ALLIGIER",
+  "adresseSiege": "Stade Municipal, 03110 Broût-Vernet",
+  "rna": "W033002816",
+  "email": "554229@laurafoot.org",
   "emailPartenaires": "asvaldesioule@gmail.com",
   "stade": "Stade Municipal",
-  "licencies": 110,
-  "boutique": "https://www.11teamsports.com/fr-fr/clubshop/association-sportive-val-de-sioule/",
-  "rna": "W033002816",
-  "facebook": "https://www.facebook.com/profile.php?id=100079830892626",
-  "nom": "AS Val de Sioule",
-  "affiliation": "554229",
   "ville": "Broût-Vernet",
-  "communes": [
-    "Broût-Vernet",
-    "Étroussat",
-    "Barberier"
-  ],
-  "directeurPublication": "Philippe ALLIGIER",
-  "fondation": 2009,
-  "saison": "2026 / 2027",
   "codePostal": "03110",
-  "email": "554229@laurafoot.org",
-  "adresseSiege": "Stade Municipal, 03110 Broût-Vernet"
+  "communes": ["Broût-Vernet", "Étroussat", "Barberier"],
+  "facebook": "https://www.facebook.com/profile.php?id=100079830892626",
+  "boutique": "https://www.11teamsports.com/fr-fr/clubshop/association-sportive-val-de-sioule/",
+  "licencies": 110
 }

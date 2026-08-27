@@ -3,79 +3,101 @@
     {
       "nom": "ACTO Intérim Saint-Pourçain",
       "niveau": "or",
-      "soutien": "Jeu de maillots pour les équipes séniors (ADIDAS ROUGE) + Flamme postée à l'entrée du terrain",
-      "logo": "/assets/medias/logos-pour-le-minibus-.png",
-      "siteWeb": "https://www.acto-rh.com/agences/acto-interim-saint-pourcain-sur-sioule/"
+      "soutien": "Jeu de maillots pour les équipes séniors (adidas rouge) + flamme à l'entrée du terrain",
+      "logo": "/assets/medias/logos-pour-le-minibus.png",
+      "siteWeb": "https://www.acto-rh.com/agences/acto-interim-saint-pourcain-sur-sioule/",
+      "telephone": "",
+      "ville": "Saint-Pourçain-sur-Sioule"
     },
     {
       "nom": "Imagine Ton Crédit",
       "niveau": "or",
-      "soutien": "Jeu de maillots pour les séniors (ADIDAS BLEU)",
-      "logo": "/assets/medias/imagine-ton-crédit.jpg",
-      "siteWeb": "https://imaginetoncredit.fr/"
+      "soutien": "Jeu de maillots pour les séniors (adidas bleu)",
+      "logo": "/assets/medias/imagine-ton-credit.jpg",
+      "siteWeb": "https://imaginetoncredit.fr/",
+      "telephone": "",
+      "ville": ""
     },
     {
       "nom": "Treyve Paysages",
       "niveau": "or",
       "soutien": "Panneau au stade + soutien du club",
       "logo": "/assets/medias/treyve-paysages.jpg",
-      "siteWeb": "https://treyve-paysages.fr/"
+      "siteWeb": "https://treyve-paysages.fr/",
+      "telephone": "04 70 32 30 66",
+      "ville": ""
     },
     {
       "nom": "Aux Délices Bourbonnais",
       "niveau": "or",
       "soutien": "Soutien au minibus du club",
       "logo": "/assets/medias/boulangerie-brout-vernet.jpg",
-      "siteWeb": "https://www.facebook.com/p/Aux-D%C3%A9lices-Bourbonnais-100057439990421/"
+      "siteWeb": "https://www.facebook.com/p/Aux-D%C3%A9lices-Bourbonnais-100057439990421/",
+      "telephone": "04 70 58 20 85",
+      "ville": "Broût-Vernet"
     },
     {
       "nom": "Le Monde du Macaron",
       "niveau": "or",
       "soutien": "Soutien au minibus du club",
       "logo": "/assets/medias/le-monde-du-macaron.png",
-      "siteWeb": "https://www.facebook.com/p/Le-monde-du-Macaron-Saint-Pour%C3%A7ain-Sur-Sioule-61575828699074/"
+      "siteWeb": "https://www.facebook.com/p/Le-monde-du-Macaron-Saint-Pour%C3%A7ain-Sur-Sioule-61575828699074/",
+      "telephone": "",
+      "ville": "Saint-Pourçain-sur-Sioule"
     },
     {
       "nom": "Caille Environnement",
       "niveau": "argent",
       "soutien": "Panneau au stade",
       "logo": "/assets/medias/caille.png",
-      "siteWeb": "https://caille-shop.fr/"
+      "siteWeb": "https://caille-shop.fr/",
+      "telephone": "04 70 58 24 81",
+      "ville": ""
     },
     {
       "nom": "Garage Moulin",
       "niveau": "argent",
       "soutien": "Panneau au stade",
       "logo": "/assets/medias/moulin.png",
-      "siteWeb": "https://www.facebook.com/EtsMOULINsarl/?locale=fr_FR"
+      "siteWeb": "https://www.facebook.com/EtsMOULINsarl/?locale=fr_FR",
+      "telephone": "04 70 56 71 00",
+      "ville": ""
     },
     {
       "nom": "Prolum Gannat",
       "niveau": "argent",
       "soutien": "Panneau au stade",
       "logo": "/assets/medias/prolum.png",
-      "siteWeb": "https://www.prolum.fr/implantations-agences-prolum/centre-auvergne/"
+      "siteWeb": "https://www.prolum.fr/implantations-agences-prolum/centre-auvergne/",
+      "telephone": "",
+      "ville": "Gannat"
     },
     {
-      "nom": "ALLIGIER PAYSAGES",
+      "nom": "Alligier Paysages",
       "niveau": "argent",
       "soutien": "Panneau au stade d'Étroussat",
       "logo": "/assets/medias/alligier.png",
-      "siteWeb": "https://www.facebook.com/p/Alligier-Paysage-100094671947566/"
+      "siteWeb": "https://www.facebook.com/p/Alligier-Paysage-100094671947566/",
+      "telephone": "",
+      "ville": "Étroussat"
     },
     {
       "nom": "RM Élec",
       "niveau": "argent",
       "soutien": "Dotation en ballons de match",
       "logo": "/assets/medias/rm-elec.png",
-      "siteWeb": "https://www.facebook.com/p/RMElec-100063559843050/"
+      "siteWeb": "https://www.facebook.com/p/RMElec-100063559843050/",
+      "telephone": "",
+      "ville": ""
     },
     {
       "nom": "Atol",
       "niveau": "bronze",
       "soutien": "Soutien au club",
       "logo": "",
-      "siteWeb": ""
+      "siteWeb": "",
+      "telephone": "",
+      "ville": ""
     }
   ]
 }
