@@ -904,6 +904,94 @@ a.partenaire:hover { transform: translateY(-2px); box-shadow: var(--ombre); }
   .chrono__pastille { left: 0; width: 28px; height: 28px; }
 }
 
+/* ---------- 17 quater. Décor de campagne vivant ----------
+   Un paysage fixe derrière tout le site : les deux clochers, la
+   Sioule, les vaches, les arbres. Les sections deviennent très
+   légèrement translucides pour le laisser transparaître sans
+   jamais gêner la lecture. */
+
+.decor {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: min(48vh, 460px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: .85;
+}
+.decor svg { width: 100%; height: 100%; display: block; }
+
+/* Ciel : nuages et oiseaux qui dérivent lentement */
+.decor__nuages { animation: derive 90s linear infinite; }
+.decor__nuages--lent { animation: derive 150s linear infinite; }
+@keyframes derive {
+  from { transform: translateX(-260px); }
+  to   { transform: translateX(1860px); }
+}
+.decor__oiseaux { animation: survol 42s linear infinite; }
+@keyframes survol {
+  0%   { transform: translate(-160px, 20px); }
+  50%  { transform: translate(760px, -14px); }
+  100% { transform: translate(1740px, 16px); }
+}
+
+/* Les blés et les arbres respirent */
+.decor__herbe { transform-origin: bottom center; animation: brise 7s ease-in-out infinite; }
+.decor__arbre { transform-origin: bottom center; animation: brise 9s ease-in-out infinite; }
+@keyframes brise {
+  0%, 100% { transform: skewX(0deg); }
+  50%      { transform: skewX(1.6deg); }
+}
+
+/* La queue de la vache */
+.decor__queue { transform-origin: top center; animation: queue 4s ease-in-out infinite; }
+@keyframes queue {
+  0%, 70%, 100% { transform: rotate(0deg); }
+  80%           { transform: rotate(16deg); }
+  90%           { transform: rotate(-12deg); }
+}
+
+/* Le ballon qui traverse le site au fil du défilement */
+.ballon {
+  position: fixed;
+  left: 0; top: 0;
+  width: 34px; height: 34px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: .9;
+  will-change: transform;
+  filter: drop-shadow(0 4px 6px rgba(27, 40, 32, .28));
+}
+.ballon svg { width: 100%; height: 100%; display: block; }
+
+/* Les sections laissent voir le décor */
+.section--creme  { background: rgba(247, 244, 236, .86); }
+.section--blanc  { background: rgba(255, 255, 255, .88); }
+.section--sombre { background: rgba(30, 59, 40, .94); }
+
+/* Le décor ne doit jamais passer derrière un bloc de texte dense :
+   les cartes et tableaux restent opaques. */
+.carte, .match, .actu, .equipe, .personne, .partenaire,
+.document, .pack, .chiffre, .table-enveloppe, .encadre, .galerie figure {
+  backdrop-filter: saturate(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decor__nuages, .decor__nuages--lent, .decor__oiseaux,
+  .decor__herbe, .decor__arbre, .decor__queue { animation: none; }
+  .ballon { display: none; }
+}
+
+/* Sur petit écran, on allège : décor plus discret, pas de ballon */
+@media (max-width: 700px) {
+  .decor { opacity: .38; height: 34vh; }
+  .ballon { display: none; }
+}
+
+/* Impression : aucun décor */
+@media print {
+  .decor, .ballon { display: none !important; }
+}
+
 /* ---------- 18. Retour en haut ---------- */
 .haut {
   position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 90;

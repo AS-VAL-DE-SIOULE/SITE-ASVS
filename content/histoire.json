@@ -38,12 +38,54 @@
       "annee": "2009",
       "titre": "La fusion",
       "texte": "Le BVS de Broût-Vernet, en rouge, et le FC Étroussat, en vert, décident de n'en faire qu'un. L'AS Val de Sioule voit le jour et rassemble désormais les familles de Broût-Vernet, d'Étroussat et de Barberier autour d'un même maillot.",
-      "photos": []
+      "photos": [
+        { "fichier": "/assets/medias/histoire-2009-8.jpg", "legende": "2009 — les débuts du club." },
+        { "fichier": "/assets/medias/histoire-2009-9.jpg", "legende": "2009" },
+        { "fichier": "/assets/medias/histoire-2009-10.jpg", "legende": "2009" },
+        { "fichier": "/assets/medias/histoire-2009-11.jpg", "legende": "2009" },
+        { "fichier": "/assets/medias/histoire-2009-12.jpg", "legende": "2009" }
+      ]
+    },
+    {
+      "annee": "2010 – 2013",
+      "titre": "Le club prend ses marques",
+      "texte": "Deux équipes séniors s'installent durablement. Année après année, les photos d'équipe se succèdent au même endroit, avec des visages qui changent et d'autres qui restent.",
+      "photos": [
+        { "fichier": "/assets/medias/histoire-2010-7.jpg", "legende": "2010 — équipe A" },
+        { "fichier": "/assets/medias/histoire-2010-8.jpg", "legende": "2010 — équipe B" },
+        { "fichier": "/assets/medias/histoire-2011-5.jpg", "legende": "2011 — séniors A" },
+        { "fichier": "/assets/medias/histoire-2011-6.jpg", "legende": "2011 — séniors B" },
+        { "fichier": "/assets/medias/histoire-2012-5.jpg", "legende": "2012 — séniors A" },
+        { "fichier": "/assets/medias/histoire-2012-6.jpg", "legende": "2012" },
+        { "fichier": "/assets/medias/histoire-2012-7.jpg", "legende": "2012 — séniors B" },
+        { "fichier": "/assets/medias/histoire-2013-7.jpg", "legende": "2013 — équipe A" },
+        { "fichier": "/assets/medias/histoire-2013-8.jpg", "legende": "2013 — équipe B" }
+      ]
+    },
+    {
+      "annee": "2014 – 2018",
+      "titre": "Les saisons qui comptent",
+      "texte": "Des matchs qu'on se raconte encore : Trévol, Voussac, la coupe au Breuil, le déplacement à Monétay. Et une nouvelle génération de maillots grâce aux partenaires du territoire.",
+      "photos": [
+        { "fichier": "/assets/medias/histoire-2014-5.jpg", "legende": "2014 — séniors A" },
+        { "fichier": "/assets/medias/histoire-2014-6.jpg", "legende": "2014 — séniors B" },
+        { "fichier": "/assets/medias/histoire-2014-7.jpg", "legende": "2014 — match à Trévol, 1er juin" },
+        { "fichier": "/assets/medias/histoire-2015-4.jpg", "legende": "2015 — séniors A" },
+        { "fichier": "/assets/medias/histoire-2015-5.jpg", "legende": "2015 — séniors B" },
+        { "fichier": "/assets/medias/histoire-2016-8.jpg", "legende": "2016 — séniors A" },
+        { "fichier": "/assets/medias/histoire-2016-7.jpg", "legende": "2016 — séniors B" },
+        { "fichier": "/assets/medias/histoire-2016-9.jpg", "legende": "2016 — les maillots Allagnon" },
+        { "fichier": "/assets/medias/histoire-2017-10.jpg", "legende": "2017 — séniors A" },
+        { "fichier": "/assets/medias/histoire-2017-9.jpg", "legende": "2017 — séniors B" },
+        { "fichier": "/assets/medias/histoire-2018-14.jpg", "legende": "2018 — coupe au Breuil" },
+        { "fichier": "/assets/medias/histoire-2018-11.jpg", "legende": "2018 — l'ASVS 2 face à Voussac" },
+        { "fichier": "/assets/medias/histoire-2018-17.jpg", "legende": "2018 — déplacement à Monétay" }
+      ]
     },
     {
       "annee": "2024-2025",
       "titre": "Une génération qui monte",
-      "texte": "Les U13 sont sacrés champions de Division 4 et accèdent à l'échelon supérieur. L'équipe A atteint la demi-finale de la Coupe Paul-Baptiste et la finale du tournoi futsal hivernal. Le club compte 113 licenciés.",
+      "texte": "Les U13 sont sacrés champions de Division 4 et accèdent à l'échelon supérieur. L'équipe A atteint la demi-finale de la Coupe Paul-Baptiste et la finale du tournoi futsal hivernal.",
       "photos": []
     },
     {
@@ -55,9 +97,24 @@
     {
       "annee": "2026",
       "titre": "Le club prend de l'ampleur",
-      "texte": "Boutique officielle en ligne, gamme de vêtements aux couleurs du club, et un concours de pétanque record avec 54 équipes engagées. Le site internet du club voit le jour.",
-      "photos": []
+      "texte": "Une troisième équipe séniors voit le jour en Départemental 5, portée par 25 nouvelles arrivées. Boutique officielle en ligne, gamme de vêtements aux couleurs du club, concours de pétanque record avec 54 équipes engagées, et un site internet pour raconter tout cela.",
+      "photos": [
+        { "fichier": "/assets/medias/1000031754.jpg", "legende": "2026 — l'ouverture de l'équipe C." }
+      ]
     }
   ],
-  "equipesHistoriques": []
+  "equipesHistoriques": [
+    { "saison": "2009", "fichier": "/assets/medias/histoire-2009-8.jpg", "legende": "La première année du club." },
+    { "saison": "2010", "fichier": "/assets/medias/histoire-2010-7.jpg", "legende": "Équipe A" },
+    { "saison": "2011", "fichier": "/assets/medias/histoire-2011-5.jpg", "legende": "Séniors A" },
+    { "saison": "2012", "fichier": "/assets/medias/histoire-2012-5.jpg", "legende": "Séniors A" },
+    { "saison": "2013", "fichier": "/assets/medias/histoire-2013-7.jpg", "legende": "Équipe A" },
+    { "saison": "2014", "fichier": "/assets/medias/histoire-2014-5.jpg", "legende": "Séniors A" },
+    { "saison": "2015", "fichier": "/assets/medias/histoire-2015-4.jpg", "legende": "Séniors A" },
+    { "saison": "2016", "fichier": "/assets/medias/histoire-2016-8.jpg", "legende": "Séniors A" },
+    { "saison": "2017", "fichier": "/assets/medias/histoire-2017-10.jpg", "legende": "Séniors A" },
+    { "saison": "2018", "fichier": "/assets/medias/histoire-2018-14.jpg", "legende": "Coupe au Breuil" },
+    { "saison": "2025-2026", "fichier": "/assets/medias/equipe-a-2025-2026.jpg", "legende": "Séniors A" },
+    { "saison": "2026-2027", "fichier": "/assets/medias/1000031677.jpg", "legende": "Séniors A — victoire en Coupe de France." }
+  ]
 }

@@ -370,7 +370,8 @@
 
   /* ---------- Cartes de match ---------- */
   function carteMatch(m) {
-    const nous = "AS Val de Sioule" + (m.equipe === "B" ? " 2" : "");
+    const suffixe = { B: " 2", C: " 3" };
+    const nous = "AS Val de Sioule" + (suffixe[m.equipe] || "");
     const dom = !!m.domicile;
     const gauche = dom ? nous : m.adversaire;
     const droite = dom ? m.adversaire : nous;
@@ -419,7 +420,7 @@
     function dessiner() {
       let liste = D.matchs.slice()
         .sort((a, b) => String(a.date).localeCompare(String(b.date)) || String(a.heure).localeCompare(String(b.heure)));
-      if (filtre === "A" || filtre === "B") liste = liste.filter(m => m.equipe === filtre);
+      if (filtre === "A" || filtre === "B" || filtre === "C") liste = liste.filter(m => m.equipe === filtre);
       if (filtre === "domicile")  liste = liste.filter(m => m.domicile);
       if (filtre === "exterieur") liste = liste.filter(m => !m.domicile);
       if (filtre === "avenir") {
@@ -689,6 +690,155 @@
     cibles.forEach(el => obs.observe(el));
   }
 
+  /* ---------- Décor de campagne ----------
+     Un paysage fixe derrière le site : les deux clochers de
+     Broût-Vernet et d'Étroussat, la Sioule entre les deux, les
+     vaches, les arbres et les bottes de paille. Le tout dessiné
+     en SVG, sans aucune image à charger. */
+  function decorVillage() {
+    if (document.querySelector(".decor")) return;
+
+    const vache = (x, y, e) =>
+      '<g transform="translate(' + x + ',' + y + ') scale(' + e + ')">' +
+        '<path class="decor__queue" d="M74 6 q9 10 5 24" stroke="#2c4433" stroke-width="3" fill="none" stroke-linecap="round"/>' +
+        '<path d="M6 34 h68 v20 h-9 v14 h-6 v-14 H21 v14 h-6 V54 H6 z" fill="#2c4433"/>' +
+        '<path d="M6 34 q-8 -4 -6 -12 q7 -3 11 4 z" fill="#2c4433"/>' +
+        '<ellipse cx="30" cy="42" rx="10" ry="6" fill="#f4f1e6" opacity=".55"/>' +
+        '<ellipse cx="56" cy="47" rx="7" ry="4" fill="#f4f1e6" opacity=".45"/>' +
+      '</g>';
+
+    const arbre = (x, y, e) =>
+      '<g class="decor__arbre" transform="translate(' + x + ',' + y + ') scale(' + e + ')">' +
+        '<rect x="-4" y="-26" width="8" height="28" fill="#3d5a41"/>' +
+        '<circle cx="0" cy="-44" r="26" fill="#3d5a41"/>' +
+        '<circle cx="-18" cy="-32" r="17" fill="#3d5a41"/>' +
+        '<circle cx="19" cy="-33" r="18" fill="#3d5a41"/>' +
+      '</g>';
+
+    const clocher = (x, y, e, couleur) =>
+      '<g transform="translate(' + x + ',' + y + ') scale(' + e + ')">' +
+        '<rect x="-17" y="-96" width="34" height="96" fill="#f2efe4"/>' +
+        '<path d="M-25 -96 L0 -150 L25 -96 z" fill="' + couleur + '"/>' +
+        '<rect x="-6" y="-84" width="12" height="17" rx="6" fill="#2c4433"/>' +
+        '<rect x="-5" y="-40" width="10" height="40" rx="5" fill="#2c4433"/>' +
+        '<circle cx="0" cy="-58" r="7" fill="#f2efe4" stroke="#2c4433" stroke-width="2"/>' +
+        '<path d="M0 -158 v9 M-5 -153 h10" stroke="#2c4433" stroke-width="2.4"/>' +
+        '<path d="M17 -60 h44 v60 h-44 z" fill="#e7e3d5"/>' +
+        '<path d="M13 -60 L39 -80 L65 -60 z" fill="' + couleur + '" opacity=".85"/>' +
+      '</g>';
+
+    const nuage = (x, y, e) =>
+      '<g transform="translate(' + x + ',' + y + ') scale(' + e + ')" fill="#ffffff" opacity=".5">' +
+        '<ellipse cx="0" cy="0" rx="34" ry="17"/>' +
+        '<ellipse cx="26" cy="6" rx="26" ry="13"/>' +
+        '<ellipse cx="-25" cy="6" rx="22" ry="11"/>' +
+      '</g>';
+
+    const oiseau = (x, y, e) =>
+      '<path transform="translate(' + x + ',' + y + ') scale(' + e + ')" ' +
+      'd="M0 0 q7 -7 14 0 q7 -7 14 0" stroke="#2c4433" stroke-width="2" fill="none" stroke-linecap="round"/>';
+
+    const svg =
+      '<svg viewBox="0 0 1600 460" preserveAspectRatio="xMidYMax meet" aria-hidden="true">' +
+        '<g class="decor__nuages--lent">' + nuage(180, 70, 1) + nuage(1180, 52, .8) + '</g>' +
+        '<g class="decor__nuages">' + nuage(700, 106, .62) + '</g>' +
+        '<g class="decor__oiseaux">' + oiseau(0, 130, 1) + oiseau(38, 146, .8) + oiseau(20, 116, .6) + '</g>' +
+
+        /* Collines lointaines */
+        '<path d="M0 300 q210 -78 430 -22 q220 56 430 -18 q210 -74 420 -6 q170 52 320 12 V460 H0 z" fill="#6f8f6a" opacity=".38"/>' +
+        '<path d="M0 336 q250 -60 500 -8 q240 50 480 -14 q220 -58 420 4 V460 H0 z" fill="#5c7d59" opacity=".5"/>' +
+
+        /* Les deux clochers, de part et d'autre de la rivière */
+        clocher(300, 340, 1, '#c9382f') +
+        clocher(1180, 340, .92, '#2f8f4a') +
+
+        /* Arbres */
+        arbre(120, 344, 1) + arbre(520, 348, .8) + arbre(880, 344, .95) +
+        arbre(1420, 348, .85) + arbre(1520, 342, .65) +
+
+        /* La Sioule */
+        '<path d="M0 392 q200 -22 400 2 q200 24 400 -2 q200 -26 400 0 q200 26 400 6 V420 q-200 20 -400 -6 q-200 -26 -400 0 q-200 26 -400 2 q-200 -24 -400 -2 z" fill="#5da9d6" opacity=".55"/>' +
+
+        /* Pré */
+        '<path d="M0 404 h1600 V460 H0 z" fill="#4e7a4a" opacity=".62"/>' +
+
+        /* Clôture */
+        '<g stroke="#6b5138" stroke-width="4" opacity=".55">' +
+          '<path d="M60 452 v-30 M140 452 v-30 M220 452 v-30 M300 452 v-30"/>' +
+          '<path d="M52 430 h256 M52 442 h256"/>' +
+        '</g>' +
+
+        /* Bottes de paille */
+        '<g fill="#c9a86a" opacity=".75">' +
+          '<circle cx="1010" cy="436" r="19"/><circle cx="1052" cy="440" r="14"/>' +
+        '</g>' +
+
+        /* Vaches */
+        vache(600, 396, .78) + vache(760, 408, .62) + vache(1300, 400, .7) +
+
+        /* Herbes au premier plan */
+        '<g class="decor__herbe" stroke="#3f6b3d" stroke-width="3" opacity=".5" stroke-linecap="round">' +
+          '<path d="M40 460 q6 -22 2 -34 M70 460 q-6 -20 -1 -30 M100 460 q7 -24 3 -32"/>' +
+          '<path d="M900 460 q6 -22 2 -34 M930 460 q-6 -20 -1 -30"/>' +
+          '<path d="M1480 460 q6 -24 2 -34 M1512 460 q-6 -20 -1 -30"/>' +
+        '</g>' +
+      '</svg>';
+
+    const decor = document.createElement("div");
+    decor.className = "decor";
+    decor.setAttribute("aria-hidden", "true");
+    decor.innerHTML = svg;
+    document.body.appendChild(decor);
+  }
+
+  /* ---------- Le ballon qui traverse le site ----------
+     Sa position horizontale suit le défilement ; sa hauteur
+     décrit une série de rebonds, comme un ballon qui traverse
+     le terrain d'un bout à l'autre de la page. */
+  function ballonVivant() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.innerWidth <= 700) return;
+
+    const el = document.createElement("div");
+    el.className = "ballon";
+    el.setAttribute("aria-hidden", "true");
+    el.innerHTML =
+      '<svg viewBox="0 0 40 40">' +
+        '<circle cx="20" cy="20" r="19" fill="#fdfdfa" stroke="#22374f" stroke-width="2"/>' +
+        '<path d="M20 8 l8 6 -3 10 h-10 l-3 -10 z" fill="#22374f"/>' +
+        '<path d="M20 1.5 l0 6.5 M28 14 l7.5 -3 M25 24 l6 6.5 M15 24 l-6 6.5 M12 14 l-7.5 -3" ' +
+        'stroke="#22374f" stroke-width="2" fill="none"/>' +
+      '</svg>';
+    document.body.appendChild(el);
+
+    const REBONDS = 13;   // nombre de rebonds sur toute la hauteur du site
+    let tache = null;
+
+    function placer() {
+      tache = null;
+      const hauteurDoc = document.documentElement.scrollHeight - window.innerHeight;
+      const p = hauteurDoc > 0 ? Math.min(1, Math.max(0, window.scrollY / hauteurDoc)) : 0;
+
+      const largeur = window.innerWidth;
+      const x = largeur * 0.06 + p * (largeur * 0.86);
+
+      // |sin| donne des rebonds successifs ; l'amplitude s'atténue
+      // légèrement pour imiter un ballon qui perd de sa force.
+      const phase = p * REBONDS * Math.PI;
+      const amplitude = 130 * (1 - 0.35 * p);
+      const sol = window.innerHeight - 96;
+      const y = sol - Math.abs(Math.sin(phase)) * amplitude;
+
+      el.style.transform =
+        "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px) rotate(" + (p * 1440).toFixed(1) + "deg)";
+    }
+    function planifier() { if (!tache) tache = window.requestAnimationFrame(placer); }
+
+    window.addEventListener("scroll", planifier, { passive: true });
+    window.addEventListener("resize", planifier);
+    placer();
+  }
+
   /* ---------- Documents ---------- */
   function documents() {
     const hote = $("#liste-documents");
@@ -778,6 +928,7 @@
     navMobile();
     anneeAuto();
     retourHaut();
+    decorVillage();
     surveillerImages();
 
     await chargerDonnees();
@@ -800,6 +951,7 @@
     activerCarrousels();
     compteurs();
     apparitions();
+    ballonVivant();
 
     document.body.classList.add("donnees-chargees");
   }
