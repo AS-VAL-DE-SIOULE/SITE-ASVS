@@ -267,6 +267,22 @@ collections:
               - { name: adversaire, label: "Adversaire", widget: string }
               - { name: score, label: "Score", widget: string, required: false, default: "", hint: "Laisser vide avant le match. Notre score en premier : 3-1" }
 
+      - name: "affiches"
+        label: "Affiches officielles"
+        file: "content/affiches.json"
+        description: "Les plannings publiés par le club. Ils s'affichent sur les pages Calendrier et Équipes, et les visiteurs peuvent les télécharger."
+        fields:
+          - name: liste
+            label: "Affiches"
+            label_singular: "une affiche"
+            widget: list
+            summary: "{{fields.titre}}"
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre", widget: string, hint: "Exemple : Équipe A — Départemental 2" }
+              - { name: sousTitre, label: "Sous-titre", widget: string, required: false, default: "", hint: "Exemple : Phase aller, saison 2026-2027" }
+              - { name: fichier, label: "Affiche", widget: image, hint: "Format portrait. 1400 px de large suffisent pour une impression A4 nette." }
+
   # ==========================================================
   #  ACTUALITÉS
   # ==========================================================

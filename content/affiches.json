@@ -1,0 +1,19 @@
+{
+  "liste": [
+    {
+      "titre": "Équipe A — Départemental 2",
+      "sousTitre": "Phase aller, saison 2026-2027",
+      "fichier": "assets/img/calendrier-equipe-a.jpg"
+    },
+    {
+      "titre": "Équipe B — Départemental 4",
+      "sousTitre": "Phase aller, saison 2026-2027",
+      "fichier": "assets/img/calendrier-equipe-b.jpg"
+    },
+    {
+      "titre": "Équipe C — Départemental 5",
+      "sousTitre": "Phase aller, saison 2026-2027",
+      "fichier": "assets/img/calendrier-equipe-c.jpg"
+    }
+  ]
+}

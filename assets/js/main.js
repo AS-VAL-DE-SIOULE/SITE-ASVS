@@ -23,7 +23,7 @@
   const D = {
     club: {}, matchs: [], actus: [], evenements: [], partenaires: [],
     bureau: [], conseil: [], commissions: [], arbitres: [],
-    equipes: [], galerie: [], documents: [], histoire: null
+    equipes: [], galerie: [], documents: [], affiches: [], histoire: null
   };
 
   function versDate(iso) {
@@ -63,6 +63,7 @@
     equipes:     "content/equipes.json",
     galerie:     "content/galerie.json",
     documents:   "content/documents.json",
+    affiches:    "content/affiches.json",
     histoire:    "content/histoire.json",
     actusAuto:   "content/actualites-auto.json"
   };
@@ -85,8 +86,17 @@
   }
 
   async function chargerDonnees() {
-    const [club, matchs, actus, evts, parts, orga, equipes, gal, docs, hist, auto] =
-      await Promise.all(Object.values(FICHIERS).map(lire));
+    /* On indexe par nom plutôt que par position : ajouter un fichier
+       à la liste ci-dessus ne peut plus décaler les autres. */
+    const cles = Object.keys(FICHIERS);
+    const recus = await Promise.all(cles.map(k => lire(FICHIERS[k])));
+    const F = {};
+    cles.forEach((k, i) => { F[k] = recus[i]; });
+
+    const club = F.club, matchs = F.matchs, actus = F.actus, evts = F.evenements,
+          parts = F.partenaires, orga = F.organisation, equipes = F.equipes,
+          gal = F.galerie, docs = F.documents, aff = F.affiches,
+          hist = F.histoire, auto = F.actusAuto;
 
     if (club)    D.club        = club;
     if (matchs)  D.matchs      = matchs.liste || [];
@@ -95,6 +105,7 @@
     if (equipes) D.equipes     = equipes.liste || [];
     if (gal)     D.galerie     = gal.liste || [];
     if (docs)    D.documents   = docs.liste || [];
+    if (aff)     D.affiches    = aff.liste || [];
     if (hist)    D.histoire    = hist;
     if (orga) {
       D.bureau      = orga.bureau || [];
@@ -839,6 +850,40 @@
     placer();
   }
 
+  /* ---------- Affiches officielles ----------
+     Les plannings publiés par le club. Chaque affiche est
+     consultable en grand et téléchargeable par les visiteurs. */
+  function affiches() {
+    const hote = $("#liste-affiches");
+    if (!hote) return;
+    const bloc = $("#bloc-affiches");
+    if (bloc) bloc.hidden = D.affiches.length === 0;
+    if (!D.affiches.length) { hote.innerHTML = ""; return; }
+
+    hote.innerHTML = D.affiches.map(a => {
+      const src = chemin(a.fichier);
+      const nom = (a.titre || "affiche").normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-|-$/g, "").toLowerCase();
+      const ext = (src.split(".").pop() || "jpg").split("?")[0];
+      return '<figure class="affiche">' +
+        '<a class="affiche__vue" href="' + echapper(src) + '" target="_blank" rel="noopener" ' +
+        'title="Ouvrir l\'affiche en grand">' +
+          '<img src="' + echapper(src) + '" alt="' + echapper(a.titre) + '" loading="lazy">' +
+        '</a>' +
+        '<figcaption class="affiche__pied">' +
+          '<div class="affiche__txt">' +
+            '<b>' + echapper(a.titre) + '</b>' +
+            (a.sousTitre ? '<span>' + echapper(a.sousTitre) + '</span>' : "") +
+          '</div>' +
+          '<a class="btn btn--bleu affiche__btn" href="' + echapper(src) + '" ' +
+          'download="asvs-' + nom + '.' + echapper(ext) + '">' +
+            '<span aria-hidden="true">⬇</span> Télécharger' +
+          '</a>' +
+        '</figcaption>' +
+      '</figure>';
+    }).join("");
+  }
+
   /* ---------- Documents ---------- */
   function documents() {
     const hote = $("#liste-documents");
@@ -943,6 +988,7 @@
     evenements();
     partenaires();
     documents();
+    affiches();
     organisation();
     arbitres();
     histoire();
