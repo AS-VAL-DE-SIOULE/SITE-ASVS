@@ -7,22 +7,58 @@
   publish = "."
   command = ""
 
-# Le back-office ne doit pas être indexé par les moteurs de recherche
-[[headers]]
-  for = "/admin/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-    Cache-Control = "no-cache"
+# ------------------------------------------------------------
+#  MISE EN CACHE
+# ------------------------------------------------------------
+#  Règle d'or : ne mettre en cache longue durée QUE ce dont le
+#  nom ne change jamais tout en gardant le même contenu.
+#  Le moteur du site (js) et la mise en forme (css) évoluent :
+#  ils doivent être revérifiés à chaque visite, sinon les
+#  visiteurs continuent d'afficher l'ancienne version pendant
+#  des jours après une mise à jour.
+# ------------------------------------------------------------
 
-# Les fichiers de contenu changent à chaque publication :
-# on évite qu'un visiteur voie une version périmée.
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Les fichiers de contenu changent à chaque publication
 [[headers]]
   for = "/content/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# Les images, vidéos et polices peuvent être mises en cache longtemps
+# Les images et documents peuvent être mis en cache longtemps :
+# quand on en change une, on change aussi son nom de fichier.
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/img/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/photos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/medias/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/docs/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Le back-office ne doit pas être indexé, ni mis en cache
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "public, max-age=0, must-revalidate"
