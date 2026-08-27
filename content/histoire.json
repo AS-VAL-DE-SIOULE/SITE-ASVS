@@ -1,17 +1,37 @@
 {
   "intro": "Deux villages, deux clochers, une rivière. L'histoire de l'AS Val de Sioule est celle de deux clubs qui ont choisi de n'en faire qu'un, et d'un territoire qui continue de faire vivre son football.",
   "blason": {
-    "titre": "La signification du blason",
-    "chapeau": "Chaque élément du blason raconte un morceau de notre histoire.",
+    "titre": "Le souffle des anciens",
+    "chapeau": "De nombreuses personnes ont portées les couleurs des deux clubs, nos anciens s'en souviennent et nous le raconte à travers ce logo...",
     "image": "assets/img/logo.png",
     "elements": [
-      { "couleur": "rouge", "titre": "Le rouge", "texte": "La couleur du BVS de Broût-Vernet, l'un des deux clubs fondateurs. Elle rappelle d'où vient la moitié de notre histoire." },
-      { "couleur": "vert", "titre": "Le vert", "texte": "La couleur du FC Étroussat, l'autre club fondateur. Sur le blason, le rouge et le vert ne s'opposent plus : ils se côtoient." },
-      { "couleur": "bleu", "titre": "Le bleu", "texte": "La Sioule, la rivière qui traverse le territoire. Elle sépare les deux villages autant qu'elle les relie — c'est elle qui donne son nom au club." },
-      { "couleur": "navy", "titre": "La chaussure et le ballon", "texte": "Le geste, tout simplement. Le football tel qu'on le pratique ici : sans esbroufe, avec envie." },
-      { "couleur": "navy", "titre": "2009", "texte": "L'année de la fusion, inscrite dans le blason pour que personne n'oublie la date où l'AS Val de Sioule est née." }
+      {
+        "couleur": "rouge",
+        "titre": "Le rouge",
+        "texte": "La couleur du BVS de Broût-Vernet, l'un des deux clubs fondateurs. Elle rappelle d'où vient la moitié de notre histoire."
+      },
+      {
+        "couleur": "vert",
+        "titre": "Le vert",
+        "texte": "La couleur du FC Étroussat, l'autre club fondateur. Sur le blason, le rouge et le vert ne s'opposent plus : ils se côtoient."
+      },
+      {
+        "couleur": "bleu",
+        "titre": "Le bleu",
+        "texte": "La Sioule, la rivière qui traverse le territoire. Elle sépare les deux villages autant qu'elle les relie — c'est elle qui donne son nom au club. La rivière trace le lien vivant entre les générations."
+      },
+      {
+        "couleur": "navy",
+        "titre": "La chaussure et le ballon",
+        "texte": "Le geste, tout simplement. Le football tel qu'on le pratique ici : sans esbroufe, avec envie.\nLe crampon bien campé évoque la tradition du football amateur et le ballon rappelle les débuts du club, ce pourquoi l'association existe."
+      },
+      {
+        "couleur": "navy",
+        "titre": "2009",
+        "texte": "L'année de la fusion, inscrite dans le blason pour que personne n'oublie la date où l'AS Val de Sioule est née."
+      }
     ],
-    "note": "Le blason actuel a été adopté en 2025, à l'issue d'un sondage public organisé sur la page Facebook du club : ce sont les licenciés, les familles et les supporters qui ont choisi."
+    "note": "Ce blason rend hommage aux anciens joueurs, aux bénévoles de toujours, à ceux qui ont bâti pierre par pierre l’histoire de l’AS Val de Sioule. Un logo vibrant de mémoire, sobre mais habité.\nIl a été adopté en 2025, à l'issue d'un sondage public organisé sur la page Facebook du club : ce sont les licenciés, les familles et les supporters qui ont choisi."
   },
   "chronologie": [
     {
