@@ -905,27 +905,26 @@ a.partenaire:hover { transform: translateY(-2px); box-shadow: var(--ombre); }
 }
 
 /* ---------- 17 quater. Décor de campagne vivant ----------
-   Un paysage fixe derrière tout le site : les deux clochers, la
-   Sioule, les vaches, les arbres. Les sections deviennent très
-   légèrement translucides pour le laisser transparaître sans
-   jamais gêner la lecture. */
+   Un paysage fixe derrière le site : les deux églises, la Sioule,
+   les vaches, les cages de foot. Les sections sont légèrement
+   translucides pour le laisser voir sans gêner la lecture. */
 
 .decor {
   position: fixed;
   left: 0; right: 0; bottom: 0;
-  height: min(48vh, 460px);
+  height: min(56vh, 540px);
   z-index: -1;
   pointer-events: none;
-  opacity: .85;
+  opacity: 1;
 }
 .decor svg { width: 100%; height: 100%; display: block; }
 
-/* Ciel : nuages et oiseaux qui dérivent lentement */
+/* Ciel : nuages et oiseaux qui dérivent */
 .decor__nuages { animation: derive 90s linear infinite; }
 .decor__nuages--lent { animation: derive 150s linear infinite; }
 @keyframes derive {
-  from { transform: translateX(-260px); }
-  to   { transform: translateX(1860px); }
+  from { transform: translateX(-280px); }
+  to   { transform: translateX(1880px); }
 }
 .decor__oiseaux { animation: survol 42s linear infinite; }
 @keyframes survol {
@@ -934,62 +933,99 @@ a.partenaire:hover { transform: translateY(-2px); box-shadow: var(--ombre); }
   100% { transform: translate(1740px, 16px); }
 }
 
-/* Les blés et les arbres respirent */
+/* Les herbes et les arbres respirent */
 .decor__herbe { transform-origin: bottom center; animation: brise 7s ease-in-out infinite; }
 .decor__arbre { transform-origin: bottom center; animation: brise 9s ease-in-out infinite; }
 @keyframes brise {
   0%, 100% { transform: skewX(0deg); }
-  50%      { transform: skewX(1.6deg); }
+  50%      { transform: skewX(1.4deg); }
 }
 
 /* La queue de la vache */
 .decor__queue { transform-origin: top center; animation: queue 4s ease-in-out infinite; }
 @keyframes queue {
   0%, 70%, 100% { transform: rotate(0deg); }
-  80%           { transform: rotate(16deg); }
-  90%           { transform: rotate(-12deg); }
+  80%           { transform: rotate(14deg); }
+  90%           { transform: rotate(-10deg); }
 }
 
-/* Le ballon qui traverse le site au fil du défilement */
+/* ---- Le ballon ---- */
 .ballon {
   position: fixed;
   left: 0; top: 0;
   width: 34px; height: 34px;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
-  opacity: .9;
+  opacity: .92;
   will-change: transform;
-  filter: drop-shadow(0 4px 6px rgba(27, 40, 32, .28));
+  filter: drop-shadow(0 4px 6px rgba(27, 40, 32, .3));
 }
 .ballon svg { width: 100%; height: 100%; display: block; }
 
-/* Les sections laissent voir le décor */
-.section--creme  { background: rgba(247, 244, 236, .86); }
-.section--blanc  { background: rgba(255, 255, 255, .88); }
-.section--sombre { background: rgba(30, 59, 40, .94); }
+/* ---- Les deux joueurs ---- */
+.joueur {
+  position: fixed;
+  bottom: 58px;
+  width: 96px; height: 136px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .45s ease;
+  filter: drop-shadow(0 5px 7px rgba(27, 40, 32, .22));
+}
+.joueur svg { width: 100%; height: 100%; display: block; }
+.joueur--frappe   { left: 1.5%; }
+.joueur--receveur { right: 1.5%; }
 
-/* Le décor ne doit jamais passer derrière un bloc de texte dense :
-   les cartes et tableaux restent opaques. */
-.carte, .match, .actu, .equipe, .personne, .partenaire,
+/* Le frappeur arme sa jambe, le receveur amortit */
+.joueur__frappe   { transform-origin: 64px 106px; animation: frappe 3.4s ease-in-out infinite; }
+@keyframes frappe {
+  0%, 55%, 100% { transform: rotate(0deg); }
+  35%           { transform: rotate(-34deg); }
+  45%           { transform: rotate(12deg); }
+}
+.joueur__controle { transform-origin: 76px 106px; animation: controle 3.4s ease-in-out infinite; }
+@keyframes controle {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  30%           { transform: rotate(10deg); }
+  45%           { transform: rotate(-6deg); }
+}
+
+/* Les sections laissent voir le décor */
+.section--creme  { background: rgba(247, 244, 236, .80); }
+.section--blanc  { background: rgba(255, 255, 255, .82); }
+.section--sombre { background: rgba(30, 59, 40, .90); }
+
+/* Les blocs de texte dense restent parfaitement lisibles */
+.carte, .match, .actu, .equipe, .personne, .partenaire, .affiche,
 .document, .pack, .chiffre, .table-enveloppe, .encadre, .galerie figure {
-  backdrop-filter: saturate(1.05);
+  backdrop-filter: saturate(1.06);
+}
+
+/* Tablette : décor et ballon conservés, échelle réduite */
+@media (max-width: 1000px) {
+  .decor { height: min(48vh, 420px); }
+  .joueur { width: 78px; height: 110px; bottom: 52px; }
+}
+
+/* Téléphone : tout reste visible, en plus discret */
+@media (max-width: 700px) {
+  .decor { height: 40vh; opacity: .92; }
+  .ballon { width: 26px; height: 26px; }
+  .joueur { width: 60px; height: 86px; bottom: 40px; }
+  .section--creme  { background: rgba(247, 244, 236, .86); }
+  .section--blanc  { background: rgba(255, 255, 255, .88); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .decor__nuages, .decor__nuages--lent, .decor__oiseaux,
-  .decor__herbe, .decor__arbre, .decor__queue { animation: none; }
-  .ballon { display: none; }
+  .decor__herbe, .decor__arbre, .decor__queue,
+  .joueur__frappe, .joueur__controle { animation: none; }
+  .ballon, .joueur { display: none; }
 }
 
-/* Sur petit écran, on allège : décor plus discret, pas de ballon */
-@media (max-width: 700px) {
-  .decor { opacity: .38; height: 34vh; }
-  .ballon { display: none; }
-}
-
-/* Impression : aucun décor */
 @media print {
-  .decor, .ballon { display: none !important; }
+  .decor, .ballon, .joueur { display: none !important; }
 }
 
 /* ---------- 17 quinquies. Affiches officielles ---------- */

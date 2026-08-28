@@ -702,47 +702,110 @@
   }
 
   /* ---------- Décor de campagne ----------
-     Un paysage fixe derrière le site : les deux clochers de
-     Broût-Vernet et d'Étroussat, la Sioule entre les deux, les
-     vaches, les arbres et les bottes de paille. Le tout dessiné
-     en SVG, sans aucune image à charger. */
+     Un paysage fixe derrière le site : les deux églises de
+     Broût-Vernet et d'Étroussat, la Sioule, les vaches, les cages
+     de foot et les arbres. Entièrement dessiné en SVG : aucune
+     image à charger, net sur tous les écrans. */
   function decorVillage() {
     if (document.querySelector(".decor")) return;
 
-    const vache = (x, y, e) =>
+    /* --- Une église : nef, clocher, flèche, contreforts --- */
+    const eglise = (x, y, e, toit) =>
       '<g transform="translate(' + x + ',' + y + ') scale(' + e + ')">' +
-        '<path class="decor__queue" d="M74 6 q9 10 5 24" stroke="#2c4433" stroke-width="3" fill="none" stroke-linecap="round"/>' +
-        '<path d="M6 34 h68 v20 h-9 v14 h-6 v-14 H21 v14 h-6 V54 H6 z" fill="#2c4433"/>' +
-        '<path d="M6 34 q-8 -4 -6 -12 q7 -3 11 4 z" fill="#2c4433"/>' +
-        '<ellipse cx="30" cy="42" rx="10" ry="6" fill="#f4f1e6" opacity=".55"/>' +
-        '<ellipse cx="56" cy="47" rx="7" ry="4" fill="#f4f1e6" opacity=".45"/>' +
+        /* Nef */
+        '<path d="M18 0 v-54 h96 v54 z" fill="#efe9db"/>' +
+        '<path d="M14 -54 L66 -78 L118 -54 z" fill="' + toit + '"/>' +
+        /* Contreforts */
+        '<path d="M34 0 v-40 l7 -5 v45 z M92 0 v-40 l7 5 v35 z" fill="#ddd5c3"/>' +
+        /* Fenêtres en plein cintre */
+        '<path d="M50 -14 v-18 a7 7 0 0 1 14 0 v18 z" fill="#3a5a44"/>' +
+        '<path d="M78 -14 v-18 a7 7 0 0 1 14 0 v18 z" fill="#3a5a44"/>' +
+        /* Clocher */
+        '<path d="M-16 0 v-104 h34 v104 z" fill="#f4efe3"/>' +
+        '<path d="M-16 -104 h34 l-3 -7 h-28 z" fill="#cfc7b4"/>' +
+        /* Flèche */
+        '<path d="M-19 -111 L1 -168 L21 -111 z" fill="' + toit + '"/>' +
+        '<path d="M1 -178 v11 M-5 -173 h12" stroke="#2c4433" stroke-width="2.6" stroke-linecap="round"/>' +
+        /* Abat-son et horloge */
+        '<path d="M-8 -84 v-14 a8 8 0 0 1 16 0 v14 z" fill="#3a5a44"/>' +
+        '<circle cx="1" cy="-62" r="8.5" fill="#f4efe3" stroke="#2c4433" stroke-width="2"/>' +
+        '<path d="M1 -62 v-5 M1 -62 h4" stroke="#2c4433" stroke-width="1.6" stroke-linecap="round"/>' +
+        /* Porte */
+        '<path d="M-7 0 v-24 a7 7 0 0 1 14 0 v24 z" fill="#6b5138"/>' +
       '</g>';
 
-    const arbre = (x, y, e) =>
+    /* --- Une vache pie : corps, tête baissée, pattes, taches --- */
+    const vache = (x, y, e, sens) =>
+      '<g transform="translate(' + x + ',' + y + ') scale(' + (e * sens) + ',' + e + ')">' +
+        /* Pattes */
+        '<path d="M-26 0 v22 h6 v-22 z M-10 0 v24 h6 v-24 z M14 0 v23 h6 v-23 z M28 0 v22 h6 v-22 z" fill="#3a4a3c"/>' +
+        '<path d="M-26 20 h6 v4 h-6 z M-10 22 h6 v4 h-6 z M14 21 h6 v4 h-6 z M28 20 h6 v4 h-6 z" fill="#22302a"/>' +
+        /* Corps */
+        '<path d="M-32 0 q-6 -22 8 -30 q20 -9 46 -6 q16 2 18 16 q2 14 -4 20 z" fill="#f6f3ea"/>' +
+        /* Taches */
+        '<path d="M-16 -22 q10 -7 18 -1 q4 8 -6 11 q-12 2 -12 -10 z" fill="#33443a"/>' +
+        '<path d="M18 -26 q12 -2 14 8 q-1 8 -10 6 q-8 -3 -4 -14 z" fill="#33443a"/>' +
+        /* Encolure et tête baissée */
+        '<path d="M-32 -6 q-14 4 -20 16 q-2 8 6 9 q10 0 14 -9 z" fill="#f6f3ea"/>' +
+        '<path d="M-52 12 q-9 2 -9 8 q1 5 8 4 q7 -1 8 -7 z" fill="#e2d9c8"/>' +
+        '<circle cx="-46" cy="10" r="1.8" fill="#22302a"/>' +
+        /* Oreille et corne */
+        '<path d="M-42 4 q-8 -5 -12 -1 q3 6 11 5 z" fill="#33443a"/>' +
+        '<path d="M-40 0 q-4 -8 1 -10 q3 4 2 10 z" fill="#d9cfb8"/>' +
+        /* Queue */
+        '<path class="decor__queue" d="M32 -18 q11 8 8 26" stroke="#33443a" stroke-width="3" fill="none" stroke-linecap="round"/>' +
+        '<path d="M39 6 q5 5 3 11 q-5 1 -6 -5 z" fill="#33443a"/>' +
+      '</g>';
+
+    /* --- Une cage de foot, avec filet --- */
+    const cage = (x, y, e) => {
+      let filet = "";
+      for (let i = 1; i < 9; i++) filet += '<path d="M' + (i * 12) + ' 0 v-52"/>';
+      for (let j = 1; j < 5; j++) filet += '<path d="M0 ' + (-j * 11) + ' h108"/>';
+      return '<g transform="translate(' + x + ',' + y + ') scale(' + e + ')">' +
+        '<g stroke="#f2efe4" stroke-width="1" opacity=".55" fill="none">' + filet + '</g>' +
+        '<path d="M0 0 v-56 h108 v56" fill="none" stroke="#f7f5ec" stroke-width="5" stroke-linejoin="round"/>' +
+        '<path d="M0 -56 l-16 -10 M108 -56 l16 -10 M-16 -66 v56 M124 -66 v56" ' +
+        'stroke="#f7f5ec" stroke-width="3" opacity=".7" fill="none"/>' +
+      '</g>';
+    };
+
+    /* --- Arbres : un peuplier, un chêne, un buisson --- */
+    const peuplier = (x, y, e) =>
       '<g class="decor__arbre" transform="translate(' + x + ',' + y + ') scale(' + e + ')">' +
-        '<rect x="-4" y="-26" width="8" height="28" fill="#3d5a41"/>' +
-        '<circle cx="0" cy="-44" r="26" fill="#3d5a41"/>' +
-        '<circle cx="-18" cy="-32" r="17" fill="#3d5a41"/>' +
-        '<circle cx="19" cy="-33" r="18" fill="#3d5a41"/>' +
+        '<rect x="-3" y="-30" width="6" height="32" fill="#4a3a28"/>' +
+        '<path d="M0 -104 q20 34 13 62 q-13 12 -26 0 q-7 -28 13 -62 z" fill="#3d6b42"/>' +
       '</g>';
 
-    const clocher = (x, y, e, couleur) =>
+    const chene = (x, y, e) =>
+      '<g class="decor__arbre" transform="translate(' + x + ',' + y + ') scale(' + e + ')">' +
+        '<path d="M-5 2 v-30 q-8 -8 -2 -12 l14 0 q6 4 -2 12 v30 z" fill="#4a3a28"/>' +
+        '<ellipse cx="0" cy="-58" rx="30" ry="24" fill="#3d6b42"/>' +
+        '<ellipse cx="-22" cy="-44" rx="19" ry="15" fill="#3d6b42"/>' +
+        '<ellipse cx="23" cy="-45" rx="20" ry="16" fill="#3d6b42"/>' +
+        '<ellipse cx="0" cy="-72" rx="19" ry="14" fill="#457a4b"/>' +
+      '</g>';
+
+    const buisson = (x, y, e) =>
+      '<g transform="translate(' + x + ',' + y + ') scale(' + e + ')" fill="#40704a">' +
+        '<ellipse cx="0" cy="0" rx="18" ry="12"/><ellipse cx="14" cy="3" rx="12" ry="9"/>' +
+        '<ellipse cx="-13" cy="3" rx="11" ry="8"/>' +
+      '</g>';
+
+    const maison = (x, y, e, toit) =>
       '<g transform="translate(' + x + ',' + y + ') scale(' + e + ')">' +
-        '<rect x="-17" y="-96" width="34" height="96" fill="#f2efe4"/>' +
-        '<path d="M-25 -96 L0 -150 L25 -96 z" fill="' + couleur + '"/>' +
-        '<rect x="-6" y="-84" width="12" height="17" rx="6" fill="#2c4433"/>' +
-        '<rect x="-5" y="-40" width="10" height="40" rx="5" fill="#2c4433"/>' +
-        '<circle cx="0" cy="-58" r="7" fill="#f2efe4" stroke="#2c4433" stroke-width="2"/>' +
-        '<path d="M0 -158 v9 M-5 -153 h10" stroke="#2c4433" stroke-width="2.4"/>' +
-        '<path d="M17 -60 h44 v60 h-44 z" fill="#e7e3d5"/>' +
-        '<path d="M13 -60 L39 -80 L65 -60 z" fill="' + couleur + '" opacity=".85"/>' +
+        '<path d="M0 0 v-38 h58 v38 z" fill="#efe9db"/>' +
+        '<path d="M-6 -38 L29 -60 L64 -38 z" fill="' + toit + '"/>' +
+        '<rect x="12" y="-26" width="12" height="12" fill="#3a5a44"/>' +
+        '<rect x="36" y="-26" width="12" height="12" fill="#3a5a44"/>' +
+        '<rect x="24" y="-14" width="12" height="14" fill="#6b5138"/>' +
+        '<rect x="44" y="-70" width="8" height="14" fill="#c9c0ad"/>' +
       '</g>';
 
     const nuage = (x, y, e) =>
-      '<g transform="translate(' + x + ',' + y + ') scale(' + e + ')" fill="#ffffff" opacity=".5">' +
-        '<ellipse cx="0" cy="0" rx="34" ry="17"/>' +
-        '<ellipse cx="26" cy="6" rx="26" ry="13"/>' +
-        '<ellipse cx="-25" cy="6" rx="22" ry="11"/>' +
+      '<g transform="translate(' + x + ',' + y + ') scale(' + e + ')" fill="#ffffff" opacity=".62">' +
+        '<ellipse cx="0" cy="0" rx="36" ry="18"/><ellipse cx="28" cy="7" rx="27" ry="14"/>' +
+        '<ellipse cx="-27" cy="7" rx="23" ry="12"/>' +
       '</g>';
 
     const oiseau = (x, y, e) =>
@@ -750,48 +813,59 @@
       'd="M0 0 q7 -7 14 0 q7 -7 14 0" stroke="#2c4433" stroke-width="2" fill="none" stroke-linecap="round"/>';
 
     const svg =
-      '<svg viewBox="0 0 1600 460" preserveAspectRatio="xMidYMax meet" aria-hidden="true">' +
-        '<g class="decor__nuages--lent">' + nuage(180, 70, 1) + nuage(1180, 52, .8) + '</g>' +
-        '<g class="decor__nuages">' + nuage(700, 106, .62) + '</g>' +
-        '<g class="decor__oiseaux">' + oiseau(0, 130, 1) + oiseau(38, 146, .8) + oiseau(20, 116, .6) + '</g>' +
+      '<svg viewBox="0 0 1600 500" preserveAspectRatio="xMidYMax meet" aria-hidden="true">' +
+        '<g class="decor__nuages--lent">' + nuage(200, 66, 1) + nuage(1200, 48, .8) + '</g>' +
+        '<g class="decor__nuages">' + nuage(720, 104, .6) + '</g>' +
+        '<g class="decor__oiseaux">' + oiseau(0, 128, 1) + oiseau(40, 146, .8) + oiseau(22, 112, .6) + '</g>' +
 
-        /* Collines lointaines */
-        '<path d="M0 300 q210 -78 430 -22 q220 56 430 -18 q210 -74 420 -6 q170 52 320 12 V460 H0 z" fill="#6f8f6a" opacity=".38"/>' +
-        '<path d="M0 336 q250 -60 500 -8 q240 50 480 -14 q220 -58 420 4 V460 H0 z" fill="#5c7d59" opacity=".5"/>' +
+        /* Collines */
+        '<path d="M0 322 q210 -80 430 -24 q220 58 430 -18 q210 -76 420 -6 q170 54 320 12 V500 H0 z" fill="#7fa077" opacity=".45"/>' +
+        '<path d="M0 358 q250 -62 500 -8 q240 52 480 -14 q220 -60 420 4 V500 H0 z" fill="#63875c" opacity=".6"/>' +
 
-        /* Les deux clochers, de part et d'autre de la rivière */
-        clocher(300, 340, 1, '#c9382f') +
-        clocher(1180, 340, .92, '#2f8f4a') +
+        /* Le village : les deux églises et quelques maisons */
+        maison(150, 372, .9, '#b8433a') +
+        eglise(300, 372, 1, '#c9382f') +
+        maison(470, 374, .78, '#b8433a') +
+        maison(1050, 374, .8, '#2f8f4a') +
+        eglise(1210, 372, .94, '#2f8f4a') +
+        maison(1400, 372, .86, '#2f8f4a') +
 
         /* Arbres */
-        arbre(120, 344, 1) + arbre(520, 348, .8) + arbre(880, 344, .95) +
-        arbre(1420, 348, .85) + arbre(1520, 342, .65) +
+        peuplier(90, 376, 1) + peuplier(112, 378, .8) +
+        chene(640, 378, .9) + chene(1550, 378, .8) + peuplier(1520, 376, .85) +
 
         /* La Sioule */
-        '<path d="M0 392 q200 -22 400 2 q200 24 400 -2 q200 -26 400 0 q200 26 400 6 V420 q-200 20 -400 -6 q-200 -26 -400 0 q-200 26 -400 2 q-200 -24 -400 -2 z" fill="#5da9d6" opacity=".55"/>' +
+        '<path d="M0 404 q200 -22 400 2 q200 24 400 -2 q200 -26 400 0 q200 26 400 6 V434 ' +
+        'q-200 20 -400 -6 q-200 -26 -400 0 q-200 26 -400 2 q-200 -24 -400 -2 z" fill="#5da9d6" opacity=".62"/>' +
+        '<path d="M0 410 q200 -20 400 2 q200 22 400 -2" stroke="#ffffff" stroke-width="2" fill="none" opacity=".35"/>' +
 
-        /* Pré */
-        '<path d="M0 404 h1600 V460 H0 z" fill="#4e7a4a" opacity=".62"/>' +
+        /* Le pré */
+        '<path d="M0 420 h1600 V500 H0 z" fill="#568b52" opacity=".68"/>' +
 
-        /* Clôture */
-        '<g stroke="#6b5138" stroke-width="4" opacity=".55">' +
-          '<path d="M60 452 v-30 M140 452 v-30 M220 452 v-30 M300 452 v-30"/>' +
-          '<path d="M52 430 h256 M52 442 h256"/>' +
+        /* Le terrain : deux cages qui se font face */
+        cage(60, 486, .9) + cage(1400, 486, .9) +
+        '<path d="M250 492 h1100" stroke="#f2efe4" stroke-width="2" opacity=".35" fill="none"/>' +
+        '<circle cx="800" cy="492" r="42" stroke="#f2efe4" stroke-width="2" opacity=".3" fill="none"/>' +
+
+        /* Vaches au pré */
+        vache(560, 452, .62, 1) + vache(700, 468, .5, -1) + vache(1180, 458, .56, 1) +
+
+        /* Buissons, bottes de paille, clôture */
+        buisson(400, 460, .9) + buisson(940, 466, .8) +
+        '<g fill="#c9a86a" opacity=".8">' +
+          '<circle cx="1020" cy="464" r="17"/><circle cx="1056" cy="468" r="12"/>' +
+          '<circle cx="1020" cy="464" r="10" fill="none" stroke="#b0904f" stroke-width="2"/>' +
         '</g>' +
-
-        /* Bottes de paille */
-        '<g fill="#c9a86a" opacity=".75">' +
-          '<circle cx="1010" cy="436" r="19"/><circle cx="1052" cy="440" r="14"/>' +
+        '<g stroke="#6b5138" stroke-width="4" opacity=".5" fill="none">' +
+          '<path d="M180 492 v-30 M262 492 v-30 M344 492 v-30"/>' +
+          '<path d="M172 470 h180 M172 482 h180"/>' +
         '</g>' +
-
-        /* Vaches */
-        vache(600, 396, .78) + vache(760, 408, .62) + vache(1300, 400, .7) +
 
         /* Herbes au premier plan */
-        '<g class="decor__herbe" stroke="#3f6b3d" stroke-width="3" opacity=".5" stroke-linecap="round">' +
-          '<path d="M40 460 q6 -22 2 -34 M70 460 q-6 -20 -1 -30 M100 460 q7 -24 3 -32"/>' +
-          '<path d="M900 460 q6 -22 2 -34 M930 460 q-6 -20 -1 -30"/>' +
-          '<path d="M1480 460 q6 -24 2 -34 M1512 460 q-6 -20 -1 -30"/>' +
+        '<g class="decor__herbe" stroke="#3f6b3d" stroke-width="3" opacity=".55" stroke-linecap="round" fill="none">' +
+          '<path d="M40 500 q6 -24 2 -36 M70 500 q-6 -22 -1 -32 M100 500 q7 -26 3 -34"/>' +
+          '<path d="M860 500 q6 -24 2 -36 M890 500 q-6 -22 -1 -32"/>' +
+          '<path d="M1490 500 q6 -26 2 -36 M1522 500 q-6 -22 -1 -32"/>' +
         '</g>' +
       '</svg>';
 
@@ -802,13 +876,78 @@
     document.body.appendChild(decor);
   }
 
+  /* ---------- Les deux joueurs ----------
+     En haut de page, un joueur frappe : c'est lui qui lance le
+     ballon. En bas, un coéquipier le réceptionne. Ils
+     n'apparaissent qu'aux deux extrémités du site. */
+  function joueurs() {
+    if (document.querySelector(".joueur")) return;
+
+    const maillot = "#e1332b", short = "#22374f", peau = "#e0b48c";
+
+    const frappeur =
+      '<svg viewBox="0 0 120 170" aria-hidden="true">' +
+        '<circle cx="52" cy="26" r="15" fill="' + peau + '"/>' +
+        '<path d="M38 22 q14 -16 28 -2 q-14 -6 -28 2 z" fill="#3a2a1c"/>' +
+        /* Torse penché vers l'avant */
+        '<path d="M40 42 q14 -6 26 0 l7 44 q-20 7 -40 0 z" fill="' + maillot + '"/>' +
+        '<path d="M47 42 h12 v10 h-12 z" fill="#f7f5ec" opacity=".85"/>' +
+        /* Bras : un tendu en arrière pour l'équilibre, un devant */
+        '<path d="M40 48 q-22 8 -30 26" stroke="' + peau + '" stroke-width="9" fill="none" stroke-linecap="round"/>' +
+        '<path d="M66 48 q20 4 26 -8" stroke="' + peau + '" stroke-width="9" fill="none" stroke-linecap="round"/>' +
+        /* Short */
+        '<path d="M33 84 q20 7 40 0 l4 24 q-24 7 -48 0 z" fill="' + short + '"/>' +
+        /* Jambe d'appui */
+        '<path d="M42 106 q-4 26 -2 46" stroke="' + peau + '" stroke-width="11" fill="none" stroke-linecap="round"/>' +
+        '<path d="M34 150 h22 v9 h-24 z" fill="#22374f"/>' +
+        /* Jambe de frappe, lancée vers l'avant */
+        '<g class="joueur__frappe">' +
+          '<path d="M64 106 q22 10 36 2" stroke="' + peau + '" stroke-width="11" fill="none" stroke-linecap="round"/>' +
+          '<path d="M96 102 h20 v9 h-20 z" fill="#22374f" transform="rotate(-16 96 106)"/>' +
+        '</g>' +
+      '</svg>';
+
+    const receveur =
+      '<svg viewBox="0 0 120 170" aria-hidden="true">' +
+        '<circle cx="68" cy="26" r="15" fill="' + peau + '"/>' +
+        '<path d="M54 22 q14 -16 28 -2 q-14 -6 -28 2 z" fill="#3a2a1c"/>' +
+        '<path d="M54 42 q14 -6 26 0 l5 44 q-20 7 -38 0 z" fill="#2f6fb7"/>' +
+        '<path d="M61 42 h12 v10 h-12 z" fill="#f7f5ec" opacity=".85"/>' +
+        /* Bras ouverts pour amortir */
+        '<path d="M54 48 q-24 2 -30 -10" stroke="' + peau + '" stroke-width="9" fill="none" stroke-linecap="round"/>' +
+        '<path d="M80 48 q22 6 28 22" stroke="' + peau + '" stroke-width="9" fill="none" stroke-linecap="round"/>' +
+        '<path d="M47 84 q20 7 40 0 l3 24 q-24 7 -46 0 z" fill="' + short + '"/>' +
+        '<path d="M56 106 q-4 26 -2 46" stroke="' + peau + '" stroke-width="11" fill="none" stroke-linecap="round"/>' +
+        '<path d="M46 150 h22 v9 h-24 z" fill="#22374f"/>' +
+        /* Jambe avancée qui contrôle le ballon */
+        '<g class="joueur__controle">' +
+          '<path d="M76 106 q-16 20 -30 30" stroke="' + peau + '" stroke-width="11" fill="none" stroke-linecap="round"/>' +
+          '<path d="M28 132 h22 v9 h-22 z" fill="#22374f" transform="rotate(14 40 136)"/>' +
+        '</g>' +
+      '</svg>';
+
+    const a = document.createElement("div");
+    a.className = "joueur joueur--frappe";
+    a.setAttribute("aria-hidden", "true");
+    a.innerHTML = frappeur;
+
+    const b = document.createElement("div");
+    b.className = "joueur joueur--receveur";
+    b.setAttribute("aria-hidden", "true");
+    b.innerHTML = receveur;
+
+    document.body.appendChild(a);
+    document.body.appendChild(b);
+    return { a, b };
+  }
+
   /* ---------- Le ballon qui traverse le site ----------
-     Sa position horizontale suit le défilement ; sa hauteur
-     décrit une série de rebonds, comme un ballon qui traverse
-     le terrain d'un bout à l'autre de la page. */
+     Frappé en haut de page, il rebondit d'un bout à l'autre au fil
+     du défilement, et retombe dans les pieds du receveur en bas. */
   function ballonVivant() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (window.innerWidth <= 700) return;
+
+    const jo = joueurs();
 
     const el = document.createElement("div");
     el.className = "ballon";
@@ -822,26 +961,31 @@
       '</svg>';
     document.body.appendChild(el);
 
-    const REBONDS = 13;   // nombre de rebonds sur toute la hauteur du site
     let tache = null;
 
     function placer() {
       tache = null;
+      const petit = window.innerWidth < 700;
+      const rebonds = petit ? 9 : 13;
       const hauteurDoc = document.documentElement.scrollHeight - window.innerHeight;
       const p = hauteurDoc > 0 ? Math.min(1, Math.max(0, window.scrollY / hauteurDoc)) : 0;
 
-      const largeur = window.innerWidth;
-      const x = largeur * 0.06 + p * (largeur * 0.86);
-
-      // |sin| donne des rebonds successifs ; l'amplitude s'atténue
-      // légèrement pour imiter un ballon qui perd de sa force.
-      const phase = p * REBONDS * Math.PI;
-      const amplitude = 130 * (1 - 0.35 * p);
-      const sol = window.innerHeight - 96;
-      const y = sol - Math.abs(Math.sin(phase)) * amplitude;
+      const marge = petit ? 0.13 : 0.09;
+      const x = window.innerWidth * marge + p * (window.innerWidth * (1 - 2 * marge));
+      const amplitude = (petit ? 78 : 130) * (1 - 0.35 * p);
+      const sol = window.innerHeight - (petit ? 62 : 84);
+      const y = sol - Math.abs(Math.sin(p * rebonds * Math.PI)) * amplitude;
 
       el.style.transform =
         "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px) rotate(" + (p * 1440).toFixed(1) + "deg)";
+
+      if (jo) {
+        // Le frappeur s'efface dès qu'on quitte le haut de la page,
+        // le receveur n'apparaît qu'à l'approche du pied de page.
+        const borne = v => Math.min(1, Math.max(0, v));
+        jo.a.style.opacity = String(borne(1 - p / 0.12));
+        jo.b.style.opacity = String(borne((p - 0.86) / 0.1));
+      }
     }
     function planifier() { if (!tache) tache = window.requestAnimationFrame(placer); }
 
