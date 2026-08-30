@@ -236,21 +236,119 @@
       "competition": "Coupe de France",
       "journee": "Deuxième tour",
       "domicile": true,
-      "score": "",
+      "score": "0-3",
       "date": "2026-08-29",
       "adversaire": "FC HAUT D'ALLIER"
     },
-
-    { "equipe": "C", "date": "2026-09-06", "heure": "15:00", "competition": "Départemental 5", "journee": "Journée 1", "domicile": false, "adversaire": "Contigny S.C.", "score": "" },
-    { "equipe": "C", "date": "2026-09-20", "heure": "15:00", "competition": "Départemental 5", "journee": "Journée 2", "domicile": true, "adversaire": "A.S. Rongères 2", "score": "" },
-    { "equipe": "C", "date": "2026-10-04", "heure": "13:00", "competition": "Départemental 5", "journee": "Journée 3", "domicile": false, "adversaire": "Am.C. Creuzier-le-Vieux 2", "score": "" },
-    { "equipe": "C", "date": "2026-10-17", "heure": "20:00", "competition": "Départemental 5", "journee": "Journée 4", "domicile": false, "adversaire": "Chantelle C.S. 2", "score": "" },
-    { "equipe": "C", "date": "2026-10-25", "heure": "15:00", "competition": "Départemental 5", "journee": "Journée 5", "domicile": true, "adversaire": "Bruyère-la-Montagne ES 2", "score": "" },
-    { "equipe": "C", "date": "2026-11-08", "heure": "15:00", "competition": "Départemental 5", "journee": "Journée 6", "domicile": false, "adversaire": "UASC", "score": "" },
-    { "equipe": "C", "date": "2026-11-15", "heure": "15:00", "competition": "Départemental 5", "journee": "Journée 7", "domicile": true, "adversaire": "Mayotte FC de Vichy 2", "score": "" },
-    { "equipe": "C", "date": "2026-11-22", "heure": "13:00", "competition": "Départemental 5", "journee": "Journée 8", "domicile": false, "adversaire": "Abrest U.S. 2", "score": "" },
-    { "equipe": "C", "date": "2026-12-06", "heure": "15:00", "competition": "Départemental 5", "journee": "Journée 9", "domicile": true, "adversaire": "USTB 2", "score": "" },
-    { "equipe": "C", "date": "2026-12-13", "heure": "15:00", "competition": "Départemental 5", "journee": "Journée 10", "domicile": false, "adversaire": "Magnet-Seuillet-St-Germain", "score": "" },
-    { "equipe": "C", "date": "2027-01-31", "heure": "15:00", "competition": "Départemental 5", "journee": "Journée 11", "domicile": true, "adversaire": "A.S. Brugheas", "score": "" }
+    {
+      "equipe": "C",
+      "date": "2026-09-06",
+      "heure": "15:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 1",
+      "domicile": false,
+      "adversaire": "Contigny S.C.",
+      "score": ""
+    },
+    {
+      "equipe": "C",
+      "date": "2026-09-20",
+      "heure": "15:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 2",
+      "domicile": true,
+      "adversaire": "A.S. Rongères 2",
+      "score": ""
+    },
+    {
+      "equipe": "C",
+      "date": "2026-10-04",
+      "heure": "13:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 3",
+      "domicile": false,
+      "adversaire": "Am.C. Creuzier-le-Vieux 2",
+      "score": ""
+    },
+    {
+      "equipe": "C",
+      "date": "2026-10-17",
+      "heure": "20:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 4",
+      "domicile": false,
+      "adversaire": "Chantelle C.S. 2",
+      "score": ""
+    },
+    {
+      "equipe": "C",
+      "date": "2026-10-25",
+      "heure": "15:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 5",
+      "domicile": true,
+      "adversaire": "Bruyère-la-Montagne ES 2",
+      "score": ""
+    },
+    {
+      "equipe": "C",
+      "date": "2026-11-08",
+      "heure": "15:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 6",
+      "domicile": false,
+      "adversaire": "UASC",
+      "score": ""
+    },
+    {
+      "equipe": "C",
+      "date": "2026-11-15",
+      "heure": "15:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 7",
+      "domicile": true,
+      "adversaire": "Mayotte FC de Vichy 2",
+      "score": ""
+    },
+    {
+      "equipe": "C",
+      "date": "2026-11-22",
+      "heure": "13:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 8",
+      "domicile": false,
+      "adversaire": "Abrest U.S. 2",
+      "score": ""
+    },
+    {
+      "equipe": "C",
+      "date": "2026-12-06",
+      "heure": "15:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 9",
+      "domicile": true,
+      "adversaire": "USTB 2",
+      "score": ""
+    },
+    {
+      "equipe": "C",
+      "date": "2026-12-13",
+      "heure": "15:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 10",
+      "domicile": false,
+      "adversaire": "Magnet-Seuillet-St-Germain",
+      "score": ""
+    },
+    {
+      "equipe": "C",
+      "date": "2027-01-31",
+      "heure": "15:00",
+      "competition": "Départemental 5",
+      "journee": "Journée 11",
+      "domicile": true,
+      "adversaire": "A.S. Brugheas",
+      "score": ""
+    }
   ]
 }
