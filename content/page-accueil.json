@@ -1,0 +1,109 @@
+{
+  "hero": {
+    "accroche": "Nos racines, la Sioule, la passion",
+    "titre": "Bienvenue à l'AS Val de Sioule",
+    "chapeau": "Né en 2009 de la fusion du FC Étroussat et du BVS de Broût-Vernet, le club fait vivre le football sur trois communes du bocage bourbonnais. Trois équipes séniors, une école de foot, et une bande de bénévoles qui ne compte pas ses heures.",
+    "bouton1": "Voir le calendrier",
+    "bouton2": "Découvrir le club",
+    "reperes": [
+      {
+        "valeur": "2009",
+        "libelle": "Année de fusion"
+      },
+      {
+        "valeur": "3",
+        "libelle": "Communes"
+      }
+    ],
+    "image": "assets/img/banniere.jpg",
+    "libelleLicencies": "Licenciés",
+    "libelleDomicile": "Matchs à domicile"
+  },
+  "matchs": {
+    "accroche": "Sortez vos agendas",
+    "titre": "Les prochains rendez-vous",
+    "chapeau": "Nos joueurs auront besoin de vous toute l'année. Venez pousser derrière l'équipe, au stade ou en déplacement.",
+    "bouton": "Tout le calendrier de la saison"
+  },
+  "histoire": {
+    "accroche": "Deux clochers, un club",
+    "titre": "Une histoire de village",
+    "texte": "Le rouge de Broût-Vernet, le vert d'Étroussat, et entre les deux la Sioule qui coule en bleu : le blason du club raconte à lui seul d'où nous venons. En 2009, deux clubs voisins ont décidé de n'en faire qu'un. Depuis, l'AS Val de Sioule rassemble les familles de Broût-Vernet, d'Étroussat et de Barberier autour d'un même maillot.\n\nIci, un club n'est pas une structure : c'est un village vivant. Les anciens transmettent, les jeunes s'engagent, et chacun trouve sa place — sur le terrain, à la buvette, à la table de marque ou au bord de la ligne de touche.",
+    "bouton": "L'histoire et l'organisation",
+    "image": "assets/img/banniere.jpg",
+    "legendeImage": "Bannière de l'AS Val de Sioule : nos racines, la Sioule, la passion"
+  },
+  "equipes": {
+    "accroche": "Du U7 aux séniors",
+    "titre": "Nos équipes",
+    "chapeau": "Quatre pôles, une même exigence : faire jouer tout le monde et bien accueillir ceux qui arrivent.",
+    "cartes": [
+      {
+        "pictogramme": "⚽",
+        "titre": "Séniors A",
+        "texte": "Départemental 2. L'équipe fanion, entraînée par Julien Alligier et Sylvain Jaffuel. Demi-finaliste de la Coupe Paul-Baptiste et finaliste du tournoi futsal en 2024-2025.",
+        "lien": "equipes.html#equipe-A"
+      },
+      {
+        "pictogramme": "🛡️",
+        "titre": "Séniors B",
+        "texte": "Départemental 4. La réserve, encadrée par Julien Guillot et Jordan Pinel. Le groupe qui fait jouer tout le monde et ne lâche jamais rien.",
+        "lien": "equipes.html#equipe-B"
+      },
+      {
+        "pictogramme": "🍻",
+        "titre": "Séniors C",
+        "texte": "Départemental 5. Née des 25 arrivées de la saison, l'équipe du plaisir de jouer et de la troisième mi-temps.",
+        "lien": "equipes.html#equipe-C"
+      },
+      {
+        "pictogramme": "🧒",
+        "titre": "École de foot",
+        "texte": "U7 à U15. Les catégories sont encadrées par le club ; seuls les U15 évoluent en entente avec Ébreuil. Les U13 champions de Division 4 en 2024-2025.",
+        "lien": "equipes.html#equipe-jeunes"
+      }
+    ]
+  },
+  "actus": {
+    "accroche": "Ce qui se passe au club",
+    "titre": "Dernières actualités",
+    "bouton1": "Toutes les actualités",
+    "bouton2": "Nous suivre sur Facebook"
+  },
+  "chiffres": {
+    "accroche": "Le club en un coup d'œil",
+    "titre": "Quelques chiffres",
+    "libelleLicencies": "Licenciés",
+    "libellePartenaires": "Partenaires",
+    "libelleMatchs": "Matchs à l'aller",
+    "autres": [
+      {
+        "valeur": "8",
+        "libelle": "Catégories"
+      },
+      {
+        "valeur": "54",
+        "libelle": "Équipes à la pétanque"
+      },
+      {
+        "valeur": "3",
+        "libelle": "Communes"
+      }
+    ]
+  },
+  "partenaires": {
+    "accroche": "Sans eux, rien ne serait possible",
+    "titre": "Nos partenaires",
+    "chapeau": "Maillots, panneaux au stade, minibus, ballons : les entreprises du territoire équipent le club au quotidien.",
+    "bouton": "Devenir partenaire du club"
+  },
+  "appel": {
+    "titre": "Envie de nous rejoindre ?",
+    "texte": "Joueur, joueuse, éducateur, arbitre ou simple bonne volonté pour tenir la buvette : le club recrute toute l'année, à tous les âges.",
+    "bouton": "Licences et contact"
+  },
+  "seo": {
+    "titre": "AS Val de Sioule — Club de football de Broût-Vernet, Étroussat et Barberier",
+    "description": "Site officiel de l'AS Val de Sioule, club de football né en 2009 de la fusion d'Étroussat et de Broût-Vernet. Calendrier des matchs, équipes, école de foot, événements et partenaires."
+  }
+}

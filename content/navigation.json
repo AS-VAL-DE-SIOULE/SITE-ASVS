@@ -1,0 +1,47 @@
+{
+  "menu": [
+    { "libelle": "Accueil", "lien": "index.html" },
+    { "libelle": "Le club", "lien": "club.html" },
+    { "libelle": "Histoire", "lien": "histoire.html" },
+    { "libelle": "Équipes", "lien": "equipes.html" },
+    { "libelle": "Calendrier", "lien": "calendrier.html" },
+    { "libelle": "Actualités", "lien": "actualites.html" },
+    { "libelle": "Événements", "lien": "evenements.html" },
+    { "libelle": "Infos pratiques", "lien": "infos.html" },
+    { "libelle": "Partenaires", "lien": "partenaires.html", "miseEnAvant": true }
+  ],
+  "marque": {
+    "sousTitre": "Depuis 2009"
+  },
+  "pied": {
+    "presentation": "Club de football des communes de Broût-Vernet, Étroussat et Barberier.",
+    "mentionAffiliation": "Affilié à la FFF sous le numéro",
+    "boutonFacebook": "Suivre sur Facebook",
+    "boutonBoutique": "La boutique",
+    "colonnes": [
+      {
+        "titre": "Le club",
+        "liens": [
+          { "libelle": "Histoire et valeurs", "lien": "club.html" },
+          { "libelle": "Notre histoire", "lien": "histoire.html" },
+          { "libelle": "Bureau et conseil", "lien": "club.html#organisation" },
+          { "libelle": "Nos équipes", "lien": "equipes.html" },
+          { "libelle": "Événements", "lien": "evenements.html" }
+        ]
+      },
+      {
+        "titre": "Pratique",
+        "liens": [
+          { "libelle": "Calendrier des matchs", "lien": "calendrier.html" },
+          { "libelle": "Actualités", "lien": "actualites.html" },
+          { "libelle": "Licences et tarifs", "lien": "infos.html" },
+          { "libelle": "Devenir partenaire", "lien": "partenaires.html" }
+        ]
+      }
+    ],
+    "titreContact": "Nous trouver",
+    "copyright": "AS Val de Sioule — Tous droits réservés.",
+    "lienMentions": "Mentions légales",
+    "prefixeSaison": "Saison"
+  }
+}

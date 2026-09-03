@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="asvs-page" content="accueil">
 <title>AS Val de Sioule — Club de football de Broût-Vernet, Étroussat et Barberier</title>
 <meta name="description" content="Site officiel de l'AS Val de Sioule, club de football né en 2009 de la fusion d'Étroussat et de Broût-Vernet. Calendrier des matchs, équipes, école de foot, événements et partenaires.">
 <meta property="og:title" content="AS Val de Sioule — Nos racines, la Sioule, la passion">
@@ -19,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260827">
+<link rel="stylesheet" href="assets/css/style.css?v=20260903">
 </head>
 <body>
 
@@ -28,9 +29,9 @@
   <div class="chevrons"><span></span><span></span><span></span></div>
   <div class="contenu site-entete__barre">
     <a class="marque" href="index.html">
-      <img src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
+      <img data-club="logo" data-club-alt="logoDescription" src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
       <span class="marque__txt">
-        <span class="marque__nom">AS Val de Sioule</span>
+        <span class="marque__nom" data-club="nom">AS Val de Sioule</span>
         <span class="marque__sous">Depuis 2009</span>
       </span>
     </a>
@@ -55,24 +56,22 @@
 
 <!-- ========== HERO ========== -->
 <section class="hero">
-  <div class="hero__fond" style="background-image:url('assets/img/banniere.jpg')"></div>
+  <div class="hero__fond" data-fond-txt="hero.image" style="background-image:url('assets/img/banniere.jpg')"></div>
   <div class="contenu hero__contenu">
-    <span class="hero__script">Nos racines, la Sioule, la passion</span>
-    <h1>Bienvenue à l'<em>AS Val de Sioule</em></h1>
-    <p class="hero__chapeau">
+    <span class="hero__script" data-txt="hero.accroche">Nos racines, la Sioule, la passion</span>
+    <h1 data-txt="hero.titre">Bienvenue à l'AS Val de Sioule</h1>
+    <p class="hero__chapeau" data-txt="hero.chapeau">
       Né en 2009 de la fusion du FC Étroussat et du BVS de Broût-Vernet, le club fait vivre
-      le football sur trois communes du bocage bourbonnais. Deux équipes séniors, une école de
-      foot, et une bande de bénévoles qui ne compte pas ses heures.
+      le football sur trois communes du bocage bourbonnais.
     </p>
     <div class="groupe-btn">
-      <a class="btn btn--primaire" href="calendrier.html">Voir le calendrier</a>
-      <a class="btn btn--fantome" href="club.html">Découvrir le club</a>
+      <a class="btn btn--primaire" href="calendrier.html" data-txt="hero.bouton1">Voir le calendrier</a>
+      <a class="btn btn--fantome" href="club.html" data-txt="hero.bouton2">Découvrir le club</a>
     </div>
     <div class="hero__meta">
-      <div><strong>2009</strong><span>Année de fusion</span></div>
-      <div><strong>3</strong><span>Communes</span></div>
-      <div><strong data-club="licencies">113</strong><span>Licenciés</span></div>
-      <div><strong data-stat="domicile">—</strong><span>Matchs à domicile</span></div>
+      <div data-liste="hero.reperes" data-gabarit="repere" style="display:contents"></div>
+      <div><strong data-club="licencies">113</strong><span data-txt="hero.libelleLicencies">Licenciés</span></div>
+      <div><strong data-stat="domicile">—</strong><span data-txt="hero.libelleDomicile">Matchs à domicile</span></div>
     </div>
   </div>
 </section>
@@ -81,13 +80,13 @@
 <section class="section section--sombre">
   <div class="contenu">
     <div class="entete-section">
-      <span class="script">Sortez vos agendas</span>
-      <h2 class="souligne">Les prochains rendez-vous</h2>
-      <p class="chapeau">Nos joueurs auront besoin de vous toute l'année. Venez pousser derrière l'équipe, au stade ou en déplacement.</p>
+      <span class="script" data-txt="matchs.accroche">Sortez vos agendas</span>
+      <h2 class="souligne" data-txt="matchs.titre">Les prochains rendez-vous</h2>
+      <p class="chapeau" data-txt="matchs.chapeau">Nos joueurs auront besoin de vous toute l'année.</p>
     </div>
     <div class="matchs" id="prochains-matchs" data-nombre="3"></div>
     <div class="groupe-btn" style="margin-top:2rem">
-      <a class="btn btn--fantome" href="calendrier.html">Tout le calendrier de la saison</a>
+      <a class="btn btn--fantome" href="calendrier.html" data-txt="matchs.bouton">Tout le calendrier de la saison</a>
     </div>
   </div>
 </section>
@@ -98,26 +97,16 @@
     <div class="duo duo--large-gauche">
       <div class="reveal">
         <div class="entete-section">
-          <span class="script">Deux clochers, un club</span>
-          <h2 class="souligne">Une histoire de village</h2>
+          <span class="script" data-txt="histoire.accroche">Deux clochers, un club</span>
+          <h2 class="souligne" data-txt="histoire.titre">Une histoire de village</h2>
         </div>
-        <p>
-          Le rouge de Broût-Vernet, le vert d'Étroussat, et entre les deux la Sioule qui coule en
-          bleu : le blason du club raconte à lui seul d'où nous venons. En 2009, deux clubs voisins
-          ont décidé de n'en faire qu'un. Depuis, l'AS Val de Sioule rassemble les familles de
-          Broût-Vernet, d'Étroussat et de Barberier autour d'un même maillot.
-        </p>
-        <p>
-          Ici, un club n'est pas une structure : c'est un village vivant. Les anciens transmettent,
-          les jeunes s'engagent, et chacun trouve sa place — sur le terrain, à la buvette,
-          à la table de marque ou au bord de la ligne de touche.
-        </p>
+        <div data-riche="histoire.texte"></div>
         <div class="groupe-btn" style="margin-top:1.6rem">
-          <a class="btn btn--sombre" href="club.html">L'histoire et l'organisation</a>
+          <a class="btn btn--sombre" href="club.html" data-txt="histoire.bouton">L'histoire et l'organisation</a>
         </div>
       </div>
       <div class="reveal">
-        <img src="assets/img/banniere.jpg" alt="Bannière de l'AS Val de Sioule : nos racines, la Sioule, la passion">
+        <img data-src-txt="histoire.image" src="assets/img/banniere.jpg" data-alt-txt="histoire.legendeImage" alt="Bannière de l'AS Val de Sioule : nos racines, la Sioule, la passion" loading="lazy">
       </div>
     </div>
   </div>
@@ -127,27 +116,11 @@
 <section class="section section--blanc">
   <div class="contenu">
     <div class="entete-section centre">
-      <span class="script">Du U7 aux séniors</span>
-      <h2 class="souligne">Nos équipes</h2>
-      <p class="chapeau">Trois pôles, une même exigence : faire jouer tout le monde et bien accueillir ceux qui arrivent.</p>
+      <span class="script" data-txt="equipes.accroche">Du U7 aux séniors</span>
+      <h2 class="souligne" data-txt="equipes.titre">Nos équipes</h2>
+      <p class="chapeau" data-txt="equipes.chapeau">Faire jouer tout le monde et bien accueillir ceux qui arrivent.</p>
     </div>
-    <div class="grille grille--3">
-      <a class="carte carte--lien reveal" href="equipes.html#equipe-A">
-        <div class="carte__pastille pastille--rouge">⚽</div>
-        <h3>Séniors A</h3>
-        <p><strong>Départemental 2.</strong> L'équipe fanion, entraînée par Julien Alligier et Sylvain Jaffuel. Demi-finaliste de la Coupe Paul-Baptiste et finaliste du tournoi futsal en 2024-2025.</p>
-      </a>
-      <a class="carte carte--lien reveal" href="equipes.html#equipe-B">
-        <div class="carte__pastille pastille--bleu">🛡️</div>
-        <h3>Séniors B</h3>
-        <p><strong>Départemental 4.</strong> La réserve, encadrée par Julien Guillot et Jordan Pinel. Le groupe qui fait jouer tout le monde et ne lâche jamais rien.</p>
-      </a>
-      <a class="carte carte--lien reveal" href="equipes.html#equipe-jeunes">
-        <div class="carte__pastille pastille--vert">🧒</div>
-        <h3>École de foot</h3>
-        <p><strong>U7 à U15.</strong> Les catégories sont encadrées par le club ; seuls les U15 évoluent en entente avec Ébreuil. Les U13 champions de Division 4 en 2024-2025.</p>
-      </a>
-    </div>
+    <div class="grille grille--3" data-liste="equipes.cartes" data-gabarit="carteLien"></div>
   </div>
 </section>
 
@@ -155,13 +128,13 @@
 <section class="section section--creme">
   <div class="contenu">
     <div class="entete-section">
-      <span class="script">Ce qui se passe au club</span>
-      <h2 class="souligne">Dernières actualités</h2>
+      <span class="script" data-txt="actus.accroche">Ce qui se passe au club</span>
+      <h2 class="souligne" data-txt="actus.titre">Dernières actualités</h2>
     </div>
     <div class="actus" id="liste-actus" data-nombre="3"></div>
     <div class="groupe-btn" style="margin-top:2rem">
-      <a class="btn btn--sombre" href="actualites.html">Toutes les actualités</a>
-      <a class="btn btn--bleu" data-club="facebook" href="#" target="_blank" rel="noopener">Nous suivre sur Facebook</a>
+      <a class="btn btn--sombre" href="actualites.html" data-txt="actus.bouton1">Toutes les actualités</a>
+      <a class="btn btn--bleu" data-club="facebook" href="#" target="_blank" rel="noopener" data-txt="actus.bouton2">Nous suivre sur Facebook</a>
     </div>
   </div>
 </section>
@@ -170,16 +143,14 @@
 <section class="section section--blanc">
   <div class="contenu">
     <div class="entete-section centre">
-      <span class="script">Le club en un coup d'œil</span>
-      <h2 class="souligne">Quelques chiffres</h2>
+      <span class="script" data-txt="chiffres.accroche">Le club en un coup d'œil</span>
+      <h2 class="souligne" data-txt="chiffres.titre">Quelques chiffres</h2>
     </div>
     <div class="chiffres">
-      <div class="chiffre reveal"><strong data-club="licencies">113</strong><span>Licenciés</span></div>
-      <div class="chiffre reveal"><strong>7</strong><span>Catégories</span></div>
-      <div class="chiffre reveal"><strong data-stat="partenaires">—</strong><span>Partenaires</span></div>
-      <div class="chiffre reveal"><strong data-stat="matchs">23</strong><span>Matchs à l'aller</span></div>
-      <div class="chiffre reveal"><strong>54</strong><span>Équipes à la pétanque</span></div>
-      <div class="chiffre reveal"><strong>3</strong><span>Communes</span></div>
+      <div class="chiffre reveal"><strong data-club="licencies">113</strong><span data-txt="chiffres.libelleLicencies">Licenciés</span></div>
+      <div class="chiffre reveal"><strong data-stat="partenaires">—</strong><span data-txt="chiffres.libellePartenaires">Partenaires</span></div>
+      <div class="chiffre reveal"><strong data-stat="matchs">35</strong><span data-txt="chiffres.libelleMatchs">Matchs à l'aller</span></div>
+      <div data-liste="chiffres.autres" data-gabarit="chiffre" style="display:contents"></div>
     </div>
   </div>
 </section>
@@ -188,13 +159,13 @@
 <section class="section section--creme">
   <div class="contenu">
     <div class="entete-section centre">
-      <span class="script">Sans eux, rien ne serait possible</span>
-      <h2 class="souligne">Nos partenaires</h2>
-      <p class="chapeau">Maillots, panneaux au stade, minibus, ballons : les entreprises du territoire équipent le club au quotidien.</p>
+      <span class="script" data-txt="partenaires.accroche">Sans eux, rien ne serait possible</span>
+      <h2 class="souligne" data-txt="partenaires.titre">Nos partenaires</h2>
+      <p class="chapeau" data-txt="partenaires.chapeau">Les entreprises du territoire équipent le club au quotidien.</p>
     </div>
     <div class="partenaires" id="bandeau-partenaires"></div>
     <div class="centre" style="margin-top:2.4rem">
-      <a class="btn btn--primaire" href="partenaires.html">Devenir partenaire du club</a>
+      <a class="btn btn--primaire" href="partenaires.html" data-txt="partenaires.bouton">Devenir partenaire du club</a>
     </div>
   </div>
 </section>
@@ -204,12 +175,11 @@
   <div class="contenu">
     <div class="cta-bande reveal">
       <div>
-        <h2>Envie de nous rejoindre&nbsp;?</h2>
-        <p>Joueur, joueuse, éducateur, arbitre ou simple bonne volonté pour tenir la buvette :
-           le club recrute toute l'année, à tous les âges.</p>
+        <h2 data-txt="appel.titre">Envie de nous rejoindre&nbsp;?</h2>
+        <p data-txt="appel.texte">Le club recrute toute l'année, à tous les âges.</p>
       </div>
       <div class="groupe-btn">
-        <a class="btn btn--fantome" href="infos.html">Licences et contact</a>
+        <a class="btn btn--fantome" href="infos.html" data-txt="appel.bouton">Licences et contact</a>
       </div>
     </div>
   </div>
@@ -221,44 +191,27 @@
 <footer class="site-pied">
   <div class="contenu">
     <div class="pied__grille">
-      <div>
+            <div>
         <div class="pied__marque">
-          <img src="assets/img/logo.png" alt="">
-          <strong>AS Val de Sioule</strong>
+          <img data-club="logo" src="assets/img/logo.png" alt="">
+          <strong data-club="nom">AS Val de Sioule</strong>
         </div>
-        <p>Club de football des communes de Broût-Vernet, Étroussat et Barberier.<br>
-           Affilié à la FFF sous le numéro <span data-club="affiliation">554229</span>.</p>
+        <p><span data-pied="presentation">Club de football des communes de Broût-Vernet, Étroussat et Barberier.</span><br>
+           <span data-pied="mentionAffiliation">Affilié à la FFF sous le numéro</span> <span data-club="affiliation">554229</span>.</p>
         <div class="reseaux">
           <a class="reseaux--facebook" data-club="facebook" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
-            <span>Suivre sur Facebook</span>
+            <span data-pied="boutonFacebook">Suivre sur Facebook</span>
           </a>
           <a class="reseaux--boutique" data-club="boutique" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4a5 5 0 0 1 10 0h3a1 1 0 0 1 1 1l-1 15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2L3 5a1 1 0 0 1 1-1h3zm2 0h6a3 3 0 0 0-6 0z"/></svg>
-            <span>La boutique</span>
+            <span data-pied="boutonBoutique">La boutique</span>
           </a>
         </div>
       </div>
+      <div data-pied="colonnes" style="display:contents"></div>
       <div>
-        <h4>Le club</h4>
-        <ul>
-          <li><a href="club.html">Histoire et valeurs</a></li>
-          <li><a href="club.html#organisation">Bureau et conseil</a></li>
-          <li><a href="equipes.html">Nos équipes</a></li>
-          <li><a href="evenements.html">Événements</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Pratique</h4>
-        <ul>
-          <li><a href="calendrier.html">Calendrier des matchs</a></li>
-          <li><a href="actualites.html">Actualités</a></li>
-          <li><a href="infos.html">Licences et tarifs</a></li>
-          <li><a href="partenaires.html">Devenir partenaire</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Nous trouver</h4>
+        <h4 data-pied="titreContact">Nous trouver</h4>
         <ul>
           <li><span data-club="stade">Stade Municipal</span><br><span data-club="codePostal">03110</span> <span data-club="ville">Broût-Vernet</span></li>
           <li><a data-club="email" href="#"></a></li>
@@ -266,13 +219,13 @@
       </div>
     </div>
     <div class="pied__bas">
-      <span>© <span data-annee>2026</span> AS Val de Sioule — Tous droits réservés.</span>
-      <span><a href="mentions-legales.html">Mentions légales</a></span>
-      <span>Saison <span data-club="saison">2026 / 2027</span></span>
+            <span>© <span data-annee>2026</span> <span data-pied="copyright">AS Val de Sioule — Tous droits réservés.</span></span>
+      <span><a href="mentions-legales.html" data-pied="lienMentions">Mentions légales</a></span>
+      <span><span data-pied="prefixeSaison">Saison</span> <span data-club="saison">2026 / 2027</span></span>
     </div>
   </div>
 </footer>
-<script src="assets/js/main.js?v=20260827" defer></script>
+<script src="assets/js/main.js?v=20260903" defer></script>
 
 <!-- Identification du back-office : permet aux liens d'invitation
      et de récupération de mot de passe d'aboutir sur /admin/. -->

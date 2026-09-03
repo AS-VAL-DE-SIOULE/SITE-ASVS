@@ -49,6 +49,163 @@ collections:
           - { name: directeurPublication, label: "Directeur de la publication", widget: string, hint: "Le président du club. Apparaît dans les mentions légales." }
           - { name: adresseSiege, label: "Adresse du siège social", widget: string }
           - { name: rna, label: "Numéro RNA de l'association", widget: string, required: false, default: "" }
+          - { name: logo, label: "Blason du club", widget: image, hint: "Affiché dans l'en-tête et le pied de page de toutes les pages." }
+          - { name: logoDescription, label: "Description du blason", widget: string, hint: "Lue à voix haute par les lecteurs d'écran, et affichée si l'image ne charge pas." }
+
+      - name: "textes-accueil"
+        label: "Textes de la page d'accueil"
+        file: "content/page-accueil.json"
+        description: "Tous les titres, phrases et boutons de la page d'accueil."
+        fields:
+          - name: hero
+            label: "Bandeau d'accueil"
+            widget: object
+            fields:
+              - { name: image, label: "Image de fond du bandeau", widget: image, hint: "Photo affichée derrière le titre de la page." }
+              - { name: accroche, label: "Petite phrase manuscrite", widget: string }
+              - { name: titre, label: "Grand titre", widget: string }
+              - { name: chapeau, label: "Paragraphe d'introduction", widget: text }
+              - { name: bouton1, label: "Premier bouton", widget: string }
+              - { name: bouton2, label: "Second bouton", widget: string }
+              - name: reperes
+                label: "Chiffres du bandeau"
+                label_singular: "un chiffre"
+                widget: list
+                summary: "{{fields.valeur}} — {{fields.libelle}}"
+                fields:
+                  - { name: valeur, label: "Chiffre", widget: string }
+                  - { name: libelle, label: "Légende", widget: string }
+              - { name: libelleLicencies, label: "Légende sous le nombre de licenciés", widget: string }
+              - { name: libelleDomicile, label: "Légende sous le nombre de matchs à domicile", widget: string }
+          - name: matchs
+            label: "Bloc « prochains rendez-vous »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+              - { name: bouton, label: "Bouton", widget: string }
+          - name: histoire
+            label: "Bloc « histoire de village »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text, hint: "Laissez une ligne vide entre deux paragraphes." }
+              - { name: bouton, label: "Bouton", widget: string }
+              - { name: image, label: "Photo à droite du texte", widget: image }
+              - { name: legendeImage, label: "Description de la photo", widget: string }
+          - name: equipes
+            label: "Bloc « nos équipes »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+              - name: cartes
+                label: "Cartes des équipes"
+                label_singular: "une carte"
+                widget: list
+                summary: "{{fields.titre}}"
+                fields:
+                  - { name: pictogramme, label: "Pictogramme", widget: string, default: "⚽" }
+                  - { name: titre, label: "Titre", widget: string }
+                  - { name: texte, label: "Texte", widget: text }
+                  - { name: lien, label: "Lien", widget: string }
+          - name: actus
+            label: "Bloc « dernières actualités »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: bouton1, label: "Premier bouton", widget: string }
+              - { name: bouton2, label: "Second bouton", widget: string }
+          - name: chiffres
+            label: "Bloc « quelques chiffres »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: libelleLicencies, label: "Légende du nombre de licenciés", widget: string }
+              - { name: libellePartenaires, label: "Légende du nombre de partenaires", widget: string }
+              - { name: libelleMatchs, label: "Légende du nombre de matchs", widget: string }
+              - name: autres
+                label: "Chiffres supplémentaires"
+                label_singular: "un chiffre"
+                widget: list
+                summary: "{{fields.valeur}} — {{fields.libelle}}"
+                fields:
+                  - { name: valeur, label: "Chiffre", widget: string }
+                  - { name: libelle, label: "Légende", widget: string }
+          - name: partenaires
+            label: "Bloc « nos partenaires »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+              - { name: bouton, label: "Bouton", widget: string }
+          - name: appel
+            label: "Bandeau « envie de nous rejoindre »"
+            widget: object
+            fields:
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text }
+              - { name: bouton, label: "Bouton", widget: string }
+          - name: seo
+            label: "Référencement (onglet du navigateur et Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre de l'onglet", widget: string, hint: "Affiché dans l'onglet du navigateur et dans les résultats Google." }
+              - { name: description, label: "Description pour Google", widget: text, hint: "Deux lignes maximum. Résume ce que contient la page." }
+
+      - name: "navigation"
+        label: "Menu et pied de page"
+        file: "content/navigation.json"
+        description: "Le menu du haut et le pied de page, communs à toutes les pages du site."
+        fields:
+          - name: menu
+            label: "Menu principal"
+            label_singular: "une entrée de menu"
+            widget: list
+            summary: "{{fields.libelle}}"
+            fields:
+              - { name: libelle, label: "Libellé", widget: string }
+              - { name: lien, label: "Page", widget: string, hint: "Exemple : equipes.html" }
+              - { name: miseEnAvant, label: "Bouton rouge mis en avant", widget: boolean, default: false, required: false }
+          - name: marque
+            label: "Logo du haut"
+            widget: object
+            fields:
+              - { name: sousTitre, label: "Sous-titre sous le nom du club", widget: string }
+          - name: pied
+            label: "Pied de page"
+            widget: object
+            fields:
+              - { name: presentation, label: "Phrase de présentation", widget: text }
+              - { name: mentionAffiliation, label: "Mention avant le numéro FFF", widget: string }
+              - { name: boutonFacebook, label: "Bouton Facebook", widget: string }
+              - { name: boutonBoutique, label: "Bouton boutique", widget: string }
+              - name: colonnes
+                label: "Colonnes de liens"
+                label_singular: "une colonne"
+                widget: list
+                summary: "{{fields.titre}}"
+                fields:
+                  - { name: titre, label: "Titre de la colonne", widget: string }
+                  - name: liens
+                    label: "Liens"
+                    label_singular: "un lien"
+                    widget: list
+                    summary: "{{fields.libelle}}"
+                    fields:
+                      - { name: libelle, label: "Libellé", widget: string }
+                      - { name: lien, label: "Page", widget: string }
+              - { name: titreContact, label: "Titre de la colonne contact", widget: string }
+              - { name: copyright, label: "Mention de copyright", widget: string }
+              - { name: lienMentions, label: "Libellé du lien mentions légales", widget: string }
+              - { name: prefixeSaison, label: "Mot avant la saison", widget: string }
 
   # ==========================================================
   #  LE CLUB
@@ -97,6 +254,101 @@ collections:
             required: false
             fields:
               - { name: nom, label: "Nom", widget: string }
+
+      - name: "textes-club"
+        label: "Textes de la page Le club"
+        file: "content/page-club.json"
+        fields:
+          - name: hero
+            label: "Bandeau de la page"
+            widget: object
+            fields:
+              - { name: image, label: "Image de fond du bandeau", widget: image, hint: "Photo affichée derrière le titre de la page." }
+              - { name: filAriane, label: "Libellé dans le fil d'Ariane", widget: string, hint: "Le petit chemin Accueil / … affiché au-dessus du titre." }
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: naissance
+            label: "Bloc « naissance d'un club »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text, hint: "Une ligne vide entre deux paragraphes." }
+              - { name: image, label: "Image à droite du texte", widget: image }
+              - { name: legendeImage, label: "Description de l'image", widget: string }
+          - name: frise
+            label: "Bloc « quelques dates »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: bouton, label: "Bouton vers la page Histoire", widget: string }
+              - name: etapes
+                label: "Dates"
+                label_singular: "une date"
+                widget: list
+                summary: "{{fields.annee}}"
+                fields:
+                  - { name: annee, label: "Année ou période", widget: string }
+                  - { name: texte, label: "Texte", widget: text }
+          - name: valeurs
+            label: "Bloc « nos valeurs »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+              - name: cartes
+                label: "Valeurs"
+                label_singular: "une valeur"
+                widget: list
+                summary: "{{fields.titre}}"
+                fields:
+                  - { name: pictogramme, label: "Pictogramme", widget: string }
+                  - { name: titre, label: "Titre", widget: string }
+                  - { name: texte, label: "Texte", widget: text }
+          - name: organisation
+            label: "Titres du bloc organisation"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titreBureau, label: "Titre « bureau »", widget: string }
+              - { name: chapeauBureau, label: "Introduction du bureau", widget: string }
+              - { name: titreConseil, label: "Titre « conseil »", widget: string }
+              - { name: chapeauConseil, label: "Introduction du conseil", widget: string }
+              - { name: titreCommissions, label: "Titre « commissions »", widget: string }
+              - { name: chapeauCommissions, label: "Introduction des commissions", widget: string }
+          - name: documents
+            label: "Titres du bloc documents"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: string }
+          - name: territoire
+            label: "Bloc « notre territoire »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+              - name: cartes
+                label: "Communes"
+                label_singular: "une commune"
+                widget: list
+                summary: "{{fields.titre}}"
+                fields:
+                  - { name: titre, label: "Nom de la commune", widget: string }
+                  - { name: texte, label: "Texte", widget: text }
+              - { name: conclusion, label: "Phrase de conclusion", widget: text }
+          - name: seo
+            label: "Référencement (onglet du navigateur et Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre de l'onglet", widget: string, hint: "Affiché dans l'onglet du navigateur et dans les résultats Google." }
+              - { name: description, label: "Description pour Google", widget: text, hint: "Deux lignes maximum. Résume ce que contient la page." }
 
   # ==========================================================
   #  HISTOIRE
@@ -166,6 +418,53 @@ collections:
               - { name: fichier, label: "Photo", widget: image }
               - { name: legende, label: "Légende", widget: string, required: false, default: "" }
 
+      - name: "textes-histoire"
+        label: "Titres de la page Histoire"
+        file: "content/page-histoire.json"
+        fields:
+          - name: hero
+            label: "Bandeau de la page"
+            widget: object
+            fields:
+              - { name: image, label: "Image de fond du bandeau", widget: image, hint: "Photo affichée derrière le titre de la page." }
+              - { name: filAriane, label: "Libellé dans le fil d'Ariane", widget: string, hint: "Le petit chemin Accueil / … affiché au-dessus du titre." }
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+          - name: blason
+            label: "Bloc du blason"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titreEncadre, label: "Titre de l'encadré du bas", widget: string }
+          - name: chronologie
+            label: "Bloc chronologie"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: equipes
+            label: "Bloc photos d'équipes"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: string }
+          - name: appel
+            label: "Bandeau « vous avez des photos »"
+            widget: object
+            fields:
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text }
+              - { name: bouton, label: "Bouton", widget: string }
+          - name: seo
+            label: "Référencement (onglet du navigateur et Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre de l'onglet", widget: string, hint: "Affiché dans l'onglet du navigateur et dans les résultats Google." }
+              - { name: description, label: "Description pour Google", widget: text, hint: "Deux lignes maximum. Résume ce que contient la page." }
+
   # ==========================================================
   #  ÉQUIPES
   # ==========================================================
@@ -233,6 +532,81 @@ collections:
                   - { label: "Vidéo", value: "video" }
               - { name: legende, label: "Légende", widget: string, required: false, default: "" }
 
+      - name: "textes-equipes"
+        label: "Textes de la page Équipes"
+        file: "content/page-equipes.json"
+        fields:
+          - name: hero
+            label: "Bandeau de la page"
+            widget: object
+            fields:
+              - { name: image, label: "Image de fond du bandeau", widget: image, hint: "Photo affichée derrière le titre de la page." }
+              - { name: filAriane, label: "Libellé dans le fil d'Ariane", widget: string, hint: "Le petit chemin Accueil / … affiché au-dessus du titre." }
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: encadrement
+            label: "Tableau de l'encadrement"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: string }
+              - { name: colonne1, label: "En-tête colonne 1", widget: string }
+              - { name: colonne2, label: "En-tête colonne 2", widget: string }
+              - { name: colonne3, label: "En-tête colonne 3", widget: string }
+              - name: lignes
+                label: "Lignes du tableau"
+                label_singular: "une ligne"
+                widget: list
+                summary: "{{fields.equipe}} — {{fields.encadrement}}"
+                fields:
+                  - { name: equipe, label: "Équipe", widget: string }
+                  - { name: championnat, label: "Championnat", widget: string }
+                  - { name: encadrement, label: "Encadrement", widget: string }
+              - { name: titreArbitres, label: "Titre de l'encadré arbitres", widget: string }
+              - { name: texteArbitres, label: "Texte de l'encadré arbitres", widget: text }
+          - name: ecole
+            label: "Bloc école de foot"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text }
+              - name: points
+                label: "Points à retenir"
+                label_singular: "un point"
+                widget: list
+                summary: "{{fields.texte}}"
+                fields:
+                  - { name: texte, label: "Texte", widget: string }
+              - { name: bouton, label: "Bouton", widget: string }
+              - { name: pictogramme, label: "Pictogramme de la carte", widget: string, hint: "Un emoji" }
+              - { name: carteTitre, label: "Titre de la carte", widget: string }
+              - { name: carteTexte, label: "Texte de la carte", widget: text }
+          - name: affiches
+            label: "Titres du bloc affiches"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: string }
+              - { name: bouton, label: "Bouton", widget: string }
+          - name: galerie
+            label: "Titres du bloc galerie"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: string }
+          - name: seo
+            label: "Référencement (onglet du navigateur et Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre de l'onglet", widget: string, hint: "Affiché dans l'onglet du navigateur et dans les résultats Google." }
+              - { name: description, label: "Description pour Google", widget: text, hint: "Deux lignes maximum. Résume ce que contient la page." }
+
   # ==========================================================
   #  CALENDRIER
   # ==========================================================
@@ -283,6 +657,74 @@ collections:
               - { name: sousTitre, label: "Sous-titre", widget: string, required: false, default: "", hint: "Exemple : Phase aller, saison 2026-2027" }
               - { name: fichier, label: "Affiche", widget: image, hint: "Format portrait. 1400 px de large suffisent pour une impression A4 nette." }
 
+      - name: "textes-calendrier"
+        label: "Textes de la page Calendrier"
+        file: "content/page-calendrier.json"
+        fields:
+          - name: hero
+            label: "Bandeau de la page"
+            widget: object
+            fields:
+              - { name: image, label: "Image de fond du bandeau", widget: image, hint: "Photo affichée derrière le titre de la page." }
+              - { name: filAriane, label: "Libellé dans le fil d'Ariane", widget: string, hint: "Le petit chemin Accueil / … affiché au-dessus du titre." }
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: avantChiffre, label: "Texte avant le nombre de matchs", widget: string, required: false, default: "" }
+              - { name: entreChiffres, label: "Texte entre les deux nombres", widget: string }
+              - { name: apresChiffres, label: "Texte après le second nombre", widget: string }
+          - name: liste
+            label: "Bloc des rencontres"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+              - name: filtres
+                label: "Libellés des filtres"
+                widget: object
+                fields:
+                  - { name: tous, label: "Toutes", widget: string }
+                  - { name: avenir, label: "À venir", widget: string }
+                  - { name: equipeA, label: "Équipe A", widget: string }
+                  - { name: equipeB, label: "Équipe B", widget: string }
+                  - { name: equipeC, label: "Équipe C", widget: string }
+                  - { name: domicile, label: "À domicile", widget: string }
+                  - { name: exterieur, label: "Déplacements", widget: string }
+          - name: stade
+            label: "Bloc « rendez-vous au stade »"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text }
+              - name: points
+                label: "Points pratiques"
+                label_singular: "un point"
+                widget: list
+                summary: "{{fields.texte}}"
+                fields:
+                  - { name: texte, label: "Texte", widget: string }
+              - { name: bouton, label: "Bouton", widget: string }
+              - { name: carteTitre, label: "Titre de la carte résultats", widget: string }
+              - { name: carteTexte, label: "Texte de la carte résultats", widget: text }
+              - { name: carteBouton1, label: "Premier bouton de la carte", widget: string }
+              - { name: carteBouton2, label: "Second bouton de la carte", widget: string }
+              - { name: carteLien2, label: "Adresse du second bouton", widget: string }
+          - name: affiches
+            label: "Titres du bloc affiches"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: seo
+            label: "Référencement (onglet du navigateur et Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre de l'onglet", widget: string, hint: "Affiché dans l'onglet du navigateur et dans les résultats Google." }
+              - { name: description, label: "Description pour Google", widget: text, hint: "Deux lignes maximum. Résume ce que contient la page." }
+
   # ==========================================================
   #  ACTUALITÉS
   # ==========================================================
@@ -327,6 +769,45 @@ collections:
               - { name: documentTitre, label: "Nom affiché du document", widget: string, required: false, default: "" }
               - { name: lien, label: "Lien « En savoir plus »", widget: string, required: false, hint: "Adresse complète, ou nom d'une page du site (ex. calendrier.html)" }
 
+      - name: "textes-actualites"
+        label: "Textes de la page Actualités"
+        file: "content/page-actualites.json"
+        fields:
+          - name: hero
+            label: "Bandeau de la page"
+            widget: object
+            fields:
+              - { name: image, label: "Image de fond du bandeau", widget: image, hint: "Photo affichée derrière le titre de la page." }
+              - { name: filAriane, label: "Libellé dans le fil d'Ariane", widget: string, hint: "Le petit chemin Accueil / … affiché au-dessus du titre." }
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: facebook
+            label: "Bandeau Facebook"
+            widget: object
+            fields:
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text }
+              - { name: bouton, label: "Bouton", widget: string }
+          - name: boutique
+            label: "Bloc boutique"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+              - { name: image, label: "Photo", widget: image }
+              - { name: legendeImage, label: "Description de la photo", widget: string }
+              - { name: texte, label: "Texte", widget: text }
+              - { name: bouton, label: "Bouton", widget: string }
+          - name: seo
+            label: "Référencement (onglet du navigateur et Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre de l'onglet", widget: string, hint: "Affiché dans l'onglet du navigateur et dans les résultats Google." }
+              - { name: description, label: "Description pour Google", widget: text, hint: "Deux lignes maximum. Résume ce que contient la page." }
+
   # ==========================================================
   #  ÉVÉNEMENTS
   # ==========================================================
@@ -359,6 +840,56 @@ collections:
                   - { name: legende, label: "Légende", widget: string, required: false, default: "" }
               - { name: document, label: "Document joint (affiche, règlement…)", widget: file, required: false }
 
+      - name: "textes-evenements"
+        label: "Textes de la page Événements"
+        file: "content/page-evenements.json"
+        fields:
+          - name: hero
+            label: "Bandeau de la page"
+            widget: object
+            fields:
+              - { name: image, label: "Image de fond du bandeau", widget: image, hint: "Photo affichée derrière le titre de la page." }
+              - { name: filAriane, label: "Libellé dans le fil d'Ariane", widget: string, hint: "Le petit chemin Accueil / … affiché au-dessus du titre." }
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: liste
+            label: "Titres du bloc des événements"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: focus
+            label: "Zoom sur un événement"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text, hint: "Laissez une ligne vide entre deux paragraphes." }
+              - { name: image, label: "Photo", widget: image }
+              - { name: legendeImage, label: "Description de la photo", widget: string }
+          - name: documents
+            label: "Titres du bloc documents"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+          - name: benevoles
+            label: "Encadré bénévoles"
+            widget: object
+            fields:
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text }
+              - { name: bouton, label: "Bouton", widget: string }
+          - name: seo
+            label: "Référencement (onglet du navigateur et Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre de l'onglet", widget: string, hint: "Affiché dans l'onglet du navigateur et dans les résultats Google." }
+              - { name: description, label: "Description pour Google", widget: text, hint: "Deux lignes maximum. Résume ce que contient la page." }
+
   # ==========================================================
   #  INFOS PRATIQUES
   # ==========================================================
@@ -389,6 +920,106 @@ collections:
                   - { label: "Page Partenaires", value: "partenaires" }
                   - { label: "Page Le club", value: "club" }
                   - { label: "Page Événements", value: "evenements" }
+
+      - name: "textes-infos"
+        label: "Textes de la page Infos pratiques"
+        file: "content/page-infos.json"
+        fields:
+          - name: hero
+            label: "Bandeau de la page"
+            widget: object
+            fields:
+              - { name: image, label: "Image de fond du bandeau", widget: image, hint: "Photo affichée derrière le titre de la page." }
+              - { name: filAriane, label: "Libellé dans le fil d'Ariane", widget: string, hint: "Le petit chemin Accueil / … affiché au-dessus du titre." }
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: licences
+            label: "Licences & tarifs"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+              - { name: titreTarifs, label: "Titre du tableau des tarifs", widget: string }
+              - name: tarifs
+                label: "Tarifs"
+                label_singular: "un tarif"
+                widget: list
+                summary: "{{fields.libelle}} — {{fields.montant}}"
+                fields:
+                  - { name: libelle, label: "Catégorie", widget: string }
+                  - { name: precision, label: "Précision", widget: string, required: false, default: "" }
+                  - { name: montant, label: "Montant", widget: string }
+              - { name: noteTarifs, label: "Note sous le tableau", widget: text }
+              - { name: titreInscription, label: "Titre « comment s'inscrire »", widget: string }
+              - name: etapes
+                label: "Étapes de l'inscription"
+                label_singular: "une étape"
+                widget: list
+                summary: "{{fields.texte}}"
+                fields:
+                  - { name: texte, label: "Texte", widget: text }
+              - { name: bouton, label: "Bouton", widget: string }
+              - { name: pictogrammeTarifs, label: "Pictogramme de la carte des tarifs", widget: string, hint: "Un emoji" }
+              - { name: pictogrammeInscription, label: "Pictogramme de la carte inscription", widget: string, hint: "Un emoji" }
+          - name: stade
+            label: "Le stade & le contact"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text, hint: "Laissez une ligne vide entre deux paragraphes." }
+              - { name: bouton, label: "Bouton carte", widget: string }
+              - { name: lienCarte, label: "Lien vers la carte", widget: string }
+              - { name: titreContact, label: "Titre du bloc contact", widget: string }
+              - { name: libelleEmail, label: "Libellé e-mail", widget: string }
+              - { name: libellePartenariats, label: "Libellé partenariats", widget: string }
+              - { name: libelleFacebook, label: "Libellé Facebook", widget: string }
+              - { name: libelleAffiliation, label: "Libellé numéro FFF", widget: string }
+              - { name: libelleCommunes, label: "Libellé communes", widget: string }
+              - { name: noteContact, label: "Note sous le contact", widget: text }
+          - name: services
+            label: "Boutique & minibus"
+            widget: object
+            fields:
+              - { name: titreBoutique, label: "Titre boutique", widget: string }
+              - { name: texteBoutique, label: "Texte boutique", widget: text }
+              - { name: boutonBoutique, label: "Bouton boutique", widget: string }
+              - { name: titreMinibus, label: "Titre minibus", widget: string }
+              - { name: texteMinibus, label: "Texte minibus", widget: text }
+              - { name: noteMinibus, label: "Note minibus", widget: text }
+              - { name: pictogrammeBoutique, label: "Pictogramme de la carte boutique", widget: string, hint: "Un emoji" }
+              - { name: pictogrammeMinibus, label: "Pictogramme de la carte minibus", widget: string, hint: "Un emoji" }
+          - name: documents
+            label: "Titres du bloc documents"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: faq
+            label: "Questions fréquentes"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - name: questions
+                label: "Questions"
+                label_singular: "une question"
+                widget: list
+                summary: "{{fields.question}}"
+                collapsed: true
+                fields:
+                  - { name: question, label: "Question", widget: string }
+                  - { name: reponse, label: "Réponse", widget: text }
+          - name: seo
+            label: "Référencement (onglet du navigateur et Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre de l'onglet", widget: string, hint: "Affiché dans l'onglet du navigateur et dans les résultats Google." }
+              - { name: description, label: "Description pour Google", widget: text, hint: "Deux lignes maximum. Résume ce que contient la page." }
 
   # ==========================================================
   #  PARTENAIRES
@@ -422,3 +1053,154 @@ collections:
               - { name: siteWeb, label: "Site internet", widget: string, required: false, default: "" }
               - { name: telephone, label: "Téléphone de l'entreprise", widget: string, required: false, default: "", hint: "Numéro professionnel uniquement, jamais un portable personnel." }
               - { name: ville, label: "Ville", widget: string, required: false, default: "" }
+
+      - name: "textes-partenaires"
+        label: "Textes de la page Partenaires"
+        file: "content/page-partenaires.json"
+        fields:
+          - name: hero
+            label: "Bandeau de la page"
+            widget: object
+            fields:
+              - { name: image, label: "Image de fond du bandeau", widget: image, hint: "Photo affichée derrière le titre de la page." }
+              - { name: filAriane, label: "Libellé dans le fil d'Ariane", widget: string, hint: "Le petit chemin Accueil / … affiché au-dessus du titre." }
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: liste
+            label: "Titres du bloc des partenaires"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+          - name: soutien
+            label: "Ce que le soutien finance"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+              - name: cartes
+                label: "Cartes"
+                label_singular: "une carte"
+                widget: list
+                summary: "{{fields.titre}}"
+                fields:
+                  - { name: pictogramme, label: "Pictogramme", widget: string, hint: "Un emoji" }
+                  - { name: titre, label: "Titre", widget: string }
+                  - { name: texte, label: "Texte", widget: text }
+          - name: supports
+            label: "Les supports de visibilité"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+              - name: packs
+                label: "Formules"
+                label_singular: "une formule"
+                widget: list
+                summary: "{{fields.titre}}"
+                collapsed: true
+                fields:
+                  - { name: titre, label: "Titre", widget: string }
+                  - { name: sousTitre, label: "Sous-titre", widget: string }
+                  - name: points
+                    label: "Ce que comprend la formule"
+                    label_singular: "un point"
+                    widget: list
+                    summary: "{{fields.texte}}"
+                    fields:
+                      - { name: texte, label: "Texte", widget: string }
+              - { name: bouton1, label: "Premier bouton", widget: string }
+              - { name: lienPlaquette, label: "Fichier de la plaquette", widget: file }
+              - { name: bouton2, label: "Second bouton", widget: string }
+          - name: mecenat
+            label: "Mécénat & démarche"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text, hint: "Laissez une ligne vide entre deux paragraphes." }
+              - { name: titreExemple, label: "Titre de l'encadré exemple", widget: string }
+              - { name: texteExemple, label: "Texte de l'encadré exemple", widget: text }
+              - { name: bouton, label: "Bouton du reçu fiscal", widget: string }
+              - { name: lienCerfa, label: "Fichier du reçu fiscal", widget: file }
+              - { name: titreDemarche, label: "Titre « comment devenir partenaire »", widget: string }
+              - name: etapes
+                label: "Étapes"
+                label_singular: "une étape"
+                widget: list
+                summary: "{{fields.texte}}"
+                fields:
+                  - { name: texte, label: "Texte", widget: text }
+              - { name: noteDemarche, label: "Note sous les étapes", widget: text }
+              - { name: titreContact, label: "Titre du bloc contact", widget: string }
+              - { name: boutonContact, label: "Bouton du bloc contact", widget: string }
+          - name: documents
+            label: "Titres du bloc documents"
+            widget: object
+            fields:
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+          - name: appel
+            label: "Appel en bas de page"
+            widget: object
+            fields:
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text }
+              - { name: bouton, label: "Bouton", widget: string }
+          - name: seo
+            label: "Référencement (onglet du navigateur et Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre de l'onglet", widget: string, hint: "Affiché dans l'onglet du navigateur et dans les résultats Google." }
+              - { name: description, label: "Description pour Google", widget: text, hint: "Deux lignes maximum. Résume ce que contient la page." }
+
+  # ==========================================================
+  #  MENTIONS LÉGALES
+  # ==========================================================
+  - name: "mentions"
+    label: "Mentions légales"
+    files:
+      - name: "textes-mentions"
+        label: "Textes des mentions légales"
+        file: "content/page-mentions.json"
+        description: "Le nom du club, l'adresse du siège, le numéro RNA, le numéro d'affiliation et l'e-mail affichés dans le tableau viennent de la fiche « Informations du club »."
+        fields:
+          - name: hero
+            label: "Bandeau de la page"
+            widget: object
+            fields:
+              - { name: image, label: "Image de fond du bandeau", widget: image, hint: "Photo affichée derrière le titre de la page." }
+              - { name: filAriane, label: "Libellé dans le fil d'Ariane", widget: string, hint: "Le petit chemin Accueil / … affiché au-dessus du titre." }
+              - { name: accroche, label: "Petite phrase", widget: string }
+              - { name: titre, label: "Titre", widget: string }
+              - { name: chapeau, label: "Introduction", widget: text }
+          - name: sections
+            label: "Paragraphes"
+            label_singular: "un paragraphe"
+            widget: list
+            summary: "{{fields.titre}}"
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre", widget: string }
+              - { name: texte, label: "Texte", widget: text, hint: "Laissez une ligne vide entre deux paragraphes." }
+          - name: tableau
+            label: "Libellés du tableau"
+            widget: object
+            fields:
+              - { name: denomination, label: "Ligne « Dénomination »", widget: string }
+              - { name: siege, label: "Ligne « Siège social »", widget: string }
+              - { name: rna, label: "Ligne « Numéro RNA »", widget: string }
+              - { name: affiliation, label: "Ligne « Affiliation »", widget: string }
+              - { name: email, label: "Ligne « Adresse électronique »", widget: string }
+              - { name: valeurAffiliation, label: "Texte avant le numéro d'affiliation", widget: string }
+          - name: seo
+            label: "Référencement (onglet du navigateur et Google)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titre, label: "Titre de l'onglet", widget: string, hint: "Affiché dans l'onglet du navigateur et dans les résultats Google." }
+              - { name: description, label: "Description pour Google", widget: text, hint: "Deux lignes maximum. Résume ce que contient la page." }

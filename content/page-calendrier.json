@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "accroche": "Saison 2026-2027 · phase aller",
+    "titre": "Calendrier des matchs",
+    "avantChiffre": "",
+    "entreChiffres": " rencontres programmées, dont ",
+    "apresChiffres": " à domicile au stade municipal de Broût-Vernet.",
+    "image": "assets/img/calendrier-equipe-a.jpg",
+    "filAriane": "Calendrier"
+  },
+  "liste": {
+    "accroche": "Filtrez comme vous voulez",
+    "titre": "Toutes les rencontres",
+    "chapeau": "Les horaires sont ceux communiqués par le District de l'Allier et peuvent évoluer. En cas de doute, la page Facebook du club fait foi.",
+    "filtres": {
+      "tous": "Toutes",
+      "avenir": "À venir",
+      "equipeA": "Équipe A",
+      "equipeB": "Équipe B",
+      "equipeC": "Équipe C",
+      "domicile": "À domicile",
+      "exterieur": "Déplacements"
+    }
+  },
+  "stade": {
+    "accroche": "Venir voir un match",
+    "titre": "Rendez-vous au stade",
+    "texte": "Les rencontres à domicile se jouent au stade municipal de Broût-Vernet. Entrée libre, buvette ouverte à chaque match, et une ambiance qui vaut le déplacement.",
+    "points": [
+      {
+        "texte": "Les séniors A reçoivent le plus souvent le samedi à 20 h."
+      },
+      {
+        "texte": "La réserve joue en général le dimanche à 15 h."
+      },
+      {
+        "texte": "Buvette tenue par les bénévoles : venez leur dire bonjour."
+      }
+    ],
+    "bouton": "Plan d'accès et contact",
+    "carteTitre": "Résultats en direct",
+    "carteTexte": "Le club publie les résultats et les compositions sur sa page Facebook après chaque journée. Les classements officiels sont consultables sur le site du District de l'Allier.",
+    "carteBouton1": "Page Facebook",
+    "carteBouton2": "District de l'Allier",
+    "carteLien2": "https://allier.fff.fr/"
+  },
+  "affiches": {
+    "accroche": "À imprimer et à accrocher",
+    "titre": "Les affiches officielles",
+    "chapeau": "Les plannings publiés par le club. Cliquez sur une affiche pour la voir en grand, ou téléchargez-la pour l'imprimer."
+  },
+  "seo": {
+    "titre": "Calendrier des matchs — AS Val de Sioule",
+    "description": "Calendrier complet de la saison 2026-2027 de l'AS Val de Sioule : équipe A en Départemental 2, équipe B en Départemental 4, matchs à domicile et déplacements."
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "hero": {
+    "accroche": "Du premier ballon aux séniors",
+    "titre": "Nos équipes",
+    "chapeau": "Trois équipes séniors, une école de foot, et la même envie de faire jouer tout le monde.",
+    "image": "assets/photos/actu-preparation.jpg",
+    "filAriane": "Équipes"
+  },
+  "encadrement": {
+    "accroche": "Sur le bord de la touche",
+    "titre": "L'encadrement sportif",
+    "chapeau": "Tous bénévoles, tous licenciés du club.",
+    "colonne1": "Équipe",
+    "colonne2": "Championnat",
+    "colonne3": "Encadrement",
+    "lignes": [
+      {
+        "equipe": "Séniors A",
+        "championnat": "Départemental 2",
+        "encadrement": "Julien ALLIGIER & Sylvain JAFFUEL"
+      },
+      {
+        "equipe": "Séniors B",
+        "championnat": "Départemental 4",
+        "encadrement": "Julien GUILLOT & Jordan PINEL"
+      },
+      {
+        "equipe": "Séniors C",
+        "championnat": "Départemental 5",
+        "encadrement": "En attente"
+      },
+      {
+        "equipe": "U15",
+        "championnat": "Entente avec Ébreuil",
+        "encadrement": "Maxime QUILLERET"
+      },
+      {
+        "equipe": "U13",
+        "championnat": "U13 Départemental",
+        "encadrement": "Sylvain JAFFUEL & Victor HEVIN"
+      },
+      {
+        "equipe": "U11",
+        "championnat": "Plateaux départementaux",
+        "encadrement": "Éducateurs du club"
+      },
+      {
+        "equipe": "U9",
+        "championnat": "Plateaux départementaux",
+        "encadrement": "Éducateurs du club"
+      },
+      {
+        "equipe": "U7",
+        "championnat": "Plateaux départementaux",
+        "encadrement": "Éducateurs du club"
+      }
+    ],
+    "titreArbitres": "Les arbitres du club",
+    "texteArbitres": "Un engagement essentiel, régulièrement salué par le président en Assemblée Générale."
+  },
+  "ecole": {
+    "accroche": "Le bel avenir du club",
+    "titre": "L'école de foot",
+    "texte": "De l'U7 à l'U15, l'école de foot accueille les enfants des communes environnantes. Le club encadre désormais ses catégories en propre ; seuls les U15 évoluent en entente avec Ébreuil.",
+    "points": [
+      {
+        "texte": "Une génération U13 dynamique et prometteuse, championne de Division 4 en 2024-2025."
+      },
+      {
+        "texte": "Des plateaux réguliers en U7, U9 et U11, dans un excellent état d'esprit."
+      },
+      {
+        "texte": "Un encadrement bénévole, épaulé par les parents à chaque déplacement."
+      },
+      {
+        "texte": "Licence à 20 € pour toutes les catégories jeunes, de l'U6 à l'U18."
+      }
+    ],
+    "bouton": "Inscrire un enfant",
+    "carteTitre": "Une place pour chaque enfant",
+    "carteTexte": "Dès 5 ans, les enfants découvrent le football par le jeu. Aucun niveau requis, aucun engagement de résultat : on vient pour apprendre et pour s'amuser.\n\nUne séance d'essai est toujours possible avant de prendre une licence.",
+    "pictogramme": "🧒"
+  },
+  "affiches": {
+    "accroche": "Phase aller 2026-2027",
+    "titre": "Les affiches de la saison",
+    "chapeau": "Les plannings officiels publiés par le club, prêts à imprimer et à accrocher.",
+    "bouton": "Voir le calendrier détaillé"
+  },
+  "galerie": {
+    "accroche": "Les images du club",
+    "titre": "Galerie",
+    "chapeau": "Photos d'équipe, jours de match et manifestations."
+  },
+  "seo": {
+    "titre": "Nos équipes — AS Val de Sioule",
+    "description": "Les équipes de l'AS Val de Sioule : séniors A en Départemental 2, séniors B en Départemental 4, et l'école de foot des U7 aux U15 en entente avec Chantelle et Ébreuil."
+  }
+}

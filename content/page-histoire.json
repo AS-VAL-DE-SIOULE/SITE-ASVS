@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "accroche": "Depuis 2009, et bien avant",
+    "titre": "Notre histoire",
+    "image": "assets/img/banniere.jpg",
+    "filAriane": "Notre histoire"
+  },
+  "blason": {
+    "accroche": "Ce que raconte notre écusson",
+    "titreEncadre": "Un blason choisi par le club"
+  },
+  "chronologie": {
+    "accroche": "Le fil des saisons",
+    "titre": "La chronologie du club",
+    "chapeau": "Les dates qui ont compté. Cette page grandira au fil des souvenirs et des photos que vous nous confierez."
+  },
+  "equipes": {
+    "accroche": "Saison après saison",
+    "titre": "Nos équipes au fil des ans",
+    "chapeau": "Les photos officielles, d'hier à aujourd'hui."
+  },
+  "appel": {
+    "titre": "Vous avez des photos d'avant ?",
+    "texte": "Une photo d'équipe du BVS ou du FC Étroussat, une coupe soulevée, un tournoi oublié : le club cherche à rassembler sa mémoire. Envoyez-nous vos images, elles trouveront leur place sur cette page.",
+    "bouton": "Nous envoyer une photo"
+  },
+  "seo": {
+    "titre": "Notre histoire — AS Val de Sioule",
+    "description": "L'histoire de l'AS Val de Sioule depuis la fusion de 2009 : la chronologie du club, la signification du blason et les photos d'équipes au fil des saisons."
+  }
+}

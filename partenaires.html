@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="asvs-page" content="partenaires">
 <title>Partenaires &amp; sponsoring — AS Val de Sioule</title>
 <meta name="description" content="Les partenaires de l'AS Val de Sioule et les modalités pour soutenir le club : panneaux au stade, jeux de maillots, calendrier, minibus, et réduction d'impôt de 60 % au titre du mécénat.">
 <link rel="icon" href="assets/img/logo-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260827">
+<link rel="stylesheet" href="assets/css/style.css?v=20260903">
 </head>
 <body>
 
@@ -17,9 +18,9 @@
   <div class="chevrons"><span></span><span></span><span></span></div>
   <div class="contenu site-entete__barre">
     <a class="marque" href="index.html">
-      <img src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
+      <img data-club="logo" data-club-alt="logoDescription" src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
       <span class="marque__txt">
-        <span class="marque__nom">AS Val de Sioule</span>
+        <span class="marque__nom" data-club="nom">AS Val de Sioule</span>
         <span class="marque__sous">Depuis 2009</span>
       </span>
     </a>
@@ -43,15 +44,12 @@
 <main>
 
 <section class="hero hero--page">
-  <div class="hero__fond" style="background-image:url('assets/photos/actu-preparation.jpg');background-position:center 75%"></div>
+  <div class="hero__fond" data-fond-txt="hero.image" style="background-image:url('assets/photos/actu-preparation.jpg');background-position:center 75%"></div>
   <div class="contenu hero__contenu">
-    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong>Partenaires</strong></p>
-    <span class="hero__script">Sans eux, rien ne serait possible</span>
-    <h1>Partenaires &amp; sponsoring</h1>
-    <p class="hero__chapeau">
-      Les entreprises du territoire équipent le club au quotidien : maillots, panneaux au stade,
-      minibus, ballons et calendrier. Merci à elles.
-    </p>
+    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong data-txt="hero.filAriane">Partenaires</strong></p>
+    <span class="hero__script" data-txt="hero.accroche">Sans eux, rien ne serait possible</span>
+    <h1 data-txt="hero.titre">Partenaires &amp; sponsoring</h1>
+    <p class="hero__chapeau" data-txt="hero.chapeau">Les entreprises du territoire équipent le club au quotidien.</p>
   </div>
 </section>
 
@@ -59,8 +57,8 @@
 <section class="section section--creme">
   <div class="contenu">
     <div class="entete-section">
-      <span class="script">Ils soutiennent l'ASVS</span>
-      <h2 class="souligne">Nos partenaires</h2>
+      <span class="script" data-txt="liste.accroche">Ils soutiennent l'ASVS</span>
+      <h2 class="souligne" data-txt="liste.titre">Nos partenaires</h2>
     </div>
     <div id="liste-partenaires"></div>
   </div>
@@ -70,32 +68,11 @@
 <section class="section section--sombre">
   <div class="contenu">
     <div class="entete-section centre">
-      <span class="script">Pourquoi nous soutenir</span>
-      <h2 class="souligne">Ce que votre soutien finance</h2>
-      <p class="chapeau">Chaque euro versé au club retourne directement sur le terrain.</p>
+      <span class="script" data-txt="soutien.accroche">Pourquoi nous soutenir</span>
+      <h2 class="souligne" data-txt="soutien.titre">Ce que votre soutien finance</h2>
+      <p class="chapeau" data-txt="soutien.chapeau">Chaque euro versé au club retourne sur le terrain.</p>
     </div>
-    <div class="grille grille--4">
-      <div class="carte reveal">
-        <div class="carte__pastille pastille--rouge">👕</div>
-        <h3>Les équipements</h3>
-        <p>Jeux de maillots, tenues d'entraînement, ballons de match et matériel pour toutes les catégories.</p>
-      </div>
-      <div class="carte reveal">
-        <div class="carte__pastille pastille--bleu">🚐</div>
-        <h3>Le minibus</h3>
-        <p>Il transporte les jeunes vers les plateaux et les équipes vers les déplacements du week-end.</p>
-      </div>
-      <div class="carte reveal">
-        <div class="carte__pastille pastille--vert">🧒</div>
-        <h3>L'école de foot</h3>
-        <p>Les licences, les plateaux et l'encadrement des enfants des trois communes, de l'U7 à l'U15.</p>
-      </div>
-      <div class="carte reveal">
-        <div class="carte__pastille pastille--rouge">🏟️</div>
-        <h3>Les installations</h3>
-        <p>Entretien de la pelouse, des vestiaires, des filets et des buts. Un stade qui reste accueillant.</p>
-      </div>
-    </div>
+    <div class="grille grille--4" data-liste="soutien.cartes" data-gabarit="carte"></div>
   </div>
 </section>
 
@@ -103,107 +80,47 @@
 <section class="section section--blanc">
   <div class="contenu">
     <div class="entete-section">
-      <span class="script">À la carte</span>
-      <h2 class="souligne">Les supports de visibilité</h2>
-      <p class="chapeau">
-        Le club propose plusieurs formules, du panneau au bord du terrain au jeu de maillots complet.
-        Les montants et les contreparties détaillées figurent dans la plaquette de sponsoring.
-      </p>
+      <span class="script" data-txt="supports.accroche">À la carte</span>
+      <h2 class="souligne" data-txt="supports.titre">Les supports de visibilité</h2>
+      <p class="chapeau" data-txt="supports.chapeau">Plusieurs formules, du panneau au jeu de maillots.</p>
     </div>
-    <div class="packs">
-      <div class="pack reveal">
-        <h4>Le stade</h4>
-        <p class="pack__sous">Visible à chaque rencontre</p>
-        <ul>
-          <li>Panneau publicitaire au bord du terrain</li>
-          <li>Stades de Broût-Vernet et d'Étroussat</li>
-          <li>Mention sur les réseaux sociaux du club</li>
-          <li>Présence dans la liste des partenaires du site</li>
-        </ul>
-      </div>
-      <div class="pack reveal">
-        <h4>Les maillots</h4>
-        <p class="pack__sous">Le support le plus visible</p>
-        <ul>
-          <li>Jeu de maillots complet floqué à vos couleurs</li>
-          <li>Maillots d'entraînement</li>
-          <li>Photo officielle de l'équipe équipée</li>
-          <li>Publication dédiée sur la page Facebook</li>
-        </ul>
-      </div>
-      <div class="pack reveal">
-        <h4>Le calendrier</h4>
-        <p class="pack__sous">Dans toutes les maisons du secteur</p>
-        <ul>
-          <li>Encart dans le calendrier annuel du club</li>
-          <li>Distribution en porte-à-porte sur les trois communes</li>
-          <li>Diffusion pendant toute l'année civile</li>
-        </ul>
-      </div>
-      <div class="pack reveal">
-        <h4>Le minibus &amp; le matériel</h4>
-        <p class="pack__sous">Un soutien qui roule</p>
-        <ul>
-          <li>Logo apposé sur le minibus du club</li>
-          <li>Dotation en ballons de match</li>
-          <li>Flamme ou oriflamme aux abords du terrain</li>
-          <li>Soutien d'une manifestation du club</li>
-        </ul>
-      </div>
-    </div>
+    <div class="packs" data-liste="supports.packs" data-gabarit="pack"></div>
     <div class="groupe-btn" style="margin-top:2.2rem">
-      <a class="btn btn--primaire" href="assets/docs/plaquette-sponsoring.pdf" target="_blank" rel="noopener">Télécharger la plaquette</a>
-      <a class="btn btn--sombre" data-club="emailPartenaires" href="#">Nous écrire</a>
+      <a class="btn btn--primaire" data-href-txt="supports.lienPlaquette" href="assets/docs/plaquette-sponsoring.pdf" target="_blank" rel="noopener" data-txt="supports.bouton1">Télécharger la plaquette</a>
+      <a class="btn btn--sombre" data-club="emailPartenaires" href="#" data-txt="supports.bouton2">Nous écrire</a>
     </div>
   </div>
 </section>
 
-<!-- ===== DÉFISCALISATION ===== -->
+<!-- ===== MÉCÉNAT ===== -->
 <section class="section section--creme">
   <div class="contenu">
     <div class="duo duo--large-gauche">
       <div>
         <div class="entete-section">
-          <span class="script">Bon à savoir</span>
-          <h2 class="souligne">Un don qui coûte moins qu'il n'y paraît</h2>
+          <span class="script" data-txt="mecenat.accroche">Bon à savoir</span>
+          <h2 class="souligne" data-txt="mecenat.titre">Un don qui coûte moins qu'il n'y paraît</h2>
         </div>
-        <p>
-          L'AS Val de Sioule est une association loi 1901 d'intérêt général. À ce titre, elle peut
-          délivrer un <strong>reçu fiscal (CERFA 11580)</strong> pour les dons qu'elle reçoit.
-        </p>
-        <p>
-          Pour une entreprise, le mécénat ouvre droit à une <strong>réduction d'impôt de 60 %</strong>
-          du montant du don, dans la limite de 20 000 € ou de 5 ‰ du chiffre d'affaires
-          (article 238 bis du Code général des impôts).
-        </p>
+        <div data-riche="mecenat.texte"></div>
         <div class="encadre encadre--vert" style="margin-top:1.4rem">
-          <h4>Concrètement</h4>
-          <p>Un don de <strong>500 €</strong> représente un coût réel de <strong>200 €</strong>
-             pour l'entreprise après réduction d'impôt.</p>
+          <h4 data-txt="mecenat.titreExemple">Concrètement</h4>
+          <p data-txt="mecenat.texteExemple">Un don de 500 € coûte réellement 200 € à l'entreprise.</p>
         </div>
         <div class="groupe-btn" style="margin-top:1.6rem">
-          <a class="btn btn--sombre" href="assets/docs/cerfa-defiscalisation.pdf" target="_blank" rel="noopener">Le modèle de reçu fiscal</a>
+          <a class="btn btn--sombre" data-href-txt="mecenat.lienCerfa" href="assets/docs/cerfa-defiscalisation.pdf" target="_blank" rel="noopener" data-txt="mecenat.bouton">Le modèle de reçu fiscal</a>
         </div>
       </div>
       <div>
         <div class="carte">
-          <h3>Comment devenir partenaire&nbsp;?</h3>
-          <ul class="liste-check" style="margin-top:1rem">
-            <li>Vous nous écrivez, ou un membre de la commission sponsoring passe vous voir.</li>
-            <li>Nous définissons ensemble le support qui vous correspond.</li>
-            <li>Le club établit la facture ou le reçu fiscal.</li>
-            <li>Votre visibilité démarre dès la mise en place du support.</li>
-          </ul>
-          <p style="margin-top:1.2rem">
-            Le démarchage est assuré bénévolement par des membres du club, qui se déplacent
-            directement dans les entreprises du secteur.
-          </p>
+          <h3 data-txt="mecenat.titreDemarche">Comment devenir partenaire&nbsp;?</h3>
+          <ul class="liste-check" style="margin-top:1rem" data-liste="mecenat.etapes" data-gabarit="puce"></ul>
+          <p style="margin-top:1.2rem" data-txt="mecenat.noteDemarche"></p>
           <div class="encadre" style="margin-top:1.2rem">
-            <h4>Contact partenariats</h4>
+            <h4 data-txt="mecenat.titreContact">Contact partenariats</h4>
             <p style="font-size:1.02rem"><strong><a data-club="emailPartenaires" href="#"></a></strong></p>
           </div>
           <div class="groupe-btn" style="margin-top:1.2rem">
-            <a class="btn btn--primaire" data-club="emailPartenaires" href="#">Prendre contact</a>
+            <a class="btn btn--primaire" data-club="emailPartenaires" href="#" data-txt="mecenat.boutonContact">Prendre contact</a>
           </div>
         </div>
       </div>
@@ -215,8 +132,8 @@
 <section class="section section--blanc" id="bloc-documents" hidden>
   <div class="contenu">
     <div class="entete-section">
-      <span class="script">À télécharger</span>
-      <h2 class="souligne">Documents partenaires</h2>
+      <span class="script" data-txt="documents.accroche">À télécharger</span>
+      <h2 class="souligne" data-txt="documents.titre">Documents partenaires</h2>
     </div>
     <div class="documents" id="liste-documents" data-categorie="partenaires"></div>
   </div>
@@ -226,12 +143,11 @@
   <div class="contenu">
     <div class="cta-bande reveal">
       <div>
-        <h2>Votre entreprise sur nos maillots&nbsp;?</h2>
-        <p>Le club démarche chaque saison les entreprises du bassin de Saint-Pourçain, Gannat,
-           Vichy et Broût-Vernet. Si vous souhaitez nous soutenir, un message suffit.</p>
+        <h2 data-txt="appel.titre">Votre entreprise sur nos maillots&nbsp;?</h2>
+        <p data-txt="appel.texte">Si vous souhaitez nous soutenir, un message suffit.</p>
       </div>
       <div class="groupe-btn">
-        <a class="btn btn--fantome" data-club="emailPartenaires" href="#">Écrire au club</a>
+        <a class="btn btn--fantome" data-club="emailPartenaires" href="#" data-txt="appel.bouton">Écrire au club</a>
       </div>
     </div>
   </div>
@@ -242,44 +158,27 @@
 <footer class="site-pied">
   <div class="contenu">
     <div class="pied__grille">
-      <div>
+            <div>
         <div class="pied__marque">
-          <img src="assets/img/logo.png" alt="">
-          <strong>AS Val de Sioule</strong>
+          <img data-club="logo" src="assets/img/logo.png" alt="">
+          <strong data-club="nom">AS Val de Sioule</strong>
         </div>
-        <p>Club de football des communes de Broût-Vernet, Étroussat et Barberier.<br>
-           Affilié à la FFF sous le numéro <span data-club="affiliation">554229</span>.</p>
+        <p><span data-pied="presentation">Club de football des communes de Broût-Vernet, Étroussat et Barberier.</span><br>
+           <span data-pied="mentionAffiliation">Affilié à la FFF sous le numéro</span> <span data-club="affiliation">554229</span>.</p>
         <div class="reseaux">
           <a class="reseaux--facebook" data-club="facebook" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
-            <span>Suivre sur Facebook</span>
+            <span data-pied="boutonFacebook">Suivre sur Facebook</span>
           </a>
           <a class="reseaux--boutique" data-club="boutique" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4a5 5 0 0 1 10 0h3a1 1 0 0 1 1 1l-1 15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2L3 5a1 1 0 0 1 1-1h3zm2 0h6a3 3 0 0 0-6 0z"/></svg>
-            <span>La boutique</span>
+            <span data-pied="boutonBoutique">La boutique</span>
           </a>
         </div>
       </div>
+      <div data-pied="colonnes" style="display:contents"></div>
       <div>
-        <h4>Le club</h4>
-        <ul>
-          <li><a href="club.html">Histoire et valeurs</a></li>
-          <li><a href="club.html#organisation">Bureau et conseil</a></li>
-          <li><a href="equipes.html">Nos équipes</a></li>
-          <li><a href="evenements.html">Événements</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Pratique</h4>
-        <ul>
-          <li><a href="calendrier.html">Calendrier des matchs</a></li>
-          <li><a href="actualites.html">Actualités</a></li>
-          <li><a href="infos.html">Licences et tarifs</a></li>
-          <li><a href="partenaires.html">Devenir partenaire</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Nous trouver</h4>
+        <h4 data-pied="titreContact">Nous trouver</h4>
         <ul>
           <li><span data-club="stade">Stade Municipal</span><br><span data-club="codePostal">03110</span> <span data-club="ville">Broût-Vernet</span></li>
           <li><a data-club="email" href="#"></a></li>
@@ -287,12 +186,12 @@
       </div>
     </div>
     <div class="pied__bas">
-      <span>© <span data-annee>2026</span> AS Val de Sioule — Tous droits réservés.</span>
-      <span><a href="mentions-legales.html">Mentions légales</a></span>
-      <span>Saison <span data-club="saison">2026 / 2027</span></span>
+            <span>© <span data-annee>2026</span> <span data-pied="copyright">AS Val de Sioule — Tous droits réservés.</span></span>
+      <span><a href="mentions-legales.html" data-pied="lienMentions">Mentions légales</a></span>
+      <span><span data-pied="prefixeSaison">Saison</span> <span data-club="saison">2026 / 2027</span></span>
     </div>
   </div>
 </footer>
-<script src="assets/js/main.js?v=20260827" defer></script>
+<script src="assets/js/main.js?v=20260903" defer></script>
 </body>
 </html>

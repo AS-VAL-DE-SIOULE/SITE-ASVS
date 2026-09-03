@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "accroche": "Tout ce qu'il faut savoir",
+    "titre": "Infos pratiques & contact",
+    "chapeau": "Licences, tarifs, adresse du stade, boutique et contact du club.",
+    "image": "assets/img/banniere.jpg",
+    "filAriane": "Infos pratiques"
+  },
+  "licences": {
+    "accroche": "Rejoindre le club",
+    "titre": "Licences & tarifs",
+    "chapeau": "Le club accueille de nouveaux licenciés toute l'année, à tous les âges.",
+    "titreTarifs": "Tarifs de la licence",
+    "tarifs": [
+      {
+        "libelle": "Séniors",
+        "precision": "(A, B, C, vétérans, féminines)",
+        "montant": "40 €"
+      },
+      {
+        "libelle": "Jeunes",
+        "precision": "— U6 à U18",
+        "montant": "20 €"
+      },
+      {
+        "libelle": "Dirigeants, éducateurs, arbitres",
+        "precision": "",
+        "montant": "Gratuit"
+      }
+    ],
+    "noteTarifs": "Tarifs votés en Assemblée Générale. Susceptibles d'évoluer chaque saison.",
+    "titreInscription": "Comment s'inscrire",
+    "etapes": [
+      {
+        "texte": "Écrivez au club ou passez au stade un soir d'entraînement."
+      },
+      {
+        "texte": "Le secrétariat vous envoie le lien de licence dématérialisée de la FFF."
+      },
+      {
+        "texte": "Prévoir une photo d'identité et un certificat médical (ou le questionnaire de santé)."
+      },
+      {
+        "texte": "Pour les mineurs, l'autorisation parentale est demandée en ligne."
+      }
+    ],
+    "bouton": "Demander une licence",
+    "pictogrammeTarifs": "🧾",
+    "pictogrammeInscription": "📝"
+  },
+  "stade": {
+    "accroche": "Nous trouver",
+    "titre": "Le stade",
+    "texte": "Les rencontres à domicile se disputent au stade municipal de Broût-Vernet (03110), dans l'Allier. Le club utilise également les installations d'Étroussat.\n\nEntrée libre à toutes les rencontres. Buvette ouverte les jours de match.",
+    "bouton": "Ouvrir dans Google Maps",
+    "lienCarte": "https://www.google.com/maps/search/Stade+municipal+Bro%C3%BBt-Vernet+03110",
+    "titreContact": "Nous contacter",
+    "libelleEmail": "E-mail",
+    "libellePartenariats": "Partenariats",
+    "libelleFacebook": "Facebook",
+    "libelleAffiliation": "N° FFF",
+    "libelleCommunes": "Communes",
+    "noteContact": "Le club répond aux messages Facebook et aux e-mails. Pour une demande urgente un jour de match, présentez-vous directement à la buvette."
+  },
+  "services": {
+    "titreBoutique": "La boutique officielle",
+    "texteBoutique": "Survêtements, polos, sweats et tenues d'entraînement adidas floqués aux couleurs de l'ASVS. Commande directe en ligne, livraison à domicile.",
+    "boutonBoutique": "Voir la boutique",
+    "titreMinibus": "Le minibus du club",
+    "texteMinibus": "Le club dispose d'un minibus pour les déplacements des équipes et des jeunes. Son utilisation est encadrée par un règlement, disponible auprès du bureau.",
+    "noteMinibus": "Merci à la boulangerie Aux Délices Bourbonnais et au Monde du Macaron, qui soutiennent le financement du minibus.",
+    "pictogrammeBoutique": "🛍️",
+    "pictogrammeMinibus": "🚐"
+  },
+  "documents": {
+    "accroche": "À télécharger",
+    "titre": "Documents utiles",
+    "chapeau": "Règlements, formulaires et documents officiels du club."
+  },
+  "faq": {
+    "accroche": "Vous vous demandez peut-être…",
+    "titre": "Questions fréquentes",
+    "questions": [
+      {
+        "question": "À partir de quel âge peut-on jouer ?",
+        "reponse": "Dès l'U6-U7, soit environ 5 ans. Les plus jeunes découvrent le football par le jeu, lors de plateaux organisés le samedi avec les clubs voisins."
+      },
+      {
+        "question": "Peut-on essayer avant de prendre une licence ?",
+        "reponse": "Oui. Passez à un entraînement, l'éducateur vous accueillera. Une séance d'essai est toujours possible avant de s'engager."
+      },
+      {
+        "question": "Le club recrute-t-il des bénévoles ?",
+        "reponse": "En permanence. Buvette, table de marque, transport, entretien, arbitrage : toutes les bonnes volontés sont les bienvenues, même pour quelques heures par saison."
+      },
+      {
+        "question": "Où voir les résultats et les classements ?",
+        "reponse": "Les résultats sont publiés sur la page Facebook du club après chaque journée. Les classements officiels sont sur le site du District de l'Allier."
+      },
+      {
+        "question": "Comment soutenir le club en tant qu'entreprise ?",
+        "reponse": "Panneau au stade, encart dans le calendrier, jeu de maillots, dotation en matériel : tout est détaillé sur la page Partenaires, avec la réduction d'impôt de 60 % au titre du mécénat."
+      }
+    ]
+  },
+  "seo": {
+    "titre": "Infos pratiques & contact — AS Val de Sioule",
+    "description": "Licences, tarifs, adresse du stade, contact et boutique officielle de l'AS Val de Sioule à Broût-Vernet (03)."
+  }
+}

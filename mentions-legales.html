@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="asvs-page" content="mentions">
 <title>Mentions légales — AS Val de Sioule</title>
 <meta name="description" content="Mentions légales du site de l'AS Val de Sioule : éditeur, directeur de la publication, hébergeur, propriété intellectuelle et données personnelles.">
 <link rel="icon" href="assets/img/logo-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260827">
+<link rel="stylesheet" href="assets/css/style.css?v=20260903">
 </head>
 <body>
 
@@ -17,9 +18,9 @@
   <div class="chevrons"><span></span><span></span><span></span></div>
   <div class="contenu site-entete__barre">
     <a class="marque" href="index.html">
-      <img src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
+      <img data-club="logo" data-club-alt="logoDescription" src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
       <span class="marque__txt">
-        <span class="marque__nom">AS Val de Sioule</span>
+        <span class="marque__nom" data-club="nom">AS Val de Sioule</span>
         <span class="marque__sous">Depuis 2009</span>
       </span>
     </a>
@@ -43,144 +44,31 @@
 <main>
 
 <section class="hero hero--page">
-  <div class="hero__fond" style="background-image:url('assets/img/banniere.jpg')"></div>
+  <div class="hero__fond" data-fond-txt="hero.image" style="background-image:url('assets/img/banniere.jpg')"></div>
   <div class="contenu hero__contenu">
-    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong>Mentions légales</strong></p>
-    <span class="hero__script">Qui édite ce site</span>
-    <h1>Mentions légales</h1>
-    <p class="hero__chapeau">Informations légales relatives au site de l'AS Val de Sioule.</p>
+    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong data-txt="hero.filAriane">Mentions légales</strong></p>
+    <span class="hero__script" data-txt="hero.accroche">Qui édite ce site</span>
+    <h1 data-txt="hero.titre">Mentions légales</h1>
+    <p class="hero__chapeau" data-txt="hero.chapeau">Informations légales relatives au site.</p>
   </div>
 </section>
 
 <section class="section section--creme">
   <div class="contenu contenu-etroit">
 
-    <h2 class="souligne">Éditeur du site</h2>
-    <p>
-      Le présent site est édité par l'association <strong data-club="nom">AS Val de Sioule</strong>,
-      association sportive régie par la loi du 1<sup>er</sup> juillet 1901 et le décret du
-      16 août 1901.
-    </p>
-    <div class="table-enveloppe" style="margin-bottom:1.4rem">
+    <div class="table-enveloppe" style="margin-bottom:1.8rem">
       <table>
         <tbody>
-          <tr><th style="width:38%">Dénomination</th><td data-club="nom">AS Val de Sioule</td></tr>
-          <tr><th>Siège social</th><td data-club="adresseSiege">Stade Municipal, 03110 Broût-Vernet</td></tr>
-          <tr data-club-si="rna" hidden><th>Numéro RNA</th><td data-club="rna"></td></tr>
-          <tr><th>Affiliation</th><td>Fédération Française de Football — club n° <span data-club="affiliation">554229</span></td></tr>
-          <tr><th>Adresse électronique</th><td><a data-club="email" href="#"></a></td></tr>
+          <tr><th style="width:38%" data-txt="tableau.denomination">Dénomination</th><td data-club="nom">AS Val de Sioule</td></tr>
+          <tr><th data-txt="tableau.siege">Siège social</th><td data-club="adresseSiege">Stade Municipal, 03110 Broût-Vernet</td></tr>
+          <tr data-club-si="rna" hidden><th data-txt="tableau.rna">Numéro RNA</th><td data-club="rna"></td></tr>
+          <tr><th data-txt="tableau.affiliation">Affiliation</th><td><span data-txt="tableau.valeurAffiliation">Fédération Française de Football — club n°</span> <span data-club="affiliation">554229</span></td></tr>
+          <tr><th data-txt="tableau.email">Adresse électronique</th><td><a data-club="email" href="#"></a></td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2 class="souligne">Directeur de la publication</h2>
-    <p>
-      Monsieur <strong data-club="directeurPublication">Philippe ALLIGIER</strong>,
-      en sa qualité de président de l'association.
-    </p>
-
-    <h2 class="souligne">Hébergement</h2>
-    <p>Le site est hébergé par&nbsp;:</p>
-    <div class="encadre">
-      <p>
-        <strong>Netlify, Inc.</strong><br>
-        512 2nd Street, Suite 200<br>
-        San Francisco, CA 94107 — États-Unis<br>
-        <a href="https://www.netlify.com" target="_blank" rel="noopener">www.netlify.com</a>
-      </p>
-    </div>
-
-    <h2 class="souligne">Propriété intellectuelle</h2>
-    <p>
-      Le blason, les couleurs, les textes, les photographies et les documents présents sur
-      ce site sont la propriété de l'AS Val de Sioule ou de leurs auteurs respectifs. Toute
-      reproduction ou représentation, totale ou partielle, à d'autres fins que la consultation
-      individuelle et privée, est interdite sans autorisation écrite préalable de l'association.
-    </p>
-    <p>
-      Les logos des entreprises partenaires demeurent la propriété de leurs titulaires
-      respectifs et sont affichés avec leur accord dans le cadre des conventions de
-      partenariat conclues avec le club.
-    </p>
-
-    <h2 class="souligne">Droit à l'image</h2>
-    <p>
-      Les photographies publiées sur ce site représentent des licenciés, des bénévoles et des
-      participants aux manifestations du club. Elles sont diffusées avec l'accord des personnes
-      concernées, et avec l'autorisation écrite des représentants légaux pour les mineurs.
-    </p>
-    <p>
-      Toute personne figurant sur une photographie peut en demander le retrait à tout moment,
-      sans avoir à motiver sa demande, en écrivant à
-      <a data-club="email" href="#"></a>. Le retrait est effectué dans les meilleurs délais.
-    </p>
-
-    <h2 class="souligne">Données personnelles</h2>
-    <p>
-      Ce site <strong>ne collecte aucune donnée personnelle</strong> : il ne comporte ni
-      formulaire de contact, ni espace de commentaires, ni inscription à une lettre
-      d'information. Aucun compte visiteur n'est créé et aucune information n'est demandée
-      pour consulter les pages.
-    </p>
-    <p>
-      Un espace d'administration réservé permet à l'association de mettre à jour le contenu du
-      site. Il est protégé par identifiant et n'est pas accessible au public.
-    </p>
-
-    <h3>Cookies</h3>
-    <p>
-      Ce site <strong>ne dépose aucun cookie</strong> de mesure d'audience, de publicité ou de
-      suivi. Aucun bandeau de consentement n'est donc nécessaire.
-    </p>
-
-    <h3>Services tiers</h3>
-    <p>
-      L'affichage des pages fait appel au service <strong>Google Fonts</strong> pour le
-      chargement des polices de caractères. Cet appel transmet l'adresse IP du visiteur aux
-      serveurs de Google, sans autre donnée. Les liens vers la page Facebook du club et vers
-      la boutique en ligne renvoient vers des sites tiers, régis par leurs propres politiques
-      de confidentialité.
-    </p>
-    <p>
-      L'hébergeur Netlify conserve des journaux de connexion techniques, à des fins de
-      sécurité et de bon fonctionnement du service.
-    </p>
-
-    <h3>Vos droits</h3>
-    <p>
-      Conformément au Règlement général sur la protection des données (RGPD) et à la loi
-      « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification,
-      d'effacement et d'opposition concernant les données vous concernant. Pour l'exercer,
-      écrivez à <a data-club="email" href="#"></a>.
-    </p>
-
-    <h2 class="souligne">Responsabilité</h2>
-    <p>
-      L'association s'efforce de publier des informations exactes et à jour, notamment
-      concernant les dates et horaires des rencontres. Ces informations sont toutefois
-      communiquées par le District de l'Allier et peuvent être modifiées à tout moment.
-      <strong>Elles sont données à titre indicatif et n'engagent pas la responsabilité de
-      l'association.</strong> En cas de doute, la page Facebook du club et le site du District
-      font foi.
-    </p>
-    <p>
-      L'association ne saurait être tenue responsable du contenu des sites tiers vers lesquels
-      des liens sont proposés.
-    </p>
-
-    <h2 class="souligne">Crédits</h2>
-    <p>
-      Blason, bannière et supports visuels : AS Val de Sioule.<br>
-      Photographies : bénévoles et licenciés du club.<br>
-      Polices de caractères : Anton, Barlow et Caveat Brush, diffusées sous licence
-      SIL Open Font License.
-    </p>
-
-    <h2 class="souligne">Nous signaler un problème</h2>
-    <p>
-      Une erreur, une photo à retirer, une information à corriger&nbsp;? Écrivez à
-      <a data-club="email" href="#"></a>, nous traitons la demande rapidement.
-    </p>
+    <div data-liste="sections" data-gabarit="bloc"></div>
 
   </div>
 </section>
@@ -190,44 +78,27 @@
 <footer class="site-pied">
   <div class="contenu">
     <div class="pied__grille">
-      <div>
+            <div>
         <div class="pied__marque">
-          <img src="assets/img/logo.png" alt="">
-          <strong>AS Val de Sioule</strong>
+          <img data-club="logo" src="assets/img/logo.png" alt="">
+          <strong data-club="nom">AS Val de Sioule</strong>
         </div>
-        <p>Club de football des communes de Broût-Vernet, Étroussat et Barberier.<br>
-           Affilié à la FFF sous le numéro <span data-club="affiliation">554229</span>.</p>
+        <p><span data-pied="presentation">Club de football des communes de Broût-Vernet, Étroussat et Barberier.</span><br>
+           <span data-pied="mentionAffiliation">Affilié à la FFF sous le numéro</span> <span data-club="affiliation">554229</span>.</p>
         <div class="reseaux">
           <a class="reseaux--facebook" data-club="facebook" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
-            <span>Suivre sur Facebook</span>
+            <span data-pied="boutonFacebook">Suivre sur Facebook</span>
           </a>
           <a class="reseaux--boutique" data-club="boutique" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4a5 5 0 0 1 10 0h3a1 1 0 0 1 1 1l-1 15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2L3 5a1 1 0 0 1 1-1h3zm2 0h6a3 3 0 0 0-6 0z"/></svg>
-            <span>La boutique</span>
+            <span data-pied="boutonBoutique">La boutique</span>
           </a>
         </div>
       </div>
+      <div data-pied="colonnes" style="display:contents"></div>
       <div>
-        <h4>Le club</h4>
-        <ul>
-          <li><a href="club.html">Histoire et valeurs</a></li>
-          <li><a href="club.html#organisation">Bureau et conseil</a></li>
-          <li><a href="equipes.html">Nos équipes</a></li>
-          <li><a href="evenements.html">Événements</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Pratique</h4>
-        <ul>
-          <li><a href="calendrier.html">Calendrier des matchs</a></li>
-          <li><a href="actualites.html">Actualités</a></li>
-          <li><a href="infos.html">Licences et tarifs</a></li>
-          <li><a href="partenaires.html">Devenir partenaire</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Nous trouver</h4>
+        <h4 data-pied="titreContact">Nous trouver</h4>
         <ul>
           <li><span data-club="stade">Stade Municipal</span><br><span data-club="codePostal">03110</span> <span data-club="ville">Broût-Vernet</span></li>
           <li><a data-club="email" href="#"></a></li>
@@ -235,12 +106,12 @@
       </div>
     </div>
     <div class="pied__bas">
-      <span>© <span data-annee>2026</span> AS Val de Sioule — Tous droits réservés.</span>
-      <span><a href="mentions-legales.html">Mentions légales</a></span>
-      <span>Saison <span data-club="saison">2026 / 2027</span></span>
+            <span>© <span data-annee>2026</span> <span data-pied="copyright">AS Val de Sioule — Tous droits réservés.</span></span>
+      <span><a href="mentions-legales.html" data-pied="lienMentions">Mentions légales</a></span>
+      <span><span data-pied="prefixeSaison">Saison</span> <span data-club="saison">2026 / 2027</span></span>
     </div>
   </div>
 </footer>
-<script src="assets/js/main.js?v=20260827" defer></script>
+<script src="assets/js/main.js?v=20260903" defer></script>
 </body>
 </html>

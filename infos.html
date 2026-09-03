@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="asvs-page" content="infos">
 <title>Infos pratiques &amp; contact — AS Val de Sioule</title>
 <meta name="description" content="Licences, tarifs, adresse du stade, contact et boutique officielle de l'AS Val de Sioule à Broût-Vernet (03).">
 <link rel="icon" href="assets/img/logo-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260827">
+<link rel="stylesheet" href="assets/css/style.css?v=20260903">
 </head>
 <body>
 
@@ -17,9 +18,9 @@
   <div class="chevrons"><span></span><span></span><span></span></div>
   <div class="contenu site-entete__barre">
     <a class="marque" href="index.html">
-      <img src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
+      <img data-club="logo" data-club-alt="logoDescription" src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
       <span class="marque__txt">
-        <span class="marque__nom">AS Val de Sioule</span>
+        <span class="marque__nom" data-club="nom">AS Val de Sioule</span>
         <span class="marque__sous">Depuis 2009</span>
       </span>
     </a>
@@ -43,12 +44,12 @@
 <main>
 
 <section class="hero hero--page">
-  <div class="hero__fond" style="background-image:url('assets/img/banniere.jpg')"></div>
+  <div class="hero__fond" data-fond-txt="hero.image" style="background-image:url('assets/img/banniere.jpg')"></div>
   <div class="contenu hero__contenu">
-    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong>Infos pratiques</strong></p>
-    <span class="hero__script">Tout ce qu'il faut savoir</span>
-    <h1>Infos pratiques &amp; contact</h1>
-    <p class="hero__chapeau">Licences, tarifs, adresse du stade, boutique et contact du club.</p>
+    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong data-txt="hero.filAriane">Infos pratiques</strong></p>
+    <span class="hero__script" data-txt="hero.accroche">Tout ce qu'il faut savoir</span>
+    <h1 data-txt="hero.titre">Infos pratiques &amp; contact</h1>
+    <p class="hero__chapeau" data-txt="hero.chapeau">Licences, tarifs, stade, boutique et contact.</p>
   </div>
 </section>
 
@@ -56,38 +57,29 @@
 <section class="section section--creme">
   <div class="contenu">
     <div class="entete-section">
-      <span class="script">Rejoindre le club</span>
-      <h2 class="souligne">Licences &amp; tarifs</h2>
-      <p class="chapeau">Le club accueille de nouveaux licenciés toute l'année, à tous les âges.</p>
+      <span class="script" data-txt="licences.accroche">Rejoindre le club</span>
+      <h2 class="souligne" data-txt="licences.titre">Licences &amp; tarifs</h2>
+      <p class="chapeau" data-txt="licences.chapeau">Le club accueille de nouveaux licenciés toute l'année.</p>
     </div>
 
     <div class="grille grille--2">
       <div class="carte">
-        <div class="carte__pastille pastille--rouge">🧾</div>
-        <h3>Tarifs de la licence</h3>
+        <div class="carte__pastille pastille--rouge" data-txt="licences.pictogrammeTarifs">🧾</div>
+        <h3 data-txt="licences.titreTarifs">Tarifs de la licence</h3>
         <div class="table-enveloppe" style="margin-top:1rem;border:0">
           <table style="min-width:auto">
-            <tbody>
-              <tr><td><strong>Séniors</strong> (A, B, vétérans, féminines)</td><td style="text-align:right;font-weight:700">40 €</td></tr>
-              <tr><td><strong>Jeunes</strong> — U6 à U18</td><td style="text-align:right;font-weight:700">20 €</td></tr>
-              <tr><td><strong>Dirigeants, éducateurs, arbitres</strong></td><td style="text-align:right;font-weight:700">Gratuit</td></tr>
-            </tbody>
+            <tbody data-liste="licences.tarifs" data-gabarit="tarif"></tbody>
           </table>
         </div>
-        <p style="margin-top:1rem;font-size:.88rem">Tarifs votés en Assemblée Générale. Susceptibles d'évoluer chaque saison.</p>
+        <p style="margin-top:1rem;font-size:.88rem" data-txt="licences.noteTarifs">Tarifs votés en Assemblée Générale.</p>
       </div>
 
       <div class="carte">
-        <div class="carte__pastille pastille--vert">📝</div>
-        <h3>Comment s'inscrire</h3>
-        <ul class="liste-check" style="margin-top:1rem">
-          <li>Écrivez au club ou passez au stade un soir d'entraînement.</li>
-          <li>Le secrétariat vous envoie le lien de licence dématérialisée de la FFF.</li>
-          <li>Prévoir une photo d'identité et un certificat médical (ou le questionnaire de santé).</li>
-          <li>Pour les mineurs, l'autorisation parentale est demandée en ligne.</li>
-        </ul>
+        <div class="carte__pastille pastille--vert" data-txt="licences.pictogrammeInscription">📝</div>
+        <h3 data-txt="licences.titreInscription">Comment s'inscrire</h3>
+        <ul class="liste-check" style="margin-top:1rem" data-liste="licences.etapes" data-gabarit="puce"></ul>
         <div class="groupe-btn" style="margin-top:1.4rem">
-          <a class="btn btn--primaire" data-club="email" href="#">Demander une licence</a>
+          <a class="btn btn--primaire" data-club="email" href="#" data-txt="licences.bouton">Demander une licence</a>
         </div>
       </div>
     </div>
@@ -100,33 +92,25 @@
     <div class="duo">
       <div>
         <div class="entete-section">
-          <span class="script">Nous trouver</span>
-          <h2 class="souligne">Le stade</h2>
+          <span class="script" data-txt="stade.accroche">Nous trouver</span>
+          <h2 class="souligne" data-txt="stade.titre">Le stade</h2>
         </div>
-        <p>
-          Les rencontres à domicile se disputent au <strong data-club="stade">Stade Municipal</strong> de
-          <strong data-club="ville">Broût-Vernet</strong> (<span data-club="codePostal">03110</span>),
-          dans l'Allier. Le club utilise également les installations d'Étroussat.
-        </p>
-        <p>Entrée libre à toutes les rencontres. Buvette ouverte les jours de match.</p>
+        <div data-riche="stade.texte"></div>
         <div class="groupe-btn" style="margin-top:1.6rem">
-          <a class="btn btn--fantome" href="https://www.google.com/maps/search/Stade+municipal+Bro%C3%BBt-Vernet+03110" target="_blank" rel="noopener">Ouvrir dans Google&nbsp;Maps</a>
+          <a class="btn btn--fantome" data-href-txt="stade.lienCarte" href="https://www.google.com/maps/search/Stade+municipal+Bro%C3%BBt-Vernet+03110" target="_blank" rel="noopener" data-txt="stade.bouton">Ouvrir dans Google&nbsp;Maps</a>
         </div>
       </div>
       <div>
         <div class="carte">
-          <h3>Nous contacter</h3>
+          <h3 data-txt="stade.titreContact">Nous contacter</h3>
           <ul class="equipe__infos" style="margin-top:1rem">
-            <li><b>E-mail</b><span><a data-club="email" href="#"></a></span></li>
-            <li><b>Partenariats</b><span><a data-club="emailPartenaires" href="#"></a></span></li>
-            <li><b>Facebook</b><span><a data-club="facebook" href="#" target="_blank" rel="noopener">A.S Val De Sioule</a></span></li>
-            <li><b>N° FFF</b><span data-club="affiliation">554229</span></li>
-            <li><b>Communes</b><span data-club="communes"></span></li>
+            <li><b data-txt="stade.libelleEmail">E-mail</b><span><a data-club="email" href="#"></a></span></li>
+            <li><b data-txt="stade.libellePartenariats">Partenariats</b><span><a data-club="emailPartenaires" href="#"></a></span></li>
+            <li><b data-txt="stade.libelleFacebook">Facebook</b><span><a data-club="facebook" href="#" target="_blank" rel="noopener">A.S Val De Sioule</a></span></li>
+            <li><b data-txt="stade.libelleAffiliation">N° FFF</b><span data-club="affiliation">554229</span></li>
+            <li><b data-txt="stade.libelleCommunes">Communes</b><span data-club="communes"></span></li>
           </ul>
-          <p style="margin-top:1.2rem;font-size:.92rem">
-            Le club répond aux messages Facebook et aux e-mails. Pour une demande urgente
-            un jour de match, présentez-vous directement à la buvette.
-          </p>
+          <p style="margin-top:1.2rem;font-size:.92rem" data-txt="stade.noteContact">Le club répond aux messages Facebook et aux e-mails.</p>
         </div>
       </div>
     </div>
@@ -138,21 +122,18 @@
   <div class="contenu">
     <div class="grille grille--2">
       <div class="carte">
-        <div class="carte__pastille pastille--bleu">🛍️</div>
-        <h3>La boutique officielle</h3>
-        <p>Survêtements, polos, sweats et tenues d'entraînement adidas floqués aux couleurs de l'ASVS.
-           Commande directe en ligne, livraison à domicile.</p>
+        <div class="carte__pastille pastille--bleu" data-txt="services.pictogrammeBoutique">🛍️</div>
+        <h3 data-txt="services.titreBoutique">La boutique officielle</h3>
+        <p data-txt="services.texteBoutique">Tenues adidas floquées aux couleurs de l'ASVS.</p>
         <div class="groupe-btn" style="margin-top:1.2rem">
-          <a class="btn btn--bleu" data-club="boutique" href="#" target="_blank" rel="noopener">Voir la boutique</a>
+          <a class="btn btn--bleu" data-club="boutique" href="#" target="_blank" rel="noopener" data-txt="services.boutonBoutique">Voir la boutique</a>
         </div>
       </div>
       <div class="carte">
-        <div class="carte__pastille pastille--vert">🚐</div>
-        <h3>Le minibus du club</h3>
-        <p>Le club dispose d'un minibus pour les déplacements des équipes et des jeunes.
-           Son utilisation est encadrée par un règlement, disponible auprès du bureau.</p>
-        <p style="margin-top:.6rem;font-size:.9rem"><em>Merci à la boulangerie Aux Délices Bourbonnais
-           et au Monde du Macaron, qui soutiennent le financement du minibus.</em></p>
+        <div class="carte__pastille pastille--vert" data-txt="services.pictogrammeMinibus">🚐</div>
+        <h3 data-txt="services.titreMinibus">Le minibus du club</h3>
+        <p data-txt="services.texteMinibus">Un minibus pour les déplacements des équipes et des jeunes.</p>
+        <p style="margin-top:.6rem;font-size:.9rem"><em data-txt="services.noteMinibus"></em></p>
       </div>
     </div>
   </div>
@@ -162,9 +143,9 @@
 <section class="section section--creme" id="bloc-documents" hidden>
   <div class="contenu">
     <div class="entete-section">
-      <span class="script">À télécharger</span>
-      <h2 class="souligne">Documents utiles</h2>
-      <p class="chapeau">Règlements, formulaires et documents officiels du club.</p>
+      <span class="script" data-txt="documents.accroche">À télécharger</span>
+      <h2 class="souligne" data-txt="documents.titre">Documents utiles</h2>
+      <p class="chapeau" data-txt="documents.chapeau">Règlements et documents officiels du club.</p>
     </div>
     <div class="documents" id="liste-documents" data-categorie="infos"></div>
   </div>
@@ -174,38 +155,10 @@
 <section class="section section--creme">
   <div class="contenu contenu-etroit">
     <div class="entete-section">
-      <span class="script">Vous vous demandez peut-être…</span>
-      <h2 class="souligne">Questions fréquentes</h2>
+      <span class="script" data-txt="faq.accroche">Vous vous demandez peut-être…</span>
+      <h2 class="souligne" data-txt="faq.titre">Questions fréquentes</h2>
     </div>
-
-    <div class="grille" style="gap:1rem">
-      <div class="carte">
-        <h3>À partir de quel âge peut-on jouer&nbsp;?</h3>
-        <p>Dès l'U6-U7, soit environ 5 ans. Les plus jeunes découvrent le football par le jeu,
-           lors de plateaux organisés le samedi avec les clubs voisins.</p>
-      </div>
-      <div class="carte">
-        <h3>Peut-on essayer avant de prendre une licence&nbsp;?</h3>
-        <p>Oui. Passez à un entraînement, l'éducateur vous accueillera. Une séance d'essai
-           est toujours possible avant de s'engager.</p>
-      </div>
-      <div class="carte">
-        <h3>Le club recrute-t-il des bénévoles&nbsp;?</h3>
-        <p>En permanence. Buvette, table de marque, transport, entretien, arbitrage :
-           toutes les bonnes volontés sont les bienvenues, même pour quelques heures par saison.</p>
-      </div>
-      <div class="carte">
-        <h3>Où voir les résultats et les classements&nbsp;?</h3>
-        <p>Les résultats sont publiés sur la page Facebook du club après chaque journée.
-           Les classements officiels sont sur le site du District de l'Allier.</p>
-      </div>
-      <div class="carte">
-        <h3>Comment soutenir le club en tant qu'entreprise&nbsp;?</h3>
-        <p>Panneau au stade, encart dans le calendrier, jeu de maillots, dotation en matériel :
-           tout est détaillé sur la <a href="partenaires.html">page partenaires</a>,
-           avec la réduction d'impôt de 60 % au titre du mécénat.</p>
-      </div>
-    </div>
+    <div class="grille" style="gap:1rem" data-liste="faq.questions" data-gabarit="faq"></div>
   </div>
 </section>
 
@@ -214,44 +167,27 @@
 <footer class="site-pied">
   <div class="contenu">
     <div class="pied__grille">
-      <div>
+            <div>
         <div class="pied__marque">
-          <img src="assets/img/logo.png" alt="">
-          <strong>AS Val de Sioule</strong>
+          <img data-club="logo" src="assets/img/logo.png" alt="">
+          <strong data-club="nom">AS Val de Sioule</strong>
         </div>
-        <p>Club de football des communes de Broût-Vernet, Étroussat et Barberier.<br>
-           Affilié à la FFF sous le numéro <span data-club="affiliation">554229</span>.</p>
+        <p><span data-pied="presentation">Club de football des communes de Broût-Vernet, Étroussat et Barberier.</span><br>
+           <span data-pied="mentionAffiliation">Affilié à la FFF sous le numéro</span> <span data-club="affiliation">554229</span>.</p>
         <div class="reseaux">
           <a class="reseaux--facebook" data-club="facebook" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
-            <span>Suivre sur Facebook</span>
+            <span data-pied="boutonFacebook">Suivre sur Facebook</span>
           </a>
           <a class="reseaux--boutique" data-club="boutique" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4a5 5 0 0 1 10 0h3a1 1 0 0 1 1 1l-1 15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2L3 5a1 1 0 0 1 1-1h3zm2 0h6a3 3 0 0 0-6 0z"/></svg>
-            <span>La boutique</span>
+            <span data-pied="boutonBoutique">La boutique</span>
           </a>
         </div>
       </div>
+      <div data-pied="colonnes" style="display:contents"></div>
       <div>
-        <h4>Le club</h4>
-        <ul>
-          <li><a href="club.html">Histoire et valeurs</a></li>
-          <li><a href="club.html#organisation">Bureau et conseil</a></li>
-          <li><a href="equipes.html">Nos équipes</a></li>
-          <li><a href="evenements.html">Événements</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Pratique</h4>
-        <ul>
-          <li><a href="calendrier.html">Calendrier des matchs</a></li>
-          <li><a href="actualites.html">Actualités</a></li>
-          <li><a href="infos.html">Licences et tarifs</a></li>
-          <li><a href="partenaires.html">Devenir partenaire</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Nous trouver</h4>
+        <h4 data-pied="titreContact">Nous trouver</h4>
         <ul>
           <li><span data-club="stade">Stade Municipal</span><br><span data-club="codePostal">03110</span> <span data-club="ville">Broût-Vernet</span></li>
           <li><a data-club="email" href="#"></a></li>
@@ -259,12 +195,12 @@
       </div>
     </div>
     <div class="pied__bas">
-      <span>© <span data-annee>2026</span> AS Val de Sioule — Tous droits réservés.</span>
-      <span><a href="mentions-legales.html">Mentions légales</a></span>
-      <span>Saison <span data-club="saison">2026 / 2027</span></span>
+            <span>© <span data-annee>2026</span> <span data-pied="copyright">AS Val de Sioule — Tous droits réservés.</span></span>
+      <span><a href="mentions-legales.html" data-pied="lienMentions">Mentions légales</a></span>
+      <span><span data-pied="prefixeSaison">Saison</span> <span data-club="saison">2026 / 2027</span></span>
     </div>
   </div>
 </footer>
-<script src="assets/js/main.js?v=20260827" defer></script>
+<script src="assets/js/main.js?v=20260903" defer></script>
 </body>
 </html>

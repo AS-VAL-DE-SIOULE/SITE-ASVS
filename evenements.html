@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="asvs-page" content="evenements">
 <title>Événements et vie du club — AS Val de Sioule</title>
 <meta name="description" content="Concours de pétanque, soirée moules-frites, grilles de dinde, tournoi des jeunes, Bataille des Deux Clochers : tous les rendez-vous de l'AS Val de Sioule.">
 <link rel="icon" href="assets/img/logo-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260827">
+<link rel="stylesheet" href="assets/css/style.css?v=20260903">
 </head>
 <body>
 
@@ -17,9 +18,9 @@
   <div class="chevrons"><span></span><span></span><span></span></div>
   <div class="contenu site-entete__barre">
     <a class="marque" href="index.html">
-      <img src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
+      <img data-club="logo" data-club-alt="logoDescription" src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
       <span class="marque__txt">
-        <span class="marque__nom">AS Val de Sioule</span>
+        <span class="marque__nom" data-club="nom">AS Val de Sioule</span>
         <span class="marque__sous">Depuis 2009</span>
       </span>
     </a>
@@ -43,54 +44,39 @@
 <main>
 
 <section class="hero hero--page">
-  <div class="hero__fond" style="background-image:url('assets/photos/actu-petanque.jpg');background-position:center 45%"></div>
+  <div class="hero__fond" data-fond-txt="hero.image" style="background-image:url('assets/photos/actu-petanque.jpg');background-position:center 45%"></div>
   <div class="contenu hero__contenu">
-    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong>Événements</strong></p>
-    <span class="hero__script">Le foot, c'est aussi hors du terrain</span>
-    <h1>Événements &amp; vie du club</h1>
-    <p class="hero__chapeau">
-      Un club de village vit de ses manifestations. Voici les rendez-vous qui rythment
-      notre saison — et qui financent les maillots, les ballons et les déplacements.
-    </p>
+    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong data-txt="hero.filAriane">Événements</strong></p>
+    <span class="hero__script" data-txt="hero.accroche">Le foot, c'est aussi hors du terrain</span>
+    <h1 data-txt="hero.titre">Événements &amp; vie du club</h1>
+    <p class="hero__chapeau" data-txt="hero.chapeau">Les rendez-vous qui rythment notre saison.</p>
   </div>
 </section>
 
 <section class="section section--creme">
   <div class="contenu">
     <div class="entete-section">
-      <span class="script">Toute l'année</span>
-      <h2 class="souligne">Nos rendez-vous</h2>
-      <p class="chapeau">Les dates précises sont annoncées sur la page Facebook du club au fil de la saison.</p>
+      <span class="script" data-txt="liste.accroche">Toute l'année</span>
+      <h2 class="souligne" data-txt="liste.titre">Nos rendez-vous</h2>
+      <p class="chapeau" data-txt="liste.chapeau">Les dates sont annoncées sur la page Facebook du club.</p>
     </div>
     <div class="grille grille--3" id="liste-evenements"></div>
   </div>
 </section>
 
-<!-- ===== PÉTANQUE ===== -->
+<!-- ===== FOCUS ===== -->
 <section class="section section--sombre">
   <div class="contenu">
     <div class="duo">
       <div>
         <div class="entete-section">
-          <span class="script">Édition 2026</span>
-          <h2 class="souligne">54 équipes : un record</h2>
+          <span class="script" data-txt="focus.accroche">Édition 2026</span>
+          <h2 class="souligne" data-txt="focus.titre">54 équipes : un record</h2>
         </div>
-        <p>
-          Le samedi 8 août 2026, le club organisait son traditionnel concours de pétanque,
-          proposé pour la première fois en semi-nocturne pour profiter d'un peu de fraîcheur.
-        </p>
-        <p>
-          Entre beaux carreaux, tirs manqués, parties disputées et éclats de rire,
-          <strong>54 équipes</strong> se sont affrontées dans une ambiance conviviale et festive.
-          Un nouveau record pour l'ASVS.
-        </p>
-        <p>
-          Félicitations aux finalistes Stelio et Nounours, et un immense merci aux bénévoles
-          mobilisés à la buvette, à la restauration et à la table de marque.
-        </p>
+        <div data-riche="focus.texte"></div>
       </div>
       <div>
-        <img src="assets/photos/actu-petanque.jpg" alt="Le concours de pétanque semi-nocturne de l'AS Val de Sioule, édition du 8 août 2026" loading="lazy">
+        <img data-src-txt="focus.image" src="assets/photos/actu-petanque.jpg" data-alt-txt="focus.legendeImage" alt="Concours de pétanque" loading="lazy">
       </div>
     </div>
   </div>
@@ -100,8 +86,8 @@
 <section class="section section--blanc" id="bloc-documents" hidden>
   <div class="contenu">
     <div class="entete-section">
-      <span class="script">À télécharger</span>
-      <h2 class="souligne">Affiches &amp; règlements</h2>
+      <span class="script" data-txt="documents.accroche">À télécharger</span>
+      <h2 class="souligne" data-txt="documents.titre">Affiches &amp; règlements</h2>
     </div>
     <div class="documents" id="liste-documents" data-categorie="evenements"></div>
   </div>
@@ -112,12 +98,11 @@
   <div class="contenu">
     <div class="cta-bande reveal">
       <div>
-        <h2>Donner un coup de main&nbsp;?</h2>
-        <p>Tenir la buvette, cuire les saucisses, tracer le terrain, tenir la table de marque,
-           conduire le minibus : chaque manifestation repose sur les bénévoles. Deux heures suffisent.</p>
+        <h2 data-txt="benevoles.titre">Donner un coup de main&nbsp;?</h2>
+        <p data-txt="benevoles.texte">Chaque manifestation repose sur les bénévoles.</p>
       </div>
       <div class="groupe-btn">
-        <a class="btn btn--fantome" href="infos.html">Nous contacter</a>
+        <a class="btn btn--fantome" href="infos.html" data-txt="benevoles.bouton">Nous contacter</a>
       </div>
     </div>
   </div>
@@ -128,44 +113,27 @@
 <footer class="site-pied">
   <div class="contenu">
     <div class="pied__grille">
-      <div>
+            <div>
         <div class="pied__marque">
-          <img src="assets/img/logo.png" alt="">
-          <strong>AS Val de Sioule</strong>
+          <img data-club="logo" src="assets/img/logo.png" alt="">
+          <strong data-club="nom">AS Val de Sioule</strong>
         </div>
-        <p>Club de football des communes de Broût-Vernet, Étroussat et Barberier.<br>
-           Affilié à la FFF sous le numéro <span data-club="affiliation">554229</span>.</p>
+        <p><span data-pied="presentation">Club de football des communes de Broût-Vernet, Étroussat et Barberier.</span><br>
+           <span data-pied="mentionAffiliation">Affilié à la FFF sous le numéro</span> <span data-club="affiliation">554229</span>.</p>
         <div class="reseaux">
           <a class="reseaux--facebook" data-club="facebook" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
-            <span>Suivre sur Facebook</span>
+            <span data-pied="boutonFacebook">Suivre sur Facebook</span>
           </a>
           <a class="reseaux--boutique" data-club="boutique" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4a5 5 0 0 1 10 0h3a1 1 0 0 1 1 1l-1 15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2L3 5a1 1 0 0 1 1-1h3zm2 0h6a3 3 0 0 0-6 0z"/></svg>
-            <span>La boutique</span>
+            <span data-pied="boutonBoutique">La boutique</span>
           </a>
         </div>
       </div>
+      <div data-pied="colonnes" style="display:contents"></div>
       <div>
-        <h4>Le club</h4>
-        <ul>
-          <li><a href="club.html">Histoire et valeurs</a></li>
-          <li><a href="club.html#organisation">Bureau et conseil</a></li>
-          <li><a href="equipes.html">Nos équipes</a></li>
-          <li><a href="evenements.html">Événements</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Pratique</h4>
-        <ul>
-          <li><a href="calendrier.html">Calendrier des matchs</a></li>
-          <li><a href="actualites.html">Actualités</a></li>
-          <li><a href="infos.html">Licences et tarifs</a></li>
-          <li><a href="partenaires.html">Devenir partenaire</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Nous trouver</h4>
+        <h4 data-pied="titreContact">Nous trouver</h4>
         <ul>
           <li><span data-club="stade">Stade Municipal</span><br><span data-club="codePostal">03110</span> <span data-club="ville">Broût-Vernet</span></li>
           <li><a data-club="email" href="#"></a></li>
@@ -173,12 +141,12 @@
       </div>
     </div>
     <div class="pied__bas">
-      <span>© <span data-annee>2026</span> AS Val de Sioule — Tous droits réservés.</span>
-      <span><a href="mentions-legales.html">Mentions légales</a></span>
-      <span>Saison <span data-club="saison">2026 / 2027</span></span>
+            <span>© <span data-annee>2026</span> <span data-pied="copyright">AS Val de Sioule — Tous droits réservés.</span></span>
+      <span><a href="mentions-legales.html" data-pied="lienMentions">Mentions légales</a></span>
+      <span><span data-pied="prefixeSaison">Saison</span> <span data-club="saison">2026 / 2027</span></span>
     </div>
   </div>
 </footer>
-<script src="assets/js/main.js?v=20260827" defer></script>
+<script src="assets/js/main.js?v=20260903" defer></script>
 </body>
 </html>

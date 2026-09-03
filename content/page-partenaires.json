@@ -1,0 +1,159 @@
+{
+  "hero": {
+    "accroche": "Sans eux, rien ne serait possible",
+    "titre": "Partenaires & sponsoring",
+    "chapeau": "Les entreprises du territoire équipent le club au quotidien : maillots, panneaux au stade, minibus, ballons et calendrier. Merci à elles.",
+    "image": "assets/photos/actu-preparation.jpg",
+    "filAriane": "Partenaires"
+  },
+  "liste": {
+    "accroche": "Ils soutiennent l'ASVS",
+    "titre": "Nos partenaires"
+  },
+  "soutien": {
+    "accroche": "Pourquoi nous soutenir",
+    "titre": "Ce que votre soutien finance",
+    "chapeau": "Chaque euro versé au club retourne directement sur le terrain.",
+    "cartes": [
+      {
+        "pictogramme": "👕",
+        "titre": "Les équipements",
+        "texte": "Jeux de maillots, tenues d'entraînement, ballons de match et matériel pour toutes les catégories."
+      },
+      {
+        "pictogramme": "🚐",
+        "titre": "Le minibus",
+        "texte": "Il transporte les jeunes vers les plateaux et les équipes vers les déplacements du week-end."
+      },
+      {
+        "pictogramme": "🧒",
+        "titre": "L'école de foot",
+        "texte": "Les licences, les plateaux et l'encadrement des enfants, de l'U7 à l'U15."
+      },
+      {
+        "pictogramme": "🏟️",
+        "titre": "Les installations",
+        "texte": "Entretien de la pelouse, des vestiaires, des filets et des buts. Un stade qui reste accueillant."
+      }
+    ]
+  },
+  "supports": {
+    "accroche": "À la carte",
+    "titre": "Les supports de visibilité",
+    "chapeau": "Le club propose plusieurs formules, du panneau au bord du terrain au jeu de maillots complet. Les montants et les contreparties détaillées figurent dans la plaquette de sponsoring.",
+    "packs": [
+      {
+        "titre": "Le stade",
+        "sousTitre": "Visible à chaque rencontre",
+        "points": [
+          {
+            "texte": "Panneau publicitaire au bord du terrain"
+          },
+          {
+            "texte": "Stades de Broût-Vernet et d'Étroussat"
+          },
+          {
+            "texte": "Mention sur les réseaux sociaux du club"
+          },
+          {
+            "texte": "Présence dans la liste des partenaires du site"
+          }
+        ]
+      },
+      {
+        "titre": "Les maillots",
+        "sousTitre": "Le support le plus visible",
+        "points": [
+          {
+            "texte": "Jeu de maillots complet floqué à vos couleurs"
+          },
+          {
+            "texte": "Maillots d'entraînement"
+          },
+          {
+            "texte": "Photo officielle de l'équipe équipée"
+          },
+          {
+            "texte": "Publication dédiée sur la page Facebook"
+          }
+        ]
+      },
+      {
+        "titre": "Le calendrier",
+        "sousTitre": "Dans toutes les maisons du secteur",
+        "points": [
+          {
+            "texte": "Encart dans le calendrier annuel du club"
+          },
+          {
+            "texte": "Distribution en porte-à-porte sur les trois communes"
+          },
+          {
+            "texte": "Diffusion pendant toute l'année civile"
+          }
+        ]
+      },
+      {
+        "titre": "Le minibus & le matériel",
+        "sousTitre": "Un soutien qui roule",
+        "points": [
+          {
+            "texte": "Logo apposé sur le minibus du club"
+          },
+          {
+            "texte": "Dotation en ballons de match"
+          },
+          {
+            "texte": "Flamme ou oriflamme aux abords du terrain"
+          },
+          {
+            "texte": "Soutien d'une manifestation du club"
+          }
+        ]
+      }
+    ],
+    "bouton1": "Télécharger la plaquette",
+    "lienPlaquette": "assets/docs/plaquette-sponsoring.pdf",
+    "bouton2": "Nous écrire"
+  },
+  "mecenat": {
+    "accroche": "Bon à savoir",
+    "titre": "Un don qui coûte moins qu'il n'y paraît",
+    "texte": "L'AS Val de Sioule est une association loi 1901 d'intérêt général. À ce titre, elle peut délivrer un reçu fiscal (CERFA 11580) pour les dons qu'elle reçoit.\n\nPour une entreprise, le mécénat ouvre droit à une réduction d'impôt de 60 % du montant du don, dans la limite de 20 000 € ou de 5 ‰ du chiffre d'affaires (article 238 bis du Code général des impôts).",
+    "titreExemple": "Concrètement",
+    "texteExemple": "Un don de 500 € représente un coût réel de 200 € pour l'entreprise après réduction d'impôt.",
+    "bouton": "Le modèle de reçu fiscal",
+    "lienCerfa": "assets/docs/cerfa-defiscalisation.pdf",
+    "titreDemarche": "Comment devenir partenaire ?",
+    "etapes": [
+      {
+        "texte": "Vous nous écrivez, ou un membre du club passe vous voir."
+      },
+      {
+        "texte": "Nous définissons ensemble le support qui vous correspond."
+      },
+      {
+        "texte": "Le club établit la facture ou le reçu fiscal."
+      },
+      {
+        "texte": "Votre visibilité démarre dès la mise en place du support."
+      }
+    ],
+    "noteDemarche": "Le démarchage est assuré bénévolement par des membres du club, qui se déplacent directement dans les entreprises du secteur.",
+    "titreContact": "Contact partenariats",
+    "boutonContact": "Prendre contact"
+  },
+  "documents": {
+    "accroche": "À télécharger",
+    "titre": "Documents partenaires"
+  },
+  "appel": {
+    "titre": "Votre entreprise sur nos maillots ?",
+    "texte": "Le club démarche chaque saison les entreprises du bassin de Saint-Pourçain, Gannat, Vichy et Broût-Vernet. Si vous souhaitez nous soutenir, un message suffit.",
+    "bouton": "Écrire au club"
+  },
+  "seo": {
+    "titre": "Partenaires & sponsoring — AS Val de Sioule",
+    "description": "Les partenaires de l'AS Val de Sioule et les modalités pour soutenir le club : panneaux au stade, jeux de maillots, calendrier, minibus, et réduction d'impôt de 60 % au titre du mécénat."
+  }
+}

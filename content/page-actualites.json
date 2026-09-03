@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "accroche": "La vie du club, semaine après semaine",
+    "titre": "Actualités",
+    "chapeau": "Résultats, événements, annonces : tout ce qui fait battre le cœur de l'ASVS.",
+    "image": "assets/photos/actu-petanque.jpg",
+    "filAriane": "Actualités"
+  },
+  "facebook": {
+    "titre": "Toute l'actu en direct sur Facebook",
+    "texte": "Compositions, résultats, photos d'après-match, annonces de manifestations : la page Facebook du club est mise à jour après chaque journée, et suivie par plus de mille personnes.",
+    "bouton": "Suivre la page"
+  },
+  "boutique": {
+    "accroche": "Aux couleurs du club",
+    "titre": "La boutique officielle",
+    "chapeau": "Survêtements, polos, sweats et tenues d'entraînement adidas floqués ASVS. Rouge, vert ou bleu — ou les trois.",
+    "image": "assets/img/vetements.jpg",
+    "legendeImage": "La gamme de vêtements 2026-2027 de l'AS Val de Sioule",
+    "texte": "La boutique en ligne du club est hébergée par 11teamsports. Les commandes se font directement en ligne, et les articles sont livrés floqués aux couleurs de l'ASVS.\n\nUn grand merci à notre partenaire Aux Délices Bourbonnais, la boulangerie de Broût-Vernet, qui a soutenu le lancement de la gamme.",
+    "bouton": "Accéder à la boutique"
+  },
+  "seo": {
+    "titre": "Actualités — AS Val de Sioule",
+    "description": "Toute l'actualité de l'AS Val de Sioule : résultats, vie du club, événements, boutique et communications officielles."
+  }
+}

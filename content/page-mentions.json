@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "accroche": "Qui édite ce site",
+    "titre": "Mentions légales",
+    "chapeau": "Informations légales relatives au site de l'AS Val de Sioule.",
+    "image": "assets/img/banniere.jpg",
+    "filAriane": "Mentions légales"
+  },
+  "sections": [
+    {
+      "titre": "Éditeur du site",
+      "texte": "Le présent site est édité par l'association AS Val de Sioule, association sportive régie par la loi du 1er juillet 1901 et le décret du 16 août 1901.\n\nLes coordonnées de l'association figurent dans le tableau ci-dessous."
+    },
+    {
+      "titre": "Directeur de la publication",
+      "texte": "Monsieur Philippe ALLIGIER, en sa qualité de président de l'association."
+    },
+    {
+      "titre": "Hébergement",
+      "texte": "Le site est hébergé par Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis — www.netlify.com"
+    },
+    {
+      "titre": "Propriété intellectuelle",
+      "texte": "Le blason, les couleurs, les textes, les photographies et les documents présents sur ce site sont la propriété de l'AS Val de Sioule ou de leurs auteurs respectifs. Toute reproduction ou représentation, totale ou partielle, à d'autres fins que la consultation individuelle et privée, est interdite sans autorisation écrite préalable de l'association.\n\nLes logos des entreprises partenaires demeurent la propriété de leurs titulaires respectifs et sont affichés avec leur accord dans le cadre des conventions de partenariat conclues avec le club."
+    },
+    {
+      "titre": "Droit à l'image",
+      "texte": "Les photographies publiées sur ce site représentent des licenciés, des bénévoles et des participants aux manifestations du club. Elles sont diffusées avec l'accord des personnes concernées, et avec l'autorisation écrite des représentants légaux pour les mineurs.\n\nToute personne figurant sur une photographie peut en demander le retrait à tout moment, sans avoir à motiver sa demande, en écrivant au club. Le retrait est effectué dans les meilleurs délais."
+    },
+    {
+      "titre": "Données personnelles",
+      "texte": "Ce site ne collecte aucune donnée personnelle : il ne comporte ni formulaire de contact, ni espace de commentaires, ni inscription à une lettre d'information. Aucun compte visiteur n'est créé et aucune information n'est demandée pour consulter les pages.\n\nUn espace d'administration réservé permet à l'association de mettre à jour le contenu du site. Il est protégé par identifiant et n'est pas accessible au public."
+    },
+    {
+      "titre": "Cookies",
+      "texte": "Ce site ne dépose aucun cookie de mesure d'audience, de publicité ou de suivi. Aucun bandeau de consentement n'est donc nécessaire."
+    },
+    {
+      "titre": "Services tiers",
+      "texte": "L'affichage des pages fait appel au service Google Fonts pour le chargement des polices de caractères. Cet appel transmet l'adresse IP du visiteur aux serveurs de Google, sans autre donnée. Les liens vers la page Facebook du club et vers la boutique en ligne renvoient vers des sites tiers, régis par leurs propres politiques de confidentialité.\n\nL'hébergeur Netlify conserve des journaux de connexion techniques, à des fins de sécurité et de bon fonctionnement du service."
+    },
+    {
+      "titre": "Vos droits",
+      "texte": "Conformément au Règlement général sur la protection des données (RGPD) et à la loi « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition concernant les données vous concernant. Pour l'exercer, écrivez au club à l'adresse indiquée ci-dessus."
+    },
+    {
+      "titre": "Responsabilité",
+      "texte": "L'association s'efforce de publier des informations exactes et à jour, notamment concernant les dates et horaires des rencontres. Ces informations sont toutefois communiquées par le District de l'Allier et peuvent être modifiées à tout moment. Elles sont données à titre indicatif et n'engagent pas la responsabilité de l'association. En cas de doute, la page Facebook du club et le site du District font foi.\n\nL'association ne saurait être tenue responsable du contenu des sites tiers vers lesquels des liens sont proposés."
+    },
+    {
+      "titre": "Crédits",
+      "texte": "Blason, bannière et supports visuels : AS Val de Sioule.\nPhotographies : bénévoles et licenciés du club.\nPolices de caractères : Anton, Barlow et Caveat Brush, diffusées sous licence SIL Open Font License."
+    },
+    {
+      "titre": "Nous signaler un problème",
+      "texte": "Une erreur, une photo à retirer, une information à corriger ? Écrivez au club à l'adresse indiquée plus haut, nous traitons la demande rapidement."
+    }
+  ],
+  "tableau": {
+    "denomination": "Dénomination",
+    "siege": "Siège social",
+    "rna": "Numéro RNA",
+    "affiliation": "Affiliation",
+    "email": "Adresse électronique",
+    "valeurAffiliation": "Fédération Française de Football — club n°"
+  },
+  "seo": {
+    "titre": "Mentions légales — AS Val de Sioule",
+    "description": "Mentions légales du site de l'AS Val de Sioule : éditeur, directeur de la publication, hébergeur, propriété intellectuelle et données personnelles."
+  }
+}

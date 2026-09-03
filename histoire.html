@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="asvs-page" content="histoire">
 <title>Notre histoire — AS Val de Sioule</title>
 <meta name="description" content="L'histoire de l'AS Val de Sioule depuis la fusion de 2009 : la chronologie du club, la signification du blason et les photos d'équipes au fil des saisons.">
 <link rel="icon" href="assets/img/logo-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260827">
+<link rel="stylesheet" href="assets/css/style.css?v=20260903">
 </head>
 <body>
 
@@ -17,9 +18,9 @@
   <div class="chevrons"><span></span><span></span><span></span></div>
   <div class="contenu site-entete__barre">
     <a class="marque" href="index.html">
-      <img src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
+      <img data-club="logo" data-club-alt="logoDescription" src="assets/img/logo.png" alt="Blason de l'AS Val de Sioule">
       <span class="marque__txt">
-        <span class="marque__nom">AS Val de Sioule</span>
+        <span class="marque__nom" data-club="nom">AS Val de Sioule</span>
         <span class="marque__sous">Depuis 2009</span>
       </span>
     </a>
@@ -43,11 +44,11 @@
 <main>
 
 <section class="hero hero--page">
-  <div class="hero__fond" style="background-image:url('assets/img/banniere.jpg')"></div>
+  <div class="hero__fond" data-fond-txt="hero.image" style="background-image:url('assets/img/banniere.jpg')"></div>
   <div class="contenu hero__contenu">
-    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong>Notre histoire</strong></p>
-    <span class="hero__script">Depuis 2009, et bien avant</span>
-    <h1>Notre histoire</h1>
+    <p class="fil"><a href="index.html">Accueil</a><span>/</span><strong data-txt="hero.filAriane">Notre histoire</strong></p>
+    <span class="hero__script" data-txt="hero.accroche">Depuis 2009, et bien avant</span>
+    <h1 data-txt="hero.titre">Notre histoire</h1>
     <p class="hero__chapeau" id="histoire-intro">
       Deux villages, deux clochers, une rivière.
     </p>
@@ -60,7 +61,7 @@
     <div class="duo duo--large-gauche">
       <div class="reveal-gauche">
         <div class="entete-section">
-          <span class="script">Ce que raconte notre écusson</span>
+          <span class="script" data-txt="blason.accroche">Ce que raconte notre écusson</span>
           <h2 class="souligne" id="blason-titre">La signification du blason</h2>
           <p class="chapeau" id="blason-chapeau">Chaque élément raconte un morceau de notre histoire.</p>
         </div>
@@ -75,7 +76,7 @@
     <div class="blason-grille" id="blason-elements" style="margin-top:2rem"></div>
 
     <div class="encadre encadre--vert" style="margin-top:2rem">
-      <h4>Un blason choisi par le club</h4>
+      <h4 data-txt="blason.titreEncadre">Un blason choisi par le club</h4>
       <p id="blason-note">
         Le blason actuel a été adopté en 2025, à l'issue d'un sondage public organisé sur
         la page Facebook du club.
@@ -88,12 +89,9 @@
 <section class="section section--sombre">
   <div class="contenu contenu-etroit">
     <div class="entete-section">
-      <span class="script">Le fil des saisons</span>
-      <h2 class="souligne">La chronologie du club</h2>
-      <p class="chapeau">
-        Les dates qui ont compté. Cette page grandira au fil des souvenirs et des photos
-        que vous nous confierez.
-      </p>
+      <span class="script" data-txt="chronologie.accroche">Le fil des saisons</span>
+      <h2 class="souligne" data-txt="chronologie.titre">La chronologie du club</h2>
+      <p class="chapeau" data-txt="chronologie.chapeau">Les dates qui ont compté.</p>
     </div>
     <ol class="chrono" id="chronologie"></ol>
   </div>
@@ -103,9 +101,9 @@
 <section class="section section--blanc" id="bloc-equipes-historiques" hidden>
   <div class="contenu">
     <div class="entete-section centre">
-      <span class="script">Saison après saison</span>
-      <h2 class="souligne">Nos équipes au fil des ans</h2>
-      <p class="chapeau">Les photos officielles, d'hier à aujourd'hui.</p>
+      <span class="script" data-txt="equipes.accroche">Saison après saison</span>
+      <h2 class="souligne" data-txt="equipes.titre">Nos équipes au fil des ans</h2>
+      <p class="chapeau" data-txt="equipes.chapeau">Les photos officielles, d'hier à aujourd'hui.</p>
     </div>
     <div class="galerie cascade" id="equipes-historiques"></div>
   </div>
@@ -116,13 +114,11 @@
   <div class="contenu">
     <div class="cta-bande reveal-zoom">
       <div>
-        <h2>Vous avez des photos d'avant&nbsp;?</h2>
-        <p>Une photo d'équipe du BVS ou du FC Étroussat, une coupe soulevée, un tournoi oublié :
-           le club cherche à rassembler sa mémoire. Envoyez-nous vos images, elles trouveront
-           leur place sur cette page.</p>
+        <h2 data-txt="appel.titre">Vous avez des photos d'avant&nbsp;?</h2>
+        <p data-txt="appel.texte">Le club cherche à rassembler sa mémoire.</p>
       </div>
       <div class="groupe-btn">
-        <a class="btn btn--fantome" data-club="email" href="#">Nous envoyer une photo</a>
+        <a class="btn btn--fantome" data-club="email" href="#" data-txt="appel.bouton">Nous envoyer une photo</a>
       </div>
     </div>
   </div>
@@ -133,44 +129,27 @@
 <footer class="site-pied">
   <div class="contenu">
     <div class="pied__grille">
-      <div>
+            <div>
         <div class="pied__marque">
-          <img src="assets/img/logo.png" alt="">
-          <strong>AS Val de Sioule</strong>
+          <img data-club="logo" src="assets/img/logo.png" alt="">
+          <strong data-club="nom">AS Val de Sioule</strong>
         </div>
-        <p>Club de football des communes de Broût-Vernet, Étroussat et Barberier.<br>
-           Affilié à la FFF sous le numéro <span data-club="affiliation">554229</span>.</p>
+        <p><span data-pied="presentation">Club de football des communes de Broût-Vernet, Étroussat et Barberier.</span><br>
+           <span data-pied="mentionAffiliation">Affilié à la FFF sous le numéro</span> <span data-club="affiliation">554229</span>.</p>
         <div class="reseaux">
           <a class="reseaux--facebook" data-club="facebook" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
-            <span>Suivre sur Facebook</span>
+            <span data-pied="boutonFacebook">Suivre sur Facebook</span>
           </a>
           <a class="reseaux--boutique" data-club="boutique" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4a5 5 0 0 1 10 0h3a1 1 0 0 1 1 1l-1 15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2L3 5a1 1 0 0 1 1-1h3zm2 0h6a3 3 0 0 0-6 0z"/></svg>
-            <span>La boutique</span>
+            <span data-pied="boutonBoutique">La boutique</span>
           </a>
         </div>
       </div>
+      <div data-pied="colonnes" style="display:contents"></div>
       <div>
-        <h4>Le club</h4>
-        <ul>
-          <li><a href="club.html">Histoire et valeurs</a></li>
-          <li><a href="histoire.html">Notre histoire</a></li>
-          <li><a href="equipes.html">Nos équipes</a></li>
-          <li><a href="evenements.html">Événements</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Pratique</h4>
-        <ul>
-          <li><a href="calendrier.html">Calendrier des matchs</a></li>
-          <li><a href="actualites.html">Actualités</a></li>
-          <li><a href="infos.html">Licences et tarifs</a></li>
-          <li><a href="partenaires.html">Devenir partenaire</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Nous trouver</h4>
+        <h4 data-pied="titreContact">Nous trouver</h4>
         <ul>
           <li><span data-club="stade">Stade Municipal</span><br><span data-club="codePostal">03110</span> <span data-club="ville">Broût-Vernet</span></li>
           <li><a data-club="email" href="#"></a></li>
@@ -178,12 +157,12 @@
       </div>
     </div>
     <div class="pied__bas">
-      <span>© <span data-annee>2026</span> AS Val de Sioule — Tous droits réservés.</span>
-      <span><a href="mentions-legales.html">Mentions légales</a></span>
-      <span>Saison <span data-club="saison">2026 / 2027</span></span>
+            <span>© <span data-annee>2026</span> <span data-pied="copyright">AS Val de Sioule — Tous droits réservés.</span></span>
+      <span><a href="mentions-legales.html" data-pied="lienMentions">Mentions légales</a></span>
+      <span><span data-pied="prefixeSaison">Saison</span> <span data-club="saison">2026 / 2027</span></span>
     </div>
   </div>
 </footer>
-<script src="assets/js/main.js?v=20260827" defer></script>
+<script src="assets/js/main.js?v=20260903" defer></script>
 </body>
 </html>

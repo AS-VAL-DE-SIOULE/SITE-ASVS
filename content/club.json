@@ -11,8 +11,14 @@
   "stade": "Stade Municipal",
   "ville": "Broût-Vernet",
   "codePostal": "03110",
-  "communes": ["Broût-Vernet", "Étroussat", "Barberier"],
+  "communes": [
+    "Broût-Vernet",
+    "Étroussat",
+    "Barberier"
+  ],
   "facebook": "https://www.facebook.com/profile.php?id=100079830892626",
   "boutique": "https://www.11teamsports.com/fr-fr/clubshop/association-sportive-val-de-sioule/",
-  "licencies": 110
+  "licencies": 110,
+  "logo": "assets/img/logo.png",
+  "logoDescription": "Blason de l'AS Val de Sioule"
 }

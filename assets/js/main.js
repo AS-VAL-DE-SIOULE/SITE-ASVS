@@ -994,6 +994,193 @@
     placer();
   }
 
+  /* ---------- Menu et pied de page ----------
+     Communs à toutes les pages, pilotés par content/navigation.json.
+     Le HTML garde une version de secours si le fichier est absent. */
+  async function navigation() {
+    const n = await lire("content/navigation.json");
+    if (!n) return;
+
+    const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+    if (Array.isArray(n.menu)) {
+      const ul = $(".nav-principale ul");
+      if (ul) {
+        ul.innerHTML = n.menu.map(m => {
+          const courant = String(m.lien).toLowerCase() === page ||
+            (page === "" && m.lien === "index.html");
+          return '<li' + (m.miseEnAvant ? ' class="nav-cta"' : "") + '>' +
+            '<a href="' + echapper(m.lien) + '"' + (courant ? ' aria-current="page"' : "") + '>' +
+            echapper(m.libelle) + '</a></li>';
+        }).join("");
+      }
+    }
+
+    if (n.marque && n.marque.sousTitre) {
+      $$(".marque__sous").forEach(e => { e.textContent = n.marque.sousTitre; });
+    }
+
+    /* Fil d'Ariane : le premier maillon reprend le libellé du menu Accueil */
+    if (Array.isArray(n.menu) && n.menu.length) {
+      const accueil = n.menu.find(m => String(m.lien).toLowerCase() === "index.html");
+      if (accueil) $$(".fil a[href='index.html']").forEach(a => { a.textContent = accueil.libelle; });
+    }
+
+    const p = n.pied || {};
+    const maj = (sel, v) => { const e = $(sel); if (e && v) e.textContent = v; };
+    maj("[data-pied='presentation']", p.presentation);
+    maj("[data-pied='mentionAffiliation']", p.mentionAffiliation);
+    maj("[data-pied='boutonFacebook']", p.boutonFacebook);
+    maj("[data-pied='boutonBoutique']", p.boutonBoutique);
+    maj("[data-pied='titreContact']", p.titreContact);
+    maj("[data-pied='copyright']", p.copyright);
+    maj("[data-pied='lienMentions']", p.lienMentions);
+    maj("[data-pied='prefixeSaison']", p.prefixeSaison);
+
+    const cols = $("[data-pied='colonnes']");
+    if (cols && Array.isArray(p.colonnes)) {
+      cols.innerHTML = p.colonnes.map(c =>
+        '<div><h4>' + echapper(c.titre) + '</h4><ul>' +
+        (c.liens || []).map(l => '<li><a href="' + echapper(l.lien) + '">' +
+          echapper(l.libelle) + '</a></li>').join("") +
+        '</ul></div>'
+      ).join("");
+    }
+  }
+
+  /* ---------- Textes de la page ----------
+     Chaque page déclare son fichier de textes dans une balise
+     <meta name="asvs-page">. Tout ce qui porte data-txt, data-riche
+     ou data-liste y est alimenté : titres, paragraphes, cartes,
+     listes à puces, tableaux, questions fréquentes. Rien n'est figé
+     dans le HTML. */
+  let PAGE = {};
+
+  async function chargerTextesPage() {
+    const meta = document.querySelector('meta[name="asvs-page"]');
+    if (!meta) return;
+    const j = await lire("content/page-" + meta.content + ".json");
+    if (j) PAGE = j;
+  }
+
+  function valeurPage(chemin) {
+    return String(chemin).split(".").reduce(
+      (o, c) => (o && o[c] !== undefined) ? o[c] : undefined, PAGE);
+  }
+
+  /* Gabarits d'affichage pour les blocs répétables */
+  const GABARITS = {
+    carte: (e, i) =>
+      '<article class="carte reveal">' +
+        (e.pictogramme ? '<div class="carte__pastille pastille--' +
+          ["rouge", "vert", "bleu"][i % 3] + '">' + echapper(e.pictogramme) + '</div>' : "") +
+        (e.titre ? '<h3>' + echapper(e.titre) + '</h3>' : "") +
+        (e.texte ? '<p>' + echapper(e.texte) + '</p>' : "") +
+      '</article>',
+
+    carteLien: (e, i) =>
+      '<a class="carte carte--lien reveal" href="' + echapper(e.lien || "#") + '">' +
+        (e.pictogramme ? '<div class="carte__pastille pastille--' +
+          ["rouge", "bleu", "vert"][i % 3] + '">' + echapper(e.pictogramme) + '</div>' : "") +
+        '<h3>' + echapper(e.titre) + '</h3>' +
+        '<p>' + echapper(e.texte) + '</p>' +
+      '</a>',
+
+    repere: e =>
+      '<div><strong>' + echapper(e.valeur) + '</strong><span>' + echapper(e.libelle) + '</span></div>',
+
+    chiffre: e =>
+      '<div class="chiffre reveal"><strong>' + echapper(e.valeur) + '</strong>' +
+      '<span>' + echapper(e.libelle) + '</span></div>',
+
+    etape: e =>
+      '<li class="reveal"><span class="frise__an">' + echapper(e.annee) + '</span>' +
+      '<p>' + echapper(e.texte) + '</p></li>',
+
+    bloc: e =>
+      '<h2 class="souligne">' + echapper(e.titre) + '</h2>' + texteRiche(e.texte),
+
+    puce: e => '<li>' + echapper(e.texte || e) + '</li>',
+
+    tarif: e =>
+      '<tr><td>' + (e.libelle ? '<strong>' + echapper(e.libelle) + '</strong>' : "") +
+      (e.precision ? ' ' + echapper(e.precision) : "") + '</td>' +
+      '<td style="text-align:right;font-weight:700">' + echapper(e.montant) + '</td></tr>',
+
+    encadrement: e =>
+      '<tr><td><strong>' + echapper(e.equipe) + '</strong></td>' +
+      '<td>' + echapper(e.championnat) + '</td>' +
+      '<td>' + echapper(e.encadrement) + '</td></tr>',
+
+    pack: e =>
+      '<div class="pack reveal">' +
+        '<h4>' + echapper(e.titre) + '</h4>' +
+        (e.sousTitre ? '<p class="pack__sous">' + echapper(e.sousTitre) + '</p>' : "") +
+        '<ul>' + (e.points || []).map(p => '<li>' + echapper(p.texte || p) + '</li>').join("") + '</ul>' +
+      '</div>',
+
+    faq: e =>
+      '<div class="carte">' +
+        '<h3>' + echapper(e.question) + '</h3>' +
+        '<div>' + texteRiche(e.reponse) + '</div>' +
+      '</div>'
+  };
+
+  function textesPage() {
+    $$("[data-txt]").forEach(el => {
+      const v = valeurPage(el.dataset.txt);
+      if (v !== undefined && v !== null && String(v) !== "") el.textContent = v;
+    });
+
+    $$("[data-riche]").forEach(el => {
+      const v = valeurPage(el.dataset.riche);
+      if (v !== undefined && v !== null && String(v) !== "") el.innerHTML = texteRiche(v);
+    });
+
+    /* Images et textes alternatifs pilotés depuis le back-office */
+    $$("[data-src-txt]").forEach(el => {
+      const v = valeurPage(el.dataset.srcTxt);
+      if (v) el.setAttribute("src", chemin(v));
+    });
+    $$("[data-alt-txt]").forEach(el => {
+      const v = valeurPage(el.dataset.altTxt);
+      if (v) el.setAttribute("alt", v);
+    });
+    $$("[data-href-txt]").forEach(el => {
+      const v = valeurPage(el.dataset.hrefTxt);
+      if (v) el.setAttribute("href", v);
+    });
+
+    /* Image de fond d'un bandeau, pilotée depuis le back-office */
+    $$("[data-fond-txt]").forEach(el => {
+      const v = valeurPage(el.dataset.fondTxt);
+      if (v) el.style.backgroundImage = "url('" + chemin(v) + "')";
+    });
+
+    /* Titre de l'onglet et description pour les moteurs de recherche */
+    const seo = valeurPage("seo") || {};
+    if (seo.titre) document.title = seo.titre;
+    if (seo.description) {
+      let m = document.querySelector('meta[name="description"]');
+      if (!m) {
+        m = document.createElement("meta");
+        m.setAttribute("name", "description");
+        document.head.appendChild(m);
+      }
+      m.setAttribute("content", seo.description);
+    }
+
+    $$("[data-liste]").forEach(el => {
+      const v = valeurPage(el.dataset.liste);
+      if (!Array.isArray(v)) return;
+      const gabarit = GABARITS[el.dataset.gabarit || "carte"];
+      if (!gabarit) return;
+      el.innerHTML = v.map(gabarit).join("");
+      const bloc = el.closest("[data-bloc-si]");
+      if (bloc) bloc.hidden = v.length === 0;
+    });
+  }
+
   /* ---------- Affiches officielles ----------
      Les plannings publiés par le club. Chaque affiche est
      consultable en grand et téléchargeable par les visiteurs. */
@@ -1106,9 +1293,17 @@
         // On ne remplit le texte que si le lien est vraiment vide :
         // un lien qui contient une icône SVG doit garder son icône.
         if (!el.textContent.trim() && !el.firstElementChild) el.textContent = v;
+      } else if (el.tagName === "IMG") {
+        el.setAttribute("src", chemin(v));
       } else {
         el.textContent = Array.isArray(v) ? v.join(" · ") : v;
       }
+    });
+
+    /* Texte alternatif d'une image (blason du club, bannière…) */
+    $$("[data-club-alt]").forEach(el => {
+      const v = D.club[el.dataset.clubAlt];
+      if (v) el.setAttribute("alt", v);
     });
   }
 
@@ -1120,8 +1315,10 @@
     decorVillage();
     surveillerImages();
 
-    await chargerDonnees();
+    await Promise.all([chargerDonnees(), chargerTextesPage(), navigation()]);
 
+    navMobile();
+    textesPage();
     infosClub();
     prochainsMatchs();
     calendrierComplet();

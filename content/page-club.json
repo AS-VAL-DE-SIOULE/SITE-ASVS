@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "accroche": "Deux clochers, une seule équipe",
+    "titre": "Le club",
+    "chapeau": "D'où nous venons, ce qui nous tient, et qui fait tourner la maison.",
+    "image": "assets/img/banniere.jpg",
+    "filAriane": "Le club"
+  },
+  "naissance": {
+    "accroche": "1 janvier 2009",
+    "titre": "Naissance d'un club",
+    "texte": "Longtemps, deux clubs se sont fait face de part et d'autre de la Sioule : le BVS de Broût-Vernet, en rouge, et le FC Étroussat, en vert. Deux villages, deux clochers, deux histoires — et souvent les mêmes familles dans les tribunes.\n\nEn 2009, ces deux clubs ont choisi de n'en faire qu'un. L'AS Val de Sioule était né. Le blason garde la trace de cette histoire : le rouge de Broût-Vernet, le vert d'Étroussat, et le bleu de la rivière qui les sépare autant qu'elle les relie.\n\nAujourd'hui, le club porte les couleurs de trois communes — Broût-Vernet, Étroussat et Barberier — et fait jouer les licenciés des tout premiers pas en U7 jusqu'aux séniors.",
+    "image": "assets/img/logo.png",
+    "legendeImage": "Blason de l'AS Val de Sioule, fondée en 2009"
+  },
+  "frise": {
+    "accroche": "Le fil de notre histoire",
+    "titre": "Quelques dates",
+    "bouton": "Toute notre histoire & le blason",
+    "etapes": [
+      {
+        "annee": "2009",
+        "texte": "Fusion du BVS de Broût-Vernet et du FC Étroussat. L'AS Val de Sioule voit le jour."
+      },
+      {
+        "annee": "2024-2025",
+        "texte": "Les U13 sont sacrés champions de Division 4 et montent à l'échelon supérieur. L'équipe A atteint la demi-finale de la Coupe Paul-Baptiste et la finale du tournoi futsal."
+      },
+      {
+        "annee": "2025",
+        "texte": "Le club change de logo à l'issue d'un sondage public organisé sur sa page Facebook : ce sont les licenciés, les familles et les supporters qui choisissent. La nouvelle identité visuelle prend forme dans la foulée, et l'Assemblée Générale du 15 juin élit le bureau."
+      },
+      {
+        "annee": "2026",
+        "texte": "L'identité se décline sur les maillots, le calendrier et tous les supports du club. Ouverture de la boutique en ligne, concours de pétanque record avec 54 équipes, et naissance d'une troisième équipe séniors."
+      }
+    ]
+  },
+  "valeurs": {
+    "accroche": "Ce qui nous tient debout",
+    "titre": "Nos valeurs",
+    "chapeau": "Elles ne sont écrites nulle part dans les statuts, mais tout le monde au club les connaît.",
+    "cartes": [
+      {
+        "pictogramme": "🤝",
+        "titre": "Le lien",
+        "texte": "Un club, ce n'est pas une structure : c'est un village vivant où les anciens transmettent et où les jeunes s'engagent."
+      },
+      {
+        "pictogramme": "🌳",
+        "titre": "Les racines",
+        "texte": "Deux clochers, une rivière, trois communes. On sait d'où l'on vient, et on continue d'écrire la suite ensemble."
+      },
+      {
+        "pictogramme": "⚖️",
+        "titre": "Le respect",
+        "texte": "Des arbitres, des adversaires, des décisions. Le fair-play n'est pas négociable, sur le terrain comme au bord."
+      },
+      {
+        "pictogramme": "🙌",
+        "titre": "La place de chacun",
+        "texte": "Joueur, éducateur, arbitre, bénévole à la buvette ou à la table de marque : chacun compte autant."
+      }
+    ]
+  },
+  "organisation": {
+    "accroche": "Qui fait quoi",
+    "titreBureau": "Le bureau",
+    "chapeauBureau": "Élu lors de l'Assemblée Générale du 15 juin 2025.",
+    "titreConseil": "Le conseil d'administration",
+    "chapeauConseil": "Les bénévoles qui portent le club au quotidien.",
+    "titreCommissions": "Les commissions",
+    "chapeauCommissions": "Chaque grand chantier du club a son référent."
+  },
+  "documents": {
+    "accroche": "À télécharger",
+    "titre": "Documents du club",
+    "chapeau": "Comptes-rendus d'assemblée générale, statuts, règlements."
+  },
+  "territoire": {
+    "accroche": "Un club, trois communes",
+    "titre": "Notre territoire",
+    "chapeau": "Le club vit sur trois communes qui le soutiennent chaque saison par leurs subventions et par la mise à disposition des installations.",
+    "cartes": [
+      {
+        "titre": "Broût-Vernet",
+        "texte": "Siège du club et stade municipal principal. C'est ici que se jouent les rencontres à domicile et que se tient l'Assemblée Générale."
+      },
+      {
+        "titre": "Étroussat",
+        "texte": "Berceau du FC Étroussat, le club au maillot vert. Son stade accueille toujours les couleurs de l'ASVS et les panneaux de nos partenaires."
+      },
+      {
+        "titre": "Barberier",
+        "texte": "Troisième commune partenaire du club, présente aux côtés de Broût-Vernet et d'Étroussat pour soutenir les équipes."
+      }
+    ],
+    "conclusion": "Les représentants des trois mairies ont rappelé lors de la dernière Assemblée Générale leur vigilance commune à offrir des conditions matérielles optimales à toutes les équipes."
+  },
+  "seo": {
+    "titre": "Le club — AS Val de Sioule",
+    "description": "L'histoire de l'AS Val de Sioule, né en 2009 de la fusion du FC Étroussat et du BVS de Broût-Vernet. Valeurs, bureau, conseil d'administration, commissions et ancrage territorial."
+  }
+}
