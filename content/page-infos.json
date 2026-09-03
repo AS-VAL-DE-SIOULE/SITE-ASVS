@@ -8,28 +8,13 @@
   },
   "licences": {
     "accroche": "Rejoindre le club",
-    "titre": "Licences & tarifs",
-    "chapeau": "Le club accueille de nouveaux licenciés toute l'année, à tous les âges.",
     "titreTarifs": "Tarifs de la licence",
-    "tarifs": [
-      {
-        "libelle": "Séniors",
-        "precision": "(A, B, C, vétérans, féminines)",
-        "montant": "40 €"
-      },
-      {
-        "libelle": "Jeunes",
-        "precision": "— U6 à U18",
-        "montant": "20 €"
-      },
-      {
-        "libelle": "Dirigeants, éducateurs, arbitres",
-        "precision": "",
-        "montant": "Gratuit"
-      }
-    ],
     "noteTarifs": "Tarifs votés en Assemblée Générale. Susceptibles d'évoluer chaque saison.",
+    "pictogrammeInscription": "📝",
+    "pictogrammeTarifs": "🧾",
+    "chapeau": "Le club accueille de nouveaux licenciés toute l'année, à tous les âges.",
     "titreInscription": "Comment s'inscrire",
+    "bouton": "Demander une licence",
     "etapes": [
       {
         "texte": "Écrivez au club ou passez au stade un soir d'entraînement."
@@ -44,23 +29,38 @@
         "texte": "Pour les mineurs, l'autorisation parentale est demandée en ligne."
       }
     ],
-    "bouton": "Demander une licence",
-    "pictogrammeTarifs": "🧾",
-    "pictogrammeInscription": "📝"
+    "tarifs": [
+      {
+        "libelle": "Séniors",
+        "precision": "(A, B, C, vétérans, féminines)",
+        "montant": "40 €"
+      },
+      {
+        "libelle": "Jeunes",
+        "precision": "— U6 à U18",
+        "montant": "20 €"
+      },
+      {
+        "libelle": "Dirigeants, éducateurs, arbitres",
+        "precision": "",
+        "montant": "40 €"
+      }
+    ],
+    "titre": "Licences & tarifs"
   },
   "stade": {
     "accroche": "Nous trouver",
-    "titre": "Le stade",
-    "texte": "Les rencontres à domicile se disputent au stade municipal de Broût-Vernet (03110), dans l'Allier. Le club utilise également les installations d'Étroussat.\n\nEntrée libre à toutes les rencontres. Buvette ouverte les jours de match.",
-    "bouton": "Ouvrir dans Google Maps",
-    "lienCarte": "https://www.google.com/maps/search/Stade+municipal+Bro%C3%BBt-Vernet+03110",
-    "titreContact": "Nous contacter",
-    "libelleEmail": "E-mail",
     "libellePartenariats": "Partenariats",
-    "libelleFacebook": "Facebook",
     "libelleAffiliation": "N° FFF",
+    "libelleFacebook": "Facebook",
+    "bouton": "Ouvrir dans Google Maps",
+    "titreContact": "Nous contacter",
+    "noteContact": "Le club répond aux messages Facebook et aux e-mails. Pour une demande urgente un jour de match, présentez-vous directement à la buvette.",
+    "titre": "Le stade",
+    "libelleEmail": "E-mail",
+    "texte": "Les rencontres à domicile se disputent au stade municipal de Broût-Vernet (03110), dans l'Allier. Le club utilise également les installations d'Étroussat.\n\nEntrée libre à toutes les rencontres. Buvette ouverte les jours de match.",
     "libelleCommunes": "Communes",
-    "noteContact": "Le club répond aux messages Facebook et aux e-mails. Pour une demande urgente un jour de match, présentez-vous directement à la buvette."
+    "lienCarte": "https://www.google.com/maps/search/Stade+municipal+Bro%C3%BBt-Vernet+03110"
   },
   "services": {
     "titreBoutique": "La boutique officielle",
