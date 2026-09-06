@@ -18,7 +18,7 @@
       "journee": "Journée 1",
       "domicile": false,
       "adversaire": "US Marcillat Pionsat",
-      "score": ""
+      "score": "1-2"
     },
     {
       "equipe": "A",
@@ -128,7 +128,7 @@
       "journee": "Journée 1",
       "domicile": true,
       "adversaire": "F.C.L. Hauterive",
-      "score": ""
+      "score": "4-3"
     },
     {
       "equipe": "B",
@@ -248,7 +248,7 @@
       "journee": "Journée 1",
       "domicile": false,
       "adversaire": "Contigny S.C.",
-      "score": ""
+      "score": "0-5"
     },
     {
       "equipe": "C",
