@@ -967,7 +967,11 @@ a.partenaire:hover { transform: translateY(-2px); box-shadow: var(--ombre); }
   position: fixed;
   bottom: 58px;
   width: 96px; height: 136px;
-  z-index: 1;
+  /* Les joueurs font partie du décor : ils passent derrière le contenu, comme
+     les clochers et les vaches. Sur tablette et téléphone les marges latérales
+     disparaissent, et sans cela ils se poseraient en travers des textes.
+     Seul le ballon reste au premier plan : c'est lui qui traverse la page. */
+  z-index: -1;
   pointer-events: none;
   opacity: 0;
   transition: opacity .45s ease;

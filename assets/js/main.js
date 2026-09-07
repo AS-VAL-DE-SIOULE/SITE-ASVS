@@ -132,14 +132,27 @@
     const bouton = $(".burger");
     const nav = $(".nav-principale");
     if (!bouton || !nav) return;
-    bouton.addEventListener("click", function () {
-      const ouvert = nav.classList.toggle("ouvert");
-      bouton.setAttribute("aria-expanded", ouvert ? "true" : "false");
+
+    /* navMobile() est rappelée après la reconstruction du menu, pour que les
+       nouveaux liens referment le panneau. Le bouton, lui, ne doit recevoir
+       son écouteur qu'une seule fois : deux écouteurs feraient deux bascules
+       coup sur coup et le menu ne s'ouvrirait jamais. */
+    if (!bouton.dataset.ecoute) {
+      bouton.dataset.ecoute = "1";
+      bouton.addEventListener("click", function () {
+        const ouvert = nav.classList.toggle("ouvert");
+        bouton.setAttribute("aria-expanded", ouvert ? "true" : "false");
+      });
+    }
+
+    $$("a", nav).forEach(a => {
+      if (a.dataset.ecoute) return;
+      a.dataset.ecoute = "1";
+      a.addEventListener("click", function () {
+        nav.classList.remove("ouvert");
+        bouton.setAttribute("aria-expanded", "false");
+      });
     });
-    $$("a", nav).forEach(a => a.addEventListener("click", function () {
-      nav.classList.remove("ouvert");
-      bouton.setAttribute("aria-expanded", "false");
-    }));
   }
 
   function anneeAuto() {
