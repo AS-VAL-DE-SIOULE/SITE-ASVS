@@ -1,63 +1,92 @@
 {
   "liste": [
     {
-      "id": "A",
-      "couleur": "a",
-      "nom": "Séniors A",
-      "niveau": "Départemental 2",
       "photos": [
-        { "fichier": "/assets/medias/equipe-a-2025-2026.jpg", "legende": "L'équipe A en début de saison 2025-2026." },
-        { "fichier": "assets/photos/equipe-a.jpg", "legende": "Après la victoire à Beauregard-l'Évêque, août 2026." }
+        {
+          "fichier": "/assets/medias/equipe-a-2025-2026.jpg",
+          "legende": "L'équipe A en début de saison 2025-2026."
+        },
+        {
+          "fichier": "assets/photos/equipe-a.jpg",
+          "legende": "Après la victoire à Beauregard-l'Évêque, août 2026."
+        }
       ],
-      "video": "",
-      "coach": "Julien ALLIGIER & Sylvain JAFFUEL",
+      "fait": "Changement de coaching : repris par Sylvain JAFFUEL et Julien ALLIGIER suite au départ de Benoît PAROT.",
+      "nom": "Séniors A",
       "creneaux": "Entraînements le mardi et le vendredi à 20 h",
       "texte": "L'équipe fanion du club évolue en Départemental 2. Après un maintien arraché lors de la dernière journée en 2024-2025 et une demi-finale en Coupe Paul-Baptiste, le groupe repart avec l'ambition de confirmer les bonnes séquences de la première partie de saison.",
-      "fait": "Changement de coaching : repris par Sylvain JAFFUEL et Julien ALLIGIER suite au départ de Benoît PAROT."
+      "coach": "Julien ALLIGIER & Sylvain JAFFUEL",
+      "video": "",
+      "id": "A",
+      "niveau": "Départemental 2",
+      "couleur": "a"
     },
     {
-      "id": "B",
-      "couleur": "b",
-      "nom": "Séniors B",
-      "niveau": "Départemental 4",
       "photos": [
-        { "fichier": "/assets/medias/equipe-b-imagine-ton-credit.jpg", "legende": "Présentation du nouveau sponsor « Imagine Ton Crédit », saison 2025-2026." },
-        { "fichier": "/assets/medias/equipe-b-echauffement.jpg", "legende": "Échauffement avant la rencontre." }
+        {
+          "fichier": "/assets/medias/pxl_20260906_130037681.jpg",
+          "legende": "Présentation de l'équipe B avec « Imagine Ton Crédit », saison 2026-2027."
+        },
+        {
+          "fichier": "/assets/medias/pxl_20260906_150105655.jpg",
+          "legende": "Victoire contre FC HAUTERIVE lors du match d'ouverture de la saison 2026-2027"
+        }
       ],
-      "video": "",
-      "coach": "Julien GUILLOT & Jordan PINEL",
+      "fait": "Une mentalité saluée par l'ensemble du club lors de l'Assemblée Générale.",
+      "nom": "Séniors B",
       "creneaux": "Entraînements le mardi et le vendredi à 20 h",
       "texte": "La réserve est le poumon du club : elle accueille les nouveaux licenciés, fait jouer les jeunes qui montent et donne du temps de jeu à tout le monde. Un groupe qui a marqué la saison passée par son état d'esprit, jusqu'à terminer une rencontre à neuf sans jamais rien lâcher.",
-      "fait": "Une mentalité saluée par l'ensemble du club lors de l'Assemblée Générale."
+      "coach": "Julien GUILLOT & Jordan PINEL",
+      "video": "",
+      "id": "B",
+      "niveau": "Départemental 4",
+      "couleur": "b"
     },
     {
-      "id": "C",
-      "couleur": "jeunes",
-      "nom": "Séniors C",
-      "niveau": "Départemental 5",
       "photos": [
-        { "fichier": "/assets/medias/1000031754.jpg", "legende": "L'équipe C, née des 25 arrivées de la saison 2026-2027." }
+        {
+          "legende": "Match d'ouverture face à CONTIGNY saison 2026-2027",
+          "fichier": "/assets/medias/screenshot_20260906-222001-1-.png"
+        },
+        {
+          "fichier": "/assets/medias/1000031754.jpg",
+          "legende": "L'équipe C, née des 25 arrivées de la saison 2026-2027."
+        }
       ],
-      "video": "",
-      "coach": "En attente",
+      "fait": "Plaisir et convivialité avant tout.",
+      "nom": "Séniors C",
       "creneaux": "Entraînements le mardi et le vendredi à 20 h",
       "texte": "Une équipe qui joue vraiment pour le plaisir du football. Ce qui compte, c'est un bon match pour se dégourdir les jambes et une bonne troisième mi-temps pour rigoler et se raconter des anecdotes du match 🔴🔵🟢",
-      "fait": "Plaisir et convivialité avant tout."
+      "coach": "Laurent TOUZAIN",
+      "video": "",
+      "id": "C",
+      "niveau": "Départemental 5",
+      "couleur": "jeunes"
     },
     {
-      "id": "jeunes",
-      "couleur": "jeunes",
-      "nom": "École de foot",
-      "niveau": "U7 à U15",
       "photos": [
-        { "fichier": "/assets/medias/ecole-de-foot-briefing.jpg", "legende": "Briefing mené par Thomas PINFORT et Julien ALLIGIER." },
-        { "fichier": "/assets/medias/ecole-de-foot-plateau.jpg", "legende": "Un plateau du samedi matin." }
+        {
+          "legende": "L'équipe U11 lors du plateau d'ouverture de la saison 2026-2027 à EBREUIL (03)",
+          "fichier": "/assets/medias/screenshot_20260913-113923-1-.png"
+        },
+        {
+          "fichier": "/assets/medias/ecole-de-foot-briefing.jpg",
+          "legende": "Briefing mené par Thomas PINFORT et Julien ALLIGIER."
+        },
+        {
+          "fichier": "/assets/medias/ecole-de-foot-plateau.jpg",
+          "legende": "Un plateau du samedi matin."
+        }
       ],
-      "video": "",
-      "coach": "Sylvain JAFFUEL & Victor HEVIN (U13) · Maxime QUILLERET (U15)",
+      "fait": "Les U13 champions de Division 4 en 2024-2025 et promus à l'échelon supérieur.",
+      "nom": "École de foot",
       "creneaux": "Entraînements et plateaux le mercredi et le samedi",
       "texte": "De la première touche de balle en U7 jusqu'aux U15, l'école de foot accueille les enfants de toutes les communes environnantes. Le club encadre ses catégories en propre ; seuls les U15 évoluent en entente avec Ébreuil.",
-      "fait": "Les U13 champions de Division 4 en 2024-2025 et promus à l'échelon supérieur."
+      "coach": "(U11 --> Julien ALLIGIER, Thomas PINFORT, Pierre BEAUREGARD), (U13 --> Victor HEVIN et Sylvain JAFFUEL), (U15 --> Maxime QUILLERET)",
+      "video": "",
+      "id": "jeunes",
+      "niveau": "U7 à U15",
+      "couleur": "jeunes"
     }
   ]
 }
