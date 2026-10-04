@@ -22,6 +22,26 @@
       "document": ""
     },
     {
+      "emoji": "🩷",
+      "nom": "OCTOBRE ROSE",
+      "periode": "Du 01/10 au 31/10",
+      "texte": "🩷🩷 Objectif pluie de buts 🩷🩷\n\nLe club se lance pour la deuxième année consécutive dans la course aux buts pour soutenir la recherche contre le cancer du sein 💪🏻\n\nCe mois d'octobre va donner des boutons à notre trésorier 😂🩷\n\n#lutte #Cancer #octobrerose #asvs #engagement #fier #foot #DistrictAllier",
+      "photos": [
+        {
+          "legende": "",
+          "fichier": "/assets/medias/octobre-rose-2-.png"
+        }
+      ]
+    },
+    {
+      "nom": "Vente des calendriers",
+      "periode": "Novembre – Décembre",
+      "emoji": "📅",
+      "texte": "Le calendrier du club, réalisé avec nos partenaires, passe de porte en porte dans les trois communes.",
+      "photos": [],
+      "document": ""
+    },
+    {
       "nom": "Dégustation d'huîtres au stade d'Étroussat",
       "periode": "Décembre",
       "emoji": "🦪",
@@ -32,14 +52,6 @@
           "legende": "L'affiche de la dégustation."
         }
       ],
-      "document": ""
-    },
-    {
-      "nom": "Vente des calendriers",
-      "periode": "Novembre – Décembre",
-      "emoji": "📅",
-      "texte": "Le calendrier du club, réalisé avec nos partenaires, passe de porte en porte dans les trois communes.",
-      "photos": [],
       "document": ""
     },
     {
@@ -96,18 +108,6 @@
       "texte": "Bilan sportif, remise des récompenses et remerciements aux bénévoles autour d'une même table.",
       "photos": [],
       "document": ""
-    },
-    {
-      "emoji": "🩷",
-      "nom": "OCTOBRE ROSE",
-      "periode": "Du 01/10 au 31/10",
-      "texte": "🩷🩷 Objectif pluie de buts 🩷🩷\n\nLe club se lance pour la deuxième année consécutive dans la course aux buts pour soutenir la recherche contre le cancer du sein 💪🏻\n\nCe mois d'octobre va donner des boutons à notre trésorier 😂🩷\n\n#lutte #Cancer #octobrerose #asvs #engagement #fier #foot #DistrictAllier",
-      "photos": [
-        {
-          "legende": "",
-          "fichier": "/assets/medias/octobre-rose-2-.png"
-        }
-      ]
     }
   ]
 }
