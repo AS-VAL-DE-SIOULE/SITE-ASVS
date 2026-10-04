@@ -6,9 +6,18 @@
       "emoji": "🎯",
       "texte": "Le rendez-vous de l'été, désormais en semi-nocturne. Édition 2026 : 54 équipes engagées, un record pour le club.",
       "photos": [
-        { "fichier": "/assets/medias/1000031484.jpg", "legende": "Édition 2026, en semi-nocturne." },
-        { "fichier": "/assets/medias/1000031485.jpg", "legende": "54 équipes engagées." },
-        { "fichier": "/assets/medias/1000031488.jpg", "legende": "Buvette et restauration." }
+        {
+          "fichier": "/assets/medias/1000031484.jpg",
+          "legende": "Édition 2026, en semi-nocturne."
+        },
+        {
+          "fichier": "/assets/medias/1000031485.jpg",
+          "legende": "54 équipes engagées."
+        },
+        {
+          "fichier": "/assets/medias/1000031488.jpg",
+          "legende": "Buvette et restauration."
+        }
       ],
       "document": ""
     },
@@ -18,7 +27,10 @@
       "emoji": "🦪",
       "texte": "Un rendez-vous convivial au stade d'Étroussat, avant les fêtes.",
       "photos": [
-        { "fichier": "/assets/medias/1000031741.jpg", "legende": "L'affiche de la dégustation." }
+        {
+          "fichier": "/assets/medias/1000031741.jpg",
+          "legende": "L'affiche de la dégustation."
+        }
       ],
       "document": ""
     },
@@ -36,7 +48,10 @@
       "emoji": "🍗",
       "texte": "Un grand classique de fin d'année, tenu par les bénévoles au profit des équipes du club.",
       "photos": [
-        { "fichier": "/assets/medias/1000031743.jpg", "legende": "L'affiche des grilles de dinde." }
+        {
+          "fichier": "/assets/medias/1000031743.jpg",
+          "legende": "L'affiche des grilles de dinde."
+        }
       ],
       "document": ""
     },
@@ -46,7 +61,10 @@
       "emoji": "🎉",
       "texte": "La soirée qui clôt l'année en beauté, et l'une des principales recettes de la saison.",
       "photos": [
-        { "fichier": "/assets/medias/1000031744.jpg", "legende": "L'affiche de la soirée." }
+        {
+          "fichier": "/assets/medias/1000031744.jpg",
+          "legende": "L'affiche de la soirée."
+        }
       ],
       "document": ""
     },
@@ -56,7 +74,10 @@
       "emoji": "🥘",
       "texte": "Salle comble, ambiance garantie : le repas le plus attendu des supporters de l'ASVS.",
       "photos": [
-        { "fichier": "/assets/medias/1000031742.jpg", "legende": "L'affiche de la soirée moules-frites." }
+        {
+          "fichier": "/assets/medias/1000031742.jpg",
+          "legende": "L'affiche de la soirée moules-frites."
+        }
       ],
       "document": ""
     },
@@ -75,6 +96,18 @@
       "texte": "Bilan sportif, remise des récompenses et remerciements aux bénévoles autour d'une même table.",
       "photos": [],
       "document": ""
+    },
+    {
+      "emoji": "🩷",
+      "nom": "OCTOBRE ROSE",
+      "periode": "Du 01/10 au 31/10",
+      "texte": "🩷🩷 Objectif pluie de buts 🩷🩷\n\nLe club se lance pour la deuxième année consécutive dans la course aux buts pour soutenir la recherche contre le cancer du sein 💪🏻\n\nCe mois d'octobre va donner des boutons à notre trésorier 😂🩷\n\n#lutte #Cancer #octobrerose #asvs #engagement #fier #foot #DistrictAllier",
+      "photos": [
+        {
+          "legende": "",
+          "fichier": "/assets/medias/octobre-rose-2-.png"
+        }
+      ]
     }
   ]
 }
