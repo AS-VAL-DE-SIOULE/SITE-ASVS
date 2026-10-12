@@ -76,6 +76,10 @@
         {
           "fichier": "/assets/medias/3.png",
           "legende": "L'affiche de la soirée."
+        },
+        {
+          "legende": "Menu de la soirée",
+          "fichier": "/assets/medias/4.png"
         }
       ],
       "document": ""
