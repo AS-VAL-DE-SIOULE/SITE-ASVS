@@ -30,8 +30,12 @@
     "titre": "Une histoire de village",
     "texte": "Le rouge de Broût-Vernet, le vert d'Étroussat, et entre les deux la Sioule qui coule en bleu : le blason du club raconte à lui seul d'où nous venons. En 2009, deux clubs voisins ont décidé de n'en faire qu'un. Depuis, l'AS Val de Sioule rassemble les familles de Broût-Vernet, d'Étroussat et de Barberier autour d'un même maillot.\n\nIci, un club n'est pas une structure : c'est un village vivant. Les anciens transmettent, les jeunes s'engagent, et chacun trouve sa place — sur le terrain, à la buvette, à la table de marque ou au bord de la ligne de touche.",
     "bouton": "L'histoire et l'organisation",
-    "image": "assets/img/banniere.jpg",
-    "legendeImage": "Bannière de l'AS Val de Sioule : nos racines, la Sioule, la passion"
+    "photos": [
+      {
+        "fichier": "assets/img/banniere.jpg",
+        "legende": "Bannière de l'AS Val de Sioule : nos racines, la Sioule, la passion"
+      }
+    ]
   },
   "equipes": {
     "accroche": "Du U7 aux séniors",

@@ -818,6 +818,35 @@ a.partenaire:hover { transform: translateY(-2px); box-shadow: var(--ombre); }
   padding: .25em .6em; border-radius: 999px;
 }
 
+/* ---- Pages de PDF affichées dans un diaporama ----
+   Un document se lit en entier : on le contient au lieu de le rogner,
+   et on garde le fond blanc de la page. */
+.carrousel--doc { background: #e9e6dd; }
+.carrousel--doc .carrousel__vue canvas {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 1 / 1.414; object-fit: contain;
+  background: #fff;
+}
+.carrousel--doc .carrousel__legende { opacity: 1; transform: none; }
+
+/* L'emplacement en attente, le temps que le document se charge */
+.carrousel__vue--attente {
+  min-height: 220px; aspect-ratio: 1 / 1.414;
+  background:
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.06) 0 12px, transparent 12px 24px),
+    var(--pelouse-2);
+}
+.carrousel__doc-secours { display: grid; place-items: center; height: 100%; padding: 1.4rem; }
+
+.carrousel__telecharger {
+  position: absolute; left: .7rem; top: .7rem; z-index: 2;
+  background: rgba(10, 22, 14, .72); color: #fff;
+  font-size: .72rem; font-weight: 700; letter-spacing: .04em;
+  padding: .4em .8em; border-radius: 999px; text-decoration: none;
+  transition: background .15s ease;
+}
+.carrousel__telecharger:hover { background: var(--rouge); color: #fff; }
+
 @media (prefers-reduced-motion: reduce) {
   .carrousel__piste { transition: none; }
   .carrousel__legende { opacity: 1; transform: none; }

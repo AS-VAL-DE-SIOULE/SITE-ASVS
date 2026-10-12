@@ -236,44 +236,54 @@
       .join("");
   }
 
+  function estPdf(f) { return /\.pdf(\?|#|$)/i.test(String(f)); }
+
+  /* Une vue du diaporama. Un PDF n'est pas affiché tout de suite :
+     on pose un emplacement que activerDocuments() remplacera par
+     autant de vues que le document compte de pages. */
+  function vueMedia(p) {
+    const f = chemin(p.fichier);
+    if (estPdf(f)) {
+      return '<div class="carrousel__vue carrousel__vue--attente" data-pdf="' + echapper(f) + '"' +
+        (p.legende ? ' data-legende="' + echapper(p.legende) + '"' : "") + '></div>';
+    }
+    const media = estVideo(f)
+      ? '<video controls preload="metadata" playsinline src="' + echapper(f) + '"></video>'
+      : '<img src="' + echapper(f) + '" alt="' + echapper(p.legende || "") + '" loading="lazy">';
+    return '<div class="carrousel__vue">' + media +
+      (p.legende ? '<div class="carrousel__legende">' + echapper(p.legende) + '</div>' : "") +
+      '</div>';
+  }
+
+  function pointsCarrousel(n) {
+    let s = "";
+    for (let i = 0; i < n; i++) {
+      s += '<button class="carrousel__point" type="button" data-vers="' + i + '" ' +
+        'aria-label="Vue ' + (i + 1) + '"' + (i === 0 ? ' aria-current="true"' : "") + '></button>';
+    }
+    return s;
+  }
+
   function blocCarrousel(photos, format) {
     if (!photos.length) return "";
-    const cls = "carrousel--" + (format || "4-3");
+    const doc = photos.some(p => estPdf(chemin(p.fichier)));
+    const cls = "carrousel--" + (format || "4-3") + (doc ? " carrousel--doc" : "");
 
-    if (photos.length === 1) {
-      const p = photos[0];
-      const f = chemin(p.fichier);
-      const media = estVideo(f)
-        ? '<video controls preload="metadata" playsinline src="' + echapper(f) + '"></video>'
-        : '<img src="' + echapper(f) + '" alt="' + echapper(p.legende || "") + '" loading="lazy">';
+    /* Une seule image : pas d'habillage inutile. Un PDF, lui, fait
+       presque toujours plusieurs pages : il garde les commandes. */
+    if (photos.length === 1 && !doc) {
       return '<div class="carrousel ' + cls + '"><div class="carrousel__piste">' +
-        '<div class="carrousel__vue">' + media +
-        (p.legende ? '<div class="carrousel__legende">' + echapper(p.legende) + '</div>' : "") +
-        '</div></div></div>';
+        vueMedia(photos[0]) + '</div></div>';
     }
 
     const id = "carr-" + (++compteurCarrousel);
-    const vues = photos.map(p => {
-      const f = chemin(p.fichier);
-      const media = estVideo(f)
-        ? '<video controls preload="metadata" playsinline src="' + echapper(f) + '"></video>'
-        : '<img src="' + echapper(f) + '" alt="' + echapper(p.legende || "") + '" loading="lazy">';
-      return '<div class="carrousel__vue">' + media +
-        (p.legende ? '<div class="carrousel__legende">' + echapper(p.legende) + '</div>' : "") +
-        '</div>';
-    }).join("");
-
-    const points = photos.map((p, i) =>
-      '<button class="carrousel__point" type="button" data-vers="' + i + '" ' +
-      'aria-label="Photo ' + (i + 1) + '"' + (i === 0 ? ' aria-current="true"' : '') + '></button>'
-    ).join("");
-
-    return '<div class="carrousel ' + cls + '" id="' + id + '" data-carrousel>' +
+    return '<div class="carrousel ' + cls + '" id="' + id + '" ' +
+      (doc ? "data-carrousel-attente" : "data-carrousel") + '>' +
       '<div class="carrousel__compteur"><span data-actuel>1</span>/' + photos.length + '</div>' +
-      '<div class="carrousel__piste">' + vues + '</div>' +
-      '<button class="carrousel__nav carrousel__nav--prec" type="button" aria-label="Photo précédente">&#8249;</button>' +
-      '<button class="carrousel__nav carrousel__nav--suiv" type="button" aria-label="Photo suivante">&#8250;</button>' +
-      '<div class="carrousel__points">' + points + '</div>' +
+      '<div class="carrousel__piste">' + photos.map(vueMedia).join("") + '</div>' +
+      '<button class="carrousel__nav carrousel__nav--prec" type="button" aria-label="Vue précédente">&#8249;</button>' +
+      '<button class="carrousel__nav carrousel__nav--suiv" type="button" aria-label="Vue suivante">&#8250;</button>' +
+      '<div class="carrousel__points">' + pointsCarrousel(photos.length) + '</div>' +
     '</div>';
   }
 
@@ -299,40 +309,49 @@
     }, true);   // capture : les erreurs d'image ne remontent pas autrement
   }
 
-  /* Remet à jour points et compteur après suppression d'une vue */
+  /* Remet à jour points et compteur quand le nombre de vues change :
+     une image en erreur qui disparaît, ou un PDF qui vient d'être
+     déplié en autant de vues que de pages. */
   function reindexerCarrousel(c) {
     const vues = $$(".carrousel__vue", c).length;
-    const points = $$(".carrousel__point", c);
-    points.slice(vues).forEach(p => p.remove());
     const compteur = $(".carrousel__compteur", c);
-    if (compteur) {
-      if (vues <= 1) compteur.remove();
-      else compteur.innerHTML = '<span data-actuel>1</span>/' + vues;
-    }
+    const piste = $(".carrousel__piste", c);
+
     if (vues <= 1) {
+      if (compteur) compteur.remove();
       $$(".carrousel__nav, .carrousel__points", c).forEach(el => el.remove());
       c.removeAttribute("data-carrousel");
-      $(".carrousel__piste", c).style.transform = "translateX(0)";
+      c.removeAttribute("data-carrousel-attente");
+      if (piste) piste.style.transform = "translateX(0)";
+      return;
     }
+    if (compteur) compteur.innerHTML = '<span data-actuel>1</span>/' + vues;
+    const points = $(".carrousel__points", c);
+    if (points) points.innerHTML = pointsCarrousel(vues);
+    if (piste) piste.style.transform = "translateX(0)";
   }
 
-  /* Active tous les carrousels présents dans la page */
+  /* Active tous les carrousels présents dans la page.
+     Peut être rappelée sans risque : un carrousel déjà actif est ignoré. */
   function activerCarrousels() {
     $$("[data-carrousel]").forEach(function (c) {
+      if (c.dataset.actif) return;
+      c.dataset.actif = "1";
+
       const piste = $(".carrousel__piste", c);
-      const points = $$(".carrousel__point", c);
-      const compteur = $("[data-actuel]", c);
-      const total = points.length;
       let index = 0;
       let minuterie = null;
 
       function aller(n) {
+        const total = $$(".carrousel__vue", c).length;
+        if (!total) return;
         index = (n + total) % total;
         piste.style.transform = "translateX(" + (-index * 100) + "%)";
-        points.forEach((p, i) => {
+        $$(".carrousel__point", c).forEach((p, i) => {
           if (i === index) p.setAttribute("aria-current", "true");
           else p.removeAttribute("aria-current");
         });
+        const compteur = $("[data-actuel]", c);
         if (compteur) compteur.textContent = index + 1;
       }
       function relancer() {
@@ -343,11 +362,17 @@
         if (minuterie) { window.clearInterval(minuterie); minuterie = null; }
       }
 
-      $(".carrousel__nav--prec", c).addEventListener("click", () => { aller(index - 1); relancer(); });
-      $(".carrousel__nav--suiv", c).addEventListener("click", () => { aller(index + 1); relancer(); });
-      points.forEach(p => p.addEventListener("click", () => {
-        aller(parseInt(p.dataset.vers, 10)); relancer();
-      }));
+      /* Délégation : les points sont reconstruits quand un PDF se déplie,
+         des écouteurs posés un par un seraient perdus au passage. */
+      c.addEventListener("click", function (e) {
+        const cible = e.target;
+        if (cible.closest(".carrousel__nav--prec")) { aller(index - 1); relancer(); }
+        else if (cible.closest(".carrousel__nav--suiv")) { aller(index + 1); relancer(); }
+        else {
+          const pt = cible.closest(".carrousel__point");
+          if (pt) { aller(parseInt(pt.dataset.vers, 10)); relancer(); }
+        }
+      });
 
       // On met en pause quand la souris ou le clavier est dessus
       c.addEventListener("mouseenter", arreter);
@@ -374,6 +399,113 @@
         relancer();
       }
     });
+  }
+
+  /* ---------- Documents PDF affichés en diaporama ----------
+     Un PDF déposé dans une liste de photos est déplié page par page :
+     chaque page devient une vue du carrousel. Pratique pour un
+     calendrier, une affiche recto-verso ou une plaquette. */
+  const PDFJS_VERSION = "3.11.174";
+  const PDF_PAGES_MAX = 20;
+  let pdfjsPret = null;
+
+  function chargerPdfJs() {
+    if (pdfjsPret) return pdfjsPret;
+    pdfjsPret = new Promise(function (ok, ko) {
+      const base = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/" + PDFJS_VERSION + "/";
+      const s = document.createElement("script");
+      s.src = base + "pdf.min.js";
+      s.onload = function () {
+        if (!window.pdfjsLib) { ko(new Error("pdf.js indisponible")); return; }
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = base + "pdf.worker.min.js";
+        ok(window.pdfjsLib);
+      };
+      s.onerror = function () { ko(new Error("pdf.js injoignable")); };
+      document.head.appendChild(s);
+    });
+    return pdfjsPret;
+  }
+
+  /* Si le PDF ne peut pas être affiché, on laisse au moins un lien :
+     mieux vaut un document téléchargeable qu'un cadre vide. */
+  function replierVersLien(place) {
+    const url = place.dataset.pdf;
+    const legende = place.dataset.legende || "Télécharger le document";
+    place.classList.remove("carrousel__vue--attente");
+    place.innerHTML = '<div class="carrousel__doc-secours">' +
+      lienDocument(url, legende) + '</div>';
+  }
+
+  async function depliierPdf(place, pdfjs) {
+    const url = place.dataset.pdf;
+    const legende = place.dataset.legende || "";
+    const doc = await pdfjs.getDocument(url).promise;
+    const total = Math.min(doc.numPages, PDF_PAGES_MAX);
+    const parent = place.parentNode;
+
+    for (let n = 1; n <= total; n++) {
+      const page = await doc.getPage(n);
+      const initiale = page.getViewport({ scale: 1 });
+      const echelle = Math.min(2, 1200 / initiale.width);
+      const vue = page.getViewport({ scale: echelle });
+
+      const toile = document.createElement("canvas");
+      toile.width = Math.round(vue.width);
+      toile.height = Math.round(vue.height);
+      await page.render({ canvasContext: toile.getContext("2d"), viewport: vue }).promise;
+
+      const titre = (legende ? legende + " — " : "") + "page " + n + " sur " + doc.numPages;
+      toile.setAttribute("role", "img");
+      toile.setAttribute("aria-label", titre);
+
+      const div = document.createElement("div");
+      div.className = "carrousel__vue";
+      div.appendChild(toile);
+
+      const lg = document.createElement("div");
+      lg.className = "carrousel__legende";
+      lg.textContent = titre;
+      div.appendChild(lg);
+
+      parent.insertBefore(div, place);
+    }
+
+    /* Un bouton pour récupérer le document d'origine, en pleine qualité */
+    const carrousel = place.closest(".carrousel");
+    if (carrousel && !$(".carrousel__telecharger", carrousel)) {
+      const a = document.createElement("a");
+      a.className = "carrousel__telecharger";
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.setAttribute("download", "");
+      a.textContent = "Télécharger le PDF";
+      carrousel.appendChild(a);
+    }
+    place.remove();
+  }
+
+  async function activerDocuments() {
+    const places = $$("[data-pdf]");
+    if (!places.length) return;
+
+    let pdfjs = null;
+    try { pdfjs = await chargerPdfJs(); }
+    catch (e) { places.forEach(replierVersLien); }
+
+    for (const place of places) {
+      if (!place.isConnected) continue;
+      if (!pdfjs) continue;
+      try { await depliierPdf(place, pdfjs); }
+      catch (e) { replierVersLien(place); }
+    }
+
+    $$("[data-carrousel-attente]").forEach(c => {
+      c.removeAttribute("data-carrousel-attente");
+      c.setAttribute("data-carrousel", "");
+      reindexerCarrousel(c);
+    });
+    activerCarrousels();
   }
 
   /* ---------- Fragments média réutilisables ---------- */
@@ -1170,6 +1302,17 @@
       if (v) el.style.backgroundImage = "url('" + chemin(v) + "')";
     });
 
+    /* Diaporama alimenté par une liste de photos de la page.
+       Une seule photo s'affiche seule, plusieurs défilent, un PDF
+       est déplié page par page. */
+    $$("[data-carrousel-txt]").forEach(el => {
+      const v = valeurPage(el.dataset.carrouselTxt);
+      const photos = normaliserPhotos(Array.isArray(v) ? { photos: v } : (v || {}));
+      if (photos.length) el.innerHTML = blocCarrousel(photos, el.dataset.format);
+      const bloc = el.closest("[data-bloc-si]");
+      if (bloc) bloc.hidden = photos.length === 0;
+    });
+
     /* Titre de l'onglet et description pour les moteurs de recherche */
     const seo = valeurPage("seo") || {};
     if (seo.titre) document.title = seo.titre;
@@ -1349,6 +1492,7 @@
 
     // Après le rendu : on anime ce qui vient d'être créé
     activerCarrousels();
+    activerDocuments();   // les PDF se déplient en arrière-plan
     compteurs();
     apparitions();
     ballonVivant();

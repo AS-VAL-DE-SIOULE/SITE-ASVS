@@ -16,6 +16,14 @@ publish_mode: simple
 media_folder: "assets/medias"
 public_folder: "/assets/medias"
 
+# Les photos sont allégées automatiquement avant l'envoi (voir admin/index.html).
+# Cette limite reste le garde-fou pour les PDF et les vidéos : au-delà,
+# l'enregistrement n'aboutit pas, Netlify refusant les gros envois.
+media_library:
+  name: default
+  config:
+    max_file_size: 4194304   # 4 Mo
+
 site_url: https://asvaldesioule.com
 display_url: https://asvaldesioule.com
 logo_url: /assets/img/logo.png
@@ -93,8 +101,16 @@ collections:
               - { name: titre, label: "Titre", widget: string }
               - { name: texte, label: "Texte", widget: text, hint: "Laissez une ligne vide entre deux paragraphes." }
               - { name: bouton, label: "Bouton", widget: string }
-              - { name: image, label: "Photo à droite du texte", widget: image }
-              - { name: legendeImage, label: "Description de la photo", widget: string }
+              - name: photos
+                label: "Photos à droite du texte"
+                label_singular: "une photo"
+                widget: list
+                required: false
+                summary: "{{fields.legende}}"
+                hint: "Plusieurs photos défilent automatiquement. Un PDF est affiché page par page."
+                fields:
+                  - { name: fichier, label: "Photo, vidéo ou PDF", widget: file }
+                  - { name: legende, label: "Légende", widget: string, required: false, default: "" }
           - name: equipes
             label: "Bloc « nos équipes »"
             widget: object
@@ -275,8 +291,16 @@ collections:
               - { name: accroche, label: "Petite phrase", widget: string }
               - { name: titre, label: "Titre", widget: string }
               - { name: texte, label: "Texte", widget: text, hint: "Une ligne vide entre deux paragraphes." }
-              - { name: image, label: "Image à droite du texte", widget: image }
-              - { name: legendeImage, label: "Description de l'image", widget: string }
+              - name: photos
+                label: "Images à droite du texte"
+                label_singular: "une image"
+                widget: list
+                required: false
+                summary: "{{fields.legende}}"
+                hint: "Plusieurs images défilent automatiquement. Un PDF est affiché page par page."
+                fields:
+                  - { name: fichier, label: "Image, vidéo ou PDF", widget: file }
+                  - { name: legende, label: "Légende", widget: string, required: false, default: "" }
           - name: frise
             label: "Bloc « quelques dates »"
             widget: object
@@ -403,9 +427,9 @@ collections:
                 widget: list
                 required: false
                 summary: "{{fields.legende}}"
-                hint: "Plusieurs photos = diaporama automatique."
+                hint: "Plusieurs photos défilent automatiquement. Un PDF est affiché page par page."
                 fields:
-                  - { name: fichier, label: "Photo", widget: image }
+                  - { name: fichier, label: "Photo, vidéo ou PDF", widget: file }
                   - { name: legende, label: "Légende", widget: string, required: false, default: "" }
           - name: equipesHistoriques
             label: "Photos d'équipes au fil des ans"
@@ -415,7 +439,7 @@ collections:
             summary: "{{fields.saison}}"
             fields:
               - { name: saison, label: "Saison", widget: string, hint: "Exemple : Saison 2018-2019" }
-              - { name: fichier, label: "Photo", widget: image }
+              - { name: fichier, label: "Photo, vidéo ou PDF", widget: file }
               - { name: legende, label: "Légende", widget: string, required: false, default: "" }
 
       - name: "textes-histoire"
@@ -502,7 +526,7 @@ collections:
                 summary: "{{fields.legende}}"
                 hint: "Plusieurs photos = diaporama automatique. Format paysage, équipe cadrée au centre."
                 fields:
-                  - { name: fichier, label: "Photo", widget: image }
+                  - { name: fichier, label: "Photo, vidéo ou PDF", widget: file }
                   - { name: legende, label: "Légende", widget: string, required: false, default: "" }
               - { name: video, label: "Vidéo (si pas de photo)", widget: file, required: false }
               - { name: coach, label: "Encadrement", widget: string }
@@ -762,7 +786,7 @@ collections:
                 summary: "{{fields.legende}}"
                 hint: "Plusieurs photos = diaporama automatique. 1200 à 1600 px, moins de 500 Ko."
                 fields:
-                  - { name: fichier, label: "Photo", widget: image }
+                  - { name: fichier, label: "Photo, vidéo ou PDF", widget: file }
                   - { name: legende, label: "Légende", widget: string, required: false, default: "" }
               - { name: video, label: "Vidéo", widget: file, required: false, hint: "MP4, 20 Mo maximum. La vidéo remplace les photos." }
               - { name: document, label: "Document joint (PDF…)", widget: file, required: false }
@@ -796,8 +820,16 @@ collections:
               - { name: accroche, label: "Petite phrase", widget: string }
               - { name: titre, label: "Titre", widget: string }
               - { name: chapeau, label: "Introduction", widget: text }
-              - { name: image, label: "Photo", widget: image }
-              - { name: legendeImage, label: "Description de la photo", widget: string }
+              - name: photos
+                label: "Photos"
+                label_singular: "une photo"
+                widget: list
+                required: false
+                summary: "{{fields.legende}}"
+                hint: "Plusieurs photos défilent automatiquement. Un PDF est affiché page par page."
+                fields:
+                  - { name: fichier, label: "Photo, vidéo ou PDF", widget: file }
+                  - { name: legende, label: "Légende", widget: string, required: false, default: "" }
               - { name: texte, label: "Texte", widget: text }
               - { name: bouton, label: "Bouton", widget: string }
           - name: seo
@@ -836,7 +868,7 @@ collections:
                 required: false
                 summary: "{{fields.legende}}"
                 fields:
-                  - { name: fichier, label: "Photo", widget: image }
+                  - { name: fichier, label: "Photo, vidéo ou PDF", widget: file }
                   - { name: legende, label: "Légende", widget: string, required: false, default: "" }
               - { name: document, label: "Document joint (affiche, règlement…)", widget: file, required: false }
 
@@ -867,8 +899,16 @@ collections:
               - { name: accroche, label: "Petite phrase", widget: string }
               - { name: titre, label: "Titre", widget: string }
               - { name: texte, label: "Texte", widget: text, hint: "Laissez une ligne vide entre deux paragraphes." }
-              - { name: image, label: "Photo", widget: image }
-              - { name: legendeImage, label: "Description de la photo", widget: string }
+              - name: photos
+                label: "Photos"
+                label_singular: "une photo"
+                widget: list
+                required: false
+                summary: "{{fields.legende}}"
+                hint: "Plusieurs photos défilent automatiquement. Un PDF est affiché page par page."
+                fields:
+                  - { name: fichier, label: "Photo, vidéo ou PDF", widget: file }
+                  - { name: legende, label: "Légende", widget: string, required: false, default: "" }
           - name: documents
             label: "Titres du bloc documents"
             widget: object

@@ -15,8 +15,12 @@
     "accroche": "Édition 2026",
     "titre": "54 équipes : un record",
     "texte": "Le samedi 8 août 2026, le club organisait son traditionnel concours de pétanque, proposé pour la première fois en semi-nocturne pour profiter d'un peu de fraîcheur.\n\nEntre beaux carreaux, tirs manqués, parties disputées et éclats de rire, 54 équipes se sont affrontées dans une ambiance conviviale et festive. Un nouveau record pour l'ASVS.\n\nFélicitations aux finalistes Stelio et Nounours, et un immense merci aux bénévoles mobilisés à la buvette, à la restauration et à la table de marque.",
-    "image": "assets/photos/actu-petanque.jpg",
-    "legendeImage": "Le concours de pétanque semi-nocturne du 8 août 2026"
+    "photos": [
+      {
+        "fichier": "assets/photos/actu-petanque.jpg",
+        "legende": "Le concours de pétanque semi-nocturne du 8 août 2026"
+      }
+    ]
   },
   "documents": {
     "accroche": "À télécharger",

@@ -29,7 +29,7 @@
       "photos": [
         {
           "legende": "",
-          "fichier": "/assets/medias/octobre-rose-2-.png"
+          "fichier": "/assets/medias/octobre-rose-2-.jpg"
         }
       ]
     },
@@ -74,12 +74,12 @@
       "texte": "La soirée qui clôt l'année en beauté, et l'une des principales recettes de la saison.",
       "photos": [
         {
-          "fichier": "/assets/medias/3.png",
+          "fichier": "/assets/medias/3.jpg",
           "legende": "L'affiche de la soirée."
         },
         {
           "legende": "Menu de la soirée",
-          "fichier": "/assets/medias/4.png"
+          "fichier": "/assets/medias/4.jpg"
         }
       ],
       "document": ""

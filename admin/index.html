@@ -15,6 +15,20 @@
   #chargement img{width:90px;margin-bottom:1.2rem}
   #chargement h1{font-size:1.3rem;margin:0 0 .5rem}
   #chargement p{margin:0;color:rgba(255,255,255,.7);font-size:.95rem;max-width:38ch}
+
+  /* Bandeau d'information pendant la préparation des photos */
+  #asvs-info{
+    position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);
+    z-index:99999;max-width:min(92vw,520px);
+    background:#22374f;color:#fff;border-left:5px solid #2f9e4f;
+    padding:.85rem 1.15rem;border-radius:10px;
+    box-shadow:0 10px 30px rgba(10,22,14,.35);
+    font-size:.92rem;line-height:1.45;
+    opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;
+  }
+  #asvs-info.visible{opacity:1;transform:translateX(-50%) translateY(0)}
+  #asvs-info.alerte{border-left-color:#e1332b}
+  #asvs-info b{display:block;margin-bottom:.15rem}
 </style>
 </head>
 <body>
@@ -28,8 +42,167 @@
   </div>
 </div>
 
+<div id="asvs-info" role="status" aria-live="polite"></div>
+
 <!-- Identification : seules les personnes invitées peuvent se connecter -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!--
+  Allègement des photos avant envoi.
+  --------------------------------------------------------------------
+  Netlify fait transiter chaque fichier par une petite fonction serveur
+  qui n'accepte qu'environ 6 Mo par appel, et le fichier y voyage encodé,
+  ce qui le gonfle d'un tiers. Une photo de téléphone pèse 8 à 12 Mo :
+  l'envoi dépasse la limite, met longtemps, puis échoue.
+
+  On intercepte donc le choix du fichier AVANT que l'interface ne le
+  voie : la photo est redimensionnée puis recompressée dans le
+  navigateur, ce qui la ramène sous les 400 Ko sans différence visible
+  à l'écran. Le fichier d'origine n'est jamais envoyé.
+-->
+<script>
+(function () {
+  var COTE    = 1600;            // plus grand côté, en pixels
+  var QUALITE = 0.82;            // compression JPEG
+  var SEUIL   = 600 * 1024;      // en dessous, on ne touche à rien
+
+  var info = document.getElementById("asvs-info");
+  var minuterie = null;
+
+  function annoncer(titre, texte, alerte) {
+    if (!info) return;
+    if (minuterie) { clearTimeout(minuterie); minuterie = null; }
+    if (!titre) { info.classList.remove("visible"); return; }
+    info.innerHTML = "";
+    var b = document.createElement("b");
+    b.textContent = titre;
+    info.appendChild(b);
+    if (texte) info.appendChild(document.createTextNode(texte));
+    info.classList.toggle("alerte", !!alerte);
+    info.classList.add("visible");
+  }
+  function annoncerPuisEffacer(titre, texte, alerte, delai) {
+    annoncer(titre, texte, alerte);
+    minuterie = setTimeout(function () {
+      info.classList.remove("visible");
+    }, delai || 5000);
+  }
+
+  function estPhoto(f) {
+    return f && /^image\//.test(f.type) && !/svg|gif/i.test(f.type);
+  }
+  function aAlleger(f) {
+    return estPhoto(f) && f.size > SEUIL;
+  }
+  function ko(n) { return Math.round(n / 1024).toLocaleString("fr-FR") + " Ko"; }
+
+  /* Décode en respectant l'orientation EXIF : sans cela, les photos
+     prises à la verticale ressortent couchées. */
+  function decoder(fichier) {
+    if (window.createImageBitmap) {
+      try {
+        return createImageBitmap(fichier, { imageOrientation: "from-image" });
+      } catch (e) { /* on retombe sur la méthode classique */ }
+    }
+    return new Promise(function (ok, ko2) {
+      var url = URL.createObjectURL(fichier);
+      var img = new Image();
+      img.onload = function () { URL.revokeObjectURL(url); ok(img); };
+      img.onerror = function () { URL.revokeObjectURL(url); ko2(new Error("illisible")); };
+      img.src = url;
+    });
+  }
+
+  function alleger(fichier) {
+    if (!aAlleger(fichier)) return Promise.resolve(fichier);
+
+    return decoder(fichier).then(function (source) {
+      var L = source.width, H = source.height;
+      var e = Math.min(1, COTE / Math.max(L, H));
+      var l = Math.max(1, Math.round(L * e));
+      var h = Math.max(1, Math.round(H * e));
+
+      var c = document.createElement("canvas");
+      c.width = l; c.height = h;
+      var g = c.getContext("2d");
+      g.fillStyle = "#ffffff";
+      g.fillRect(0, 0, l, h);
+      g.drawImage(source, 0, 0, l, h);
+      if (source.close) source.close();
+
+      return new Promise(function (ok) {
+        c.toBlob(function (blob) {
+          if (!blob || blob.size >= fichier.size) { ok(fichier); return; }
+          var nom = fichier.name.replace(/\.[^.]+$/, "") + ".jpg";
+          try {
+            ok(new File([blob], nom, { type: "image/jpeg", lastModified: Date.now() }));
+          } catch (err) {
+            blob.name = nom;              // vieux navigateurs sans constructeur File
+            ok(blob);
+          }
+        }, "image/jpeg", QUALITE);
+      });
+    }).catch(function () {
+      return fichier;   // en cas de pépin, on laisse passer l'original
+    });
+  }
+
+  /* On se place en phase de capture sur le document : notre écouteur
+     passe donc avant celui de l'interface. On arrête l'événement, on
+     allège, puis on en relance un identique une fois le travail fait. */
+  var aNous = false;
+
+  document.addEventListener("change", function (ev) {
+    var input = ev.target;
+    if (!input || input.tagName !== "INPUT" || input.type !== "file") return;
+    if (aNous) { aNous = false; return; }
+
+    var fichiers = Array.prototype.slice.call(input.files || []);
+    if (!fichiers.length) return;
+    if (!fichiers.some(aAlleger)) return;
+
+    ev.stopImmediatePropagation();
+    ev.preventDefault();
+
+    var avant = fichiers.reduce(function (s, f) { return s + f.size; }, 0);
+    annoncer("Préparation des photos…",
+             "Elles sont allégées pour que l'enregistrement aboutisse. Un instant.");
+
+    Promise.all(fichiers.map(alleger)).then(function (sortie) {
+      var apres = sortie.reduce(function (s, f) { return s + f.size; }, 0);
+      try {
+        var dt = new DataTransfer();
+        sortie.forEach(function (f) { dt.items.add(f); });
+        input.files = dt.files;
+      } catch (e) {
+        annoncerPuisEffacer("Photo trop lourde",
+          "Votre navigateur ne permet pas de l'alléger ici. Réduisez-la avant de l'ajouter.",
+          true, 9000);
+        return;
+      }
+      aNous = true;
+      input.dispatchEvent(new Event("change", { bubbles: true }));
+      annoncerPuisEffacer("Photos prêtes",
+        ko(avant) + " ramenés à " + ko(apres) + ". Vous pouvez enregistrer.");
+    });
+  }, true);
+
+  /* Un fichier déposé par glisser-déposer ne passe pas par le champ
+     ci-dessus. On prévient plutôt que de laisser l'envoi échouer. */
+  document.addEventListener("drop", function (ev) {
+    var fichiers = ev.dataTransfer && ev.dataTransfer.files;
+    if (!fichiers || !fichiers.length) return;
+    for (var i = 0; i < fichiers.length; i++) {
+      if (fichiers[i].size > 4 * 1024 * 1024) {
+        annoncerPuisEffacer("Fichier volumineux",
+          "Passez plutôt par le bouton de choix de fichier : les photos y sont " +
+          "allégées automatiquement, et l'enregistrement aboutit.", true, 10000);
+        return;
+      }
+    }
+  }, true);
+})();
+</script>
 
 <!-- Interface de gestion du contenu -->
 <script src="https://unpkg.com/decap-cms@^3.1.10/dist/decap-cms.js"></script>
