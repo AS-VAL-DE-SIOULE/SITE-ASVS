@@ -34,6 +34,18 @@
       ]
     },
     {
+      "emoji": "🎱",
+      "nom": "Loto rifles - Etroussat",
+      "periode": "31 octobre & 1 novembre",
+      "texte": "Evènement organisé par l'association des lotos rifles. Le club assure la buvette.",
+      "photos": [
+        {
+          "legende": "",
+          "fichier": "/assets/medias/publications-2026-2027.jpg"
+        }
+      ]
+    },
+    {
       "nom": "Vente des calendriers",
       "periode": "Novembre – Décembre",
       "emoji": "📅",
@@ -112,18 +124,6 @@
       "texte": "Bilan sportif, remise des récompenses et remerciements aux bénévoles autour d'une même table.",
       "photos": [],
       "document": ""
-    },
-    {
-      "emoji": "🎱",
-      "nom": "Loto rifles - Etroussat",
-      "periode": "31 octobre & 1 novembre",
-      "texte": "Evènement organisé par l'association des lotos rifles. Le club assure la buvette.",
-      "photos": [
-        {
-          "legende": "",
-          "fichier": "/assets/medias/publications-2026-2027.jpg"
-        }
-      ]
     }
   ]
 }
