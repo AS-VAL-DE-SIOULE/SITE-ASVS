@@ -16,13 +16,12 @@ publish_mode: simple
 media_folder: "assets/medias"
 public_folder: "/assets/medias"
 
-# Les photos sont allégées automatiquement avant l'envoi (voir admin/index.html).
-# Cette limite reste le garde-fou pour les PDF et les vidéos : au-delà,
-# l'enregistrement n'aboutit pas, Netlify refusant les gros envois.
-media_library:
-  name: default
-  config:
-    max_file_size: 4194304   # 4 Mo
+# Ne pas ajouter de bloc « media_library » ici : dans Decap 3 cette clé ne
+# sert qu'aux bibliothèques externes (Cloudinary, Uploadcare). Elle réclame
+# un « name », puis refuse de démarrer faute de bibliothèque enregistrée,
+# et tout le back-office reste bloqué sur une erreur de configuration.
+# L'allègement des photos et le refus des fichiers trop lourds sont gérés
+# dans admin/index.html, avant que Decap ne voie le fichier.
 
 site_url: https://asvaldesioule.com
 display_url: https://asvaldesioule.com

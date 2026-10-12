@@ -65,6 +65,7 @@
   var COTE    = 1600;            // plus grand côté, en pixels
   var QUALITE = 0.82;            // compression JPEG
   var SEUIL   = 600 * 1024;      // en dessous, on ne touche à rien
+  var LIMITE  = 4 * 1024 * 1024; // au-delà, l'envoi n'aboutit pas
 
   var info = document.getElementById("asvs-info");
   var minuterie = null;
@@ -94,7 +95,14 @@
   function aAlleger(f) {
     return estPhoto(f) && f.size > SEUIL;
   }
+  /* Un PDF ou une vidéo ne peut pas être allégé ici : au-delà de la
+     limite, autant le refuser tout de suite plutôt que de laisser
+     l'enregistrement traîner puis échouer. */
+  function tropLourd(f) {
+    return !estPhoto(f) && f.size > LIMITE;
+  }
   function ko(n) { return Math.round(n / 1024).toLocaleString("fr-FR") + " Ko"; }
+  function mo(n) { return (n / 1048576).toFixed(1).replace(".", ",") + " Mo"; }
 
   /* Décode en respectant l'orientation EXIF : sans cela, les photos
      prises à la verticale ressortent couchées. */
@@ -159,10 +167,23 @@
 
     var fichiers = Array.prototype.slice.call(input.files || []);
     if (!fichiers.length) return;
-    if (!fichiers.some(aAlleger)) return;
+
+    var refuses = fichiers.filter(tropLourd);
+    if (!refuses.length && !fichiers.some(aAlleger)) return;
 
     ev.stopImmediatePropagation();
     ev.preventDefault();
+
+    if (refuses.length) {
+      input.value = "";
+      annoncerPuisEffacer(
+        refuses.length > 1 ? "Fichiers trop lourds" : "Fichier trop lourd",
+        refuses.map(function (f) { return f.name + " (" + mo(f.size) + ")"; }).join(", ") +
+        ". La limite est de 4 Mo pour un PDF ou une vidéo : au-delà, " +
+        "l'enregistrement n'aboutit pas. Allégez le document, ou découpez-le.",
+        true, 12000);
+      return;
+    }
 
     var avant = fichiers.reduce(function (s, f) { return s + f.size; }, 0);
     annoncer("Préparation des photos…",
