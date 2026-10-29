@@ -58,7 +58,7 @@
       "journee": "Journée 5",
       "domicile": true,
       "adversaire": "Chevagnes U.S.",
-      "score": ""
+      "score": "3-2"
     },
     {
       "equipe": "A",
@@ -168,7 +168,7 @@
       "journee": "Journée 5",
       "domicile": false,
       "adversaire": "Association F.C. Ébreuil",
-      "score": ""
+      "score": "0-0"
     },
     {
       "equipe": "B",
@@ -288,7 +288,7 @@
       "journee": "Journée 5",
       "domicile": true,
       "adversaire": "Bruyère-la-Montagne ES 2",
-      "score": ""
+      "score": "3-3"
     },
     {
       "equipe": "C",
