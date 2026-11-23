@@ -78,7 +78,7 @@
       "journee": "Journée 7",
       "domicile": true,
       "adversaire": "Mayotte FC de Vichy",
-      "score": ""
+      "score": "3-1"
     },
     {
       "equipe": "A",
@@ -88,7 +88,7 @@
       "journee": "Journée 8",
       "domicile": false,
       "adversaire": "AC S. Moulins Foot 2",
-      "score": ""
+      "score": "1-2"
     },
     {
       "equipe": "A",
@@ -188,7 +188,7 @@
       "journee": "Journée 7",
       "domicile": false,
       "adversaire": "St-Germain-des-Fossés 3",
-      "score": ""
+      "score": "1-1"
     },
     {
       "equipe": "B",
@@ -198,7 +198,7 @@
       "journee": "Journée 8",
       "domicile": true,
       "adversaire": "A.S. Rongères",
-      "score": ""
+      "score": "1-4"
     },
     {
       "equipe": "B",
@@ -308,7 +308,7 @@
       "journee": "Journée 7",
       "domicile": true,
       "adversaire": "Mayotte FC de Vichy 2",
-      "score": ""
+      "score": "0-6"
     },
     {
       "equipe": "C",
@@ -318,7 +318,7 @@
       "journee": "Journée 8",
       "domicile": false,
       "adversaire": "Abrest U.S. 2",
-      "score": ""
+      "score": "0-10"
     },
     {
       "equipe": "C",
