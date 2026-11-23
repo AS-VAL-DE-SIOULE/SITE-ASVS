@@ -170,6 +170,19 @@
           "fichier": "/assets/medias/equipe-b.jpg"
         }
       ]
+    },
+    {
+      "categorie": "sportif",
+      "documentTitre": "",
+      "date": "2026-11-14",
+      "titre": "Les résultats de nos jeunes",
+      "texte": "🔥 U11 : un début de 2e phase parfait !\nAprès un parcours sans faute en 1re phase, nos U11 attaquent le niveau championnat avec deux nouvelles victoires 💪\n\n🧨 Victoire 4-0 contre Gannat\n⚽️⚽️⚽️ Marceau\n⚽️ Lorik\n\n🧨 Victoire 2-1 contre Allier Sud Foot\n⚽️ Lorik\n⚽️ Marceau\n\n😤 U13 : défaite cruelle à Brout-Vernet\nNos U13 menaient 3-1 mais s'inclinent finalement 5-3 face à l'Avenir Sud Bourbonnais. La réaction viendra dès le prochain match !\n⚽️ Timéo M.\n⚽️ Timéo J.\n⚽️ CSC\n\n✅ U15 : belle victoire à Ébreuil\nNos U15 s'imposent 5-2 contre le BAF 👏\n\nBravo à tous les joueurs et merci aux éducateurs et aux parents pour leur soutien ! 💙",
+      "photos": [
+        {
+          "legende": "",
+          "fichier": "/assets/medias/u11.jpg"
+        }
+      ]
     }
   ]
 }
